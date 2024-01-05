@@ -1,0 +1,32 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[BEMV9999]') AND OBJECTPROPERTY(ID, N'IsView') = 1)
+DROP VIEW [DBO].[BEMV9999]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+-- <Summary>
+-- Tạo View lấy danh sách Kỳ của module BEM
+-- <Param>
+-- <Return>
+-- <Reference>
+-- <History>
+-- Created by Vĩnh Tâm on 05/08/2020
+
+CREATE VIEW [dbo].[BEMV9999] AS
+
+SELECT 
+	CASE
+		WHEN TranMonth < 10
+			THEN '0'+ LTRIM(RTRIM(STR(TRANMONTH))) + '/' + LTRIM(RTRIM(STR(TRANYEAR)))
+		ELSE LTRIM(RTRIM(STR(TRANMONTH))) + '/' + LTRIM(RTRIM(STR(TRANYEAR)))
+	END AS MonthYear
+	, DivisionID, TranMonth, TranYear, Closing, BeginDate, EndDate
+FROM BEMT9999
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO

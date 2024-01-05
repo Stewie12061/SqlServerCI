@@ -1,0 +1,28 @@
+﻿---- Create by Nguyễn Hoàng Bảo Thy on 5/3/2017 1:57:11 PM
+---- Master Quản lý tiến độ sản xuất (Đông Dương)
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[OT0170]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[OT0170]
+(
+  [VoucherID] VARCHAR(50) NOT NULL,
+  [DivisionID] NVARCHAR(50) NOT NULL,
+  [ProgressID] VARCHAR(50) NOT NULL,
+  [VoucherNo] VARCHAR(50) NULL,
+  [ApprovedDate] DATETIME NULL,
+  [ShipDate] DATETIME NULL,
+  [AttachFile] TEXT NULL,
+  [AttachFileName] NVARCHAR(250) NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [CreateDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_OT0170] PRIMARY KEY CLUSTERED
+(
+  [VoucherID],
+  [DivisionID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END

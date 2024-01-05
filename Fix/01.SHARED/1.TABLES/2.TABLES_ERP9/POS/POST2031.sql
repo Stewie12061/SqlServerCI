@@ -1,0 +1,41 @@
+﻿---- Create by Cao Thị Phượng on 12/14/2017 11:57:48 AM
+---- Phiếu đè nghị xuất hóa đơn detail
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[POST2031]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[POST2031]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [APKMaster] VARCHAR(50) NOT NULL,
+  [APKMInherited] VARCHAR(50) NOT NULL,
+  [APKDInherited] VARCHAR(50) NOT NULL,
+  [InVoucherTypeID] VARCHAR(50) NULL,
+  [InVoucherNo] VARCHAR(50) NULL,
+  [InVoucherDate] DATETIME NULL,
+  [PackageID] VARCHAR(50) NULL,
+  [InventoryID] VARCHAR(50) NULL,
+  [UnitID] VARCHAR(50) NULL,
+  [Quantity] DECIMAL(28,8) NULL,
+  [UnitPrice] DECIMAL(28,8) NULL,
+  [OriginalAmount] DECIMAL(28,8) NULL,
+  [ConvertedAmount] DECIMAL(28,8) NULL,
+  [CurrencyID] VARCHAR(50) NULL,
+  [DiscountRate] DECIMAL(28,8) NULL,
+  [ExchangeRate] DECIMAL(28,8) NULL,
+  [DiscountAmount] DECIMAL(28,8) NULL,
+  [VATGroupID] VARCHAR(50) NULL,
+  [VATPercent] DECIMAL(28,8) NULL,
+  [TaxAmount] DECIMAL(28,8) NULL,
+  [Notes] NVARCHAR(250) NULL,
+  [Orders] INT NULL,
+  [SerialNo] VARCHAR(50) NULL,
+  [DeleteFlg] TINYINT DEFAULT (0) NULL
+CONSTRAINT [PK_POST2031] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END

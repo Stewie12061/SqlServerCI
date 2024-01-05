@@ -1,0 +1,39 @@
+﻿---- Create by Thái Huỳnh Khả Vi on 2/28/2018 2:54:38 PM
+---- Chấm công nhân viên theo sản phẩm CustomerIndex = 88 (VIETFIRST)
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HT1126]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HT1126]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [TranMonth] INT NULL,
+  [TranYear] INT NULL,
+  [ProductID] VARCHAR(50) NULL,
+  [CheckDate] DATETIME NULL,
+  [NormID] VARCHAR(50) NULL, 
+  [PriceSheetID] VARCHAR(50) NULL,
+  [EmployeeID] VARCHAR(50) NULL,
+  [Quantity] DECIMAL(28,8) NULL,
+  [TAT] DECIMAL(28,8) NULL,
+  [Bounce] DECIMAL(28,8) NULL,
+  [PercentAmount] DECIMAL(28,8) NULL,
+  [Amount] DECIMAL(28,8) NULL,
+  [TotalAmount] DECIMAL(28,8) NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [CreateDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_HT1126] PRIMARY KEY CLUSTERED
+(
+  [APK],
+  [DivisionID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+
+
+

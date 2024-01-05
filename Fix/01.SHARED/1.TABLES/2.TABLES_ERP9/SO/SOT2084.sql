@@ -1,0 +1,32 @@
+﻿---- Create by Kiều Nga on 11/07/2020
+---- Dự toán ( MAITHU = 107) MPT load động
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[SOT2084]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[SOT2084]
+(
+	[APK] [uniqueidentifier] DEFAULT NEWID() NOT NULL,
+	[DivisionID] [varchar](50) NOT NULL,
+	[APKMaster] [uniqueidentifier] NOT NULL,
+	[CreateUserID] VARCHAR(50) NULL,
+	[CreateDate] DATETIME NULL,
+	[LastModifyUserID] VARCHAR(50) NULL,
+	[LastModifyDate] DATETIME NULL,
+	[TranMonth] INT NULL,
+	[Tranyear] INT NULL,
+  	[DeleteFlg] TINYINT DEFAULT (0) NULL,
+
+    [Type] VARCHAR(50) NULL,
+	[AnaID] VARCHAR(50) NOT NULL,
+	[AnaName] NVARCHAR(250) NULL,
+	[Value] NVARCHAR(250) NULL		
+ 
+CONSTRAINT [PK_SOT2084] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+

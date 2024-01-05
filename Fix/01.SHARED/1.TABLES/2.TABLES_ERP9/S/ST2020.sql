@@ -1,0 +1,35 @@
+﻿---- Create by Nguyễn Tấn Lộc on 9/30/2020 10:45:41 AM
+---- Thiết lập rules
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[ST2020]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[ST2020]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+  [DivisionID] VARCHAR(50) NULL,
+  [RuleID] VARCHAR(50) NULL,
+  [RuleName] NVARCHAR(250) NULL,
+  [EffectDate] DATETIME NULL,
+  [ExpiryDate] DATETIME NULL,
+  [UserID] VARCHAR(50) NULL,
+  [DeleteFlg] TINYINT DEFAULT 0 NULL,
+  [CreateDate] DATETIME NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL
+CONSTRAINT [PK_ST2020] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+--23/11/2020 - Huỳnh Thử: bổ sung cột Type
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'ST2020' AND xtype = 'U')
+BEGIN 
+   IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+   ON col.id = tab.id WHERE tab.name = 'ST2020' AND col.name = 'TypeRules') 
+   ALTER TABLE ST2020 ADD TypeRules TINYINT NULL
+END

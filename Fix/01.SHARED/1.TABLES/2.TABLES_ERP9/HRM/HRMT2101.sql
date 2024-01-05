@@ -1,0 +1,28 @@
+﻿---- Create by Phan Hải Long on 9/20/2017 8:21:26 AM
+---- Lịch đào tạo (Detail)
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HRMT2101]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HRMT2101]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NULL,
+  [DivisionID] NVARCHAR(50) NOT NULL,
+  [TransactionID] NVARCHAR(50) NOT NULL,
+  [TrainingScheduleID] NVARCHAR(50) NOT NULL,
+  [EmployeeID] NVARCHAR(50) NULL,  
+  [DepartmentID] NVARCHAR(50) NULL,  
+  [ScheduleAmount] DECIMAL(28,8) NULL,    
+  [Notes] NVARCHAR(250) NULL,
+  [Orders] TINYINT NULL,
+  [InheritID] NVARCHAR(50) NULL,  
+  [InheritTransactionID] NVARCHAR(50) NULL
+CONSTRAINT [PK_HRMT2101] PRIMARY KEY CLUSTERED
+(
+  [DivisionID],
+  [TransactionID],
+  [TrainingScheduleID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END

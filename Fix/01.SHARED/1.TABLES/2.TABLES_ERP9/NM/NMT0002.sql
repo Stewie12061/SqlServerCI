@@ -1,0 +1,32 @@
+﻿---- Create by Tra Giang on 17/08/2018 
+----Danh mục định mức sức khỏe
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[NMT0002]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[NMT0002]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [YearOld] INT NOT NULL,
+  [LowerThreshold] DECIMAL(28,2) NOT NULL,
+  [QuotaThreshold] DECIMAL(28,2) NOT NULL,
+  [AboveThreshold] DECIMAL(28,2) NOT NULL,
+  [QuotaType]  INT NOT NULL, 
+  [CreateUserID] VARCHAR(50) NULL,
+  [CreateDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_NMT0002] PRIMARY KEY CLUSTERED
+(
+  [APK] ASC
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+
+
+
+
+  

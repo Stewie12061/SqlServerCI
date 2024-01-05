@@ -1,0 +1,69 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WITH(NOLOCK) WHERE ID = OBJECT_ID(N'[DBO].[EDMP1032]') AND OBJECTPROPERTY(ID, N'IsProcedure') = 1)
+DROP PROCEDURE [DBO].[EDMP1032]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+-- <Summary>
+---- Xuất Excel danh mục môn học
+-- <Param>
+---- 
+-- <Return>
+---- 
+-- <Reference>
+---- 
+-- <History>
+----Created by: Minh Hòa , Date: 12/09/2018
+---- Modified by on 
+-- <Example>
+---- 
+/*-- <Example>
+	EDMP1032 @DivisionID = 'VF', @UserID = 'ASOFTADMIN', @XML = '431AFE34-9E6E-45B6-9C8E-241532857FBE'
+	
+	EDMP1032 @DivisionID, @UserID, @XML
+	Exec EDMP1032 'MK','NV04','E80FA704-6CBD-4168-A7D3-2580ABDA2D64'
+----*/
+
+CREATE PROCEDURE EDMP1032
+( 
+	 @DivisionID VARCHAR(50),
+	 @UserID VARCHAR(50),
+	 @XML XML,
+	 @LanguageID VARCHAR(50)
+)
+AS 
+DECLARE @sSQL NVARCHAR (MAX) = N''
+		
+
+--SELECT TOP 1 @LanguageID = ISNULL(LanguageID,'') FROM AT14051 WITH (NOLOCK) WHERE UserID = @UserID
+        
+CREATE TABLE #EDMP1032 (APK VARCHAR(50))
+INSERT INTO #EDMP1032 (APK)
+SELECT X.Data.query('APK').value('.', 'NVARCHAR(50)') AS APK
+FROM @XML.nodes('//Data') AS X (Data)	
+
+SET @sSQL = @sSQL + N'
+SELECT EDMT1030.DivisionID, EDMT1030.SubjectID, EDMT1030.SubjectName, EDMT1030.Notes, 
+'+CASE WHEN ISNULL(@LanguageID,'') = 'vi-VN' THEN 'T01.Description' ELSE 'T01.DescriptionE' END+' AS IsCommon, 
+'+CASE WHEN ISNULL(@LanguageID,'') = 'vi-VN' THEN 'T02.Description' ELSE 'T02.DescriptionE' END+' AS [Disabled]
+FROM EDMT1030 WITH (NOLOCK)
+INNER JOIN #EDMP1032 ON EDMT1030.APK = #EDMP1032.APK
+LEFT JOIN EDMT0099 T01 WITH (NOLOCK) ON EDMT1030.IsCommon = T01.ID AND T01.CodeMaster = ''Disabled''
+LEFT JOIN EDMT0099 T02 WITH (NOLOCK) ON EDMT1030.[Disabled] = T02.ID AND T02.CodeMaster = ''Disabled''
+ORDER BY EDMT1030.SubjectID'
+
+EXEC (@sSQL)
+--PRINT(@sSQL)
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+

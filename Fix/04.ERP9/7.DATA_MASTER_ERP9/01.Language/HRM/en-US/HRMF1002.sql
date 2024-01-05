@@ -1,0 +1,72 @@
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ HRMF1002- HRM
+------------------------------------------------------------------------------------------------------
+DECLARE
+@ModuleID VARCHAR(10),
+@FormID VARCHAR(200),
+@Language VARCHAR(10),
+------------------------------------------------------------------------------------------------------
+-- Tham so gen tu dong
+------------------------------------------------------------------------------------------------------
+@LanguageValue NVARCHAR(4000),
+
+------------------------------------------------------------------------------------------------------
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
+
+
+------------------------------------------------------------------------------------------------------
+-- Gan gia tri tham so va thu thi truy van
+------------------------------------------------------------------------------------------------------
+/*
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
+*/
+SET @Language = 'en-US' 
+SET @ModuleID = 'HRM';
+SET @FormID = 'HRMF1002';
+
+SET @LanguageValue  = N'Recruitment Resource View'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.Title',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Division';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.DivisionID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Recruitment Resource';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.ResourceID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Description';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.ResourceName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Notes';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.Note', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'IsCommon';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.IsCommon', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Disabled';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.Disabled', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creation date';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Last modified user';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Last modified date';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Recruitment Resource Info'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.TabInfo',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'History'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.TabCRMT00003',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Status'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.StatusID',  @FormID, @LanguageValue, @Language;

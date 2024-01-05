@@ -1,0 +1,32 @@
+﻿---- Create by Khâu Vĩnh Tâm on 11/20/2019 10:50:59 AM
+---- Dữ liệu Người theo dõi
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[CMNT0020]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[CMNT0020]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+  [DivisionID] VARCHAR(50) NULL,
+  [APKMaster] UNIQUEIDENTIFIER NULL,
+  [RelatedToID] VARCHAR(50) NULL,
+  [TableID] VARCHAR(50) NULL,
+  [FollowerID] VARCHAR(50) NULL,
+  [TypeFollow] TINYINT DEFAULT 0 NULL,
+  [CreateDate] DATETIME NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [RelatedToTypeID] INT NULL
+CONSTRAINT [PK_CMNT0020] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+-------------------- 26/12/2019 - Truong Lam: Bổ sung cột RelatedToTypeID --------------------
+IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'CMNT0020' AND col.name = 'RelatedToTypeID')
+BEGIN
+	ALTER TABLE CMNT0020 ADD RelatedToTypeID INT NULL
+END

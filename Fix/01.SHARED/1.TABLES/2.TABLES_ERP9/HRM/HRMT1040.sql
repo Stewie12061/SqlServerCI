@@ -1,0 +1,34 @@
+﻿---- Create by Hải Long on 07/07/2017
+---- Danh mục lĩnh vực đào tạo
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HRMT1040]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HRMT1040]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] NVARCHAR(50) NOT NULL,
+  [TrainingFieldID] NVARCHAR(50) NOT NULL,
+  [TrainingFieldName] NVARCHAR(1000) NULL,
+  [Description] NVARCHAR(1000) NULL,
+  [Disabled] TINYINT DEFAULT (0) NULL,
+  [IsCommon] TINYINT DEFAULT (0) NULL,  
+  [CreateUserID] NVARCHAR(50) NULL,
+  [CreateDate] DATETIME NULL,
+  [LastModifyUserID] NVARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_HRMT1040] PRIMARY KEY CLUSTERED
+(
+  [DivisionID],
+  [TrainingFieldID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+--Thanh Hải Create 17/10/2023 --Bổ sung cột DeleteFlg
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name]='HRMT1040' AND xtype='U')
+BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+	ON col.id=tab.id WHERE tab.name='HRMT1040' and col.name='DeleteFlg')
+	ALTER TABLE HRMT1040 ADD DeleteFlg TINYINT DEFAULT 0 NULL
+END

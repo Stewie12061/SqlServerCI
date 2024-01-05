@@ -1,0 +1,41 @@
+﻿---- Create by Cao Thị Phượng on 7/28/2017 8:18:18 AM
+---- Phiếu đề xuất khuyến mãi Master
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[POST00901]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[POST00901]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [ShopID] VARCHAR(50) NOT NULL,
+  [VoucherTypeID] VARCHAR(50) NOT NULL,
+  [TranMonth] INT NOT NULL,
+  [TranYear] INT NOT NULL,
+  [VoucherNo] VARCHAR(50) NOT NULL,
+  [VoucherDate] DATETIME NOT NULL,
+  [ObjectID] VARCHAR(50) NULL,
+  [ObjectName] NVARCHAR(250) NULL,
+  [EmployeeID] VARCHAR(50) NULL,
+  [EmployeeName] NVARCHAR(250) NULL,
+  [SalesManID] VARCHAR(50) NULL,
+  [SalesManName] NVARCHAR(250) NULL,
+  [MemberID] VARCHAR(50) NULL,
+  [MemberName] NVARCHAR(250) NULL,
+  [Description] NVARCHAR(max) NULL,
+  [ConfirmUserID] VARCHAR(50) NULL,
+  [ConfirmDate]  DATETIME NULL,
+  [IsConfirm] TINYINT DEFAULT 0 NULL,
+  [Status] TINYINT DEFAULT 0 NULL, --0:chưa duyệt; 1:đang duyệt; 2:Đã duyệt
+  [DeleteFlg] TINYINT DEFAULT 0 NULL,
+  [CreateDate] DATETIME NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL
+CONSTRAINT [PK_POST00901] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END

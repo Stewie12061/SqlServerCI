@@ -1,0 +1,37 @@
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HRMT2170]') AND TYPE IN (N'U'))
+BEGIN
+     CREATE TABLE [dbo].[HRMT2170]
+     (
+      [APK] UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+	  [APKMaster_9000] UNIQUEIDENTIFIER DEFAULT  NULL,
+      [DivisionID] VARCHAR(50) NOT NULL,    
+	  [VoucherNo] VARCHAR(50) NOT NULL,  
+	  [OrderDate] DATETIME NULL,
+	  [WorkToDate] DATETIME  NULL,  
+      [WorkFromDate] DATETIME  NULL,    
+	  [Note] NVARCHAR(250) NULL, 
+	  [DepartmentID] VARCHAR(50)  NULL,
+	  [SectionID] VARCHAR(50) NULL,
+	  [SubsectionID] VARCHAR(50) NULL,	 
+      [Status] TINYINT DEFAULT (1)  NULL,    
+	  [Description] NVARCHAR(250) NULL, 
+	  [ApproveLevel] INT  NULL, 
+	  [TranMonth] INT  NULL,
+	  [TranYear] INT  NULL,
+	  [DeleteFlg] TINYINT DEFAULT (0) NULL,
+	  [LastModifyDate] DATETIME NULL,
+	  [LastModifyUserID] VARCHAR(50) NULL,
+	  [CreateDate] DATETIME NULL,
+	  [CreateUserID] VARCHAR(50) NULL,
+	
+    CONSTRAINT [PK_HRMT2170] PRIMARY KEY CLUSTERED
+      (
+      [APK]
+      )
+WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+     )
+ ON [PRIMARY]
+END
+
+

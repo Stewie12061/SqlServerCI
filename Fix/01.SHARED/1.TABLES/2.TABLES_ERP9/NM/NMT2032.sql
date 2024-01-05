@@ -1,0 +1,36 @@
+﻿---- Create by Tra Giang on 16/08/2018 
+---- Nghiệp Vụ: Cập nhật điều tra dinh dưỡng ( detail: thực phẩm )
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[NMT2032]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[NMT2032]
+(
+		 [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+		 [DivisionID] VARCHAR(50) NOT NULL,
+		 [APKMaster] UNIQUEIDENTIFIER NOT NULL,
+
+		 [MaterialsID] VARCHAR(50) NOT NULL,
+		 [UnitID] VARCHAR(50) NOT NULL,
+		 [ActualQuantity] DECIMAL(28,8) NOT NULL,
+		[ConvetedQuantity] DECIMAL(28,8)  NULL,
+		[Thrown] DECIMAL(28,8)  NULL,
+	    [RealityQuantity] DECIMAL(28,8)  NULL,
+		[UnitPrice] DECIMAL(28,8) NOT NULL,
+		[Amount] DECIMAL(28,8) NOT NULL,
+		[DeleteFlg] TINYINT Default 0 NOT NULL ,
+		[TranMonth] INT NOT NULL,
+		[TranYear] INT NOT NULL,
+	[InheritAPK] UNIQUEIDENTIFIER NULL,
+	[InheritAPKMaster] UNIQUEIDENTIFIER NULL,
+	[InheritTableID] VARCHAR(25)
+
+CONSTRAINT [PK_NMT2032] PRIMARY KEY CLUSTERED
+(
+  [APK] ASC
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+ 

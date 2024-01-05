@@ -1,0 +1,61 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[NMP1061]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			
+DROP PROCEDURE [DBO].[NMP1061]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+-- <Summary>
+---- Xuất Excel danh mục bữa ăn
+-- <Param>
+---- 
+-- <Return>
+---- 
+-- <Reference>
+---- 
+-- <History>
+----Created by: Trà Giang, Date: 30/08/2018
+-- <Example>
+---- 
+/*-- <Example>
+	NMP1061 @DivisionID = 'BS', @UserID = 'ASOFTADMIN', @XML = 'ACA2816E-0903-4126-885C-387AB959408E'
+	
+
+	NMP1061 @DivisionID, @UserID, @XML
+----*/
+
+CREATE PROCEDURE NMP1061
+( 
+	 @DivisionID VARCHAR(50),
+	 @UserID VARCHAR(50),
+	 @XML XML
+)
+
+
+AS 
+DECLARE @sSQL NVARCHAR (MAX) = N'',
+		@LanguageID VARCHAR(50)
+
+
+
+CREATE TABLE #NMP1061 (APK VARCHAR(50))
+INSERT INTO #NMP1061 (APK)
+SELECT X.Data.query('APK').value('.', 'NVARCHAR(50)') AS APK
+FROM @XML.nodes('//Data') AS X (Data)	
+
+SET @sSQL = @sSQL + N'
+SELECT NMT1060.DivisionID, NMT1060.MealID, NMT1060.MealName,NMT1060.Description
+FROM NMT1060 WITH (NOLOCK)
+ORDER BY NMT1060.MealID'
+
+--PRINT(@sSQL)
+EXEC (@sSQL)
+
+
+   
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO

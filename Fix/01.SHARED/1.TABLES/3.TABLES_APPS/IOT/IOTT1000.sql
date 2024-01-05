@@ -1,0 +1,24 @@
+﻿---- Create by Đoàn Duy on 29/09/2022 15:13:42 PM
+---- Danh mục host IoT
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[IOTT1000]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[IOTT1000](
+	[APK] [uniqueidentifier] NOT NULL DEFAULT (NEWID()),
+	[DivisionID] VARCHAR(50) NOT NULL,
+	[HostID] [nvarchar](50) NOT NULL,
+	[HostName] [nvarchar](250) NULL,
+	[HostIP] [nvarchar](250) NULL,
+	[AccessToken] [nvarchar](MAX) NULL,
+	[Disabled] TINYINT DEFAULT 0 NULL,
+	[DeleteFlg] TINYINT DEFAULT 0 NULL,
+	[CreateUserID] VARCHAR(50) NULL,
+	[CreateDate] DATETIME NULL,
+	[LastModifyUserID] VARCHAR(50) NULL,
+	[LastModifyDate] DATETIME NULL
+ CONSTRAINT [PK_IOTT1000] PRIMARY KEY CLUSTERED 
+(
+	[HostID]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
