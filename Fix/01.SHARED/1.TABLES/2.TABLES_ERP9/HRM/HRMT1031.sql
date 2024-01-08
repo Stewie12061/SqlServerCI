@@ -46,3 +46,10 @@ BEGIN
    ON col.id = tab.id WHERE tab.name = 'HRMT1031' AND col.name = 'EvaluationKitID') 
    ALTER TABLE HRMT1031 ADD EvaluationKitID VARCHAR(50) NULL 
 END
+
+---------------- 05/10/2022 - Tấn Lộc: Update độ dài dữ liệu cột CandidateID ----------------
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HRMT1031' AND col.name = 'CandidateID')
+BEGIN
+	ALTER TABLE HRMT1031 ALTER COLUMN CandidateID VARCHAR(250) NOT NULL
+END

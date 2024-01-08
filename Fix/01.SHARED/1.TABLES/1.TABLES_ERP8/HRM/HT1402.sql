@@ -78,3 +78,11 @@ IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1402' AND xtype = 'U
         ON col.id = tab.id WHERE tab.name = 'HT1402' AND col.name = 'ReAPK')
         ALTER TABLE HT1402 ADD ReAPK UNIQUEIDENTIFIER NULL
     END
+
+--Modify by Phương Thảo 14/11/2023 ADD BankAddress
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1402' AND xtype = 'U')
+    BEGIN
+        IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+        ON col.id = tab.id WHERE tab.name = 'HT1402' AND col.name = 'BankAddress')
+        ALTER TABLE HT1402 ADD BankAddress NVARCHAR(MAX) NULL
+    END

@@ -58,4 +58,11 @@ BEGIN
     ON col.id = tab.id WHERE tab.name = 'AT0112' AND col.name = 'DivisionID')
 	ALTER TABLE AT0112 ALTER COLUMN DivisionID [nvarchar](50) NOT NULL
 END
+--- [Thanh Lượng][30/05/2023]Bổ sung trường thêm trường ApportionID
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'AT0112' AND xtype = 'U')
+BEGIN
+    IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+    ON col.id = tab.id WHERE tab.name = 'AT0112' AND col.name = 'ApportionID')
+	ALTER TABLE AT0112 ADD ApportionID INT NULL
+END
 

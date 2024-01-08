@@ -10,7 +10,6 @@ CREATE TABLE [dbo].[HRMT2042]
   [APKMaster] VARCHAR(50) NOT NULL,
   [ReAPK] VARCHAR(50) NOT NULL,
   [InterviewTypeID] VARCHAR(50) NULL,
-  [InterviewTypeName] NVARCHAR(200) NULL,
   [DetailTypeID] VARCHAR(50) NULL,
   [InterviewResult] NVARCHAR(2000) NULL,
   [CreateUserID] VARCHAR(50) NULL,

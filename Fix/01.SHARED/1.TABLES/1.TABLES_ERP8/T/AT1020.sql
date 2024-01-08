@@ -355,3 +355,11 @@ BEGIN
    ON col.id = tab.id WHERE tab.name = 'AT1020' AND col.name = 'VATConvertedAmount') 
    ALTER TABLE AT1020 ADD VATConvertedAmount DECIMAL(28,8) NULL
 END
+
+----Modified by Tấn Lộc on 02/09/2022: Bổ sung trường AssignedToUserID
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'AT1020' AND xtype = 'U')
+BEGIN
+   IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+   ON col.id = tab.id WHERE tab.name = 'AT1020' AND col.name = 'AssignedToUserID') 
+   ALTER TABLE AT1020 ADD AssignedToUserID VARCHAR(250) NULL
+END

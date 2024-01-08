@@ -146,3 +146,17 @@ IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab
 BEGIN
 	ALTER TABLE HRMT2000 ADD Status VARCHAR(50) NULL
 END
+--- 24/08/2023 - Phương Thảo: Bổ sung cột DeleteFlg
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE NAME='HRMT2000' AND xtype='U')
+	BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+		ON col.id=tab.id WHERE tab.name='HRMT2000' AND col.name='DeleteFlg')
+		ALTER TABLE HRMT2000 ADD DeleteFlg TINYINT DEFAULT (0) NULL
+	END
+	
+---------------- 05/10/2022 - Tấn Lộc: Update độ dài dữ liệu cột Description ----------------
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HRMT2000' AND col.name = 'Description')
+BEGIN
+	ALTER TABLE HRMT2000 ALTER COLUMN Description NVARCHAR(MAX) NULL
+END

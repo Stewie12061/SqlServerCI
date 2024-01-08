@@ -265,6 +265,21 @@ IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1403' AND xtype = 'U
         ON col.id = tab.id WHERE tab.name = 'HT1403' AND col.name = 'ToApprenticeTime')
         ALTER TABLE HT1403 ADD ToApprenticeTime DATETIME NULL
     END
+--- Modified on 14/11/2023 by Phương Thảo: Bổ sung AbsentReason, StatusNotes (Lí do nghỉ việc , ghi chú nghỉ việc)
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1403' AND xtype = 'U')
+    BEGIN
+        IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+        ON col.id = tab.id WHERE tab.name = 'HT1403' AND col.name = 'AbsentReason')
+        ALTER TABLE HT1403 ADD AbsentReason [nvarchar](50) NULL
+    END
+
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1403' AND xtype = 'U')
+    BEGIN
+        IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+        ON col.id = tab.id WHERE tab.name = 'HT1403' AND col.name = 'StatusNotes')
+        ALTER TABLE HT1403 ADD StatusNotes [nvarchar](250) NULL
+    END
+
 ----Modified by Hồng Thắm: Add column SectionID
 IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1403' AND xtype = 'U')
     BEGIN

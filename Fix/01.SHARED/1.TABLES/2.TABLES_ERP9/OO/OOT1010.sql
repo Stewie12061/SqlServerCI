@@ -53,4 +53,9 @@ IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'OOT1010' AND xtype = '
 		IF EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
         ON col.id = tab.id WHERE tab.name = 'OOT1010' AND col.name = 'DescriptionE')
         ALTER TABLE OOT1010 ALTER COLUMN DescriptionE NVARCHAR(250) NULL
+
+		---Thanh Phương Create 21/12/2023 --Bổ sung cột DeleteFlg
+		IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+		ON col.id=tab.id WHERE tab.name='OOT1010' and col.name='DeleteFlg')
+		ALTER TABLE OOT1010 ADD DeleteFlg TINYINT DEFAULT 0 NULL
     END

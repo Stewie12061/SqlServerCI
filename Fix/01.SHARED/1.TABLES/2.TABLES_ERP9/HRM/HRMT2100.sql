@@ -49,5 +49,17 @@ IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HRMT2100' AND xtype = 
 			
 		IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
         ON col.id = tab.id WHERE tab.name = 'HRMT2100' AND col.name = 'HoursPerSession')
-			ALTER TABLE HRMT2100 ADD HoursPerSession DECIMAL(8,2) NULL     
+			ALTER TABLE HRMT2100 ADD HoursPerSession DECIMAL(8,2) NULL
+
+		--- Modified on 26/09/2023 by Võ Dương: Bổ sung giờ đào tạo cụ thể
+		IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+        ON col.id = tab.id WHERE tab.name = 'HRMT2100' AND col.name = 'SpecificHours')
+			ALTER TABLE HRMT2100 ADD SpecificHours DECIMAL(8,2) NULL
     END
+	
+---------------- 18/12/2023 - Tấn Lộc: Update độ dài dữ liệu cột SpecificHours ----------------
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HRMT2100' AND col.name = 'SpecificHours')
+BEGIN
+	ALTER TABLE HRMT2100 ALTER COLUMN SpecificHours DATETIME NULL
+END

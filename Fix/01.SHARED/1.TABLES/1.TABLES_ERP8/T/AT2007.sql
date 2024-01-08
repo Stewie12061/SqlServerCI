@@ -625,8 +625,12 @@ BEGIN
 	ALTER TABLE AT2007 ADD ImVoucherDate DATE
 
 	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+	ON col.id = tab.id WHERE tab.name = 'AT2007' AND col.name = 'ImVoucherDate') 
+	ALTER TABLE AT2007 ADD ImVoucherDate DATE
+
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
 	ON col.id = tab.id WHERE tab.name = 'AT2007' AND col.name = 'ReVoucherNo') 
-	ALTER TABLE AT2007 ADD ReVoucherNo NVARCHAR(50)
+	ALTER TABLE AT2007 ADD ReVoucherNo NVARCHAR(50) NULL 
 END
 
 ---Modified by Bi Phan on 20/12/2023: Bổ sung trường ObjectTHCPID, ObjectTHCPName, ProductID, ProductName

@@ -38,3 +38,28 @@ IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab
 BEGIN
 	ALTER TABLE OOT2290 ADD StatusID VARCHAR(50) NULL
 END
+
+---------------- 06/12/2019 - Tấn Lộc: Thay đổi kiểu dữ liệu của các cột ----------------
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'OOT2290' AND col.name = 'TargetTaskName')
+BEGIN
+	ALTER TABLE OOT2290 ALTER COLUMN TargetTaskName NVARCHAR(MAX) NULL
+END
+
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'OOT2290' AND col.name = 'TypeID')
+BEGIN
+	ALTER TABLE OOT2290 ALTER COLUMN TypeID VARCHAR(250) NULL
+END
+
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'OOT2290' AND col.name = 'RequestUserID')
+BEGIN
+	ALTER TABLE OOT2290 ALTER COLUMN RequestUserID VARCHAR(250) NULL
+END
+
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'OOT2290' AND col.name = 'CreateUserID')
+BEGIN
+	ALTER TABLE OOT2290 ALTER COLUMN CreateUserID VARCHAR(250) NULL
+END

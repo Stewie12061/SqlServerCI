@@ -142,3 +142,12 @@ Begin
        On col.id = tab.id where tab.name =   'HT1013'  and col.name = 'ProbationaryTypeID')
        Alter Table HT1013 Add ProbationaryTypeID varchar(50)       
 END
+
+--Modyfy by Phương Thảo on 14/12/2023 :Bổ sung thêm trường DeleteFlg 
+If Exists (Select * From sysobjects Where name = 'HT1013' and xtype ='U') 
+Begin      
+       If not exists (select * from syscolumns col inner join sysobjects tab 
+       On col.id = tab.id where tab.name =   'HT1013'  and col.name = 'DeleteFlg')
+       Alter Table HT1013 Add DeleteFlg TINYINT DEFAULT(0) NULL
+    
+END

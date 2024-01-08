@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[QCT1020](
 ) ON [PRIMARY]
 END
 
----------------- 10/04/2023 - Hoàng Long: Bổ sung cột UpdateDate ----------------
+---------------- 12/04/2023 - Hoàng Long: Bổ sung cột UpdateDate ----------------
 IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
 	ON col.id = tab.id WHERE tab.name = 'QCT1020' AND col.name = 'UpdateDate')
 BEGIN

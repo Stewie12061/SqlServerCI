@@ -32,3 +32,40 @@ WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALL
      )
  ON [PRIMARY]
 END
+
+--- 18/10/2023 - Phương Thảo: Bổ sung cột DeleteFlg,Status,ApprovingLevel,ApprovalNotes,ApproveLevel Begin ADD
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE NAME='HT0534' AND xtype='U')
+	BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+		ON col.id=tab.id WHERE tab.name='HT0534' AND col.name='DeleteFlg')
+		ALTER TABLE HT0534 ADD DeleteFlg TINYINT DEFAULT (0) NULL
+	END
+
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE NAME='HT0534' AND xtype='U')
+	BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+		ON col.id=tab.id WHERE tab.name='HT0534' AND col.name='Status')
+		ALTER TABLE HT0534 ADD Status TINYINT DEFAULT (0) NULL
+	END
+
+IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HT0534' AND col.name = 'ApprovingLevel')
+BEGIN
+	ALTER TABLE HT0534 ADD ApprovingLevel INT NULL
+END
+
+IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HT0534' AND col.name = 'ApprovalNotes')
+BEGIN
+	ALTER TABLE HT0534 ADD ApprovalNotes NVARCHAR(MAX) NULL
+END
+
+IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HT0534' AND col.name = 'ApproveLevel')
+BEGIN
+	ALTER TABLE HT0534 ADD ApproveLevel INT NULL
+END
+
+--- 18/10/2023 - Phương Thảo: Bổ sung cột DeleteFlg,Status,ApprovingLevel,ApprovalNotes,ApproveLevel End ADD
+
+

@@ -34,5 +34,3 @@ IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'HT1108' AND xtype = 'U
         ON col.id = tab.id WHERE tab.name = 'HT1108' AND col.name = 'IsReward')
         ALTER TABLE HT1108 ADD IsReward TINYINT NULL
     END
-    
- 

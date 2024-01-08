@@ -100,3 +100,9 @@ IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab
 BEGIN
 	ALTER TABLE OOT2160 ADD ActualTime DECIMAL(28,8) NULL
 END
+-------------------- 08/11/2023 - Thu Hà: Bổ sung cột TargetTaskID --------------------
+IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'OOT2160' AND col.name = 'TargetTaskID')
+BEGIN
+	ALTER TABLE OOT2160 ADD TargetTaskID VARCHAR(50) NULL
+END

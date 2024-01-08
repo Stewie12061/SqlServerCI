@@ -71,3 +71,11 @@ BEGIN
    ON col.id = tab.id WHERE tab.name = 'OOT1000' AND col.name = 'IsRegime') 
    ALTER TABLE OOT1000 ADD IsRegime TINYINT NULL DEFAULT(0)
 END
+
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'OOT1000' AND xtype = 'U')
+BEGIN
+	---Thanh Phương Create 21/12/2023 --Bổ sung cột DeleteFlg
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
+	ON col.id=tab.id WHERE tab.name='OOT1000' and col.name='DeleteFlg')
+	ALTER TABLE OOT1000 ADD DeleteFlg TINYINT DEFAULT 0 NULL
+END

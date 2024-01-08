@@ -37,3 +37,11 @@ WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW
 )
 ON [PRIMARY]
 END
+
+--- 12/10/2023 - Phương Thảo: Bổ sung cột DeleteFlg
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE NAME='HRMT2020' AND xtype='U')
+	BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+		ON col.id=tab.id WHERE tab.name='HRMT2020' AND col.name='DeleteFlg')
+		ALTER TABLE HRMT2020 ADD DeleteFlg TINYINT DEFAULT (0) NULL
+	END

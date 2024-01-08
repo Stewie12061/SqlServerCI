@@ -30,4 +30,5 @@ Begin
        If not exists (select * from syscolumns col inner join sysobjects tab 
        On col.id = tab.id where tab.name =   'HT1420'  and col.name = 'FirstOTLeaveDays')
        Alter Table HT1420 Add FirstOTLeaveDays DECIMAL(28,8) NULL
+	   ALTER TABLE HT1420 ALTER COLUMN DivisionID nvarchar(6) NOT NULL;
 END

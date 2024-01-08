@@ -2,7 +2,7 @@
 ---- 
 -- <History>
 ---- Create on 11/10/2010 by Thanh Trẫm
----- Modified on ... by ...
+---- Modified .....on...
 ---- <Example>
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[HT1104]') AND type in (N'U'))
 CREATE TABLE [dbo].[HT1104](
@@ -22,3 +22,4 @@ CREATE TABLE [dbo].[HT1104](
 	[STypeID] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+

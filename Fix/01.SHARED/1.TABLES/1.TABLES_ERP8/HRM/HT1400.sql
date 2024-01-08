@@ -249,3 +249,11 @@ BEGIN
    ON col.id = tab.id WHERE tab.name = 'HT1400' AND col.name = 'CandidateID') 
    ALTER TABLE HT1400 ADD CandidateID VARCHAR(50) NULL 
 END
+
+--- 14/11/2023 - Phương Thảo: Bổ sung cột DeleteFlg
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE NAME='HT1400' AND xtype='U')
+	BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+		ON col.id=tab.id WHERE tab.name='HT1400' AND col.name='DeleteFlg')
+		ALTER TABLE HT1400 ADD DeleteFlg TINYINT DEFAULT (0) NULL
+	END

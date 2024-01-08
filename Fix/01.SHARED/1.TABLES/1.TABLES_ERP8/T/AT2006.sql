@@ -448,14 +448,14 @@ BEGIN
    ALTER TABLE AT2006 ADD PONumber Nvarchar(50) 
 END
 
----Modified by Ngô Dũng on 19/12/2023: Bổ sung trường CarID (Xe) , DriverID (Tài xế)
+---Modified by Ngô Dũng on 20/12/2023: Bổ sung trường tài xế và xe (NKC)
 IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'AT2006' AND xtype = 'U')
 BEGIN 
    IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
-   ON col.id = tab.id WHERE tab.name = 'AT2006' AND col.name = 'CarID') 
-   ALTER TABLE AT2006 ADD CarID Nvarchar(500) 
-
-   IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
    ON col.id = tab.id WHERE tab.name = 'AT2006' AND col.name = 'DriverID') 
    ALTER TABLE AT2006 ADD DriverID Nvarchar(500) 
+
+   IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+   ON col.id = tab.id WHERE tab.name = 'AT2006' AND col.name = 'CarID') 
+   ALTER TABLE AT2006 ADD CarID Nvarchar(500) 
 END

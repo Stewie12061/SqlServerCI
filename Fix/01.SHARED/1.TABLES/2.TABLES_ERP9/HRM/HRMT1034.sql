@@ -27,3 +27,10 @@ WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW
 )
 ON [PRIMARY]
 END
+
+---------------- 05/10/2022 - Tấn Lộc: Update độ dài dữ liệu cột CandidateID ----------------
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HRMT1034' AND col.name = 'CandidateID')
+BEGIN
+	ALTER TABLE HRMT1034 ALTER COLUMN CandidateID VARCHAR(250) NOT NULL
+END

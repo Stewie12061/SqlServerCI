@@ -22,7 +22,6 @@ IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab
 	   ON col.id = tab.id WHERE tab.name = 'AT0017' AND col.name = 'APK')
 BEGIN
 	ALTER TABLE AT0017 ADD APK UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL
-	
 END
 
 ---------------- 05/03/2022 - Hoài Bảo: Thay đổi tên cột PackageID -> InventoryID ----------------
@@ -31,7 +30,6 @@ IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab
 BEGIN
 	EXEC SP_RENAME 'AT0017.PackageID','InventoryID','COLUMN'
 END
-
 
 ---------------- 06/05/2022 - Tấn Lộc: Loại bỏ CONSTRAINT củ ----------------
 IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 

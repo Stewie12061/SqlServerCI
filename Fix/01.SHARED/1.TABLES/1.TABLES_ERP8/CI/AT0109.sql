@@ -67,7 +67,7 @@ IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab
 		ON col.id = tab.id WHERE tab.name = 'AT0109' AND col.name = 'ObjectTypeID')
 BEGIN 
    ALTER TABLE AT0109 ADD ObjectTypeID NVARCHAR(50) NULL
-END 
+END
 
 ------Modified by [Hoài Bảo] on [06/06/2022]: Bổ sung cột IsDiscountType, PromotionTypeID, ByPromotionID, InventoryID, UnitID, S01ID -> S20ID
 IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 

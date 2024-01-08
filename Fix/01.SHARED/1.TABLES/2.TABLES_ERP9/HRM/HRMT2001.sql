@@ -26,3 +26,10 @@ WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW
 )
 ON [PRIMARY]
 END
+
+---------------- 05/10/2022 - Tấn Lộc: Update độ dài dữ liệu cột Note ----------------
+IF EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	   ON col.id = tab.id WHERE tab.name = 'HRMT2001' AND col.name = 'Note')
+BEGIN
+	ALTER TABLE HRMT2001 ALTER COLUMN Note NVARCHAR(MAX) NULL
+END
