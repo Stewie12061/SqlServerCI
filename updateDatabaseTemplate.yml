@@ -21,5 +21,5 @@ jobs:
         ScriptPath: '$(Pipeline.Workspace)/s/Fix'
         IncludeSubfolders: true
         Order: 'FolderStructure'
-        JournalSchemaName: 'dbo'
-        JournalTableName: '_SchemaVersions'
+        # JournalSchemaName: 'dbo'
+        # JournalTableName: '_SchemaVersions'
