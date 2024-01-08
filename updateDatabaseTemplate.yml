@@ -3,7 +3,7 @@ parameters:
     type: string
 
 jobs:
-- job: UpdateDatabase
+- job:
   displayName: 'Update Database - ${{ parameters.databaseName }}'
   pool:
     name: Stewie
