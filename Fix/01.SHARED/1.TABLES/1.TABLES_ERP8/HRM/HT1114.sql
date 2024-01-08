@@ -1,0 +1,32 @@
+﻿-- <Summary>
+---- 
+-- <History>
+---- Create on 21/09/2017 by Khả Vi
+---- Modified on ... by ...
+---- <Example>
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HT1114]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HT1114]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid(),
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [EmployeeID] VARCHAR(50) NOT NULL,
+  [MachineID] VARCHAR(50) NOT NULL,
+  [TranMonth] INT NULL,
+  [TranYear] INT NULL,
+  [Notes] NVARCHAR(250) NULL,
+  [FromDate] DATETIME NULL,
+  [ToDate] DATETIME NULL,
+  [CreateDate] DATETIME NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_HT1114] PRIMARY KEY CLUSTERED
+(
+  [APK],
+  [DivisionID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END

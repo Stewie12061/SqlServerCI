@@ -1,0 +1,88 @@
+ 
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HT1402_CT]') AND TYPE IN (N'U'))
+BEGIN
+     CREATE TABLE [dbo].[HT1402_CT]
+     (
+    [Operation] [tinyint] NULL,	
+	[APK] [uniqueidentifier] NULL,
+	[DivisionID] [nvarchar](50)  NULL,
+	[EmployeeID] [nvarchar](50)  NULL,
+	[BankID] [nvarchar](50) NULL,
+	[BankAccountNo] [nvarchar](50) NULL,
+	[SoInsuranceNo] [nvarchar](50) NULL,
+	[SoInsurBeginDate] [datetime] NULL,
+	[HeInsuranceNo] [nvarchar](50) NULL,
+	[ArmyJoinDate] [datetime] NULL,
+	[ArmyEndDate] [datetime] NULL,
+	[ArmyLevel] [nvarchar](100) NULL,
+	[Hobby] [nvarchar](100) NULL,
+	[HospitalID] [nvarchar](50) NULL,
+	[Height] [nvarchar](100) NULL,
+	[Weight] [nvarchar](100) NULL,
+	[BloodGroup] [nvarchar](100) NULL,
+	[PersonalTaxID] [nvarchar](50) NULL,
+	[HFromDate] [datetime] NULL,
+	[HToDate] [datetime] NULL,
+	[CreateDate] [datetime] NULL,
+	[CreateUserID] [nvarchar](50) NULL,
+	[LastModifyDate] [datetime] NULL,
+	[LastModifyUserID] [nvarchar](50) NULL,
+	[ReAPK] [uniqueidentifier] NULL
+     )
+     
+     INSERT INTO HT1402_CT
+     (
+     	Operation,
+     	APK,
+     	DivisionID,
+     	EmployeeID,
+     	BankID,
+     	BankAccountNo,
+     	SoInsuranceNo,
+     	SoInsurBeginDate,
+     	HeInsuranceNo,
+     	ArmyJoinDate,
+     	ArmyEndDate,
+     	ArmyLevel,
+     	Hobby,
+     	HospitalID,
+     	Height,
+     	[Weight],
+     	BloodGroup,
+     	PersonalTaxID,
+     	HFromDate,
+     	HToDate,
+     	CreateDate,
+     	CreateUserID,
+     	LastModifyDate,
+     	LastModifyUserID,
+     	ReAPK
+     )
+     SELECT 2,
+     APK,
+    DivisionID,
+    EmployeeID,
+    BankID,
+    BankAccountNo,
+    SoInsuranceNo,
+    SoInsurBeginDate,
+    HeInsuranceNo,
+    ArmyJoinDate,
+    ArmyEndDate,
+    ArmyLevel,
+    Hobby,
+    HospitalID,
+    Height,
+    [Weight],
+    BloodGroup,
+    PersonalTaxID,
+    HFromDate,
+    HToDate,
+    CreateDate,
+    CreateUserID,
+    LastModifyDate,
+    LastModifyUserID,
+    ReAPK
+     FROM HT1402
+     
+END

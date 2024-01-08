@@ -1,0 +1,28 @@
+﻿---- Create by Thái Huỳnh Khả Vi on 9/22/2017 8:48:18 AM
+---- Sản phẩm trả về
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HT1116]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HT1116]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [TransactionID] VARCHAR(50) NOT NULL,
+  [TranMonth] INT NULL,
+  [TranYear] INT NULL,
+  [EmployeeID] VARCHAR(50) NULL,
+  [RepayTotalAmount] DECIMAL(28,8) NULL,
+  [RemainAmount] DECIMAL(28,8) NULL,
+  [CreateDate] DATETIME NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_HT1116] PRIMARY KEY CLUSTERED
+(
+  [DivisionID],
+  [TransactionID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
