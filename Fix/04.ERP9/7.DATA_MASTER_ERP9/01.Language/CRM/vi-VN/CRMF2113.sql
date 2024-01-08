@@ -114,4 +114,5 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2113.MoldStatusName', @FormID, @LanguageVal
 SET @LanguageValue = N'Ngày khuôn';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2113.MoldDate', @FormID, @LanguageValue, @Language;
 
-
+SET @LanguageValue = N'Version';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2113.BOMVersion', @FormID, @LanguageValue, @Language;

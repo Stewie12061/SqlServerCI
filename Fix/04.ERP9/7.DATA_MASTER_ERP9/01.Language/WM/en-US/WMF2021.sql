@@ -25,14 +25,14 @@ DECLARE
  - Tieng Nhat: ja-JP
  - Tieng Trung: zh-CN
 */
-SET @Language = 'vi-VN' 
+SET @Language = 'en-US' 
 SET @ModuleID = 'WM';
 SET @FormID = 'WMF2021';
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -41,16 +41,16 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2021.TranMonth', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.TranYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher Date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher Type';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -62,70 +62,73 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Warehouse01ID', @FormID, @LanguageValue
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Warehouse02ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory Type ID';
+SET @LanguageValue = N'Sectors';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object ID';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ObjectID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Employee ID';
+SET @LanguageValue = N'Voting maker';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CreateUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue =N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.LastModifyUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ExWarehouseName', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Export warehouse';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ExWareHouseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ExWarehouseID', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ExWareHouseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ImWarehouseName', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ImWareHouseName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Import Warehouse';
-EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ImWarehouseID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ImWareHouseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object Name';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Employee Name';
+SET @LanguageValue = N'Voting maker';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.EmployeeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.IsLocation', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ref 01';
+SET @LanguageValue = N'Reference code 01';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Ref01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ref 02';
+SET @LanguageValue = N'Reference code 02';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Ref02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inherit Purchase';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ApportionID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Inherit purchase orders';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CheckPurchase', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inherit Input';
+SET @LanguageValue = N'Inherit warehouse requirements';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CheckTransport', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inherit Dismount';
+SET @LanguageValue = N'Inherit the dismantling ticket';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CheckOutput', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -137,41 +140,44 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ImDivisionID', @FormID, @LanguageValue,
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ImDivisionName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory Type Name';
+SET @LanguageValue = N'Sectors';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.InventoryTypeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherGroupID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Exchange Rate';
+SET @LanguageValue = N'Exchange rate';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ExchangeRate1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Currency';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.CurrencyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Is Apple Consignment';
+SET @LanguageValue = N'Import warehouse from Apple';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.IsConsignment', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Invoice No';
+SET @LanguageValue = N'Some bills';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.InvoiceNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Invoice Date';
+SET @LanguageValue = N'Bill date';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.InvoiceDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Confirm Date';
+SET @LanguageValue = N'Confirmation date';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ConfirmDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.IsConsignmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Contact person';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ContactPerson', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Address';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.DeliveryAddress', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'InheritSaleOrders';
+SET @LanguageValue = N'Inherit sales orders';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.InheritSaleOrders', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Inherit quality votes';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.InheritProductQuantity', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherID', @FormID, @LanguageValue, @Language;
@@ -179,9 +185,27 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherID', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.VoucherTypeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Status', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2021.StatusName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.APKMaster_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ApprovePersonStatus', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.ApprovingLevel', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.StatusMaster', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2021.Type_9000', @FormID, @LanguageValue, @Language;
 

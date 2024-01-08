@@ -32,7 +32,10 @@ SET @FormID = 'MF2132';
 SET @LanguageValue = N'Production process view';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2132.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Process ID';
@@ -41,22 +44,22 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2132.RoutingID', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Process name';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.RoutingName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Editor';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2132.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';

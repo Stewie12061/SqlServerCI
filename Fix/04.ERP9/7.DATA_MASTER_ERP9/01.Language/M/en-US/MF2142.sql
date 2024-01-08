@@ -33,37 +33,46 @@ SET @LanguageValue = N'Production plan view';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2142.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Describe';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.VoucherNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inheritance of production information';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.InheritSOT2080', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2142.DescriptionSearch', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2142.InheritPlan', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Production order ID';
 EXEC ERP9AddLanguage @ModuleID, 'MF2142.VoucherNoProduct', @FormID, @LanguageValue, @Language;

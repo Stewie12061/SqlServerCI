@@ -124,7 +124,7 @@ SET @LanguageValue = N'Tên loại hợp đồng';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2181.ContractTypeName' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Người ký';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2181.SignPersonID' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2181.SignPersonName' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Trạng thái hợp đồng';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2181.StatusRecieve' , @FormID, @LanguageValue, @Language;

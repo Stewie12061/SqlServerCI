@@ -35,10 +35,10 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1120.Title' , @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Parent division';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.ParentDivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Branch';
+SET @LanguageValue = N'Unit code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division Name';
+SET @LanguageValue = N'Unit name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.DivisionName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Division name (En)';
@@ -53,7 +53,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1120.Email', @FormID, @LanguageValue, @Langu
 SET @LanguageValue = N'Fax';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.Fax', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'VAT number';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.VATNO', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Address';
@@ -74,7 +74,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1120.ContactPerson', @FormID, @LanguageValue
 SET @LanguageValue = N'Logo';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.Logo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Accounting period start month';
@@ -140,7 +140,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1120.TaxAgentNo', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Name of tax agent';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.TaxAgentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Office address';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1120.TaxAgentAddress', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Fax';

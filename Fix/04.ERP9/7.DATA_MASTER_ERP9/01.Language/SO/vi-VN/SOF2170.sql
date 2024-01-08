@@ -59,7 +59,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2170.OrderNo' , @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Địa chỉ'; 
 EXEC ERP9AddLanguage @ModuleID, 'SOF2170.Address' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ngày giao hàng';
+SET @LanguageValue = N'Ngày giao'; 
 EXEC ERP9AddLanguage @ModuleID, 'SOF2170.DeliveryDate' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Ngày điều phối'; 

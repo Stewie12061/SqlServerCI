@@ -32,34 +32,37 @@ SET @FormID = 'MF1812';
 SET @LanguageValue = N'Production phase view';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF1812.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase ID';
+SET @LanguageValue = N'Process code';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.PhaseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase name';
+SET @LanguageValue = N'Stage name';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.PhaseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phase order';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.PhaseOrder', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Editor';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'MF1812.IsCommon', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Notes';

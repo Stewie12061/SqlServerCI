@@ -18,6 +18,7 @@ GO
 -- <History>
 ----Created by Bảo Thy on 17/07/2017
 ---Modified by Khả Vi on 30/10/1017: Bổ sung trường hợp kiểm tra sửa xóa khi nguồn tuyển dụng là dùng chung
+---Modified by: Phương Thảo, Date: 12/03/2023 -[2023/09/IS/0029] Thay đổi update cờ xóa = 1
 -- <Example>
 -- Exec HRMP1001 @DivisionID = 'AS', @UserID = 'ASOFTADMIN', @ResourceList = 'NTD0001', @Mode = 0
 -- Exec HRMP1001 @DivisionID, @UserID, @ResourceList, @Mode
@@ -49,7 +50,7 @@ BEGIN
 
 	SET @Cur = CURSOR SCROLL KEYSET FOR
 	SELECT APK, DivisionID, ResourceID, IsCommon 
-	FROM HRMT1000 WITH (NOLOCK) WHERE ResourceID IN ('''+@ResourceList+''')
+	FROM HRMT1000 WITH (NOLOCK) WHERE APK IN ('''+@ResourceList+''')
 	OPEN @Cur
 	FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelResourceID, @DelIsCommon
 	WHILE @@FETCH_STATUS = 0
@@ -60,8 +61,11 @@ BEGIN
 			SET @Params2 = @Params2 + @DelResourceID + '', ''			
 		ELSE
 		BEGIN
-			DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 1 ---Xoa thong tin tab lich su
-			DELETE HRMT1000 WHERE DivisionID = @DelDivisionID AND ResourceID = @DelResourceID
+		    -- Thay đổi biến cờ DeleteFlg
+			  UPDATE HRMT1000 SET DeleteFlg = 1 WHERE DivisionID = @DelDivisionID AND APK = @DelAPK
+
+			--DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 1 ---Xoa thong tin tab lich su
+			--DELETE HRMT1000 WHERE DivisionID = @DelDivisionID AND ResourceID = @DelResourceID
 		END
 		FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelResourceID, @DelIsCommon
 	END 
@@ -102,7 +106,7 @@ BEGIN
 END
 
 
---PRINT(@sSQL)
+PRINT(@sSQL)
 EXEC (@sSQL)
 
 GO

@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF2191';
 
-SET @LanguageValue = N'Cập nhật chiến dịch SMS';
+SET @LanguageValue = N'Cập nhật chiến dịch sms';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2191.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -50,10 +50,10 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2191.LastModifyUserID', @FormID, @LanguageV
 SET @LanguageValue = N'Ngày sửa';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2191.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mã chiến dịch SMS';
+SET @LanguageValue = N'Mã chiến dịch sms';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2191.CampaignSMSID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tên chiến dịch SMS';
+SET @LanguageValue = N'Tên chiến dịch sms';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2191.CampaignSMSName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Chiến dịch marketing';

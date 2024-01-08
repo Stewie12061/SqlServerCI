@@ -59,16 +59,16 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF1001.TypeID.CB' , @FormID, @LanguageValue, @
 SET @LanguageValue = N'Type Name';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1001.TypeName.CB' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1001.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1001.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1001.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1001.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Come late/leave early';

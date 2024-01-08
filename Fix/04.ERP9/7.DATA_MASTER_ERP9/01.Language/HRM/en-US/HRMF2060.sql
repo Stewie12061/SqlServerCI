@@ -32,10 +32,10 @@ SET @FormID = 'HRMF2060';
 SET @LanguageValue  = N'List of training budget';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Budget ID';
+SET @LanguageValue = N'Budget code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.BudgetID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
@@ -47,46 +47,46 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.EmployeeID', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'The whole company';
+SET @LanguageValue = N'All the people in company';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.IsAllName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quarterly/annual budget';
+SET @LanguageValue = N'Quarterly/Yearly Budget';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.IsBugetYearName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quarter';
+SET @LanguageValue = N'Precious';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.TranQuarter', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Year';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.TranYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'The whole company';
+SET @LanguageValue = N'All the people in company';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.IsAll', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quarterly/annual budget';
+SET @LanguageValue = N'Quarterly/Yearly Budget';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.TranQuarterYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Budget amount';
+SET @LanguageValue = N'Amount of money';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.BudgetAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Balance';
+SET @LanguageValue = N'The remaining amount';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.RemainBudgetAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.IsQuarterYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
@@ -95,8 +95,14 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.AssignedToUserID', @FormID, @LanguageV
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.AssignedToUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Budget type';
+SET @LanguageValue = N'Budget accordingly';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.IsBugetYear', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Employee ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2060.EmployeeID.CB',  @FormID, @LanguageValue, @Language;

@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF0030';
 
-SET @LanguageValue = N'Dashboard Dịch vụ khách hàng';
+SET @LanguageValue = N'Dashboard dịch vụ khách hàng (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tổng số yêu cầu hỗ trợ';
@@ -65,7 +65,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.Period', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'So với cùng kỳ năm trước';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.ComparePeriod', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê số lượng {0} theo trạng thái';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng {0} theo trạng thái (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.ChartRSStatusName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tổng: {0}';
@@ -83,13 +83,13 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.Business', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Trạng thái';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.Status', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê yêu cầu hỗ trợ theo khách hàng';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng yêu cầu hỗ trợ theo khách hàng (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.ChartRSCustomerName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Loại';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.TypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tình hình thực hiện yêu cầu hỗ trợ, yêu cầu dịch vụ';
+SET @LanguageValue = N'Tình hình thực hiện Yêu cầu hỗ trợ/Yêu cầu dịch vụ (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.ChartImplementName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phút';
@@ -137,23 +137,23 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.DivisionID.CB', @FormID, @LanguageValu
 SET @LanguageValue = N'Tên đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0030.DivisionName.CB', @FormID, @LanguageValue, @Language;
 ------------------------------------Ngôn ngữ màn hình phân quyền Dashboard Quan hệ khách hàng------------------------------------------------
-SET @LanguageValue = N'Tổng quan công ty';
-EXEC ERP9AddLanguage @ModuleID, 'CRMD0029.Title', 'CRMD0029', @LanguageValue, @Language;
+-- SET @LanguageValue = N'Tổng quan công ty';
+-- EXEC ERP9AddLanguage @ModuleID, 'CRMD0029.Title', 'CRMD0029', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Chi tiết cá nhân/team';
-EXEC ERP9AddLanguage @ModuleID, 'CRMD0030.Title', 'CRMD0030', @LanguageValue, @Language;
+-- SET @LanguageValue = N'Chi tiết cá nhân/team';
+-- EXEC ERP9AddLanguage @ModuleID, 'CRMD0030.Title', 'CRMD0030', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số liệu tổng quan';
+SET @LanguageValue = N'Số liệu thống kê tổng hợp (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0031.Title', 'CRMD0031', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ Thống kê số lượng yêu cầu hỗ trợ/yêu cầu dịch vụ theo trạng thái';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng yêu cầu hỗ trợ/yêu cầu dịch vụ theo trạng thái (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0032.Title', 'CRMD0032', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê yêu câu hỗ trợ theo khách hàng';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng yêu cầu hỗ trợ theo khách hàng (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0033.Title', 'CRMD0033', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số liệu chi tết cá nhân/team';
+SET @LanguageValue = N'Số liệu thống kê chi tiết (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0034.Title', 'CRMD0034', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tình hình thực hiện yêu cầu hỗ trợ/yêu cầu dịch vụ';
+SET @LanguageValue = N'Tình hình thực hiện yêu cầu hỗ trợ/yêu cầu dịch vụ (CS)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0035.Title', 'CRMD0035', @LanguageValue, @Language;

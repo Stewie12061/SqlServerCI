@@ -9,6 +9,8 @@ GO
 
 
 
+
+
 -- <Summary>
 ---- Đổ nguồn màn hình cập nhật lịch đào tạo
 -- <Param>
@@ -47,7 +49,8 @@ BEGIN
 			, HRMT2100.TrainingFieldID
 			, HRMT1040.TrainingFieldName
 			, COALESCE(HRMT2100.ScheduleAmount, 0) AS ScheduleAmount
-			, HRMT2100.SpecificHours
+			, COALESCE(HRMT2100.ScheduleAmount, 0) AS ScheduleAmount_DT
+			, FORMAT(HRMT2100.SpecificHours, ''HH:mm:ss'') AS SpecificHours
 			, HRMT2100.FromDate, HRMT2100.ToDate
 			, HRMT2100.TrainingCourseID
 			, HRMT2100.TrainingCourseID AS TrainingCourseName
@@ -85,7 +88,7 @@ ELSE
 BEGIN
 	SET @sSQL = '
 	SELECT HRMT2101.TransactionID, HRMT2101.TrainingScheduleID, HRMT2101.EmployeeID, AT1405.UserName AS EmployeeName, HRMT2100.SpecificHours,
-	HRMT2101.DepartmentID, AT1102.DepartmentName, HT1102.DutyName, COALESCE(HRMT2100.ScheduleAmount, 0) AS ScheduleAmount, HRMT2101.Notes, HRMT2101.Orders, HRMT2101.InheritID, HRMT2101.InheritTransactionID,
+	HRMT2101.DepartmentID, AT1102.DepartmentName, HT1102.DutyName, COALESCE(HRMT2100.ScheduleAmount, 0) AS ScheduleAmount, COALESCE(HRMT2100.ScheduleAmount, 0) AS ScheduleAmount_DT, HRMT2101.Notes, HRMT2101.Orders, HRMT2101.InheritID, HRMT2101.InheritTransactionID,
 	HRMT2091.FromDate AS FromDate_DT, HRMT2091.ToDate AS ToDate_DT, HRMT2091.ProposeAmount AS ProposeAmount_DT
 	FROM HRMT2101 WITH (NOLOCK)
 	INNER JOIN HRMT2100 WITH (NOLOCK) ON HRMT2101.DivisionID = HRMT2100.DivisionID AND HRMT2101.TrainingScheduleID = Convert(Varchar(50),HRMT2100.APK)
@@ -104,10 +107,10 @@ EXEC (@sSQL)
 
 
 
+
+
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 SET ANSI_NULLS ON
 GO
-
-

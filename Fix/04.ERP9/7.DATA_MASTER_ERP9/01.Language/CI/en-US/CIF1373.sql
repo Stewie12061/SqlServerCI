@@ -1,5 +1,5 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ CIF1373-CI
+-- Script tạo ngôn ngữ CIF1373- CI
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -30,28 +30,26 @@ SET @Language = 'en-US'
 SET @ModuleID = 'CI';
 SET @FormID = 'CIF1373';
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Batch number - Item';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine ID';
+SET @LanguageValue = N'Machine code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.MachineID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine Name';
+SET @LanguageValue = N'Machine name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.MachineName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine Name(Eng)';
+SET @LanguageValue = N'Machine name (ENG)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.MachineNameE', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Factory ID';
+SET @LanguageValue = N'Factory';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1373.Notes', @FormID, @LanguageValue, @Language;
 
-------------------------------------------------------------------------------------------------------
--- Finished
-------------------------------------------------------------------------------------------------------
+
 SET @Finished = 0;

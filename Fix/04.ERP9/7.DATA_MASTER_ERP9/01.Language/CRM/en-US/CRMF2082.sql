@@ -32,6 +32,9 @@ SET @FormID = 'CRMF2082';
 SET @LanguageValue = N'Request view';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Request ID';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.RequestID', @FormID, @LanguageValue, @Language;
 
@@ -140,6 +143,9 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.AccountName', @FormID, @LanguageValue,
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.LastAssignedToUserID', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.FromToDate', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Attachment';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.TabCRMT00002', @FormID, @LanguageValue, @Language;
 
@@ -166,5 +172,4 @@ EXEC ERP9AddLanguage @ModuleID, N'CRMF2082.NoiDungYeuCau', @FormID,@LanguageValu
 
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.StatusID', @FormID, @LanguageValue, @Language;
-
 

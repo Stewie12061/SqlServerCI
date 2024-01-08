@@ -32,6 +32,9 @@ SET @FormID = 'MF2131';
 SET @LanguageValue = N'Update production process';
 EXEC ERP9AddLanguage @ModuleID, 'MF2131.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2131.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'MF2131.DivisionID', @FormID, @LanguageValue, @Language;
 
@@ -56,7 +59,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2131.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF2131.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2131.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';

@@ -11,7 +11,7 @@ SET @ModuleID = 'PO';
 SET @FormID = 'POF3014'
 ---------------------------------------------------------------
 
-SET @LanguageValue  = N'Báo cáo Book-cont đơn hàng xuất khẩu'
+SET @LanguageValue  = N'Báo cáo đặt Container xuất hàng'
 EXEC ERP9AddLanguage @ModuleID, 'POF3014.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Khách hàng'

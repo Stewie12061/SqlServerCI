@@ -12,7 +12,7 @@ SET @FormID = 'CIF1252'
 
 ---------------------------------------------------------------
 
-SET @LanguageValue  = N'Xem chi tiết bảng giá bán'
+SET @LanguageValue  = N'Xem chi tiết bảng giá bán (Sell In)'
 EXEC ERP9AddLanguage @ModuleID, 'CIF1252.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đơn vị';

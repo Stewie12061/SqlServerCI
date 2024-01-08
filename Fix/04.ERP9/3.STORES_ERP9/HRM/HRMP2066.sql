@@ -42,24 +42,25 @@ BEGIN
 	SELECT NAME, TranQuarter, TranYear
 	FROM
 	(
-		SELECT N'Qúy 1/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 1 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 1 AS FromPeriod, @TranYear*100 + 3 AS ToPeriod
+		SELECT N'Quý 1/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 1 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 1 AS FromPeriod, @TranYear*100 + 3 AS ToPeriod
 		UNION ALL	
-		SELECT N'Qúy 2/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 2 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 4 AS FromPeriod, @TranYear*100 + 6 AS ToPeriod
+		SELECT N'Quý 2/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 2 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 4 AS FromPeriod, @TranYear*100 + 6 AS ToPeriod
 		UNION ALL	
-		SELECT N'Qúy 3/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 3 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 7 AS FromPeriod, @TranYear*100 + 9 AS ToPeriod
+		SELECT N'Quý 3/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 3 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 7 AS FromPeriod, @TranYear*100 + 9 AS ToPeriod
 		UNION ALL	
-		SELECT N'Qúy 4/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 4 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 10 AS FromPeriod, @TranYear*100 + 12 AS ToPeriod
+		SELECT N'Quý 4/Năm ' + CONVERT(NVARCHAR(5), @TranYear) AS Name, 4 AS TranQuarter, @TranYear AS TranYear, @TranYear*100 + 10 AS FromPeriod, @TranYear*100 + 12 AS ToPeriod
 		UNION
-		SELECT N'Qúy 1/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 1 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 1 AS FromPeriod, (@TranYear + 1)*100 + 3 AS ToPeriod
+		SELECT N'Quý 1/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 1 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 1 AS FromPeriod, (@TranYear + 1)*100 + 3 AS ToPeriod
 		UNION ALL																			 							  
-		SELECT N'Qúy 2/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 2 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 4 AS FromPeriod, (@TranYear + 1)*100 + 6 AS ToPeriod
+		SELECT N'Quý 2/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 2 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 4 AS FromPeriod, (@TranYear + 1)*100 + 6 AS ToPeriod
 		UNION ALL																			 							  
-		SELECT N'Qúy 3/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 3 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 7 AS FromPeriod, (@TranYear + 1)*100 + 9 AS ToPeriod
+		SELECT N'Quý 3/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 3 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 7 AS FromPeriod, (@TranYear + 1)*100 + 9 AS ToPeriod
 		UNION ALL																			 							  
-		SELECT N'Qúy 4/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 4 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 10 AS FromPeriod, (@TranYear + 1)*100 + 12 AS ToPeriod				
+		SELECT N'Quý 4/Năm ' + CONVERT(NVARCHAR(5), @TranYear + 1) AS Name, 4 AS TranQuarter, (@TranYear + 1) AS TranYear, (@TranYear + 1)*100 + 10 AS FromPeriod, (@TranYear + 1)*100 + 12 AS ToPeriod				
 	) TB
-	WHERE (@TranYear*100 + @TranMonth BETWEEN FromPeriod AND ToPeriod) OR (@TranYear*100 + @TranMonth < FromPeriod)
+	WHERE (@TranYear*100 + @TranMonth BETWEEN @TranYear*100 +1 AND @TranYear*100 + 12) OR (@TranYear*100 + @TranMonth < FromPeriod)
 	ORDER BY FromPeriod
+	/*(@TranYear*100 + @TranMonth BETWEEN FromPeriod AND ToPeriod)*/
 END	
 
 

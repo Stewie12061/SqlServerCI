@@ -13,8 +13,6 @@ GO
 
 
 
-
-
 -- <Summary>
 ---- Delete master và detail định mức dự án
 -- <Param>
@@ -185,8 +183,6 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 	EXEC (@sSQL1 + @sSQL2)
 	--PRINT (@sSQL1 + @sSQL2)
 END
-
-
 
 
 

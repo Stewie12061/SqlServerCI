@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF0002';
 
-SET @LanguageValue = N'Dashboard Dự án (PR)';
+SET @LanguageValue = N'Dashboard dự án (PR)';
 EXEC ERP9AddLanguage @ModuleID, 'OOF0002.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Số dự án trễ';
@@ -116,7 +116,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF0002.ChartRequestStatusName', @FormID, @Lang
 SET @LanguageValue = N'Milestone';
 EXEC ERP9AddLanguage @ModuleID, 'OOF0002.Milestone', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Yêu cầu';
+SET @LanguageValue = N'Yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'OOF0002.Request', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Công việc';
@@ -179,6 +179,9 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF0002.DivisionName.CB', @FormID, @LanguageVal
 -- SET @LanguageValue = N'Chi tiết dự án';
 -- EXEC ERP9AddLanguage @ModuleID, 'OOD0013.Title', 'OOD0013', @LanguageValue, @Language;
 
+SET @LanguageValue = N'Tình hình dự án (PR)';
+EXEC ERP9AddLanguage @ModuleID, 'OOD0004.Title', 'OOD0004', @LanguageValue, @Language;
+
 SET @LanguageValue = N'Số liệu thống kê tổng hợp (PR)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0014.Title', 'OOD0014', @LanguageValue, @Language;
 
@@ -191,7 +194,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOD0016.Title', 'OOD0016', @LanguageValue, @Lan
 SET @LanguageValue = N'Số liệu thống kê chi tiết (PR)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0017.Title', 'OOD0017', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê số lượng Công việc/Yêu cầu/Vấn đề/Milestone theo trạng thái (PR)';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng công việc/yêu cầu/vấn đề/milestone theo trạng thái (PR)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0018.Title', 'OOD0018', @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tình hình công việc, độ trễ theo thành viên dự án (PR)';

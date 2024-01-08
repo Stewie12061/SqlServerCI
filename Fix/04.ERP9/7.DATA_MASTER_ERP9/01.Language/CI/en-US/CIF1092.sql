@@ -1,37 +1,66 @@
-﻿------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ CIF1092 - CRM
---            Ngày tạo                                    Người tạo
---            06/06/2017									Thành Luân
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ CIF1092- CI
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
-@LanguageID VARCHAR(10)
+@Language VARCHAR(10),
+------------------------------------------------------------------------------------------------------
+-- Tham so gen tu dong
+------------------------------------------------------------------------------------------------------
+@LanguageValue NVARCHAR(4000),
 
+------------------------------------------------------------------------------------------------------
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
+
+
+------------------------------------------------------------------------------------------------------
 -- Gan gia tri tham so va thu thi truy van
--- SELECT * FROM A00001 WHERE FormID = 'CIF1092'
 ------------------------------------------------------------------------------------------------------
 /*
-- Tieng Viet: vi-VN 
-- Tieng Anh: en-US 
-- Tieng Nhat: ja-JP 
-- Tieng Trung: zh-CN
-*/ 
-SET @LanguageID = 'en-US';
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
+*/
+SET @Language = 'en-US';
 SET @ModuleID = 'CI';
 SET @FormID = 'CIF1092';
 
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.Title', @FormID, N'View details type of object increase automatically', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.DivisionID', @FormID, N'Division', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.S', @FormID, N'Classification code', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.SName', @FormID, N'Classification name', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.STypeID', @FormID, N'Classification', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.IsCommon', @FormID, N'Common', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.TypeID', @FormID, N'Type of object', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.Disabled', @FormID, N'Disabled', @LanguageID, NULL
+EXEC ERP9AddLanguage @ModuleID, N'CIF1092.Title', @FormID, N'View details type of object increase automatically', @Language, NULL
+EXEC ERP9AddLanguage @ModuleID, N'CIF1092.TypeID', @FormID, N'Type of object', @Language, NULL
+EXEC ERP9AddLanguage @ModuleID, N'CIF1092.ThongMaPhanTich', @FormID, N'Information classification code', @Language, NULL
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.DivisionID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Classify';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.STypeID', @FormID, @LanguageValue, @Language;
 
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.LastModifyDate', @FormID, N'Last modify date', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.LastModifyUserID', @FormID, N'Last modify user', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.CreateDate', @FormID, N'Create date', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.CreateUserID', @FormID, N'Create user', @LanguageID, NULL
-EXEC ERP9AddLanguage @ModuleID, N'CIF1092.ThongMaPhanTich', @FormID, N'Information classification code', @LanguageID, NULL
+SET @LanguageValue = N'Classification code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.S', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Category name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.SName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Shared';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.IsCommon', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.Disabled', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Update day';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Updater';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unusual type View';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1092.APK', @FormID, @LanguageValue, @Language;
+

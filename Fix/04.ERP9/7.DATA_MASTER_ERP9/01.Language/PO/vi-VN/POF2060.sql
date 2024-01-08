@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'PO';
 SET @FormID = 'POF2060';
 
-SET @LanguageValue = N'Book Cont đơn hàng xuất khẩu';
+SET @LanguageValue = N'Đặt containter xuất hàng';
 EXEC ERP9AddLanguage @ModuleID, 'POF2060.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

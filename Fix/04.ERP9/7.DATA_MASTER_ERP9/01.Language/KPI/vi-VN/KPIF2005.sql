@@ -191,3 +191,8 @@ EXEC ERP9AddLanguage @ModuleID, 'KPIF2005.TabCRMT90031', @FormID, @LanguageValue
 SET @LanguageValue = N'Lịch sử';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2005.TabCRMT00003', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Diễn giải'
+EXEC ERP9AddLanguage @ModuleID, 'KPIF2005.Description',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'KPIF2005.StatusID',  @FormID, @LanguageValue, @Language;

@@ -25,10 +25,9 @@ DECLARE
  - Tieng Nhat: ja-JP
  - Tieng Trung: zh-CN
 */
-SET @Language = 'vi-VN' 
+SET @Language = 'en-US' 
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2101';
-
 
 SET @LanguageValue = N'Update training schedules';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Title', @FormID, @LanguageValue, @Language;
@@ -45,6 +44,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.LastModifyUserID', @FormID, @LanguageV
 SET @LanguageValue = N'Last modified date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.LastModifyDate', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.DivisionID', @FormID, @LanguageValue, @Language;
 
@@ -60,7 +62,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingFieldID', @FormID, @LanguageVa
 SET @LanguageValue = N'Training field';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingFieldName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training type';
+SET @LanguageValue = N'Forms of training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingTypeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
@@ -70,51 +72,51 @@ SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.StatusName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Date', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.FromToDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.AssignedToUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training schedule ID';
+SET @LanguageValue = N'Training schedule code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingScheduleID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training course';
+SET @LanguageValue = N'Training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingCourseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training course';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingCourseName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training cost estimate';
+SET @LanguageValue = N'Estimated phone costs';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.ScheduleAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Proposed budget';
+SET @LanguageValue = N'Proposed telephone costs';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.ProposeAmount_MT', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Target';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Description1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Content';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Description2', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Description3', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training partner';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Address';
+SET @LanguageValue = N'Location';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Address', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training duration (expected0 from date';
+SET @LanguageValue = N'Estimated training time is from';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.FromDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To';
+SET @LanguageValue = N'Arrive';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.ToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training of the whole company';
+SET @LanguageValue = N'Company-wide training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.IsAll', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training type';
+SET @LanguageValue = N'Forms of training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingType', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
@@ -123,8 +125,11 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.AssignedToUserName', @FormID, @Languag
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.TrainingProposeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Attachment';
+SET @LanguageValue = N'Attach';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Attach', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.SpecificHours', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Training cost estimate';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.ScheduleAmount_DT',  @FormID, @LanguageValue, @Language;

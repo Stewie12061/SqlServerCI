@@ -30,7 +30,7 @@ CREATE PROCEDURE CIP14701 (
         @ID nvarchar(50),
         @Description nvarchar(100),
         @OID NVARCHAR(100),
-		@InventoryTypeID  VARCHAR(50),
+		@InventoryTypeID NVARCHAR(50),
 		@CurrencyID  VARCHAR(50),
 		@Disabled NVARCHAR(100),
 		@UserID VARCHAR(50),

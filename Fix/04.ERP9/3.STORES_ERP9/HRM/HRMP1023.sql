@@ -52,8 +52,7 @@ DECLARE @sSQL NVARCHAR (MAX)=N'',
         @sWhere NVARCHAR(MAX)=N'',
 		@sJoin NVARCHAR(MAX)=N'',
         @OrderBy NVARCHAR(500)=N'',
-        @TotalRow NVARCHAR(50)=N'',
-        @DatePeriod NVARCHAR(MAX)=N''
+        @TotalRow NVARCHAR(50)=N''
 
 SET @OrderBy = ' HRMT1020.BoundaryID,HRMT1020.DepartmentID'
 
@@ -89,44 +88,45 @@ BEGIN
 		BEGIN
 		SET @sWhere = @sWhere + '
 				AND CONVERT(VARCHAR(10), CONVERT(DATE,HRMT1020.CreateDate,120), 120) BETWEEN '''+CONVERT(VARCHAR(10),@FromDate,120)+''' AND '''+CONVERT(VARCHAR(10),@ToDate,120)+''''
-		SET @DatePeriod =N'Từ ngày: '+FORMAT (@FromDate, 'dd/MM/yyyy')+N'       đến ngày: '+FORMAT (@ToDate, 'dd/MM/yyyy')
 		END
 	END	
 	-- Lọc theo kỳ
 	ELSE
 	BEGIN
-		SET @sWhere = @sWhere + ' AND (SELECT FORMAT(ISNULL(HRMT1020.CreateDate,HRMT1020.CreateDate), ''MM/yyyy'')) IN (''' + @PeriodList + ''') '
-		SET @DatePeriod =N'Theo kỳ: '+ REPLACE(@PeriodList,'''','')
+		IF(@PeriodList IS NOT NULL)
+			BEGIN
+			SET @sWhere = @sWhere + ' AND (SELECT FORMAT(ISNULL(HRMT1020.CreateDate,HRMT1020.CreateDate), ''MM/yyyy'')) IN (''' + @PeriodList + ''') '
+			END
 	END
 
 END
 
 SET @sSQL = N'
-SELECT HRMT1020.APK, 
+SELECT HRMT1020.APK,
 		HRMT1020.DivisionID,
-		N'''+@DatePeriod+''' AS DatePeriod,
-		AT1101.DivisionName, 
-		HRMT1020.BoundaryID, 
-		HRMT1020.Description, 
-		HRMT1020.DepartmentID, 
+		AT1101.DivisionName,
+		HRMT1020.BoundaryID,
+		HRMT1020.Description,
+		HRMT1020.DepartmentID,
+		HRMT1020.CostBoundary,
 		AT1102.DepartmentName,
 		B.DutyID,
 		C.DutyName,
 		B.Notes,
 		FORMAT(B.QuantityBoundary, ''N0'') AS QuantityBoundary,
-		HRMT1020.CreateUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT1020.CreateUserID) CreateUserID, 
-		HRMT1020.CreateDate, 
-		HRMT1020.LastModifyUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT1020.LastModifyUserID) LastModifyUserID, 
+		HRMT1020.CreateUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT1020.CreateUserID) CreateUserID,
+		HRMT1020.CreateDate,
+		HRMT1020.LastModifyUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT1020.LastModifyUserID) LastModifyUserID,
 		HRMT1020.LastModifyDate,
 		HT0099.Description AS Disabled,
 		HRMT1020.CostBoundary,
-		HRMT1020.FromDate, 
+		HRMT1020.FromDate,
 		HRMT1020.ToDate
 FROM HRMT1020 WITH (NOLOCK)
 LEFT JOIN HRMT1021 B ON HRMT1020.BoundaryID = B.BoundaryID
-LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT1020.DepartmentID = AT1102.DepartmentID 
+LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT1020.DepartmentID = AT1102.DepartmentID
 LEFT JOIN AT1101 WITH (NOLOCK) ON HRMT1020.DivisionID = AT1101.DivisionID
-LEFT JOIN HT1102 C WITH (NOLOCK) ON B.DutyID = C.DutyID 
+LEFT JOIN HT1102 C WITH (NOLOCK) ON B.DutyID = C.DutyID
 LEFT JOIN HT0099 WITH (NOLOCK) ON HRMT1020.Disabled = HT0099.ID AND HT0099.CodeMaster = ''Disabled'' '+@sJoin+'
 WHERE '+@sWhere +'
 ORDER BY '+@OrderBy+''

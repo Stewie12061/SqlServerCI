@@ -29,16 +29,16 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2291';
 
-SET @LanguageValue = N'Cập nhật chỉ tiêu/công việc';
+SET @LanguageValue = N'Cập nhật chỉ tiêu/target';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2291.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phân loại';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2291.TypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mã chỉ tiêu/công việc';
+SET @LanguageValue = N'Mã chỉ tiêu/target';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2291.TargetTaskID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tên chỉ tiêu/công việc';
+SET @LanguageValue = N'Tên chỉ tiêu/target';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2291.TargetTaskName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Độ ưu tiên';
@@ -94,3 +94,12 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2291.TeamName.CB', @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Trạng thái';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2291.StatusID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Phân loại';
+EXEC ERP9AddLanguage @ModuleID, 'OOF2291.TypeName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Trạng thái';
+EXEC ERP9AddLanguage @ModuleID, 'OOF2291.StatusName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Độ ưu tiên';
+EXEC ERP9AddLanguage @ModuleID, 'OOF2291.PriorityName', @FormID, @LanguageValue, @Language;

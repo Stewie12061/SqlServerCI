@@ -216,9 +216,6 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2022.InventoryName' , @FormID, @LanguageValu
 SET @LanguageValue = N'Đơn vị tính';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2022.UnitName' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Hàng khuyến mãi';
-EXEC ERP9AddLanguage @ModuleID, 'WMF2022.IsProInventoryID' , @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue = N'Ghi chú';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2022.Notes' , @FormID, @LanguageValue, @Language;
 

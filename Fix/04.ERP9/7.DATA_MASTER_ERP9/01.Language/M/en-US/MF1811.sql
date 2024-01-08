@@ -32,19 +32,22 @@ SET @FormID = 'MF1811';
 SET @LanguageValue = N'Update production phase';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF1811.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase ID';
+SET @LanguageValue = N'Process code';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.PhaseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase name';
+SET @LanguageValue = N'Stage name';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.PhaseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phase order';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.PhaseOrder', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';
@@ -59,9 +62,9 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1811.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF1811.Notes', @FormID, @LanguageValue, @Language;
 

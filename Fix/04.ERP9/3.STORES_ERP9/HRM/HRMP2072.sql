@@ -34,7 +34,7 @@ DECLARE @sSQL1 NVARCHAR(MAX),
 
 -- Load Master
 SET @sSQL1 = '
-SELECT HRMT2070.APK,HRMT2070.DivisionID, HRMT2070.TrainingPlanID, Description, 
+SELECT HRMT2070.APK,HRMT2070.DivisionID, HRMT2070.TrainingPlanID, Description,
 AssignedToUserID, (SELECT TOP 1 FullName FROM AT1103 WHERE EmployeeID = HRMT2070.AssignedToUserID) AS AssignedToUserName, HRMT2070.CreateUserID, 
 HRMT2070.CreateDate, HRMT2070.LastModifyUserID, HRMT2070.LastModifyDate
 FROM HRMT2070 WITH (NOLOCK)

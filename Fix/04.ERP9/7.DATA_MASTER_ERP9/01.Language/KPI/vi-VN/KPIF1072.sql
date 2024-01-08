@@ -125,5 +125,8 @@ EXEC ERP9AddLanguage @ModuleID, 'KPIF1072.FromDate',  @FormID, @LanguageValue, @
 SET @LanguageValue  = N'Ngày kết thúc';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF1072.ToDate',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Diễn giải'
+EXEC ERP9AddLanguage @ModuleID, 'KPIF1072.Description',  @FormID, @LanguageValue, @Language;
 
-
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'KPIF1072.StatusID',  @FormID, @LanguageValue, @Language;

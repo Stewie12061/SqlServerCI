@@ -62,7 +62,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.InterviewToDate' , @FormID, @LanguageV
 SET @LanguageValue = N'Mã đợt tuyển dụng';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.RecruitPeriodID' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Đợt tuyển dụng';
+SET @LanguageValue = N'Tên đợt tuyển dụng';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.RecruitPeriodName' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phòng ban';
@@ -89,5 +89,5 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.DepartmentName.CB' , @FormID, @Languag
 SET @LanguageValue = N'Mã người phụ trách';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.AssignedToUserID' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tên người phụ trách';
+SET @LanguageValue = N'Người phỏng vấn';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.AssignedToUserName' , @FormID, @LanguageValue, @Language;

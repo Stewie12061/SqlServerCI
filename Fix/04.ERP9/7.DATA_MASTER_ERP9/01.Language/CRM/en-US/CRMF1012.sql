@@ -30,11 +30,8 @@ SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF1012';
 
 SET @LanguageValue = N'Customer view';
-
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Title', @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue = N'Customer name';
-
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.AccountName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tax ID';
@@ -69,9 +66,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.ReCreditLimit', @FormID, @LanguageValu
 
 SET @LanguageValue = N'Analysis ID 01';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.O01ID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Delivery route';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.RouteID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Stop using';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.IsUsing', @FormID, @LanguageValue, @Language;
@@ -181,7 +175,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.ConvertType', @FormID, @LanguageValue,
 SET @LanguageValue = N'Conversion ID';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.InheritConvertID', @FormID, @LanguageValue, @Language;
 
-
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.ConvertUserID', @FormID, @LanguageValue, @Language;
 
@@ -212,86 +205,36 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.LastAssignedToUserID', @FormID, @Langu
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.WarningNoOrdersGenerated', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quotation';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabOT2101', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.FromToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Campaign';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT20401', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Note1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Opportunity';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT20501', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.AssignedToUser', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Attachment';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT00002', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.IsComfirmCustomers', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Label 01';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Description02', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.APKRel', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Label 02';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Description03', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.RelatedToID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Label 03';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Description04', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TableREL', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Label 04';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Description05', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.RePaymentTermID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mission';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT90041', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.PaymentTermName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Event';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT90051', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Tel1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contact name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.ContactName', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.Tel2', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer information';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.ThongTinKhachHang', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Request';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT20801', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Sales order';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabOT2001', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Leads';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT20301', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Tasks';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabOOT2110', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'TaskID';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TaskID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'TaskName';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TaskName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Status Name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.StatusName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Start Date';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.PlanStartDate', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'End Date';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.PlanEndDate', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Process Name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.ProcessName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Step Name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.StepName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Email';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCMNT90051' , @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Contact';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT10102' , @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Note';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT90031' , @FormID, @LanguageValue, @Language;	
-
-SET @LanguageValue = N'Status';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.StatusID' , @FormID, @LanguageValue, @Language;	
-
-SET @LanguageValue = N'List of call history';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabOOT2180' , @FormID, @LanguageValue, @Language;

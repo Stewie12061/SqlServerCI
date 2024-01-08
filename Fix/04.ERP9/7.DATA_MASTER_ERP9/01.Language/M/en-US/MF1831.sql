@@ -32,10 +32,13 @@ SET @FormID = 'MF1831';
 SET @LanguageValue = N'Update alternative material';
 EXEC ERP9AddLanguage @ModuleID, 'MF1831.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF1831.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'MF1831.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Group ID';
+SET @LanguageValue = N'Group code';
 EXEC ERP9AddLanguage @ModuleID, 'MF1831.MaterialGroupID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Group name';
@@ -44,10 +47,10 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1831.GroupName', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Material type';
 EXEC ERP9AddLanguage @ModuleID, 'MF1831.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF1831.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'MF1831.IsCommon', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';

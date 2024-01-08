@@ -20,20 +20,20 @@ DECLARE
 -- Gan gia tri tham so va thu thi truy van
 ------------------------------------------------------------------------------------------------------
 /*
-
  - Tieng Viet: vi-VN 
  - Tieng Anh: en-US 
  - Tieng Nhat: ja-JP
  - Tieng Trung: zh-CN
 */
-SET @Language = 'en-US' 
+SET @Language = 'en-US'
 SET @ModuleID = 'SO';
 SET @FormID = 'SOF2020';
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'List of quotations';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2020.Title', @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2020.DivisionID', @FormID, @LanguageValue, @Language;
 
@@ -369,6 +369,46 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2020.InheritEstimates', @FormID, @LanguageVa
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2020.InheritBoardPricing', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.OldTaskID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.ContactorID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.DutyID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Opportunity';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.OpportunityName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Sales order';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.InheritOrder', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.PromoteIDList', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.CurrencyName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.InventoryTypeName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Payment methods';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.PaymentName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.ItemTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.DiscountTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.VATTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2020.OrderTotal', @FormID, @LanguageValue, @Language;
+
 
 --- ĐÌnh Hòa - 06/07/2021 : Bổ sung ngôn ngữ cho Phiếu in Báo giá
 SET @LanguageValue  = N'BALLOT QUOTES'

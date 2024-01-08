@@ -28,11 +28,11 @@ DECLARE
 */
 SET @Language = 'vi-VN' 
 SET @ModuleID = 'SO';
-SET @FormID = 'SOF20291';
+SET @FormID = 'SOF2036';
 
 SET @LanguageValue = N'Chọn mẫu in phiếu báo giá';
-EXEC ERP9AddLanguage @ModuleID, 'SOF20291.Title' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF2036.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Mẫu phiếu in';
-EXEC ERP9AddLanguage @ModuleID, 'SOF20291.IsPrint' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF2036.IsPrint' , @FormID, @LanguageValue, @Language;
 

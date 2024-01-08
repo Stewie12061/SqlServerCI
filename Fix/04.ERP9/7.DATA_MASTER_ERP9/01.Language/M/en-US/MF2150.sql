@@ -33,6 +33,9 @@ SET @LanguageValue = N'List of production cost estimate';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2150.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -50,10 +53,10 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2150.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Supplies date';
@@ -65,7 +68,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2150.DepartmentID', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Requesting employee ID';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Requesting employee';
+SET @LanguageValue = N'Petitioner';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.EmployeeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
@@ -74,7 +77,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2150.OrderStatus', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Voucher status';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.StatusID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -98,7 +101,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2150.ApprovingLevel', @FormID, @LanguageValue
 SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object ID';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'MF2150.ObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

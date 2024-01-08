@@ -68,3 +68,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1463.VATAmount',  @FormID, @LanguageValue, @
 
 SET @LanguageValue  = N'Tổng tiền';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1463.TotalAmount',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Giá bán lẻ đề nghị';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1463.RetailPrice',  @FormID, @LanguageValue, @Language;

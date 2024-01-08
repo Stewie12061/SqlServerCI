@@ -32,10 +32,13 @@ SET @FormID = 'MF1822';
 SET @LanguageValue = N'Production resource view';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF1822.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Resource ID';
+SET @LanguageValue = N'Đóng góp';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.ResourceID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Resource name';
@@ -44,49 +47,49 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1822.ResourceName', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Efficiency';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.Efficiency', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Editor';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Describe';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Efficiency';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.LinedUpTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Setting time';
+SET @LanguageValue = N'Setup time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.SettingTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Waiting time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.WaittingTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Transfer time';
+SET @LanguageValue = N'Travel time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.TransferTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Min time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.MinTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Max time';
+SET @LanguageValue = N'Maximum time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.MaxTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.UnitID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1822.UnitName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Resource type';

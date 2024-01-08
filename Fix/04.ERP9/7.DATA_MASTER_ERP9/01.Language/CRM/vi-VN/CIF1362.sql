@@ -119,10 +119,10 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1362.CurrencyName', @FormID, @LanguageValue,
 SET @LanguageValue = N'Tỷ giá';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.ExchangeRate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ nguyên tệ';
+SET @LanguageValue = N'Giá trị HĐ Nguyên tệ (trước thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.Amount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ quy đổi';
+SET @LanguageValue = N'Giá trị HĐ quy đổi (trước thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.ConvertedAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Ghi chú';
@@ -349,11 +349,20 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1362.DiscountAmount', @FormID, @LanguageValu
 SET @LanguageValue = N'Số tiền sau thuế';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.PaymentVATAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ nguyên tệ sau thuế';
+SET @LanguageValue = N'Giá trị HĐ Nguyên tệ (sau thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.MasterVATOriginalAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ quy đổi sau thuế';
+SET @LanguageValue = N'Giá trị HĐ quy đổi (sau thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.MasterVATConvertedAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Bảng giá';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1362.PriceListName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Bảng giá';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1362.PriceListID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Người phụ trách';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1362.AssignedToUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Người phụ trách';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1362.AssignedToUserName', @FormID, @LanguageValue, @Language;

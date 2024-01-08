@@ -221,7 +221,8 @@ SET @sSQL2 = '
 			GROUP BY A.DivisionID, A.AssignedToUserID, A.LeadTypeID 
 			UNION ALL
 			SELECT A.DivisionID, A.AssignedToUserID, A.SourceID LeadTypeID, 0 AS Lead, CAST(COUNT(A.OpportunityID) AS DECIMAL(28,1)) AS Opp, 0 AS Customer 
-			FROM CRMT20501 A WITH (NOLOCK)
+			FROM CRMT20501 A WITH (NOLOCK) 
+			--LEFT JOIN CRMT20501_CRMT20301_REL B WITH (NOLOCK) ON A.APK = B.OpportunityID
 			WHERE ISNULL(A.DeleteFlg, 0) = 0 '+@sWhere4+'
 			GROUP BY A.DivisionID, A.AssignedToUserID, A.SourceID, A.SourceID
 			UNION ALL

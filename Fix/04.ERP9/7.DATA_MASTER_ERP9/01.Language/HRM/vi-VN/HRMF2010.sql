@@ -31,7 +31,7 @@ SET @Language = 'vi-VN';
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2010'
 
-SET @LanguageValue  = N'Yêu cầu công việc'
+SET @LanguageValue  = N'Danh mục yêu cầu công việc'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2010.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đơn vị'

@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2340';
 
-SET @LanguageValue = N'Danh mục Văn bản';
+SET @LanguageValue = N'Danh mục văn bản';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2340.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

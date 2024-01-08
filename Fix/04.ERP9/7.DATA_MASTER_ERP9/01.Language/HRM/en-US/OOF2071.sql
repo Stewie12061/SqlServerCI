@@ -56,10 +56,10 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2071.CreateUserID', @FormID, @LanguageValue,
 SET @LanguageValue = N'Creation date';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2071.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2071.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2071.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

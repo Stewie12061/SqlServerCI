@@ -59,19 +59,19 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF1011.Note', @FormID, @LanguageValue, @Langua
 SET @LanguageValue = N'Disabled';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1011.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1011.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1011.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1011.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1011.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Treatment methods';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1011.HandleMethodName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'From Date';

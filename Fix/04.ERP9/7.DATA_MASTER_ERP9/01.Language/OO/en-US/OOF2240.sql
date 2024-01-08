@@ -74,16 +74,16 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2240.Description', @FormID, @LanguageValue, 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2240.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2240.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2240.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2240.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2240.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Equipment Type';

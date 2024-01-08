@@ -47,6 +47,9 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.ObjectName', @FormID, @LanguageValue,
 SET @LanguageValue = N'Sản phẩm';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.InventoryID', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Sản phẩm';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.InventoryName', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Tổng chi phí sản xuất';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.TotalVariableFee', @FormID, @LanguageValue, @Language;
 
@@ -124,3 +127,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.UpPercent', @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Địa chỉ giao hàng';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.DeliveryAddress', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Ghi chú';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2110A.Notes', @FormID, @LanguageValue, @Language;

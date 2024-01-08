@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF0003';
 
-SET @LanguageValue = N'Dashboard Công việc (WO)';
+SET @LanguageValue = N'Dashboard công việc (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOF0003.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tổng số văn bản đến';
@@ -218,16 +218,16 @@ EXEC ERP9AddLanguage @ModuleID, 'OOD0022.Title', 'OOD0022', @LanguageValue, @Lan
 SET @LanguageValue = N'Biểu đồ thể hiện số lượng văn bản theo trạng thái (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0023.Title', 'OOD0023', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê tỷ lệ trạng thái Công việc/Vấn đề/Yêu cầu theo đơn vị (WO)';
+SET @LanguageValue = N'Biểu đồ thống kê tỷ lệ trạng thái công việc/vấn đề/yêu cầu theo đơn vị (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0024.Title', 'OOD0024', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ trạng thái và tiến độ Yêu cầu/Công việc/Vấn đề (WO)';
+SET @LanguageValue = N'Biểu đồ trạng thái và tiến độ yêu cầu/công việc/vấn đề (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0025.Title', 'OOD0025', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê số lượng Công việc/vấn đề/Yêu cầu theo phòng ban (WO)';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng công việc/vấn đề/yêu cầu theo phòng ban (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0026.Title', 'OOD0026', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ điểm Nóng/Lạnh (WO)';
+SET @LanguageValue = N'Biểu đồ điểm nóng/lạnh (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0027.Title', 'OOD0027', @LanguageValue, @Language;
 
 SET @LanguageValue = N'Số liệu thống kê chi tiết (WO)';
@@ -236,7 +236,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOD0028.Title', 'OOD0028', @LanguageValue, @Lan
 SET @LanguageValue = N'Biểu đồ thống kê tình trạng phê duyệt văn bản (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0029.Title', 'OOD0029', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê tỷ lệ trạng thái Công việc/Vấn đề/Yêu cầu theo nhân viên (WO)';
+SET @LanguageValue = N'Biểu đồ thống kê tỷ lệ trạng thái công việc/vấn đề/yêu cầu theo nhân viên (WO)';
 EXEC ERP9AddLanguage @ModuleID, 'OOD0030.Title', 'OOD0030', @LanguageValue, @Language;
 
 SET @LanguageValue = N'Danh sách công việc theo trạng thái (WO)';

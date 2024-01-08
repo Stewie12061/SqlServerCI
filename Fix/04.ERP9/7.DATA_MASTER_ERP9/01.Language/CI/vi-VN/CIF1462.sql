@@ -11,7 +11,7 @@ SET @ModuleID = 'CI';
 SET @FormID = 'CIF1462'
 ---------------------------------------------------------------
 
-SET @LanguageValue  = N'Xem chi tiết bảng giá bán (Sale out)'
+SET @LanguageValue  = N'Xem chi tiết bảng giá bán (Sell Out)'
 EXEC ERP9AddLanguage @ModuleID, 'CIF1462.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Thông tin bảng giá bán (Sale out)'
@@ -85,3 +85,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1462.Description',  @FormID, @LanguageValue,
 
 SET @LanguageValue  = N'Bảng giá mua';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1462.IsPurchasePrice',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên loại mặt hàng';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1462.InventoryTypeName',  @FormID, @LanguageValue, @Language;

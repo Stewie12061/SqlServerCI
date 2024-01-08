@@ -28,10 +28,10 @@ EXEC ERP9AddLanguage N'00', N'A00.ItemPOS_List_Product', N'A00', N'Catalog of go
 EXEC ERP9AddLanguage N'00', N'A00.ItemPOS_List_Shop', N'A00', N'Shop category', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.ItemPOS_List_TableCategory', N'A00', N'Table category', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.ItemPOS_List_Time', N'A00', N'Time category', N'en-US', NULL
-EXEC ERP9AddLanguage N'00', N'A00.List', N'A00', N'Category', N'en-US', NULL
+EXEC ERP9AddLanguage N'00', N'A00.List', N'A00', N'Directory', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.List_AbsentType', N'A00', N'Permission types category', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.List_UnusualType', N'A00', N'Irregular category', N'en-US', NULL
-EXEC ERP9AddLanguage N'00', N'CRM_DanhMuc', N'A00', N'Category', N'en-US', NULL
+EXEC ERP9AddLanguage N'00', N'CRM_DanhMuc', N'A00', N'Directory', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.Business', N'A00', N'Business', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.BusinessAnalystID', N'A00', N'Business analysis code', N'en-US', NULL
 EXEC ERP9AddLanguage N'00', N'A00.ST0007_TableID', N'A00', N'Business code', N'en-US', NULL

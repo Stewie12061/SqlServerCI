@@ -32,47 +32,50 @@ SET @FormID = 'HRMF1022';
 SET @LanguageValue = N'Recruitment Boundary View';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Boundary ID';
+SET @LanguageValue = N'Unit code';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.DivisionID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Boundary code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.BoundaryID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Department ID';
+SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Department Name';
+SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Duty';
+SET @LanguageValue = N'Vacancies';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.DutyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Cost Boundary';
+SET @LanguageValue = N'Fixed costs';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.CostBoundary', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'FromDate';
+SET @LanguageValue = N'Since';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.FromDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'ToDate';
+SET @LanguageValue = N'To date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.ToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Quantity Boundary'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.QuantityBoundary',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Recruitment Boundary Detail'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.TabInfo',  @FormID, @LanguageValue, @Language;
@@ -88,3 +91,6 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.TabCRMT00003',  @FormID, @LanguageValu
 
 SET @LanguageValue  = N'Status'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.StatusID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Quantity Boundary'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.QuantityBoundary',  @FormID, @LanguageValue, @Language;

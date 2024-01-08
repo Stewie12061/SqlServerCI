@@ -32,49 +32,82 @@ CREATE PROCEDURE KPIP20007
   @ConfirmUserID nvarchar(50),
   @UserID VARCHAR(50),
   @PageNumber INT,
-  @PageSize INT
+  @PageSize INT,
+  @IsSearch TINYINT,		  
+  @FromDate DATETIME,
+  @ToDate DATETIME,
+  @IsPeriod INT = 0,
+  @PeriodList VARCHAR(MAX) = ''
 )
 
 AS 
 DECLARE @sSQL NVARCHAR (MAX),
 		@sWhere NVARCHAR(MAX),
-		@OrderBy NVARCHAR(500)
+		@OrderBy NVARCHAR(500),
+		@FromDateText NVARCHAR(20),
+		@ToDateText NVARCHAR(20)
+	SET @FromDateText = CONVERT(NVARCHAR(20), @FromDate, 111) + ' 00:00:00'
+	SET @ToDateText = CONVERT(NVARCHAR(20), @ToDate, 111) + ' 23:59:59'	
 		
 SET @sWhere = ''
 SET @OrderBy = ' M.CreateUserID DESC, M.EmployeeID '
-
-IF Isnull(@DivisionIDList, '') != ''
-	SET @sWhere = @sWhere + ' M.DivisionID IN ('''+@DivisionIDList+''') and M.DeleteFlg = 0 '
-Else 
-	SET @sWhere = @sWhere + ' M.DivisionID = N'''+@DivisionID+''' and M.DeleteFlg = 0 '
+IF @IsSearch = 1
+BEGIN
+	IF Isnull(@DivisionIDList, '') != ''
+		SET @sWhere = @sWhere + ' AND M.DivisionID IN ('''+@DivisionIDList+''')'
+	Else 
+		SET @sWhere = @sWhere + ' AND M.DivisionID = N'''+@DivisionID+''''
 	
-IF Isnull(@EmployeeID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.EmployeeID, '''') LIKE N''%'+@EmployeeID+'%'' '
+	IF Isnull(@EmployeeID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.EmployeeID, '''') LIKE N''%'+@EmployeeID+'%'' '
 	
-IF Isnull(@EmployeeName, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(D.FullName, '''') LIKE N''%'+@EmployeeName+'%'' '
+	IF Isnull(@EmployeeName, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(D.FullName, '''') LIKE N''%'+@EmployeeName+'%'' '
 
-IF Isnull(@DepartmentID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.DepartmentID, '''') LIKE N''%'+@DepartmentID+'%'' '
+	IF Isnull(@DepartmentID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.DepartmentID, '''') LIKE N''%'+@DepartmentID+'%'' '
 
-IF Isnull(@DutyID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.DutyID, '''') LIKE N''%'+@DutyID+'%'' '
+	IF Isnull(@DutyID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.DutyID, '''') LIKE N''%'+@DutyID+'%'' '
 
-IF Isnull(@TitleID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.TitleID, '''') LIKE N''%'+@TitleID+'%'' '
+	IF Isnull(@TitleID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.TitleID, '''') LIKE N''%'+@TitleID+'%'' '
 
-IF Isnull(@EvaluationPhaseID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.EvaluationPhaseID, '''') LIKE N''%'+@EvaluationPhaseID+'%'' '
+	IF Isnull(@EvaluationPhaseID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.EvaluationPhaseID, '''') LIKE N''%'+@EvaluationPhaseID+'%'' '
 		
-IF Isnull(@EvaluationSetID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.EvaluationSetID, '''') LIKE N''%'+@EvaluationSetID+'%'' '
+	IF Isnull(@EvaluationSetID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.EvaluationSetID, '''') LIKE N''%'+@EvaluationSetID+'%'' '
 	
-IF Isnull(@ConfirmUserID, '') != ''
-	SET @sWhere = @sWhere + ' AND ISNULL(M.ConfirmUserID, '''') LIKE N''%'+@ConfirmUserID+'%'' '
+	IF Isnull(@ConfirmUserID, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(M.ConfirmUserID, '''') LIKE N''%'+@ConfirmUserID+'%'' '
 	
-IF Isnull(@UserID, '') != ''
-	SET @sWhere = @sWhere + ' AND (M.CreateUserID in (N'''+@UserID+''' ) OR M.ConfirmUserID in (N'''+@UserID+''' ))'	
-
+	IF Isnull(@UserID, '') != ''
+		SET @sWhere = @sWhere + ' AND (M.CreateUserID in (N'''+@UserID+''' ) OR M.ConfirmUserID in (N'''+@UserID+''' ))'	
+-- Trường hợp search theo từ ngày đến ngày
+	IF @IsPeriod = 0
+	BEGIN
+		IF(ISNULL(@FromDate,'') != '' AND ISNULL(@ToDate,'') = '' )
+		BEGIN
+			SET @sWhere = @sWhere + ' AND (M.CreateDate >= ''' + @FromDateText + '''
+											OR M.CreateDate >= ''' + @FromDateText + ''')'
+		END
+	ELSE IF(ISNULL(@FromDate,'') = '' AND ISNULL(@ToDate,'') != '')
+		BEGIN
+			SET @sWhere = @sWhere + ' AND (M.CreateDate <= ''' + @ToDateText + ''' 
+											OR M.CreateDate <= ''' + @ToDateText + ''')'
+		END
+	ELSE IF(ISNULL(@FromDate, '') != '' AND ISNULL(@ToDate, '') != '')
+		BEGIN
+			SET @sWhere = @sWhere + ' AND (M.CreateDate BETWEEN ''' + @FromDateText + ''' AND ''' + @ToDateText + ''') '
+		END
+	END	
+	-- Lọc theo kỳ
+	ELSE
+	BEGIN
+		SET @sWhere = @sWhere + ' AND (SELECT FORMAT(M.CreateDate, ''MM/yyyy'')) IN ( ''' + @PeriodList + ''') '
+	END
+END	
 SET @sSQL = ' 
 			SELECT M.APK, M.DivisionID, M.EmployeeID, D.FullName as EmployeeName, M.EvaluationPhaseID, E.FromDate
 				, E.ToDate, M.EvaluationSetID, F.EvaluationSetName, M.DepartmentID
@@ -85,7 +118,7 @@ SET @sSQL = '
 			INNER JOIN AT1103 D WITH (NOLOCK) ON M.EmployeeID = D.EmployeeID
 			LEFT JOIN KPIT10601 E WITH (NOLOCK) ON M.DivisionID = E.DivisionID AND M.EvaluationPhaseID = E.EvaluationPhaseID
 			LEFT JOIN KPIT10701 F WITH (NOLOCK) ON M.DivisionID = F.DivisionID AND M.EvaluationSetID = F.EvaluationSetID
-			WHERE '+@sWhere+'
+			WHERE ISNULL(M.DeleteFlg,0) = 0 '+@sWhere +'
 
 			DECLARE @count int
 			Select @count = Count(EmployeeID) From #TempKPIT20003 WITH (NOLOCK)

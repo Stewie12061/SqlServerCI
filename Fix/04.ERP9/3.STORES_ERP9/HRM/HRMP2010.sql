@@ -6,6 +6,8 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
 -- <Summary>
 ---- Load Grid Form HRF2010: Yêu cầu tuyển dụng
 -- <Param>
@@ -19,6 +21,7 @@ GO
 ----Update  by: Thu Hà,  Date: 29/06/2023 - Bổ sung lọc theo thời gian
 ----Update  by: Thu Hà,  Date: 07/08/2023 - Thay đổi vị trí orderBy để sắp xếp thứ tự theo mã yêu cầu công việc
 ----Update  by: Thu Hà,  Date: 09/09/2023 - Cập nhật kiểu dữ liệu NVARCHAR cho RecruitRequireName
+----Update  by: Phương Thảo, Date: 12/03/2023 -[2023/09/IS/0029] Cập nhật bổ sung điều kiện lọc ( DeleteFlg = 0 )
 -- <Example>
 ---- 
 /*-- <Example>
@@ -100,10 +103,11 @@ END
 	IF ISNULL(@DutyID,'') <> '' 
 	SET @sWhere = @sWhere + 'AND HRMT2010.DutyID LIKE ''%'+@DutyID+'%'' '
 
-	IF @Disabled IS NOT NULL 
+	IF ISNULL(@Disabled,'') <> '' 
 	SET @sWhere = @sWhere + N'AND HRMT2010.Disabled = '+@Disabled+''
 
-
+--Bổ sung điều kiện cờ xóa = 0
+SET @sWhere = @sWhere + ' AND ISNULL(HRMT2010.DeleteFlg,0) = 0 '
 SET @sSQL = N'
 SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+' ) AS RowNum, '+@TotalRow+' AS TotalRow,
 	HRMT2010.APK, HRMT2010.DivisionID, HRMT2010.RecruitRequireID, HRMT2010.RecruitRequireName, HRMT2010.DutyID, HT1102.DutyName,
@@ -134,9 +138,9 @@ EXEC (@sSQL)
 
 
 
+
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 SET ANSI_NULLS ON
 GO
-

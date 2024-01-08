@@ -643,3 +643,18 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2151.DiscountWalletTotal' , @FormID, @Langua
 
 SET @LanguageValue = N'Giá đề nghị';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2151.RetailPrice' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Mã combo';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2151.KITID' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số lượng combo';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2151.KITQuantity' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Giá đề nghị';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2151.RetailPrice' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số dư ví chiết khấu tích lũy';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2151.DiscountWalletTotal' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Xem ví chiết khấu tích lũy';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2151.Vi_chiet_khau_tich_luy' , @FormID, @LanguageValue, @Language;

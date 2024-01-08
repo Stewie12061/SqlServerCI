@@ -1,10 +1,9 @@
 ﻿-----------------------------------------------------------------------------------------------------
 -- Script tạo ngôn ngữ SOF2022- SO
-----------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
-
 @Language VARCHAR(10),
 ------------------------------------------------------------------------------------------------------
 -- Tham so gen tu dong
@@ -19,10 +18,8 @@ DECLARE
 
 ------------------------------------------------------------------------------------------------------
 -- Gan gia tri tham so va thu thi truy van
-
 ------------------------------------------------------------------------------------------------------
 /*
-
  - Tieng Viet: vi-VN 
  - Tieng Anh: en-US 
  - Tieng Nhat: ja-JP
@@ -32,10 +29,11 @@ SET @Language = 'en-US'
 SET @ModuleID = 'SO';
 SET @FormID = 'SOF2022';
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Quotation view';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.Title', @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.DivisionID', @FormID, @LanguageValue, @Language;
 
@@ -135,7 +133,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InventoryTypeID', @FormID, @LanguageVal
 SET @LanguageValue = N'End date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.EndDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Transport vehicle';
+SET @LanguageValue = N'Transport';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.Transport', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Delivery address';
@@ -285,7 +283,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2022.StatusMaster', @FormID, @LanguageValue,
 SET @LanguageValue = N'Inheritance of supplier quotation';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InheritPOF2041', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Note of approver';
+SET @LanguageValue = N'Approval Notes';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.ApprovalNotes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -365,6 +363,46 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InheritEstimates', @FormID, @LanguageVa
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InheritBoardPricing', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.OldTaskID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.ContactorID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.DutyID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Opportunity';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.OpportunityName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InheritOrder', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.PromoteIDList', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Currency';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.CurrencyName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Item type';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InventoryTypeName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Payment methods';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.PaymentName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.ItemTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.DiscountTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.VATTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.OrderTotal', @FormID, @LanguageValue, @Language;
+
 
 SET @LanguageValue  = N'Inventory';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InventoryID',  @FormID, @LanguageValue, @Language;

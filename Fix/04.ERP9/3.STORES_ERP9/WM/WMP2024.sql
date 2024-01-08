@@ -86,7 +86,7 @@ SELECT ROW_NUMBER() OVER (ORDER BY VoucherNo) AS RowNum, '+@TotalRow+' AS TotalR
 FROM
 (
 	SELECT DISTINCT OT3001.APK AS APKMaster, OT3001.DivisionID, OT3001.POrderID AS OrderID, OT3001.VoucherNo, OT3001.OrderDate, OT3001.ObjectID, AT1202.ObjectName, OT3001.Notes--, OT3002.OrderQuantity,
-	AT1302.PrimeCostAccountID as CreditAccountName, AT1302.AccountID as DebitAccountName
+	AT1302.PrimeCostAccountID as CreditAccountName, AT1302.AccountID as DebitAccountName,
 	--CASE WHEN ISNULL(T3.IsCheck, '''') <> '''' THEN T3.IsCheck ELSE 0 END AS IsCheck
 	--ISNULL(IIF(T3.InventoryID=OT3002.InventoryID,SUM(T3.ActualQuantity),0),0) as InheritedQuantity
 	FROM OT3001 WITH (NOLOCK) 

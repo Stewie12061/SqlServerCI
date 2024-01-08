@@ -9,6 +9,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Load cac phieu yêu cầu Nhap, xuat len man hinh truy van WF0122 (ERP9 - EIMSKIP)
 ---- Created by Bảo Thy on 30/12/2016
@@ -128,7 +129,7 @@ SET @sSQL = '
 	SELECT W95.VoucherNo, W95.VoucherDate, '+@sSelect+' 
 	W95.[Description], W95.EmployeeID, AT1103.FullName EmployeeName, W96.Notes,
 	W96.InventoryID, A02.InventoryName, W96.UnitID, A04.UnitName, SUM(W96.ConvertedQuantity) ConvertedQuantity,
-	W96.UnitPrice, SUM(W96.ConvertedAmount) ConvertedAmount, 
+	W96.UnitPrice, SUM(W96.ConvertedAmount) ConvertedAmount, SUM(W96.OriginalAmount) OriginalAmount,
 	A02.Notes01, W95.ObjectID, A202.ObjectName, A02.BarCode,
 	ISNULL(W95.SParameter01,'''') SParameter01, ISNULL(W95.SParameter02,'''') SParameter02, ISNULL(W95.SParameter03,'''') SParameter03, 
 	ISNULL(W95.SParameter04,'''') SParameter04, ISNULL(W95.SParameter05,'''') SParameter05, ISNULL(W95.SParameter06,'''') SParameter06, 
@@ -187,6 +188,7 @@ PRINT @sSQL1
 EXEC (@sSQL + @sSQL1)
 
 DROP TABLE #VoucherIDList
+
 
 
 

@@ -31,7 +31,7 @@ SET @ModuleID = 'WM';
 SET @FormID = 'WMF2230';
 
 
-SET @LanguageValue = N'Chuyển kho';
+SET @LanguageValue = N'Danh mục chuyển kho';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2230.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -76,7 +76,7 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2230.WareHouseID.CB' , @FormID, @LanguageVal
 SET @LanguageValue = N'Loại chứng từ';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2230.VoucherTypeID' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Loại sản phẩm';
+SET @LanguageValue = N'Loại hàng';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2230.InventoryTypeID' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Mã người lập';

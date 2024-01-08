@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2141';
 
-SET @LanguageValue = N'Khai báo định mức chi phí dự án';
+SET @LanguageValue = N'Cập nhật định mức chi phí dự án';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2141.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Nhóm chi';

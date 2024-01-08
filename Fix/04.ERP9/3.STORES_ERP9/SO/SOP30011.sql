@@ -43,8 +43,8 @@ CREATE PROCEDURE [dbo].[SOP30011] (
 AS
 
 DECLARE 
-    @sSQL01 NVARCHAR(MAX),
-    @sSQL02 NVARCHAR(max),
+    @sSQL01 VARCHAR(MAX),
+    @sSQL02 VARCHAR(max),
 	@sWhere NVARCHAR(MAX),
 	@sFROM nvarchar(500),
 	@sSELECT nvarchar(500)
@@ -104,35 +104,105 @@ DECLARE
 	IF Isnull(@OrderStatus, '') != ''
 		SET @sWhere = @sWhere + ' AND OT2101.OrderStatus IN ('''+@OrderStatus+''')'
 	
-SET @sSQL01 = ' SELECT OT2101.DivisionID, OT2101.TranMonth, OT2101.TranYear, OT2101.VoucherTypeID, OT2101.ObjectID,
-					   CASE WHEN ISNULL(OT2101.ObjectName, '''') <> '''' THEN OT2101.ObjectName ELSE AT1202.ObjectName END AS ObjectName, 
-					   CASE WHEN ISNULL(OT2101.Address, '''') <> '''' THEN OT2101.Address ELSE AT1202.Address END AS Address, AT1202.Tel,AT1202.Fax,
-					   AT1202.Email,AT1202.BankAccountNo,OT2101.EmployeeID, AT1103.FullName,OT2101.CurrencyID, AT1004.CurrencyName,OT2101.ExchangeRate, 
-					   OT2101.QuotationNo, OT2101.QuotationDate, OT2101.RefNo1, OT2101.RefNo2, OT2101.RefNo3, OT2101.Attention1, OT2101.Attention2, 
-					   OT2101.Dear, OT2101.Condition, OT2101.SaleAmount, OT2101.PurchaseAmount, OT2101.Disabled, OT2101.Status, OT2101.OrderStatus, 
-					   OT2101.IsSO, OT2101.Description, OT2101.CreateDate, OT2101.CreateUserID, OT2101.LastModifyDate, OT2101.LastModifyUserID, 
-					   OT2101.InventoryTypeID, OT2101.EndDate, OT2101.Transport, OT2101.DeliveryAddress, OT2101.PaymentID, OT2101.PaymentTermID, 
-					   OT2101.Ana01ID, OT2101.Ana02ID, OT2101.Ana03ID, OT1002_1.AnaName AS Ana01Name, OT1002_2.AnaName AS Ana02Name, 
-					   OT1002_3.AnaName AS Ana03Name, OT2101.Ana04ID, OT2101.Ana05ID, OT2101.SalesManID,AT01.FullName as SaleManName,OT2101.ClassifyID, 
-					   A00002.Name AS OrderStatusName,OV1001.EDescription AS EOrderStatusName,OT2001.SOrderID, 
-					   QuoQuantity = (SELECT SUM(ISNULL (QuoQuantity,0)) FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   OriginalAmount = (
-							SELECT SUM(ISNULL(OriginalAmount, 0)) - SUM(ISNULL(DiscountAmount, 0)) + SUM(ISNULL(VATOriginalAmount, 0)) 
-							FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   ConvertedAmount = (
-							SELECT SUM(ISNULL(ConvertedAmount, 0)) - SUM(ISNULL(DiscountAmount, 0)) * ISNULL(OT2101.ExchangeRate, 1) + SUM(ISNULL(VATConvertedAmount, 0))
-							FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   VATOriginalAmount = (SELECT SUM(ISNULL(VATOriginalAmount, 0)) FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   VATConvertedAmount = (SELECT SUM(ISNULL(VATConvertedAmount, 0)) FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   DiscountOriginalAmount = (SELECT SUM(ISNULL(DiscountOriginalAmount, 0)) FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   DiscountConvertedAmount = (SELECT SUM(ISNULL(DiscountConvertedAmount, 0)) FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+'''),
-					   OT2102.Ana01ID as AnaID01,OT2102.Ana02ID as AnaID02,OT2102.Ana03ID as AnaID03,OT2102.Ana04ID as AnaID04,OT2102.Ana05ID as AnaID05,
-					   OT2102.Ana06ID as AnaID06,OT2102.Ana07ID as AnaID07,OT2102.Ana08ID as AnaID08,OT2102.Ana09ID as AnaID09,OT2102.Ana10ID as AnaID10,
-					   A01.AnaName as AnaName01,A02.AnaName as AnaName02,A03.AnaName as AnaName03,A04.AnaName as AnaName04,A05.AnaName as AnaName05,
-					   A06.AnaName as AnaName06,A07.AnaName as AnaName07,A08.AnaName as AnaName08,A09.AnaName as AnaName09,A10.AnaName as AnaName10,
-					   OT2102.QD01,OT2102.QD02,OT2102.QD03,OT2102.QD04,OT2102.QD05, OT2102.QD06,OT2102.QD07,OT2102.QD08,OT2102.QD09,OT2102.QD10
-					   ,OT2102.InventoryID,AT02.InventoryName
-					   ,DiscountAmount = (SELECT SUM(ISNULL(DiscountAmount, 0)) FROM OT2102 WHERE OT2102.QuotationID = OT2101.QuotationID AND DivisionID = '''+@DivisionID+''')'
+SET @sSQL01 = '
+	SELECT 
+		OT2101.DivisionID
+		, OT2101.TranMonth
+		, OT2101.TranYear
+		, OT2101.VoucherTypeID
+		, OT2101.ObjectID
+		, CASE WHEN ISNULL(OT2101.ObjectName, '''') <> '''' THEN OT2101.ObjectName ELSE AT1202.ObjectName END AS ObjectName
+		, CASE WHEN ISNULL(OT2101.Address, '''') <> '''' THEN OT2101.Address ELSE AT1202.Address END AS Address
+		, AT1202.Tel
+		, AT1202.Fax
+		, AT1202.Email
+		, AT1202.BankAccountNo
+		, OT2101.EmployeeID
+		, AT1103.FullName
+		, OT2101.CurrencyID
+		, AT1004.CurrencyName
+		, OT2101.ExchangeRate
+		, OT2101.QuotationNo
+		, OT2101.QuotationDate
+		, OT2101.RefNo1
+		, OT2101.RefNo2
+		, OT2101.RefNo3
+		, OT2101.Attention1
+		, OT2101.Attention2
+		, OT2101.Dear
+		, OT2101.Condition
+		, OT2101.SaleAmount
+		, OT2101.PurchaseAmount
+		, OT2101.Disabled
+		, OT2101.Status
+		, OT2101.OrderStatus
+		, OT2101.IsSO
+		, OT2101.Description
+		, OT2101.CreateDate
+		, OT2101.CreateUserID
+		, OT2101.LastModifyDate
+		, OT2101.LastModifyUserID
+		, OT2101.InventoryTypeID
+		, OT2101.EndDate
+		, OT2101.Transport
+		, OT2101.DeliveryAddress
+		, OT2101.PaymentID
+		, OT2101.PaymentTermID
+		, OT2101.Ana01ID
+		, OT2101.Ana02ID
+		, OT2101.Ana03ID
+		, OT1002_1.AnaName AS Ana01Name
+		, OT1002_2.AnaName AS Ana02Name
+		, OT1002_3.AnaName AS Ana03Name
+		, OT2101.Ana04ID
+		, OT2101.Ana05ID
+		, OT2101.SalesManID
+		, AT01.FullName AS SaleManName
+		, OT2101.ClassifyID
+		, A00002.Name AS OrderStatusName
+		, OV1001.EDescription AS EOrderStatusName
+		, OT2001.SOrderID
+		, OT22.QuoQuantity
+		, OT22.OriginalAmount
+		, OT22.ConvertedAmount
+		, OT22.VATOriginalAmount
+		, OT22.VATConvertedAmount
+		, OT22.DiscountOriginalAmount
+		, OT22.DiscountConvertedAmount
+		, OT22.DiscountAmount
+		, OT2102.Ana01ID as AnaID01
+		, OT2102.Ana02ID as AnaID02
+		, OT2102.Ana03ID as AnaID03
+		, OT2102.Ana04ID as AnaID04
+		, OT2102.Ana05ID as AnaID05
+		, OT2102.Ana06ID as AnaID06
+		, OT2102.Ana07ID as AnaID07
+		, OT2102.Ana08ID as AnaID08
+		, OT2102.Ana09ID as AnaID09
+		, OT2102.Ana10ID as AnaID10
+		, A01.AnaName as AnaName01
+		, A02.AnaName as AnaName02
+		, A03.AnaName as AnaName03
+		, A04.AnaName as AnaName04
+		, A05.AnaName as AnaName05
+		, A06.AnaName as AnaName06
+		, A07.AnaName as AnaName07
+		, A08.AnaName as AnaName08
+		, A09.AnaName as AnaName09
+		, A10.AnaName as AnaName10
+		, OT2102.QD01
+		, OT2102.QD02
+		, OT2102.QD03
+		, OT2102.QD04
+		, OT2102.QD05
+		, OT2102.QD06
+		, OT2102.QD07
+		, OT2102.QD08
+		, OT2102.QD09
+		, OT2102.QD10
+		, OT2102.InventoryID
+		, AT02.InventoryName
+			'
 
 SET @sSQL02 = ' FROM OT2101 LEFT JOIN OV1001           WITH (NOLOCK) ON OV1001.DivisionID = OT2101.DivisionID    AND OV1001.OrderStatus = OT2101.OrderStatus AND OV1001.TypeID=''QO''
 							LEFT JOIN OT2001           WITH (NOLOCK) ON OT2001.DivisionID = OT2101.DivisionID    AND OT2001.QuotationID = OT2101.QuotationID
@@ -146,7 +216,7 @@ SET @sSQL02 = ' FROM OT2101 LEFT JOIN OV1001           WITH (NOLOCK) ON OV1001.D
 											  O02.Ana06ID,O02.Ana07ID,O02.Ana08ID,O02.Ana09ID,O02.Ana10ID,O02.QD01,O02.QD02,O02.QD03,O02.QD04,
 											  O02.QD05,O02.QD06,O02.QD07,O02.QD08,O02.QD09,O02.QD10, O02.InventoryID
 									   FROM OT2102 O02 	WITH (NOLOCK) WHERE O02.DivisionID = ''' + @DivisionID + ''' AND O02.Orders = 1
-									   ) OT2102	ON OT2102.DivisionID = OT2101.DivisionID	AND OT2102.QuotationID = OT2101.QuotationID
+									   ) OT2102	ON OT2102.DivisionID = OT2101.DivisionID AND OT2102.QuotationID = OT2101.QuotationID
 							left join AT1011 A01 WITH (NOLOCK) on A01.AnaTypeID = ''A01'' and A01.AnaID = OT2102.Ana01ID  
 							left join AT1011 A02 WITH (NOLOCK) on A02.AnaTypeID = ''A02'' and A02.AnaID = OT2102.Ana02ID  
 							left join AT1011 A03 WITH (NOLOCK) on A03.AnaTypeID = ''A03'' and A03.AnaID = OT2102.Ana03ID  
@@ -160,14 +230,29 @@ SET @sSQL02 = ' FROM OT2101 LEFT JOIN OV1001           WITH (NOLOCK) ON OV1001.D
 							LEFT JOIN A00002 WITH (NOLOCK) ON OV1001.Description = A00002.ID and LanguageID = ''vi-VN''
 							LEFT JOIN AT1103 AT01 WITH (NOLOCK) ON AT01.EmployeeID = OT2101.SalesManID
 							LEFT JOIN AT1302 AT02 WITH (NOLOCK) ON AT02.InventoryID = OT2102.InventoryID
+							CROSS APPLY
+							(
+								
+								SELECT SUM(ISNULL(QuoQuantity, 0)) AS QuoQuantity
+									, SUM(ISNULL(OriginalAmount, 0)) - SUM(ISNULL(DiscountAmount, 0)) + SUM(ISNULL(VATOriginalAmount, 0)) AS OriginalAmount
+									, SUM(ISNULL(ConvertedAmount, 0)) - SUM(ISNULL(DiscountAmount, 0)) * ISNULL(OT2101.ExchangeRate, 1) + SUM(ISNULL(VATConvertedAmount, 0)) AS ConvertedAmount
+									, SUM(ISNULL(VATOriginalAmount, 0)) AS VATOriginalAmount
+									, SUM(ISNULL(VATConvertedAmount, 0)) AS VATConvertedAmount
+									, SUM(ISNULL(DiscountOriginalAmount, 0)) AS DiscountOriginalAmount
+									, SUM(ISNULL(DiscountConvertedAmount, 0)) AS DiscountConvertedAmount
+									, SUM(ISNULL(DiscountAmount, 0)) AS DiscountAmount
+								FROM OT2102 WITH (NOLOCK)
+								WHERE DivisionID = ''' + @DivisionID + '''
+								AND OT2102.QuotationID = OT2101.QuotationID 
+							) OT22
           
 				Where ' + @sWhere +
 				' Order by OT2101.QuotationDate, OT2101.QuotationNo'
 
-EXEC (@sSQL01 + @sSQL02)
-
 print @sSQL01 
 print @sSQL02
+EXEC (@sSQL01 + @sSQL02)
+
 
 
 GO

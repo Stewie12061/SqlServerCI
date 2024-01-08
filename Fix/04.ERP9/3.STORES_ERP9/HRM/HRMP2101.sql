@@ -7,6 +7,7 @@ SET ANSI_NULLS ON
 GO
 
 
+
 -- <Summary>
 ---- Kiểm tra xóa/sửa lịch đào tạo
 -- <Param>
@@ -64,7 +65,7 @@ BEGIN
 				SELECT 2 AS Status, ''00ML000052'' AS MessageID, NULL AS Params
 				
 				SET @Cur = CURSOR SCROLL KEYSET FOR
-				SELECT APK, DivisionID, TrainingScheduleID FROM HRMT2100 WITH (NOLOCK) WHERE TrainingScheduleID IN ('''+@IDList+''')
+				SELECT APK, DivisionID, TrainingScheduleID FROM HRMT2100 WITH (NOLOCK) WHERE APK IN ('''+@IDList+''')
 				OPEN @Cur
 				FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelID
 				WHILE @@FETCH_STATUS = 0
@@ -81,9 +82,9 @@ BEGIN
 					END
 					ELSE 
 					BEGIN
-						DELETE FROM HRMT2100 WHERE TrainingScheduleID = @DelID	
-						DELETE FROM HRMT2101 WHERE TrainingScheduleID = @DelID							
-						DELETE FROM CRMT00003 WHERE RelatedToID = CONVERT(NVARCHAR(50), @DelAPK)			
+						DELETE FROM HRMT2101 WHERE TrainingScheduleID = @DelAPK	
+						DELETE FROM HRMT2100 WHERE APK = @DelAPK
+
 					END
 					FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelID
 					Set @Status = 0
@@ -91,7 +92,7 @@ BEGIN
 				CLOSE @Cur
 				SELECT Status, MessageID, LEFT(Params,LEN(Params) - 1) AS Params FROM @HRMF2100TEMP WHERE Params IS NOT NULL'
 				
-		--PRINT @sSQL		
+		PRINT @sSQL		
 		EXEC (@sSQL)
 	END
 	ELSE IF @Mode = 0 --Kiểm tra trước khi sửa
@@ -126,6 +127,7 @@ BEGIN
 	END
 	
 END
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

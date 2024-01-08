@@ -32,10 +32,13 @@ SET @FormID = 'MF1820';
 SET @LanguageValue = N'List of production resources';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF1820.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Resource ID';
+SET @LanguageValue = N'Đóng góp';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.ResourceID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Resource name';
@@ -44,7 +47,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1820.ResourceName', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Efficiency';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.Efficiency', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';
@@ -59,10 +62,10 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1820.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Describe';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Efficiency';
@@ -86,7 +89,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1820.MaxTime', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.UnitID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF1820.UnitName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Resource type';

@@ -25,14 +25,14 @@ DECLARE
  - Tieng Nhat: ja-JP
  - Tieng Trung: zh-CN
 */
-SET @Language = 'vi-VN' 
+SET @Language = 'en-US' 
 SET @ModuleID = 'WM';
 SET @FormID = 'WMF2032';
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -41,16 +41,16 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.TranMonth', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.TranYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số chứng từ';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ngày chứng từ';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Loại chứng từ';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Diễn giải';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -62,7 +62,7 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Warehouse01ID', @FormID, @LanguageValue
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Warehouse02ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Loại hàng';
+SET @LanguageValue = N'Sectors';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -71,31 +71,43 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ObjectID', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Người tạo';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Người tạo';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.CreateUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ngày tạo';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Người sửa';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Người sửa';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.LastModifyUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ngày sửa';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Kho xuất';
+SET @LanguageValue =N'Export Warehouse Name';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ExWareHouseName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ExWareHouseID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Import warehouse';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ImWareHouseName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ImWareHouseID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Export Warehouse Name';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ExWarehouseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ExWarehouseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Kho nhận';
+SET @LanguageValue = N'Import warehouse';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ImWarehouseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -104,20 +116,23 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ImWarehouseID', @FormID, @LanguageValue
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Đối tượng';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Người lập phiếu';
+SET @LanguageValue = N'Voting maker';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.EmployeeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.IsLocation', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mã tham chiếu 01';
+SET @LanguageValue = N'Reference code 01';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Ref01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mã tham chiếu 02';
+SET @LanguageValue = N'Reference code 02';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Ref02', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ApportionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.CheckPurchase', @FormID, @LanguageValue, @Language;
@@ -128,16 +143,16 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.CheckTransport', @FormID, @LanguageValu
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.CheckOutput', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Xuất chuyển xuyên đơn vị';
+SET @LanguageValue = N'Export across units';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.IsTransferDivision', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ImDivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Đơn vị nhận';
+SET @LanguageValue = N'Receiving unit';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ImDivisionName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Loại hàng';
+SET @LanguageValue = N'Sectors';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.InventoryTypeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -158,25 +173,28 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.InvoiceNo', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.InvoiceDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Confirmation date';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ConfirmDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.IsConsignmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Người liên lạc';
+SET @LanguageValue = N'Contact person';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ContactPerson', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Địa chỉ giao hàng';
+SET @LanguageValue = N'Delivery address';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.DeliveryAddress', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.InheritSaleOrders', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'WMF2032.VoucherID', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.InheritProductQuantity', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.VoucherID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.VoucherTypeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -184,4 +202,22 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Status', @FormID, @LanguageValue, @Lang
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2032.StatusName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.APKMaster_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ApprovePersonStatus', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.ApprovingLevel', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.StatusMaster', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2032.Type_9000', @FormID, @LanguageValue, @Language;
 

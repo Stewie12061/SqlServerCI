@@ -6,6 +6,9 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
+
 -- <Summary>
 ---- Load Grid Form HRMF2020: Đợt tuyển dụng
 -- <Param>
@@ -19,7 +22,8 @@ GO
 ----Updated by: Phương Thảo on 26/07/2023  [2023/07/TA/0035]bổ sung điều kiện lọc từ ngày đến ngày và theo kì 
 ----Updated by: Phương Thảo on 27/07/2023  [2023/07/TA/0035]Xóa điều kiện lọc thực hiện từ, thực hiện đến
 ----Updated by: Phương Thảo on 14/08/2023   [2023/08/IS/0008]Bổ sung điều kiện lọc tên đợt tuyển dụng
-----Update  by Thu Hà on 07092023 - Cập nhật sắp xếp giảm dần theo mã đợt tuyển dụng
+----Update  by: Thu Hà on 07092023 - Cập nhật sắp xếp giảm dần theo mã đợt tuyển dụng
+----Update  by: Phương Thảo, Date: 12/03/2023 -[2023/09/IS/0029] Cập nhật bổ sung điều kiện lọc ( DeleteFlg = 0 )
 ---- 
 /*-- <Example>
 	HRMP2020 @DivisionID='MK',@DivisionList='MK'',''MK1',@UserID='ASOFTADMIN',@PageNumber=1,@PageSize=25,@IsSearch=1,
@@ -77,9 +81,9 @@ IF  @IsSearch = 1
 BEGIN
 	
 	IF ISNULL(@RecruitPeriodID,'') <> '' SET @sWhere = @sWhere + '
-	AND HRMT2020.RecruitPeriodID LIKE ''%'+@RecruitPeriodID+'%'' '
+	AND HRMT2020.RecruitPeriodID LIKE N''%'+@RecruitPeriodID+'%'' '
     IF ISNULL(@RecruitPeriodName,'') <> '' SET @sWhere = @sWhere + '
-	AND HRMT2020.RecruitPeriodName LIKE ''%'+@RecruitPeriodName+'%'' '
+	AND HRMT2020.RecruitPeriodName LIKE N''%'+@RecruitPeriodName+'%'' '
 	IF ISNULL(@DepartmentID,'') <> '' SET @sWhere = @sWhere + '
 	AND HRMT2020.DepartmentID = '''+@DepartmentID+''' '
 	IF ISNULL(@DutyID,'') <> '' SET @sWhere = @sWhere + '
@@ -113,6 +117,8 @@ BEGIN
 		SET @sWhere = @sWhere + ' AND ISNULL(HRMT2020.CreateUserID,'''') in (N'''+@ConditionRecruitPeriodID+''', '''+@UserID+''' )'
 END
 
+--Bổ sung điều kiện cờ xóa = 0
+SET @sWhere = @sWhere + ' AND ISNULL(HRMT2020.DeleteFlg,0) = 0 '
 SET @sSQL = N'
 	SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum, '+@TotalRow+' AS TotalRow,
 		HRMT2020.APK, HRMT2020.DivisionID, HRMT2020.RecruitPeriodID, HRMT2020.RecruitPeriodName, HRMT2020.DepartmentID, AT1102.DepartmentName,
@@ -130,6 +136,9 @@ SET @sSQL = N'
 
 PRINT(@sSQL)
 EXEC (@sSQL)
+
+
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

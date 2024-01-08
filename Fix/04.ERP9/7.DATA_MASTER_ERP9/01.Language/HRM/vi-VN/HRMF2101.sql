@@ -143,3 +143,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Sessions',  @FormID, @LanguageValue, @
 
 SET @LanguageValue  = N'Số giờ/buổi'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.HoursPerSession',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Giờ đào tạo cụ thể'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.SpecificHours',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Chọn nhiều nhân viên'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2101.Employee',  @FormID, @LanguageValue, @Language;

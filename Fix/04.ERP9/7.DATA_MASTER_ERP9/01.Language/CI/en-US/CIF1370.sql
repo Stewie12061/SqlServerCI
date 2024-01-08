@@ -31,53 +31,52 @@ SET @FormID = 'CIF1370';
 
 SET @LanguageValue = N'List of machine';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.Title', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Batch number - Item';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine ID';
+SET @LanguageValue = N'Đóng góp';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.MachineID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine Name';
+SET @LanguageValue = N'Resource name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.MachineName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine Name(Eng)';
+SET @LanguageValue = N'Resource name (ENG)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.MachineNameE', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Workshop';
+SET @LanguageValue = N'Factory';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Model';
+SET @LanguageValue = N'Sample';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.Model', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Year';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.Year', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date of formation';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.StartDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.Notes', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last Modified Date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine type';
+SET @LanguageValue = N'Resource type';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.ResourceTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';
@@ -89,13 +88,13 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1370.UnitName', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Efficiency';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.Efficiency', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Lined up time';
+SET @LanguageValue = N'Time in line';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.LinedUpTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Setting time';
+SET @LanguageValue = N'Setup time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.SettingTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Standby time';
+SET @LanguageValue = N'Waiting time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.WaittingTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Transfer time';
@@ -107,10 +106,10 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1370.MinTime', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Maximum time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.MaxTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Capacity/Unit';
+SET @LanguageValue = N'Capacity/unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1370.GoldLimit', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Time limit';

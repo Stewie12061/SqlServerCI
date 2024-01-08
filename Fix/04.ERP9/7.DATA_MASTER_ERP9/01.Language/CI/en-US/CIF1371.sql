@@ -1,4 +1,4 @@
-﻿	-----------------------------------------------------------------------------------------------------
+﻿-----------------------------------------------------------------------------------------------------
 -- Script tạo ngôn ngữ CIF1371- CI
 ------------------------------------------------------------------------------------------------------
 DECLARE
@@ -32,70 +32,73 @@ SET @FormID = 'CIF1371';
 SET @LanguageValue = N'Update machine';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1371.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine ID';
+SET @LanguageValue = N'Đóng góp';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.MachineID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine Name';
+SET @LanguageValue = N'Resource name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.MachineName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine Name(Eng)';
+SET @LanguageValue = N'Resource name (ENG)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.MachineNameE', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Workshop';
+SET @LanguageValue = N'Factory';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Model';
+SET @LanguageValue = N'Sample';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.Model', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Year';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.Year', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date of formation';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.StartDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.Notes', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last Modified Date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine type';
+SET @LanguageValue = N'Resource type';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.ResourceTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.UnitID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.UnitName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Efficiency';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.Efficiency', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Lined up time';
+SET @LanguageValue = N'Time in line';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.LinedUpTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Setting time';
+SET @LanguageValue = N'Setup time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.SettingTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Standby time';
+SET @LanguageValue = N'Waiting time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.WaittingTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Transfer time';
+SET @LanguageValue = N'Travel time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.TransferTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Minimum time';
@@ -104,16 +107,16 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1371.MinTime', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Maximum time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.MaxTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Capacity/Unit';
+SET @LanguageValue = N'Capacity/unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.GoldLimit', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Time limit';
+SET @LanguageValue = N'Rated time';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.TimeLimit', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Total working hours';
+SET @LanguageValue = N'Total number of employees';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1371.WorkersLimit', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'ID';

@@ -40,3 +40,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1501.AnaTypeID.CB',  @FormID, @LanguageValue
 
 SET @LanguageValue  = N'Định nghĩa';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1501.AnaTypeName.CB',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên loại mã phân tích';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1501.AnaTypeName',  @FormID, @LanguageValue, @Language;

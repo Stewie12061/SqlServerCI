@@ -23,7 +23,7 @@ SET @ModuleID = 'SO';
 SET @FormID = 'SOF2000';
 ------------------------------------------------------------------------------------------------------
 
-SET @LanguageValue = N'Danh mục đơn hàng bán';
+SET @LanguageValue = N'Danh mục đơn hàng bán sỉ (Sell In)';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2000.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -117,9 +117,3 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2000.SalesManID' , @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Người bán hàng';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2000.SalesManName' , @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Tên chứng từ';
-EXEC ERP9AddLanguage @ModuleID, 'SOF2000.VoucherTypeName.CB' , @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Mã chứng từ';
-EXEC ERP9AddLanguage @ModuleID, 'SOF2000.VoucherTypeID.CB' , @FormID, @LanguageValue, @Language;

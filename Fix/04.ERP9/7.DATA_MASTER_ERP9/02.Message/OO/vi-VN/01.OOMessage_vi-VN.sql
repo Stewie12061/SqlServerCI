@@ -511,23 +511,32 @@ EXEC ERP9AddMessage @ModuleID,'OOFML000278', @MessageValue, @Language;
 SET @MessageValue=N'Bạn đã khai báo thông tin đăng ký dự án. Bạn chỉ được chỉnh sửa'
 EXEC ERP9AddMessage @ModuleID,'OOFML000279', @MessageValue, @Language;
 
-SET @MessageValue=N'Bạn vừa được giao 1 chỉ tiêu/target có độ ưu tiên thấp: {0}'
+SET @MessageValue=N'Bạn vừa được giao 1 chỉ tiêu/công việc có độ ưu tiên thấp: {0}'
 EXEC ERP9AddMessage @ModuleID,'OOFML000280', @MessageValue, @Language;
 
-SET @MessageValue=N'Bạn vừa được giao 1 chỉ tiêu/target có độ ưu tiên cao: {0}'
+SET @MessageValue=N'Bạn vừa được giao 1 chỉ tiêu/công việc có độ ưu tiên cao: {0}'
 EXEC ERP9AddMessage @ModuleID,'OOFML000281', @MessageValue, @Language;
 
-SET @MessageValue=N'Bạn vừa được giao 1 chỉ tiêu/target có độ ưu tiên khẩn cấp: {0}'
+SET @MessageValue=N'Bạn vừa được giao 1 chỉ tiêu/công việc có độ ưu tiên khẩn cấp: {0}'
 EXEC ERP9AddMessage @ModuleID,'OOFML000282', @MessageValue, @Language;
 
-SET @MessageValue=N'Chỉ tiêu/target đã hủy không thể chuyển sang trạng thái Đã xong!'
+SET @MessageValue=N'Chỉ tiêu/Công việc đã hủy không thể chuyển sang trạng thái Đã xong!'
 EXEC ERP9AddMessage @ModuleID,'OOFML000283', @MessageValue, @Language;
 
-SET @MessageValue=N'Chỉ tiêu/target đã bắt đầu không thể chuyển sang trạng thái Chưa thực hiện!'
+SET @MessageValue=N'Chỉ tiêu/Công việc đã bắt đầu không thể chuyển sang trạng thái Chưa thực hiện!'
 EXEC ERP9AddMessage @ModuleID,'OOFML000284', @MessageValue, @Language;
 
 SET @MessageValue=N'Bạn phải chuyển sang trạng thái Đang xử lý trước khi chuyển sang các trạng thái khác!'
 EXEC ERP9AddMessage @ModuleID,'OOFML000285', @MessageValue, @Language;
 
-SET @MessageValue=N'{0} đã hoàn thành chỉ tiêu/target {1}'
+SET @MessageValue=N'{0} đã hoàn thành công việc {1}'
 EXEC ERP9AddMessage @ModuleID,'OOFML000286', @MessageValue, @Language;
+
+-- [Thu Hà] - [31/10/2023]- Bổ sung thông báo Xóa phiếu chỉ tiêu/công việc
+SET @MessageValue=N'- Xóa phiếu chỉ tiêu/công việc: '
+EXEC ERP9AddMessage @ModuleID,'OOFML000287', @MessageValue, @Language;
+
+-- [Tấn Lộc] - [09/11/2023] - Begin add
+SET @MessageValue=N'Vấn đề phải thuộc nghiệp vụ cụ thể!'
+EXEC ERP9AddMessage @ModuleID,'OOFML000288', @MessageValue, @Language;
+

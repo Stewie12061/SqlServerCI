@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF2212';
 
-SET @LanguageValue = N'Chi tiết dữ liệu ao đầu mối online';
+SET @LanguageValue = N'Chi tiết dữ liệu nguồn online';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2212.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -148,3 +148,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2212.CampaignMedium', @FormID, @LanguageVal
 
 SET @LanguageValue = N'Đầu mối';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2212.LeadName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Ladipage';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2212.Link', @FormID, @LanguageValue, @Language;

@@ -121,7 +121,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2102.ProposeAmount_MT',  @FormID, @Language
 SET @LanguageValue  = N'Chi phí đề xuất'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2102.ProposeAmount_DT',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Thời gian đào tạo (dự kiến) từ ngày'
+SET @LanguageValue  = N'Từ ngày'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2102.FromDate',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đến ngày'
@@ -174,3 +174,6 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2102.Description',  @FormID, @LanguageValue
 
 SET @LanguageValue  = N'Người phụ trách'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2102.AssignedToUserName',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Giờ đào tạo cụ thể'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2102.SpecificHours',  @FormID, @LanguageValue, @Language;

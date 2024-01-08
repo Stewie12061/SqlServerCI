@@ -34,7 +34,7 @@ SET @FormID = 'HRMF1042'
 SET @LanguageValue  = N'Xem chi tiết lĩnh vực đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.Title ',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Mã Lĩnh vực đào tạo'
+SET @LanguageValue  = N'Mã lĩnh vực đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.TrainingFieldID',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đơn vị'
@@ -70,3 +70,11 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.SubTitle1',  @FormID, @LanguageValue, 
 SET @LanguageValue  = N'Lịch sử'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.TabCRMT00003',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Ghi chú'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.TabCRMT90031',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Đính kèm'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.TabCRMT00002',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1042.StatusID',  @FormID, @LanguageValue, @Language;

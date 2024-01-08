@@ -34,7 +34,7 @@ SET @CustomerIndex = (SELECT CustomerName FROM CustomerIndex);
 
  EXEC ERP9AddLanguage @ModuleID, 'SOF2002.TabOT2002' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Xem chi tiết đơn hàng';
+SET @LanguageValue = N'Chi tiết đơn hàng bán sỉ (Sell In)';
  EXEC ERP9AddLanguage @ModuleID, 'SOF2002.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

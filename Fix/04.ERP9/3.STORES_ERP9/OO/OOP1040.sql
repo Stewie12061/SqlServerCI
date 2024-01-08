@@ -8,6 +8,7 @@ GO
 
 
 
+
 CREATE PROCEDURE [dbo].[OOP1040]
 (
 		@DivisionID VARCHAR(50), 
@@ -27,7 +28,7 @@ DECLARE @sSQL NVARCHAR (MAX),
 		@OrderBy NVARCHAR(500)
 
 SET @sWhere = ''
-SET @OrderBy = ' M.DivisionID, M.StatusID, M.Orders '
+SET @OrderBy = 'M.StatusTypeID ASC'
 
 -- Check Para DivisionIDList null then get DivisionID
 IF ISNULL(@DivisionIDList, '')!= ''
@@ -51,7 +52,7 @@ IF ISNULL(@StatusType, '') != ''
 	SET @sWhere = @sWhere + ' AND ISNULL(M.StatusType, '''') LIKE N''%' + @StatusType + '%'''
 
 SET @sSQL = 	'SELECT M.APK, M.DivisionID, M.StatusID, M.StatusName, M.Orders
-					, M.Color, A1.Description AS StatusType, M.Disabled, M.IsCommon, M.StatusNameE
+					, M.Color, A1.ID AS StatusTypeID, A1.Description AS StatusType, M.Disabled, M.IsCommon, M.StatusNameE
 				INTO #TempOOT1040
 				FROM OOT1040 M WITH (NOLOCK)
 					LEFT JOIN OOT0099 A1 WITH (NOLOCK) ON A1.ID = M.StatusType AND A1.CodeMaster = ''OOT00000001''
@@ -62,13 +63,14 @@ SET @sSQL = 	'SELECT M.APK, M.DivisionID, M.StatusID, M.StatusName, M.Orders
 
 				SELECT ROW_NUMBER() OVER (ORDER BY ' + @OrderBy + ') AS RowNum, @Count AS TotalRow
 					, M.APK, M.DivisionID, M.StatusID, M.StatusName, M.StatusType
-					, M.Color, M.Orders, M.Disabled, M.IsCommon, M.StatusNameE
+					, M.Color, M.Orders, M.Disabled, M.IsCommon, M.StatusNameE, M.StatusTypeID
 				FROM #TempOOT1040 M
 				ORDER BY ' + @OrderBy + '
 				OFFSET ' + STR((@PageNumber - 1) * @PageSize) + ' ROWS
 				FETCH NEXT ' + STR(@PageSize) + ' ROWS ONLY '
 EXEC (@sSQL)
 PRINT (@sSQL)
+
 
 
 GO

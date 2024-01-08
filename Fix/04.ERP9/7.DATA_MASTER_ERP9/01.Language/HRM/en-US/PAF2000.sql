@@ -83,16 +83,16 @@ EXEC ERP9AddLanguage @ModuleID, 'PAF2000.TotalUnifiedPoint', @FormID, @LanguageV
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'PAF2000.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'PAF2000.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'PAF2000.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'PAF2000.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'PAF2000.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Department';

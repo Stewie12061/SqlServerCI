@@ -32,22 +32,28 @@ SET @FormID = 'MF2122';
 SET @LanguageValue = N'Inventory norm view';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory ID';
+SET @LanguageValue = N'Product code';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.NodeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory name';
+SET @LanguageValue = N'Product is name';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.NodeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Start date';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.BomVersion', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Start time';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.StartDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To date';
+SET @LanguageValue = N'End time';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.EndDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -56,19 +62,19 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2122.Date', @FormID, @LanguageValue, @Languag
 SET @LanguageValue = N'Inventory type';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory name';
+SET @LanguageValue = N'Name items';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.InventoryName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Updater';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Structure type';
@@ -83,7 +89,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2122.InheritID', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.CreateBOMVersion', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.ObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object';
@@ -157,3 +163,67 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2122.GhiChu', @FormID, @LanguageValue, @Langu
 
 SET @LanguageValue = N'List of BOM version';
 EXEC ERP9AddLanguage @ModuleID, 'MF2122.DanhSachVersionBOM', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S01ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S02ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S03ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S04ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S05ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S06ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S07ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S08ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S09ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S10ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S11ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S12ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S13ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S14ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S15ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S16ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S17ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S18ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S19ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.S20ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Specifications';
+EXEC ERP9AddLanguage @ModuleID, 'MF2122.Specification', @FormID, @LanguageValue, @Language;
+

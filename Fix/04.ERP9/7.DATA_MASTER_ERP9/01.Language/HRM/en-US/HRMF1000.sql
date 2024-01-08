@@ -32,22 +32,22 @@ SET @FormID = 'HRMF1000';
 SET @LanguageValue  = N'Recruitment Resource'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment Resource';
+SET @LanguageValue = N'Recruitment source';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.ResourceID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Name of recruitment source';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.ResourceName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.Note', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'IsCommon';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
@@ -61,4 +61,10 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.LastModifyUserID', @FormID, @LanguageV
 
 SET @LanguageValue = N'Last modify date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1000.APK', @FormID, @LanguageValue, @Language;
 

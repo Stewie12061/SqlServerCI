@@ -237,3 +237,6 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2042.TabCRMT00003',  @FormID, @LanguageValu
 
 SET @LanguageValue  = N'Trạng thái' 
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2042.StatusID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Mô tả' 
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2042.Description',  @FormID, @LanguageValue, @Language;

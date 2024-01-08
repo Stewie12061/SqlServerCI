@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF0020';
 
-SET @LanguageValue = N'Dashboard Quan hệ khách hàng';
+SET @LanguageValue = N'Dashboard quan hệ khách hàng (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đầu mối';
@@ -77,7 +77,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.Division', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Chọn kỳ';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.Period', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê số lượng Đầu mối, Cơ hội, Yêu cầu, Khách hàng, Liên hệ, Hợp đồng';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng theo nghiệp vụ (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.ChartStatisAmountName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Kỳ hiện tại';
@@ -89,7 +89,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.PastPeriodName', @FormID, @LanguageVal
 SET @LanguageValue = N'Giai đoạn';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.Stage', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ tỷ trọng số lượng cơ hội theo giai đoạn';
+SET @LanguageValue = N'Biểu đồ tỷ trọng số lượng cơ hội theo giai đoạn (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.ChartQuantityAmountName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tổng số lượng: {0} <br> Tổng giá trị: {1}';
@@ -110,7 +110,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.AvgCallTime', @FormID, @LanguageValue,
 SET @LanguageValue = N'Số cuộc gọi ra thành công';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.TotalSuccessCall', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phễu tỉ lệ chuyển đổi giữa các trạng thái của {0}';
+SET @LanguageValue = N'Phễu tỷ lệ chuyển đổi giữa các trạng thái của {0} (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.ChartStatusFunnelName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Nghiệp vụ';
@@ -119,7 +119,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.Business', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Trạng thái';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.Status', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ giá trị cơ hội theo nhân viên';
+SET @LanguageValue = N'Biểu đồ giá trị cơ hội theo nhân viên (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.ChartOppValueName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Nhân viên';
@@ -137,26 +137,26 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.DivisionID.CB', @FormID, @LanguageValu
 SET @LanguageValue = N'Tên đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF0020.DivisionName.CB', @FormID, @LanguageValue, @Language;
 ------------------------------------Ngôn ngữ màn hình phân quyền Dashboard Quan hệ khách hàng------------------------------------------------
-SET @LanguageValue = N'Tổng quan công ty';
-EXEC ERP9AddLanguage @ModuleID, 'CRMD0021.Title', 'CRMD0021', @LanguageValue, @Language;
+-- SET @LanguageValue = N'Tổng quan công ty';
+-- EXEC ERP9AddLanguage @ModuleID, 'CRMD0021.Title', 'CRMD0021', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Chi tiết cá nhân/team';
-EXEC ERP9AddLanguage @ModuleID, 'CRMD0022.Title', 'CRMD0022', @LanguageValue, @Language;
+-- SET @LanguageValue = N'Chi tiết cá nhân/team';
+-- EXEC ERP9AddLanguage @ModuleID, 'CRMD0022.Title', 'CRMD0022', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số liệu tổng quan';
+SET @LanguageValue = N'Số liệu thống kê tổng hợp (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0023.Title', 'CRMD0023', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ thống kê số lượng Đầu mối, Cơ hội, Yêu cầu, Khách hàng, Liên hệ, Hợp đồng';
+SET @LanguageValue = N'Biểu đồ thống kê số lượng theo nghiệp vụ (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0024.Title', 'CRMD0024', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ tỷ trọng số lượng-giá trị cơ hội theo giai đoạn';
+SET @LanguageValue = N'Biểu đồ tỷ trọng số lượng cơ hội theo giai đoạn (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0025.Title', 'CRMD0025', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số liệu chi tết cá nhân/ công ty';
+SET @LanguageValue = N'Số liệu thống kê chi tiết (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0026.Title', 'CRMD0026', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phễu tỉ lệ chuyển đổi giữa các trạng thái của Cơ hội';
+SET @LanguageValue = N'Phễu tỷ lệ chuyển đổi giữa các trạng thái của cơ hội / đầu mối (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0027.Title', 'CRMD0027', @LanguageValue, @Language;
 
-SET @LanguageValue = N'Biểu đồ giá trị cơ hội theo nhân viên';
+SET @LanguageValue = N'Biểu đồ giá trị cơ hội theo nhân viên (CR)';
 EXEC ERP9AddLanguage @ModuleID, 'CRMD0028.Title', 'CRMD0028', @LanguageValue, @Language;

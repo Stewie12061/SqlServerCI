@@ -106,3 +106,9 @@ EXEC ERP9AddLanguage @ModuleID, 'KPIF1052.EvaluationPhaseID',  @FormID, @Languag
 
 SET @LanguageValue  = N'Thông tin chi tiết chỉ tiêu';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF1052.ChiTietThongTinChiTieu',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Diễn giải'
+EXEC ERP9AddLanguage @ModuleID, 'KPIF1052.Description',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'KPIF1052.StatusID',  @FormID, @LanguageValue, @Language;

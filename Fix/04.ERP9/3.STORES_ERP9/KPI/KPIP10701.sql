@@ -15,6 +15,8 @@ GO
 ---- 
 -- <History>
 ----Created by: hoàng vũ, Date: 21/08/2017
+----Edited by: Minh Trí, Date: 27/12/2023: chỉnh sửa Lấy dữ liệu search theo ngày , kỳ
+----Edited by: Minh Trí, Date: 27/12/2023: Bổ sung cờ xóa DeleteFlg
 -- <Example> EXEC KPIP10701 'AS', '', '', '', '', '', '', '', '', '', '', 1, 20
 
 CREATE PROCEDURE KPIP10701 ( 
@@ -30,21 +32,30 @@ CREATE PROCEDURE KPIP10701 (
 		  @Disabled nvarchar(100),
 		  @UserID  VARCHAR(50),
 		  @PageNumber INT,
-		  @PageSize INT
+		  @PageSize INT,
+		  @IsSearch TINYINT,		  
+		  @FromDate DATETIME,
+		  @ToDate DATETIME,
+		  @IsPeriod INT = 0,
+		  @PeriodList VARCHAR(MAX) = ''
 ) 
 AS 
 DECLARE @sSQL NVARCHAR (MAX),
 		@sWhere NVARCHAR(MAX),
-		@OrderBy NVARCHAR(500)
-		
+		@OrderBy NVARCHAR(500),
+		@FromDateText NVARCHAR(20),
+		@ToDateText NVARCHAR(20)
+	SET @FromDateText = CONVERT(NVARCHAR(20), @FromDate, 111) + ' 00:00:00'
+	SET @ToDateText = CONVERT(NVARCHAR(20), @ToDate, 111) + ' 23:59:59'	
 	SET @sWhere = ''
 	SET @OrderBy = ' M.CreateDate DESC, M.EvaluationSetID '
-
+IF @IsSearch = 1
+BEGIN
 		--Check Para DivisionIDList null then get DivisionID 
 	IF Isnull(@DivisionIDList, '') != ''
-		SET @sWhere = @sWhere + ' (M.DivisionID IN ('''+@DivisionIDList+''', ''@@@'')) '
+		SET @sWhere = @sWhere + ' AND (M.DivisionID IN ('''+@DivisionIDList+''', ''@@@'')) '
 	Else 
-		SET @sWhere = @sWhere + ' (M.DivisionID in ('''+@DivisionID+''', ''@@@'')) '
+		SET @sWhere = @sWhere + ' AND (M.DivisionID in ('''+@DivisionID+''', ''@@@'')) '
 	
 	IF Isnull(@DepartmentID, '') != ''
 		SET @sWhere = @sWhere + ' AND ISNULL(M.DepartmentID, '''') LIKE N''%'+@DepartmentID+'%'' '
@@ -72,14 +83,37 @@ DECLARE @sSQL NVARCHAR (MAX),
 		SET @sWhere = @sWhere + ' AND ISNULL(M.IsCommon,'''') LIKE N''%'+@IsCommon+'%'' '
 	IF Isnull(@Disabled, '') != ''
 		SET @sWhere = @sWhere + ' AND ISNULL(M.Disabled,'''') LIKE N''%'+@Disabled+'%'' '
-
+-- Trường hợp search theo từ ngày đến ngày
+	IF @IsPeriod = 0
+	BEGIN
+		IF(ISNULL(@FromDate,'') != '' AND ISNULL(@ToDate,'') = '' )
+		BEGIN
+			SET @sWhere = @sWhere + ' AND (M.CreateDate >= ''' + @FromDateText + '''
+											OR M.CreateDate >= ''' + @FromDateText + ''')'
+		END
+	ELSE IF(ISNULL(@FromDate,'') = '' AND ISNULL(@ToDate,'') != '')
+		BEGIN
+			SET @sWhere = @sWhere + ' AND (M.CreateDate <= ''' + @ToDateText + ''' 
+											OR M.CreateDate <= ''' + @ToDateText + ''')'
+		END
+	ELSE IF(ISNULL(@FromDate, '') != '' AND ISNULL(@ToDate, '') != '')
+		BEGIN
+			SET @sWhere = @sWhere + ' AND (M.CreateDate BETWEEN ''' + @FromDateText + ''' AND ''' + @ToDateText + ''') '
+		END
+	END	
+	-- Lọc theo kỳ
+	ELSE
+	BEGIN
+		SET @sWhere = @sWhere + ' AND (SELECT FORMAT(M.CreateDate, ''MM/yyyy'')) IN ( ''' + @PeriodList + ''') '
+	END
+END	
 SET @sSQL = ' 
 			SELECT M.APK, M.DivisionID, M.DepartmentID, M.EvaluationPhaseID, M.EvaluationSetID
 					, M.EvaluationSetName, M.DutyID, M.TitleID, M.Note, M.IsCommon, M.Disabled, M.CreateUserID
 					, M.CreateDate, M.LastModifyUserID, M.LastModifyDate
 					into #TempKPIT10701
 			FROM KPIT10701 M With (NOLOCK) 
-			WHERE '+@sWhere+'
+			WHERE ISNULL(M.DeleteFlg,0) = 0 '+@sWhere +'
 
 			DECLARE @count int
 			Select @count = Count(EvaluationSetID) From #TempKPIT10701 With (NOLOCK)

@@ -32,16 +32,19 @@ SET @FormID = 'HRMF2071';
 SET @LanguageValue = N'Update regular training plan';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Regular training plan ID';
+SET @LanguageValue = N'Periodic phone plan code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.TrainingPlanID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.AssignedToUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
@@ -55,6 +58,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.LastModifyUserID', @FormID, @LanguageV
 
 SET @LanguageValue = N'Last modified date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Person in charge';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.AssignedToUserName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Is whole';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2071.IsAll' , @FormID, @LanguageValue, @Language;

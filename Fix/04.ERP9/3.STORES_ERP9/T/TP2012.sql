@@ -1,9 +1,11 @@
-﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[TP2012]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			DROP PROCEDURE [DBO].[TP2012]
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[TP2012]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			
+DROP PROCEDURE [DBO].[TP2012]
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
+
 
 -- <Summary>
 ---- Load Grid Form Lưới detail xem chi tiết đề nghị thu/chi
@@ -15,6 +17,7 @@ GO
 ---- 
 -- <History>
 ----Created by: Đức Tuyên on 24/08/2022
+----Modified by: Nhật Quang on 14/03/2023 - Cập nhật: Bổ sung thêm trường OrderVoucherNo.
 
 -- <Example>
 ----    exec TP2012 @DivisionID=N'EXV',@UserID=N'ADMIN',@APKMaster_9000=N'd6196220-f698-49aa-bc65-7915c94ee001',@Mode=1,@PageNumber=1,@PageSize=25
@@ -129,6 +132,7 @@ SET @sSQL = 'SELECT ROW_NUMBER() OVER (ORDER BY AT9010.Orders) AS RowNum, '+@Tot
 	AT9010.Ana02ID,
 	AT9010.Ana03ID,
 	AT9010.OrderID,
+	AT9010.OrderVoucherNo,
 	AT12.ObjectName,
 	
 	AT9010.Ana01ID, T01.AnaName As Ana01Name, AT9010.Ana02ID, T02.AnaName As Ana02Name, AT9010.Ana03ID, T03.AnaName As Ana03Name,
@@ -199,6 +203,7 @@ PRINT @sSQL3
 PRINT @sSQL2
 PRINT @sSQL4
 EXEC (@sSQL+ @sSQL1+ @sSQL3+@sSQL2+ @sSQL4)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

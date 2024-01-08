@@ -8,6 +8,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Đổ nguồn lưới chi tiết màn hình cập nhật ghi nhận kết quả
 ---- 
@@ -47,7 +48,7 @@ SET @sSQL1 = N'OFFSET '+STR((@PageNumber-1) * @PageSize)+' ROWS
 SELECT @IsAll = IsAll 
 FROM HRMT2100 WITH (NOLOCK)
 WHERE DivisionID = @DivisionID
-AND TrainingScheduleID = @TrainingScheduleID	
+AND APK = @TrainingScheduleID	
 
 IF @IsAll = 0 -- Trường hợp lịch đào tạo cho từng phòng ban
 BEGIN
@@ -85,6 +86,8 @@ END
 
 --PRINT @sSQL
 EXEC (@sSQL + ' ' + @sSQL1)
+
+
 
 
 

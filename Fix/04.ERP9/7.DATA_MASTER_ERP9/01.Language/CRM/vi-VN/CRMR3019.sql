@@ -6,7 +6,7 @@ SET @ModuleID = 'CRM'
 SET @Language = 'vi-VN'
 SET @FormID = 'CRMR3019'
 
-SET @LanguageValue = N'Báo cáo tổng marketing và sales';
+SET @LanguageValue = N'Báo cáo tổng hợp marketing và sales';
 EXEC ERP9AddLanguage @ModuleID, 'CRMR3019.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

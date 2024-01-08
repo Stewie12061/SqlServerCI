@@ -32,10 +32,10 @@ SET @FormID = 'CIF1171';
 SET @LanguageValue  = N'Update inventory'
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory ID';
+SET @LanguageValue = N'Item code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.InventoryID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';
@@ -44,25 +44,25 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1171.UnitID', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.UnitName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory name';
+SET @LanguageValue = N'Name items';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.InventoryName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Classification ID';
+SET @LanguageValue = N'Classification code 1';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.S1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Classification ID 2';
+SET @LanguageValue = N'Classification code 2';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.S2', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Classification ID 3';
+SET @LanguageValue = N'Classification code 3';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.S3', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory type';
+SET @LanguageValue = N'Item type';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inventory account';
@@ -71,34 +71,34 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1171.AccountID', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Revenue account';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalesAccountID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Account of returned sale';
+SET @LanguageValue = N'Account for returned goods';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.ReSalesAccountID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Capital cost account';
+SET @LanguageValue = N'Cost account';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.PrimeCostAccountID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Purchase Account';
+SET @LanguageValue = N'Purchase account';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.PurchaseAccountID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tax group';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.VATGroupID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'% VAT group';
+SET @LanguageValue = N'% Tax group';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.VATPercent', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Import tax group';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.VATImGroupID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'% import tax group';
+SET @LanguageValue = N'% Import tax group';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.VATImPercent', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Classification of production';
+SET @LanguageValue = N'Production classification';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.ProductTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Import price';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.RecievedPrice', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Delivery price';
+SET @LanguageValue = N'Export price';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.DeliveryPrice', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Purchase price 01';
@@ -116,25 +116,25 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1171.PurchasePrice04', @FormID, @LanguageVal
 SET @LanguageValue = N'Purchase price 05';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.PurchasePrice05', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Price 01';
+SET @LanguageValue = N'Selling price 01';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalePrice01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Price 02';
+SET @LanguageValue = N'Selling price 02';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalePrice02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Price 03';
+SET @LanguageValue = N'Selling price 03';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalePrice03', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Price 04';
+SET @LanguageValue = N'Selling price 04';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalePrice04', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Price 05';
+SET @LanguageValue = N'Selling price 05';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalePrice05', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Price calculation method';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.MethodID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'By warehouses';
+SET @LanguageValue = N'By batch';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsSource', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Expiration date';
@@ -143,106 +143,106 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsLimitDate', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Discount';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsDiscount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Stock management';
+SET @LanguageValue = N'Inventory management';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsStocked', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Batch number - Item';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 1';
+SET @LanguageValue = N'Analysis code 1';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I01ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 2';
+SET @LanguageValue = N'Analysis code 2';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I02ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 3';
+SET @LanguageValue = N'Analysis code 3';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I03ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 4';
+SET @LanguageValue = N'Analysis code 4';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I04ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 5';
+SET @LanguageValue = N'Analysis code 5';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I05ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 6';
+SET @LanguageValue = N'Analysis code 6';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I06ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 7';
+SET @LanguageValue = N'Analysis code 7';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I07ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 8';
+SET @LanguageValue = N'Analysis code 8';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I08ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 9';
+SET @LanguageValue = N'Analysis code 9';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I09ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID 10';
+SET @LanguageValue = N'Analysis code 10';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.I10ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Parameters 1';
+SET @LanguageValue = N'Parameter 1';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Varchar01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Other units';
+SET @LanguageValue = N'Parameter 2';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Varchar02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Parameters 3';
+SET @LanguageValue = N'Parameter 3';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Varchar03', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Parameters 4';
+SET @LanguageValue = N'Parameter 4';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Varchar04', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Parameters 5';
+SET @LanguageValue = N'Parameter 5';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Varchar05', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Technical features';
+SET @LanguageValue = N'Set technicality';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Specification', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Notes 1';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Notes01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 2';
+SET @LanguageValue = N'Note 2';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Notes02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 3';
+SET @LanguageValue = N'Note 3';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Notes03', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Reference ID';
+SET @LanguageValue = N'Reference code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.RefInventoryID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Barcode';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Barcode', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Type of inventory subject to environmental protection tax ';
+SET @LanguageValue = N'Type of goods subject to environmental protection tax';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.ETaxID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Conversion rate to environmental protection tax calculation unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.ETaxConvertedUnit', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Natural resource consumption tax material';
+SET @LanguageValue = N'Type of resource subject to resource tax';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.NRTClassifyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Type of goods and services subject to excise tax';
+SET @LanguageValue = N'Type of goods and services subject to VAT';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SETID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Stock level definition';
+SET @LanguageValue = N'Determine inventory levels';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsNorm', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Norm Method';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.NormMethod', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Avatar';
+SET @LanguageValue = N'Image';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.Image01ID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -305,45 +305,47 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1171.S19', @FormID, @LanguageValue, @Languag
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.S20', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Safety stock';
+SET @LanguageValue = N'Safe inventory';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsMinQuantity', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory price type';
+SET @LanguageValue = N'Cost item type';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsExpense', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Gift Voucher';
+SET @LanguageValue = N'Gift Certificate';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsGiftVoucher', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Stock level definition';
+SET @LanguageValue = N'Determine inventory levels';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsDefineStockNorm', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'All warehouses';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsWareHouse', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Norm ID';
+SET @LanguageValue = N'Norm code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.NormID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Min quantity';
+SET @LanguageValue = N'Minimum';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.MinQuantity10805', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Max quantity';
+SET @LanguageValue = N'Maximum levels';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.MaxQuantity10805', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Reorder quantity';
+SET @LanguageValue = N'Reorder level';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.ReOrderQuantity10805', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Every warehouse';
+SET @LanguageValue = N'Each warehouse';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.IsEveryWarehouse', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.APK_DefineStockNorm', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.VATGroupName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit price';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1171.SalePrice', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'First in first out (FIFO)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.MethodID1',  @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue  = N'Equality in family';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.MethodID2',  @FormID, @LanguageValue, @Language;
 
@@ -469,4 +471,3 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1171.ReOrderQuantity',  @FormID, @LanguageVa
 
 SET @LanguageValue  = N'Account ID';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1171.AccountIDDT',  @FormID, @LanguageValue, @Language;
-

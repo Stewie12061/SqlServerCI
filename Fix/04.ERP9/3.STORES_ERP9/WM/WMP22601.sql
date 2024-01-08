@@ -7,6 +7,7 @@ SET ANSI_NULLS ON
 GO
 
 
+
 -- <Summary>
 ---- Load Grid Form WMP22601 Số dư đầu hàng tồn kho
 -- <Param>
@@ -21,7 +22,10 @@ GO
 ----Modified by: Hoài Bảo, Date: 13/12/2022 - Bổ sung load dữ liệu theo biến phân quyền ConditionInventoryBalance
 -- <Example>
 /*
-EXEC [WMP22601]	@DivisionID = N'DTI', @DivisionIDList = N'', @FromDate = NULL, @ToDate = NULL, @IsPeriod = 0, 	@PeriodList = N'', @VoucherNo = N'', @ObjectID = N'', @EmployeeID = N'', @KindVoucherID = N'', 	@PageNumber = 1, @PageSize = 100
+EXEC [WMP22601]
+	@DivisionID = N'DTI', @DivisionIDList = N'', @FromDate = NULL, @ToDate = NULL, @IsPeriod = 0, 
+	@PeriodList = N'', @VoucherNo = N'', @ObjectID = N'', @EmployeeID = N'', @KindVoucherID = N'', 
+	@PageNumber = 1, @PageSize = 100
 */
 
 CREATE PROCEDURE WMP22601 (
@@ -34,7 +38,7 @@ CREATE PROCEDURE WMP22601 (
 		@VoucherNo NVARCHAR(250),
 		@WareHouseID NVARCHAR(50),
 		@EmployeeName NVARCHAR(50),
-		@ObjectName VARCHAR(50),
+		@ObjectName NVARCHAR(MAX),
 		@PageNumber INT,
 		@PageSize INT,
 		@ConditionInventoryBalance NVARCHAR(MAX)
@@ -79,7 +83,7 @@ BEGIN
 END
 ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 	BEGIN
-		SET @sWhere = @sWhere + ' AND (SELECT FORMAT(M.CreateDate, ''MM/yyyy'')) IN ( ''' + @PeriodList + ''') '
+		SET @sWhere = @sWhere + ' AND (SELECT FORMAT(M.VoucherDate, ''MM/yyyy'')) IN ( ''' + @PeriodList + ''') '
 	END
 
 -- Kiểm tra điều kiện lọc
@@ -119,6 +123,7 @@ SET @sSQL = N'
 
 --PRINT (@sSQL)
 EXEC (@sSQL)
+
 
 
 GO

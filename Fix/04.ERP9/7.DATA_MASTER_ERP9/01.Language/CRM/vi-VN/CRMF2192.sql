@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF2192';
 
-SET @LanguageValue = N'Xem chi tiết chiến dịch SMS';
+SET @LanguageValue = N'Xem chi tiết chiến dịch sms';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2192.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

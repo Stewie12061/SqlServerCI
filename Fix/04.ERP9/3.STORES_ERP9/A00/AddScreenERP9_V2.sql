@@ -5,6 +5,7 @@
 -- Store Insert dữ liệu phân quyền màn hình V2 (AT1404 - Danh mục màn hình, AT1403 - Thiết lập phân quyền)
 ------------------------------------------------------------------------------------------------------
 -- Create	By Tấn Thành	- 18/03/2021
+-- Modified by Trung Kiên at 01/03/2023: Bổ sung trường OrderNo để hiển thị kết quả theo thứ tự
 -- Modified By Văn Tài		- 21/06/2023 - Bổ sung WITH (NOLOCK)
 
 
@@ -23,7 +24,8 @@ CREATE PROCEDURE AddScreenERP9_V2
     @ScreenName NVARCHAR(4000),
     @ScreenNameE NVARCHAR(4000),
 	@CustomerIndex INT = -1,
-	@CommonID VARCHAR(50) = NULL
+	@CommonID VARCHAR(50) = NULL,
+	@OrderNo INT = NULL
 )
 AS
 
@@ -58,6 +60,7 @@ BEGIN
 		ScreenNameE = @ScreenNameE,
 		SourceID = 'ERP9',
 		CustomerIndex = @CustomerIndex,
+		OrderNo = @OrderNo,
 		LastModifyUserID = 'ASOFTADMIN',
 		LastModifyDate = GETDATE()
 		WHERE ModuleID = @ModuleID 
@@ -80,7 +83,8 @@ BEGIN
 		CustomerIndex = @CustomerIndex,
 		LastModifyUserID = 'ASOFTADMIN',
 		LastModifyDate = GETDATE(),
-		CommonID = @CommonID
+		CommonID = @CommonID,
+		OrderNo = @OrderNo
 		WHERE ModuleID = @ModuleID 
 		AND ScreenID = @ScreenID
 		AND EXISTS (SELECT TOP 1 1 FROM AT1101 WITH (NOLOCK) WHERE AT1101.DivisionID=AT1404.DivisionID)

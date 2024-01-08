@@ -17,6 +17,7 @@ GO
 ---- 
 -- <History>
 ----Created by Bảo Thy on 10/08/2017
+---- Modified by: Phương Thảo, Date: 12/03/2023 -[2023/09/IS/0029] Thay đổi update cờ xóa = 1
 -- <Example>
 -- Exec HRMP2011 @DivisionID='CTY',@UserID='ASOFTADMIN',@@RecruitRequireID='2A5687D8-563C-47E0-B870-0D6853EDC681',@Mode=1
 ---- 
@@ -55,19 +56,26 @@ BEGIN
 	SET @Cur = CURSOR SCROLL KEYSET FOR
 	SELECT HRMT2010.APK, HRMT2010.DivisionID, HRMT2010.RecruitRequireID
 	FROM  HRMT2010 WITH (NOLOCK)
-	INNER JOIN #RecruitRequireID ON #RecruitRequireID.DivisionID = HRMT2010.DivisionID AND #RecruitRequireID.RecruitRequireID = HRMT2010.RecruitRequireID
+	INNER JOIN #RecruitRequireID ON #RecruitRequireID.DivisionID = HRMT2010.DivisionID AND (#RecruitRequireID.RecruitRequireID = HRMT2010.APK OR #RecruitRequireID.RecruitRequireID = HRMT2010.RecruitRequireID)
 
 	OPEN @Cur
 	FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelRecruitRequireID
 	WHILE @@FETCH_STATUS = 0
 	BEGIN	
-		IF (@DelDivisionID <> '''+@DivisionID+''' )   --kiểm tra khác DivisionID
-			SET @Params1 = @Params1 + @DelRecruitRequireID + '', ''
+		IF ('''+@DivisionID+''' <> (SELECT TOP 1 T1.DivisionID FROM HRMT2010 WITH (NOLOCK) 
+								INNER JOIN #RecruitRequireID T1 ON HRMT2010.RecruitRequireID = T1.RecruitRequireID)) -- kiểm tra khác Division
+			SET @Params1 = @Params1 + @DelRecruitRequireID+ '', ''
+		
+		
 		ELSE
-		BEGIN
-			DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 6 ---Xoa thong tin tab lich su
-			DELETE HRMT2010 WHERE DivisionID = @DelDivisionID AND RecruitRequireID = @DelRecruitRequireID
-		END
+			BEGIN
+			    -- Thay đổi biến cờ DeleteFlg
+				  UPDATE HRMT2010 SET DeleteFlg = 1 WHERE APK = @DelAPK 
+		        --DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 6 ---Xoa thong tin tab lich su
+				--DELETE HRMT2010 WHERE DivisionID = @DelDivisionID AND RecruitRequireID = @DelRecruitRequireID
+		
+			END
+		
 	FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelRecruitRequireID
 	END 
 

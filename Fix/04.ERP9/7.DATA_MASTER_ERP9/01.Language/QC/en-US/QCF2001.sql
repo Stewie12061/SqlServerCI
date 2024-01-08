@@ -32,25 +32,28 @@ SET @FormID = 'QCF2001';
 SET @LanguageValue = N'Product quality voucher Update';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.FromToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher type';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'The date of the vote';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher no';
+SET @LanguageValue = N'Votes';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher preparation month';
+SET @LanguageValue = N'Voting month';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.TranMonth', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher preparation year';
+SET @LanguageValue = N'Year of voting';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.TranYear', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Shift';
@@ -59,58 +62,64 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ShiftID', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Shift';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ShiftName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine code';
+SET @LanguageValue = N'Machine';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.MachineID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Machine name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.MachineName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine manager ID';
+SET @LanguageValue = N'Measuring person';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID01', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Machine manager';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'QC staff ID';
+SET @LanguageValue = N'QC staff';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID02', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'QC staff';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machinist ID';
+SET @LanguageValue = N'Mechanic';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID03', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Machinist';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName03', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Warehouse filler ID';
+SET @LanguageValue = N'Warehouse assistant';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID04', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Warehouse filler';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName04', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Packing worker';
+SET @LanguageValue = N'Packaging worker';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID05', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Packing worker';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName05', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Production supervisor';
+SET @LanguageValue = N'Supervising producer';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID06', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Production supervisor';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName06', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Auditor';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeID07', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.EmployeeName07', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Notes 01';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Notes01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 02';
+SET @LanguageValue = N'Note 02';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Notes02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 03';
+SET @LanguageValue = N'Note 03';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Notes03', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -128,10 +137,10 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2001.LastModifyDate', @FormID, @LanguageValu
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Workshop ID';
+SET @LanguageValue = N'Factory';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Workshop';
+SET @LanguageValue = N'Factory';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.DepartmentName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Sales order';
@@ -140,7 +149,7 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritSOrder', @FormID, @LanguageValue
 SET @LanguageValue = N'Purchase order';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritPOrder', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Production result summary';
+SET @LanguageValue = N'Statistics of production results';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritProductRes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -148,6 +157,49 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritTable', @FormID, @LanguageValue,
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritVoucher', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Request release from warehouse';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritCheckOutPut', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Delivery progress';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.InheritProgressInventory', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Client';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ObjectID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ObjectName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Product name (Customer)';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Ana04ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Ana04Name', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.APKMaster_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.Type_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Browsing status';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.StatusSS', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Reviewer comments';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ApprovingLevel', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.ApproveLevel', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'% pass rate';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.PassRate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Percentage of failure';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2001.FailRate', @FormID, @LanguageValue, @Language;
+
 
 SET @LanguageValue = N'Details';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2001.TabQCT2001', @FormID, @LanguageValue, @Language;

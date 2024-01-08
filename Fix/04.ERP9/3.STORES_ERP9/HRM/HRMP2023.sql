@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- Load Grid Form HRMF2023: Chọn Kế hoạch tuyển dụng
 -- <Param>
@@ -17,6 +18,8 @@ GO
 -- <History>
 ----Created by: Bảo Thy, Date: 20/07/2017
 ----Created by: Huỳnh Thử, Date: 30/11/2020 -- Load kế hoạch tuyển dụng đã được duyệt
+----Created by: Phương Thảo, Date: 21/09/2023 --Bổ sung điều kiện load KHTD chưa bị xóa (ISNULL(HRMT2000.DeleteFlg,0) = 0)
+----                                          -- Điều chỉnh lấy thêm DepartmentID và DutyID
 -- <Example>
 ---- 
 /*-- <Example>
@@ -44,7 +47,7 @@ DECLARE @sSQL NVARCHAR (MAX)=N'',
 
 SET @OrderBy = '#HRMF2023.DepartmentID, #HRMF2023.RecruitPlanID, #HRMF2023.DutyID'
 IF  @PageNumber = 1 SET @TotalRow = 'COUNT(*) OVER ()' ELSE SET @TotalRow = 'NULL'
-SET @sWhere = @sWhere + N' HRMT2000.DivisionID = '''+@DivisionID+''' AND HRMT2000.Status = 1 -- Do chưa có duyệt
+SET @sWhere = @sWhere + N' HRMT2000.DivisionID = '''+@DivisionID+''' AND HRMT2000.Status = 1 AND ISNULL(HRMT2000.DeleteFlg,0) = 0 -- Do chưa có duyệt
 '
 
 IF ISNULL(@DepartmentID, '') <> '' SET @sWhere = @sWhere + N'
@@ -61,7 +64,7 @@ SELECT HRMT2000.APK, HRMT2000.DivisionID, HRMT2000.RecruitPlanID, HRMT2000.Descr
 HRMT2000.FromDate, HRMT2000.ToDate
 INTO #HRMF2023
 FROM HRMT2000 WITH (NOLOCK)
-LEFT JOIN HRMT2001 WITH (NOLOCK) ON HRMT2000.DivisionID = HRMT2001.DivisionID AND HRMT2000.RecruitPlanID = HRMT2001.RecruitPlanID
+LEFT JOIN HRMT2001 WITH (NOLOCK) ON HRMT2000.DivisionID = HRMT2001.DivisionID AND Convert(Varchar(50),HRMT2000.APK) = HRMT2001.RecruitPlanID
 LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT2000.DepartmentID = AT1102.DepartmentID
 WHERE '+@sWhere+'
 
@@ -69,7 +72,7 @@ WHERE '+@sWhere+'
 SELECT T3.DivisionID, T3.RecruitPlanID, T1.DepartmentID, T2.DutyID, SUM(T2.RecruitCost) AS Cost_KHTD, SUM(T2.Quantity) AS Quantity_KHTD
 INTO #Temp_KHTD_HRMF2023
 FROM HRMT2000 T1 WITH (NOLOCK)
-LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.RecruitPlanID = T2.RecruitPlanID
+LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND Convert(Varchar(50),T1.APK) = T2.RecruitPlanID
 INNER JOIN #HRMF2023 T3 ON T1.DivisionID = T3.DivisionID AND T1.RecruitPlanID = T3.RecruitPlanID AND T1.DepartmentID = T3.DepartmentID AND T2.DutyID = T3.DutyID
 AND (T3.FromDate Between T1.FromDate and T1.ToDate
 	OR T3.ToDate Between T1.FromDate and T1.ToDate
@@ -89,7 +92,7 @@ GROUP BY T2.DivisionID, T2.RecruitPlanID, T1.DepartmentID, T1.DutyID
 
 SET @sSQL1 = N'
 SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum, '+@TotalRow+' AS TotalRow, #HRMF2023.DivisionID, #HRMF2023.RecruitPlanID, #HRMF2023.Description,
-#HRMF2023.DepartmentName AS DepartmentID, HT1102.DutyName AS DutyID, #HRMF2023.FromDate, #HRMF2023.ToDate
+#HRMF2023.DepartmentName AS DepartmentName,#HRMF2023.DepartmentID AS DepartmentID, HT1102.DutyName AS DutyName, #HRMF2023.DutyID AS DutyID, #HRMF2023.FromDate, #HRMF2023.ToDate
 FROM #HRMF2023
 INNER JOIN #Temp_KHTD_HRMF2023 T1 ON T1.DivisionID = #HRMF2023.DivisionID AND T1.RecruitPlanID = #HRMF2023.RecruitPlanID 
 			AND T1.DepartmentID = #HRMF2023.DepartmentID AND T1.DutyID = #HRMF2023.DutyID
@@ -111,6 +114,7 @@ PRINT(@sSQL)
 PRINT(@sSQL1)
 
 EXEC (@sSQL + @sSQL1)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

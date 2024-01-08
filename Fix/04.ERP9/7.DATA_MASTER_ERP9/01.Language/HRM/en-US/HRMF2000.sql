@@ -32,13 +32,16 @@ SET @FormID = 'HRMF2000';
 SET @LanguageValue = N'Recruitment plan';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Recruitment plan';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.RecruitPlanID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
@@ -47,11 +50,14 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.DepartmentID', @FormID, @LanguageValue
 SET @LanguageValue = N'Total cost estimate';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.TotalCost', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From date';
+SET @LanguageValue = N'Since';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.FromDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'To date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.ToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Status';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.Status', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.StatusName', @FormID, @LanguageValue, @Language;
@@ -73,6 +79,12 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.ActualCost', @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Fixing recruitment cost';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.CostBoundary', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Reviewer''s notes';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.Type_9000', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Vacancy ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2000.DutyID.CB' , @FormID, @LanguageValue, @Language;

@@ -49,7 +49,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.AssignedToUserID',  @FormID, @Language
 SET @LanguageValue  = N'Người phụ trách'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.AssignedToUserName',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Số lượng nhân viên'
+SET @LanguageValue  = N'Số lượng tham gia'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.NumberEmployee',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Từ ngày'

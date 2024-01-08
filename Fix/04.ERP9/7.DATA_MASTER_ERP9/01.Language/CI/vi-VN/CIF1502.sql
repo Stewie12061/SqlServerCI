@@ -55,3 +55,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1502.LastModifyDate',  @FormID, @LanguageVal
 
 SET @LanguageValue  = N'Người cập nhật';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1502.LastModifyUserID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên loại mã phân tích';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1502.AnaTypeName',  @FormID, @LanguageValue, @Language;

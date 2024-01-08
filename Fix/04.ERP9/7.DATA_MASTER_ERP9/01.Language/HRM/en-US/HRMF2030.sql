@@ -32,7 +32,10 @@ SET @FormID = 'HRMF2030';
 SET @LanguageValue = N'Interview Schedule';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Interview schedule code';
@@ -41,10 +44,10 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.InterviewScheduleID', @FormID, @Langua
 SET @LanguageValue = N'Description';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Interview round';
+SET @LanguageValue = N'The interview';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.InterviewLevel', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment ID';
+SET @LanguageValue = N'Recruitment code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.RecruitPeriodID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
@@ -58,6 +61,18 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.LastModifyUserID', @FormID, @LanguageV
 
 SET @LanguageValue = N'Last modified date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Person in charge';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.AssignedToUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Person in charge';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.AssignedToUserName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Recruitment';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.RecruitPeriodName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Candidate ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2030.CandidateID' , @FormID, @LanguageValue, @Language;

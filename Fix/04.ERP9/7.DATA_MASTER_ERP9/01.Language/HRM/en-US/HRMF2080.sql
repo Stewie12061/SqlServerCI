@@ -35,10 +35,10 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.Title',  @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training request ID';
+SET @LanguageValue = N'Training request code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.TrainingRequestID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training field';
@@ -50,10 +50,10 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.AssignedToUserID', @FormID, @LanguageV
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.AssignedToUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Number of employees';
+SET @LanguageValue = N'Number of participants';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.NumberEmployee', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From date';
+SET @LanguageValue = N'Since';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.TrainingFromDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'To date';
@@ -62,10 +62,10 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.TrainingToDate', @FormID, @LanguageVal
 SET @LanguageValue = N'Target';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.Description1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Content';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.Description2', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Approving status';
+SET @LanguageValue = N'Browsing status';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.IsConfirmName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
@@ -80,14 +80,20 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.TrainingFieldName', @FormID, @Language
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Training field ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2080.TrainingFieldID.CB',  @FormID, @LanguageValue, @Language;

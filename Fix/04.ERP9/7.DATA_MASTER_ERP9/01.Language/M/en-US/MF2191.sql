@@ -32,6 +32,9 @@ SET @FormID = 'MF2191';
 SET @LanguageValue = N'Update finish product packing';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2191.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.DivisionID', @FormID, @LanguageValue, @Language;
 
@@ -47,14 +50,20 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2191.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Selection of multi sales orders';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.InheritSOrder', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2191.Date', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Explain';
+EXEC ERP9AddLanguage @ModuleID, 'MF2191.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Sales order information';
 EXEC ERP9AddLanguage @ModuleID, 'MF2191.TabMT2191', @FormID, @LanguageValue, @Language;

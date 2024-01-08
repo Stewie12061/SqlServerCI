@@ -37,3 +37,13 @@ EXEC ERP9AddLanguage @ModuleID, 'POF2003.SaveCopy',  @FormID, @LanguageValue, @L
 
 SET @LanguageValue  = N'In Skid Label';
 EXEC ERP9AddLanguage @ModuleID, 'POF2003.Skid',  @FormID, @LanguageValue, @Language;
+
+--[Phương Thảo][17/06/2023][2023/06/IS/0105] bổ sung Chọn loại in barcode
+SET @LanguageValue  = N'Chọn loại in';
+EXEC ERP9AddLanguage @ModuleID, 'POF2003.ChooseTypeID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên loại';
+EXEC ERP9AddLanguage @ModuleID, 'POF2003.ChooseTypeName.CB',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Mã loại';
+EXEC ERP9AddLanguage @ModuleID, 'POF2003.ChooseTypeID.CB',  @FormID, @LanguageValue, @Language;

@@ -21,7 +21,6 @@ GO
 ----Editted by: Bảo Toàn , Date: 26/04/2020: Bổ sung điều kiện lọc theo người theo dõi bỏ quan người hỗ trợ và người giám sát.
 ----Editted by: Văn Tài	 , Date: 08/06/2021: Bổ sung điều kiện loc theo bảng theo dõi mới do thay đổi Core: Module + 'T9020'
 ----Editted by: Hoài Bảo , Date: 16/07/2021: Load thêm cột APK công việc.
-----Editted by: Nhật Quang , Date: 04/08/2022: Bổ sung thêm số lượng người theo dõi từ 20 lên 50.
 ----<Example> exec OOP2115 @DivisionID=N'KY', @TxtSearch=N'',@UserID=N'',@PageNumber=N'1',@PageSize=N'10'
 
  CREATE PROCEDURE [dbo].[OOP2115] (
@@ -77,9 +76,10 @@ BEGIN
 																				AND ''' + @UserID + ''' IN (OT90.FollowerID01, OT90.FollowerID02, OT90.FollowerID03, OT90.FollowerID04, OT90.FollowerID05
 																											 , OT90.FollowerID06, OT90.FollowerID07, OT90.FollowerID08, OT90.FollowerID09, OT90.FollowerID10
 																											 , OT90.FollowerID11, OT90.FollowerID12, OT90.FollowerID13, OT90.FollowerID14, OT90.FollowerID15
-																											 , OT90.FollowerID16, OT90.FollowerID17, OT90.FollowerID18, OT90.FollowerID19, OT90.FollowerID20, OT90.FollowerID21, OT90.FollowerID22, OT90.FollowerID23, OT90.FollowerID24, OT90.FollowerID25, OT90.FollowerID26, OT90.FollowerID27, OT90.FollowerID28, OT90.FollowerID29, OT90.FollowerID30, OT90.FollowerID31, OT90.FollowerID32, OT90.FollowerID33, OT90.FollowerID34, OT90.FollowerID35, OT90.FollowerID36, OT90.FollowerID37, OT90.FollowerID38, OT90.FollowerID39, OT90.FollowerID40, OT90.FollowerID41, OT90.FollowerID42, OT90.FollowerID43, OT90.FollowerID44, OT90.FollowerID45, OT90.FollowerID46, OT90.FollowerID47, OT90.FollowerID48, OT90.FollowerID49, OT90.FollowerID50)
-																				AND ''' + @UserID + ''' NOT IN (ISNULL(M.SupportUserID, ''''), ISNULL(M.ReviewerUserID, ''''))'
-		SET @sWhere = @sWhere + '
+																											 , OT90.FollowerID16, OT90.FollowerID17, OT90.FollowerID18, OT90.FollowerID19, OT90.FollowerID20)
+																				AND ''' + @UserID + ''' NOT IN (ISNULL(M.SupportUserID, ''''), ISNULL(M.ReviewerUserID, ''''))
+								'
+		SET @sWhere = @sWhere + ' 
 		AND (CMNT20.APKMaster IS NOT NULL OR OT90.APKMaster IS NOT NULL) '
 	END
 

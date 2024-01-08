@@ -42,7 +42,6 @@ SET @Language = N'vi-VN'
 SET @CustomName = NULL
 EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
 
-
 SET @ModuleID = N'QC'
 SET @KeyID = N'QCF2003.InventoryID'
 SET @FormID = N'QCF2003'

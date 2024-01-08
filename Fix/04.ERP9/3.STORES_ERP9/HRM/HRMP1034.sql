@@ -7,6 +7,7 @@ SET ANSI_NULLS ON
 GO
 
 
+
 -- <Summary>
 ---- Load phiếu in chi tiết hồ sơ ứng viên(HRMF1030)
 -- <Param>
@@ -62,7 +63,7 @@ BEGIN
 			HRMT1030.LastName,
 			CONCAT (HRMT1030.LastName,'' '', HRMT1030.MiddleName,'' '',HRMT1030.FirstName) AS FullName,
 			HRMT1030.ImageID,
-			CASE WHEN HRMT1030.Gender = 0 THEN N''Nam'' WHEN HRMT1030.Gender = 1 THEN N''Nữ'' WHEN HRMT1030.Gender = 2 THEN N''khác'' ELSE '''' END AS Gender,
+			HRMT1030.Gender,
 			HRMT1030.Birthday,
 			HRMT1030.BornPlace,
 			HRMT1030.NationalityID,
@@ -75,7 +76,7 @@ BEGIN
 			HRMT1030.IdentifyCityID,
 			AT1002.CityName,
 			HRMT1030.IdentifyDate,
-			CASE WHEN HRMT1030.IsSingle = 0 THEN N''Độc thân'' WHEN HRMT1030.IsSingle = 1 THEN N''Đã kết hôn'' ELSE '''' END AS IsSingle,
+			CASE WHEN HRMT1030.IsSingle = 0 THEN CONVERT(NVARCHAR(MAX), N''Độc thân'') WHEN HRMT1030.IsSingle = 1 THEN CONVERT(NVARCHAR(MAX), N''Đã kết hôn'') ELSE '''' END AS IsSingle,
 			HRMT1030.HealthStatus,
 			HRMT1030.Height,
 			HRMT1030.Weight, 
@@ -141,8 +142,8 @@ BEGIN
 			A3.CityName AS IdentifyCityName
 		FROM HRMT1030 WITH (NOLOCK)'
 	SET @sSQL2_Extend =N'	
-			LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1031.DivisionID AND HRMT1030.CandidateID = HRMT1031.CandidateID 
-			LEFT JOIN HRMT1032 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1032.DivisionID AND HRMT1030.CandidateID = HRMT1032.CandidateID 
+			LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1031.DivisionID AND CAST( HRMT1030.APK AS VARCHAR(250)) = HRMT1031.CandidateID 
+			LEFT JOIN HRMT1032 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1032.DivisionID AND CAST( HRMT1030.APK AS VARCHAR(250)) = HRMT1032.CandidateID 
 			LEFT JOIN HT1001 WITH (NOLOCK) ON HRMT1030.DivisionID = HT1001.DivisionID AND HRMT1030.EthnicID = HT1001.EthnicID 
 			LEFT JOIN HT1102 WITH (NOLOCK) ON HRMT1030.DivisionID = HT1102.DivisionID AND HRMT1031.DutyID = HT1102.DutyID 
 			LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT1031.DepartmentID = AT1102.DepartmentID AND AT1102.DivisionID IN ('''+@DivisionID+''' , ''@@@'')
@@ -169,7 +170,7 @@ BEGIN
 			LEFT JOIN AT1405 A2 WITH (NOLOCK) ON A2.UserID = HRMT1030.LastModifyUserID AND A2.DivisionID IN (HRMT1030.DivisionID, ''@@@'')
 			LEFT JOIN AT1002 A3 WITH (NOLOCK) ON A3.CityID = HRMT1030.IdentifyCityID AND A3.DivisionID IN (HRMT1030.DivisionID, ''@@@'')
 		WHERE HRMT1030.DivisionID = '''+@DivisionID+''' 
-		AND HRMT1030.CandidateID = '''+@CandidateID+'''
+		AND HRMT1030.APK = '''+@CandidateID+'''
 		'
 END
 
@@ -229,6 +230,7 @@ BEGIN
 END
 PRINT (@sSQL + @sSQL2_Extend + @sSQL3_Extend)
 EXEC (@sSQL + @sSQL2_Extend + @sSQL3_Extend)
+
 
 
 GO

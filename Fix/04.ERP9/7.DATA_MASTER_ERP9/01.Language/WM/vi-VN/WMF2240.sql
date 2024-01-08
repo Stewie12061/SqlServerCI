@@ -31,7 +31,7 @@ SET @ModuleID = 'WM';
 SET @FormID = 'WMF2240';
 
 
-SET @LanguageValue = N'Kiểm kê';
+SET @LanguageValue = N'Danh mục kiểm kê kho';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2240.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

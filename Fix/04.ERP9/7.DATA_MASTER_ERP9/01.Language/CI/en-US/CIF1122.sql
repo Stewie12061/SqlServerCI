@@ -32,16 +32,16 @@ SET @FormID = 'CIF1122';
 SET @LanguageValue = N'Division view';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.Title' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Parent division';
+SET @LanguageValue = N'Parent unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.ParentDivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Branch';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division Name';
+SET @LanguageValue = N'Unit name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.DivisionName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division name (En)';
+SET @LanguageValue = N'Unit name (En)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.DivisionNameE', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phone';
@@ -53,7 +53,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1122.Email', @FormID, @LanguageValue, @Langu
 SET @LanguageValue = N'Fax';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.Fax', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tax ID';
+SET @LanguageValue = N'VAT number';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.VATNO', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Address';
@@ -65,82 +65,82 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1122.AddressE', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'District';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.District', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Province/city';
+SET @LanguageValue = N'Province/City';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.City', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Contact';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.ContactPerson', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Logo';
+SET @LanguageValue = N'Logos';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.Logo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Accounting period start month';
+SET @LanguageValue = N'The month the accounting period begins';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.BeginMonth', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Accounting period start year';
+SET @LanguageValue = N'The year the accounting period begins';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.BeginYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Start date';
+SET @LanguageValue = N'Year start date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.StartDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'End Date';
+SET @LanguageValue = N'Year end date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.EndDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Accounted money';
+SET @LanguageValue = N'Pre-planning';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.BaseCurrencyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Accounting period number';
+SET @LanguageValue = N'Number of accounting periods';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.PeriodNum', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Bank';
+SET @LanguageValue = N'Bank account';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.BankAccountID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Decimal quantity';
+SET @LanguageValue = N'Odd quantity';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.QuantityDecimals', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Unit cost decimals';
+SET @LanguageValue = N'Odd number of unit prices';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.UnitCostDecimals', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Decimal conversion';
+SET @LanguageValue = N'Odd number converted';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.ConvertedDecimals', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Percent to Decimal';
+SET @LanguageValue = N'Odd number of percent';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.PercentDecimal', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Business';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.Industry', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Fiscal year beginning date';
+SET @LanguageValue = N'Fiscal year start date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.FiscalBeginDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'The person signing the declaration';
+SET @LanguageValue = N'Person signing the declaration';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxreturnPerson', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Provincial level tax authority';
+SET @LanguageValue = N'Department-level tax authority';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxDepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tax authority';
+SET @LanguageValue = N'Management tax agency';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxDepartID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Managing Unit';
+SET @LanguageValue = N'Managing unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.ManagingUnit', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tax ID of the managing unit';
+SET @LanguageValue = N'Tax code of the managing unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.ManagingUnitTaxNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tax agent';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.IsUseTaxAgent', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tax agent ID';
+SET @LanguageValue = N'Tax agent code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Name of tax agent';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Office address';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentAddress', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Fax';
@@ -149,37 +149,37 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentFax', @FormID, @LanguageValue, 
 SET @LanguageValue = N'District';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentDistrict', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Province/city';
+SET @LanguageValue = N'Province/City';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentCity', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tel';
+SET @LanguageValue = N'Phone';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentTel', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Email';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentEmail', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tax agent contract reference number';
+SET @LanguageValue = N'Tax agent contract number';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentContractNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contract date';
+SET @LanguageValue = N'Day contract';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentContractDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tax agent staff';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentPerson', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Certificate reference number';
+SET @LanguageValue = N'Number of certificates';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.TaxAgentCertificate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation Date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1122.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tax agent information';

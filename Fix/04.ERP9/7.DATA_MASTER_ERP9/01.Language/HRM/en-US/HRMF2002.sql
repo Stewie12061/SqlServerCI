@@ -29,25 +29,25 @@ SET @Language = 'en-US'
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2002';
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Batch number - Item';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Recruitment plan';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.RecruitPlanID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Total cost estimate';
+SET @LanguageValue = N'Total expected cost';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.TotalCost', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From date';
+SET @LanguageValue = N'Since';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.FromDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'To date';
@@ -56,23 +56,32 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.ToDate', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.StatusName', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Status';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.Status', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Updater';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Available cost';
+SET @LanguageValue = N'Existing costs';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.ActualCost', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Fixing recruitment cost';
+SET @LanguageValue = N'Fixed costs';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.CostBoundary', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.Type_9000', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Vacancy';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.DutyID', @FormID, @LanguageValue, @Language;

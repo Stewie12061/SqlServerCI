@@ -1,37 +1,124 @@
-                   
-                    ------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ CIF1262 - CRM
---            Ngày tạo                                    Người tạo
---            6/21/2017 9:21:43 AM                                         Thành Luân
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ CIF1262- CI
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
-@LanguageID VARCHAR(10)
+@Language VARCHAR(10),
+------------------------------------------------------------------------------------------------------
+-- Tham so gen tu dong
+------------------------------------------------------------------------------------------------------
+@LanguageValue NVARCHAR(4000),
 
+------------------------------------------------------------------------------------------------------
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
+
+
+------------------------------------------------------------------------------------------------------
 -- Gan gia tri tham so va thu thi truy van
--- SELECT * FROM A00001 WHERE FormID = 'CIF1262' and Module = N'CI'
--- SELECT * FROM A00001 WHERE FormID = 'CIF1262' and Module = N'CI' and LanguageID = N'en-US'
 ------------------------------------------------------------------------------------------------------
 /*
-- Tieng Viet: vi-VN
-- Tieng Anh: en-US 
-- Tieng Nhat: ja-JP 
-- Tieng Trung: zh-CN
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
 */
-EXEC ERP9AddLanguage N'CI', N'TabAT0109', N'CIF1262', N'Details', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.ToDate', N'CIF1262', N'To date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.Description', N'CIF1262', N'Description', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.DivisionID', N'CIF1262', N'Division', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.IsCommon', N'CIF1262', N'Common', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.Disabled', N'CIF1262', N'Disabled', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.PromoteID', N'CIF1262', N'Promotion code', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.LastModifyDate', N'CIF1262', N'Last modify date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.CreateDate', N'CIF1262', N'Create date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.LastModifyUserID', N'CIF1262', N'Last modify user', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.CreateUserID', N'CIF1262', N'Create user', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.PromoteName', N'CIF1262', N'Promotion name', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.ThongTinKhuyenMaiTheoDonHang', N'CIF1262', N'Promotional information by order', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.FromDate', N'CIF1262', N'From date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1262.Title', N'CIF1262', N'View promotion by bill', N'en-US', NULL
+SET @Language = 'en-US';
+SET @ModuleID = 'CI';
+SET @FormID = 'CIF1262';
+SET @LanguageValue = N'Details';
+EXEC ERP9AddLanguage @ModuleID, 'TabAT0109', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Promotional information by order';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.ThongTinKhuyenMaiTheoDonHang', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'View promotion by bill';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.Title', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.DivisionID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Promotional code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.PromoteID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'From value';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.FromValues', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'To value';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.ToValues', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'% discount';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.DiscountPercent', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Discount';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.DiscountAmount', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Edit date';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Repairer';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Quantity';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.PromoteQuantity', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Promotion name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.PromoteName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Explain';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.Description', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Since';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.FromDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'To date';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.ToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Shared';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.IsCommon', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.Disabled', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Item code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.InventoryID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Name items';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.InventoryName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Note';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.Notes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.PromotionTypeID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Text';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.Text', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Object code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.ObjectID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Object';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.ObjectName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Order';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.OrderNo', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Detail';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.APKDetail', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Object type';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1262.ObjectTypeID', @FormID, @LanguageValue, @Language;
 

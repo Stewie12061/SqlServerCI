@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- Đổ nguồn màn hình cập nhật ghi nhận kết quả
 -- <Param>
@@ -17,7 +18,7 @@ GO
 -- <History>
 ----Created by: Hải Long, Date: 20/09/2017
 ----Modified by: Trọng Kiên, Date: 29/08/2020: Bổ sung load Người phụ trách và lịch đào tạo
-----Modified by: Thu Hà, Date: 28/09/2020: Bổ sung  hiển thị tên người người phụ trách và fix không hiển thị tên nhân viên và chức vụ
+----Modified by: Thu Hà      Date: 28/09/2020: Bổ sung  hiển thị tên người người phụ trách và fix không hiển thị tên nhân viên và chức vụ
 -- <Example>
 ---- 
 /*-- <Example>
@@ -40,16 +41,11 @@ BEGIN
 	SET @sSQL = '	
 	SELECT HRMT2120.APK, HRMT2120.DivisionID, HRMT2120.TrainingResultID, HRMT2120.TrainingScheduleID AS TrainingScheduleName, HRMT1050.TrainingCourseID, HRMT1050.Address,
 	HRMT1050.ObjectID, 
-	--AT1202.ObjectName,  
-	CASE
-        WHEN HRMT1050.ObjectID = AT1103.EmployeeID THEN AT1103.FullName
-        WHEN HRMT1050.ObjectID = AT1202.ObjectID THEN AT1202.ObjectName
-	END AS ObjectName,
+	IIF(ISNULL(AT1202.ObjectName, '''') != '''', AT1202.ObjectName, A2.FullName) AS ObjectName,
 	HRMT2100.TrainingFieldID, HRMT1040.TrainingFieldName, HRMT1050.TrainingType, HT0099.Description AS TrainingTypeName, 
 	HRMT2120.ResultTypeID, HRMV2120.ResultTypeName, HRMT2120.Description1, HRMT2120.Description2, HRMT2120.TrainingScheduleID,
 	HRMT2120.AssignedToUserID,
-	--CONCAT(HRMT2120.AssignedToUserID,''_'',(SELECT TOP 1 FullName FROM HV1400 WHERE EmployeeID = HRMT2120.AssignedToUserID)) AS AssignedToUserName,
-	 AT1103.FullName AS AssignedToUserName,
+	A1.FullName AS AssignedToUserName,
 	HRMT2120.CreateUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT2120.CreateUserID) CreateUserID, HRMT2120.CreateDate, 
 	HRMT2120.LastModifyUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT2120.LastModifyUserID) LastModifyUserID, HRMT2120.LastModifyDate
 	FROM HRMT2120 WITH (NOLOCK)
@@ -59,9 +55,10 @@ BEGIN
 	LEFT JOIN HT0099 WITH (NOLOCK) ON HT0099.ID = HRMT1050.TrainingType AND HT0099.CodeMaster = ''TrainingType''
 	LEFT JOIN AT1202 WITH (NOLOCK) ON AT1202.ObjectID = HRMT1050.ObjectID
 	LEFT JOIN HRMV2120 ON HRMV2120.ResultTypeID = HRMT2120.ResultTypeID
-	LEFT JOIN  AT1103 WITH (NOLOCK) ON AT1103.EmployeeID = HRMT2120.AssignedToUserID
+	LEFT JOIN AT1103 A1  WITH (NOLOCK) ON A1.EmployeeID = HRMT2120.AssignedToUserID
+	LEFT JOIN AT1103 A2 WITH (NOLOCK) ON A2.EmployeeID = HRMT1050.ObjectID
 	WHERE HRMT2120.DivisionID = ''' + @DivisionID + '''
-	AND HRMT2120.TrainingResultID = ''' + @TrainingResultID + ''''
+	AND HRMT2120.APK = ''' + @TrainingResultID + ''''
 END
 ELSE
 BEGIN
@@ -92,6 +89,7 @@ END
 
 PRINT @sSQL			
 EXEC (@sSQL)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

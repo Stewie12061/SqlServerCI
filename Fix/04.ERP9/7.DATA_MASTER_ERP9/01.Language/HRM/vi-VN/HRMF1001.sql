@@ -37,7 +37,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1001.DivisionID',  @FormID, @LanguageValue,
 SET @LanguageValue  = N'Nguồn tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1001.ResourceID',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Diễn giải'
+SET @LanguageValue  = N'Tên nguồn tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1001.ResourceName',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Dùng chung'

@@ -135,3 +135,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1320.ScreenID.CB', @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Tên nghiệp vụ';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1320.ScreenName.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Mã phân hệ';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1320.MenuText1BOSS.CB', @FormID, @LanguageValue, @Language;

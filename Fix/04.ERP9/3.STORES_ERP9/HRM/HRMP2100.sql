@@ -10,6 +10,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Load Grid Form HRF2100: Danh mục lịch đào tạo
 -- <Param>
@@ -148,7 +149,7 @@ SET @sSQL = N'
 SELECT CONVERT(INT, ROW_NUMBER() OVER (ORDER BY '+@OrderBy+')) AS RowNum, '+@TotalRow+N' AS TotalRow, *
 FROM
 (
-	SELECT HRMT2100.APK, HRMT2100.DivisionID, HRMT2100.TrainingScheduleID, HRMT2100.TrainingCourseID, HRMT2100.TrainingFieldID, HRMT1040.TrainingFieldName, HRMT2100.SpecificHours,
+	SELECT HRMT2100.APK, HRMT2100.DivisionID, HRMT2100.TrainingScheduleID, HRMT2100.TrainingCourseID, HRMT2100.TrainingFieldID, HRMT1040.TrainingFieldName, FORMAT(HRMT2100.SpecificHours, ''HH:mm:ss'') AS SpecificHours,
 	HRMT1050.TrainingType,HRMT1050.ObjectID, HT0099.Description AS TrainingTypeName, COALESCE(HRMT2100.ScheduleAmount, 0) AS ScheduleAmount, HRMT2100.FromDate, HRMT2100.ToDate, HRMT2100.AssignedToUserID,	
 	0 AS StatusID, N''Chưa kết thúc'' AS StatusName,
 	HRMT2100.CreateUserID, HRMT2100.CreateDate, HRMT2100.LastModifyUserID, HRMT2100.LastModifyDate
@@ -174,10 +175,9 @@ EXEC (@sSQL)
 
 
 
+
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 SET ANSI_NULLS ON
 GO
-
-

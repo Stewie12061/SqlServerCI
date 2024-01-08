@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF2122';
 
-SET @LanguageValue = N'Chi tiết license';
+SET @LanguageValue = N'Xem chi tiết license';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2122.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

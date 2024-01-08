@@ -22,7 +22,7 @@ SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF1082';
 ------------------------------------------------------------------------------------------------------
 
-Exec ERP9AddLanguage @ModuleID, N'CRMF1082.Title', @FormID, N'Xem chi tiết hành động', @Language, NULL
+Exec ERP9AddLanguage @ModuleID, N'CRMF1082.Title', @FormID, N'Xem chi tiết hành động (next action)', @Language, NULL
 
 Exec ERP9AddLanguage @ModuleID, N'CRMF1082.DivisionID', @FormID, N'Đơn vị', @Language, NULL
 

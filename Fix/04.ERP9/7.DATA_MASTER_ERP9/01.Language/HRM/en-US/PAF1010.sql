@@ -50,15 +50,15 @@ EXEC ERP9AddLanguage @ModuleID, 'PAF1010.IsCommon', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Disabled';
 EXEC ERP9AddLanguage @ModuleID, 'PAF1010.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'PAF1010.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'PAF1010.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'PAF1010.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'PAF1010.LastModifyUserID', @FormID, @LanguageValue, @Language;
 

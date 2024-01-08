@@ -29,122 +29,128 @@ SET @Language = 'en-US'
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2012';
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Require ID';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.RecruitRequireID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Job request code';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.RecruitRequireID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Require name';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.RecruitRequireName', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Job request name';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.RecruitRequireName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Duty ID';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.DutyID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Location code';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.DutyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Duty name';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.DutyName', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Location name';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.DutyName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Sex';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Gender', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Gender', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From age';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.FromAge', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'From';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.FromAge', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To age';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.ToAge', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Arrive';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.ToAge', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Education level';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.EducationLevelID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Academic level';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.EducationLevelID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Appearance';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Appearance', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Appearance', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Experience';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Experience', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Experience', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From salary';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.FromSalary', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'From';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.FromSalary', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To salary';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.ToSalary', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Arrive';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.ToSalary', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Job requirement description';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.WorkDescription', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Describe job requirements';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.WorkDescription', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Language 1';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Language1ID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Foreign language 1';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Language1ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Language 2';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Language2ID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Foreign language 2';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Language2ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Language 3';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Language3ID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Foreign language 3';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Language3ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Language level 1';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.LanguageLevel1ID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Foreign language level 1';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.LanguageLevel1ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Language level 2';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.LanguageLevel2ID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Foreign language level 2';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.LanguageLevel2ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Language level 3';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.LanguageLevel3ID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Foreign language level 3';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.LanguageLevel3ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Informatics level';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.IsInformatics', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Computer skill';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.IsInformatics', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creativity';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.IsCreativeness', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.IsCreativeness', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Problem solving';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.IsProblemSolving', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Ability to solve tasks';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.IsProblemSolving', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Prsentation';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.IsPrsentation', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Presentation and persuasion skills';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.IsPrsentation', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Communication skill';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.IsCommunication', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.IsCommunication', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Content';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.InformaticsLevel', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.InformaticsLevel', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Content';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Creativeness', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Creativeness', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Content';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.ProblemSolving', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.ProblemSolving', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Content';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Prsentation', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Prsentation', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Content';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Communication', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Communication', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Note';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Notes', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Height';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Height', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Height', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Weight';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Weight', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Weight', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Health status';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.HealthStatus', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Health condition';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.HealthStatus', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.Disabled', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.CreateUserID', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.CreateDate', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.LastModifyUserID', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Repairer';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2011.LastModifyDate', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Edit date';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'General Information'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.TabInfo',  @FormID, @LanguageValue, @Language;

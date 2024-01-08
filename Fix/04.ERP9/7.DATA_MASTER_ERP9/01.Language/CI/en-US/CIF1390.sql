@@ -1,51 +1,75 @@
-﻿DECLARE 
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ CIF1390- CI
+------------------------------------------------------------------------------------------------------
+DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
-@Language VARCHAR(200),
---------------------------------------------------------
-@LanguageValue NVARCHAR(4000)
---------------------------------------------------------
+@Language VARCHAR(10),
+------------------------------------------------------------------------------------------------------
+-- Tham so gen tu dong
+------------------------------------------------------------------------------------------------------
+@LanguageValue NVARCHAR(4000),
 
-SET @Language = 'en-US';
+------------------------------------------------------------------------------------------------------
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
+
+
+------------------------------------------------------------------------------------------------------
+-- Gan gia tri tham so va thu thi truy van
+------------------------------------------------------------------------------------------------------
+/*
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
+*/
+SET @Language = 'en-US' 
 SET @ModuleID = 'CI';
-SET @FormID = 'CIF1390'
----------------------------------------------------------------
+SET @FormID = 'CIF1390';
 
-SET @LanguageValue  = N'Danh mục thiết lập công thức quy đổi'
+SET @LanguageValue  = N'List of conversion formula settings'
 EXEC ERP9AddLanguage @ModuleID, 'CIF1390.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Dùng chung';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.IsCommon',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Không hiển thị';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.Disabled',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Recipe code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.FormulaID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Mã công thức';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.FormulaID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Recipe name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.FormulaName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Tên công thức';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.FormulaName',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Shared';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Diễn giải';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.FormulaDes',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Ghi chú';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.Notes',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Người tạo';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.CreateUserID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Ngày tạo';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.CreateDate',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Update day';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Người cập nhật';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.LastModifyUserID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Updater';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Ngày cập nhật';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1390.LastModifyDate',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Trạng thái';
+SET @LanguageValue = N'Explain';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.FormulaDes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Note';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1390.Notes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1390.StatusID',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Mô tả';
+SET @LanguageValue  = N'Describe';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1390.Description',  @FormID, @LanguageValue, @Language;

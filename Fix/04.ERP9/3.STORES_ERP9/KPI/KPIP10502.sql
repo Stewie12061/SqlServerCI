@@ -61,8 +61,9 @@ BEGIN
 							UPDATE @KPIT10501temp SET Params = ISNULL(Params, '''') + @DelTargetsID + '', ''  WHERE MessageID = ''00ML000052''
 					ELSE 
 						BEGIN
-							DELETE FROM KPIT10501 WHERE APK = @DelAPK	
-							DELETE FROM KPIT10502 WHERE APKMaster = @DelAPK	
+							--DELETE FROM KPIT10501 WHERE APK = @DelAPK	
+							--DELETE FROM KPIT10502 WHERE APKMaster = @DelAPK
+							UPDATE KPIT10501 SET DeleteFlg = 1 WHERE APK = @DelAPK
 						END
 					FETCH NEXT FROM @Cur INTO @DelAPK, @DelTargetsID, @DelIsCommon
 					SET @Status = 0

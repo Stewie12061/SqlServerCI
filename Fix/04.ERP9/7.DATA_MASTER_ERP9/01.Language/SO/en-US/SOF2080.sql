@@ -1,5 +1,5 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ SOF2080- SO
+-- Script tạo ngôn ngữ SOF2080- WM
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -32,28 +32,31 @@ SET @FormID = 'SOF2080';
 SET @LanguageValue = N'List of production details';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2080.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Client';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory';
+SET @LanguageValue = N'Product';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.InventoryID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit price';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.UnitPrice', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory name';
+SET @LanguageValue = N'Product name';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.InventoryName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Client';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.ObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Delivery address';
@@ -140,7 +143,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2080.APKMaster_9000', @FormID, @LanguageValu
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.Type_9000', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Approving status';
+SET @LanguageValue = N'Browsing status';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.Status', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Note of approver';
@@ -149,7 +152,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2080.ApprovalNotes', @FormID, @LanguageValue
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.ApprovingLevel', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Approving status';
+SET @LanguageValue = N'Browsing status';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.StatusName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -241,4 +244,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2080.InventoryAssemble', @FormID, @LanguageV
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2080.AssembleValue', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2080.APK_BomVersion', @FormID, @LanguageValue, @Language;
 

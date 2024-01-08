@@ -1,5 +1,5 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ SOF2082- SO
+-- Script tạo ngôn ngữ SOF2082- WM
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -32,16 +32,19 @@ SET @FormID = 'SOF2082';
 SET @LanguageValue = N'Production detail view';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2082.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Client';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.ObjectName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inventory';
@@ -50,10 +53,10 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2082.InventoryID', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Unit price';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.UnitPrice', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory name';
+SET @LanguageValue = N'Product name';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.InventoryName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Customer name';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.ObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Delivery address';
@@ -65,7 +68,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2082.DeliveryTime', @FormID, @LanguageValue,
 SET @LanguageValue = N'Paper type';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.PaperTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Order quantity';
+SET @LanguageValue = N'Number of orders';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.ActualQuantity', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Print number';
@@ -119,13 +122,13 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2082.InheritOT2001', @FormID, @LanguageValue
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'File status';
@@ -212,7 +215,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2082.SemiProduct', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.StatusID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Note of delivery';
+SET @LanguageValue = N'Delivery notes';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.DeliveryNotes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Approving wave status';
@@ -244,6 +247,9 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2082.AssembleValue', @FormID, @LanguageValue
 
 SET @LanguageValue = N'Routing';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.RoutingID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2082.APK_BomVersion', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Phase ID';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2082.PhaseID', @FormID, @LanguageValue, @Language;

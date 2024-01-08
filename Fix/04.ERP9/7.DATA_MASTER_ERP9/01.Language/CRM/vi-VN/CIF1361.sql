@@ -104,10 +104,10 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1361.CurrencyID', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Tỷ giá';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.ExchangeRate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ nguyên tệ';
+SET @LanguageValue = N'Giá trị HĐ Nguyên tệ (trước thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.Amount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quy đổi';
+SET @LanguageValue = N'Giá trị HĐ quy đổi (trước thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.ConvertedAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Diễn giải';
@@ -295,10 +295,10 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1361.CurrencyID', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Tỷ giá';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.ExchangeRate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ nguyên tệ';
+SET @LanguageValue = N'Giá trị HĐ Nguyên tệ (trước thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.Amount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quy đổi';
+SET @LanguageValue = N'Giá trị HĐ quy đổi (trước thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.ConvertedAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Diễn giải';
@@ -394,8 +394,14 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1361.DiscountAmount', @FormID, @LanguageValu
 SET @LanguageValue = N'Số tiền sau thuế';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.PaymentVATAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ nguyên tệ sau thuế';
+SET @LanguageValue = N'Giá trị HĐ Nguyên tệ (sau thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.MasterVATOriginalAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Giá trị HĐ quy đổi sau thuế';
+SET @LanguageValue = N'Giá trị HĐ quy đổi (sau thuế)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1361.MasterVATConvertedAmount', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Người phụ trách';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1361.AssignedToUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Người phụ trách';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1361.AssignedToUserName', @FormID, @LanguageValue, @Language;

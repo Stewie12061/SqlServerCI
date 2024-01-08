@@ -152,6 +152,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.NoiDungPhanHoi', @FormID, @LanguageVal
 SET @LanguageValue = N'Công việc';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.TabOOT2110', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Thông tin yêu cầu';
+SET @LanguageValue = N'Thông tin yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2082.ThongTinYeuCau', @FormID, @LanguageValue, @Language;
 

@@ -729,42 +729,42 @@ VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccou
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 15, N'CompanyName', N'Tên doanh nghiệp', N'CompanyName', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'O')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'O')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 16, N'Representative', N'Người đại diện', N'Representative', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'P')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'P')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 17, N'MstCompany', N'MST doanh nghiệp', N'MstCompany', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'Q')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'Q')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 18, N'ApartmentCompany', N'Số nhà', N'ApartmentCompany', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'R')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'R')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 19, N'RoadCompany', N'Đường', N'RoadCompany', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'S')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'S')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 20, N'WardCompany', N'Phường/Xã', N'WardCompany', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'T')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'T')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 21, N'DistrictCompany', N'Phường/Xã', N'DistrictCompany', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'U')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'U')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)
 VALUES (N'ActiveAccount', N'Danh mục tài khoản kích hoạt', N'ActiveAccount', N'SOF2200', N'Import_Excel_TaiKhoanKichHoat.xlsx', N'EXEC SOP22000 @DivisionID = @DivisionID, @UserID = @UserID, @ImportTemplateID = @ImportTemplateID, @ImportTransTypeID = @ImportTransTypeID, @TranMonth = @TranMonth, @TranYear = @TranYear, @XML = @XML', 22, N'ProvinceCompany', N'Tỉnh/TP', N'ProvinceCompany', 
-	N'', 80, 50, 0, N'nvarchar(50)', N'', 0, N'V')
+	N'', 80, 50, 0, N'nvarchar(50)', N'', 1, N'V')
 
 INSERT INTO A00065(ImportTransTypeID, ImportTransTypeName, ImportTransTypeNameEng, ScreenID, TemplateFileName, ExecSQL, OrderNum, ColID, ColName, ColNameEng, 
 	InputMask, ColWidth, ColLength, ColType, ColSQLDataType, CheckExpression, IsObligated, DataCol)

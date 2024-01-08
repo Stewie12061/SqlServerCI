@@ -95,6 +95,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.TabThongTinKeHoachTuyenDung' , @FormID
 SET @LanguageValue = N'Thông tin chi tiết';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.TabThongTinChiTiet' , @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Ghi chú';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.TabCRMT00001' , @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Đính kèm';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.TabCRMT00002' , @FormID, @LanguageValue, @Language;
 
@@ -116,8 +119,12 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.ActualCost' , @FormID, @LanguageValue,
 SET @LanguageValue = N'Chi phí định biên';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.CostBoundary' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số lượng hiện có';
+SET @LanguageValue = N'SLKH theo đợt';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.ActualQuantity' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Số lượng định biên';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.QuantityBoundary' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Trạng thái';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2002.StatusID' , @FormID, @LanguageValue, @Language;
+

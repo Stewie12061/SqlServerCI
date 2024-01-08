@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 --- Trả dữ liệu cho màn hình khai báo tồn phép đầu kỳ
 -- <Param>
@@ -18,7 +19,7 @@ GO
 ----Created on 07/05/2004 by: Hải Long
 --- Modified on 12/07/2018 by Bảo Anh: Sắp xếp theo mã nhân viên
 ---- Modified on 05/01/2019 by Bảo Anh: Bổ sung cột Số phép bù ban đầu
----- Modified on 08/12/2023 by Đình Định: APT - Join lại cột DepartmentID tránh double dòng.
+---- Modified on 05/01/2019 by Thanh Phương: Bổ sung điều kiện lọc FromDate, ToDate
 -- <Example>
 /*   
    EXEC HP0082 @DivisionID = 'ANG', @TranMonth = 2, @TranYear = 2016, @PageNumber=1, @PageSize=10, @IsSearch = 1, @LstDepartmentID = 'PRD, PSX', @LstTeamID = 'TRD, PSX', @EmployeeID = '', @FullName = ''
@@ -36,18 +37,27 @@ CREATE PROCEDURE [dbo].[HP0082]
 	@LstTeamID NVARCHAR(4000),
 	@EmployeeID NVARCHAR(100),
 	@FullName NVARCHAR(100)
+	,@FromDate DATETIME = NULL,  
+    @ToDate DATETIME = NULL,  
+    @IsPeriod INT = 0,  
+    @PeriodList VARCHAR(MAX) = ''
 )
 AS
 DECLARE @sSQL NVARCHAR(4000),
 		@sWhere NVARCHAR(500) = '',
 		@OrderBy NVARCHAR(500),
-        @TotalRow NVARCHAR(50) = ''
+        @TotalRow NVARCHAR(50) = '',
+		@sSQLLanguage VARCHAR(100)='',
+		@FromDateText NVARCHAR(20),  
+        @ToDateText NVARCHAR(20)  
 		
 SET @OrderBy = 'A.EmployeeID'
 IF @PageNumber = 1 SET @TotalRow = 'COUNT(*) OVER ()' ELSE SET @TotalRow = 'NULL'		
 		
 SET @LstDepartmentID = REPLACE(@LstDepartmentID, ',', ''',''')
 SET @LstTeamID = REPLACE(@LstTeamID, ',', ''',''')
+SET @FromDateText = CONVERT(NVARCHAR(20), @FromDate, 111)  
+SET @ToDateText = CONVERT(NVARCHAR(20), @ToDate, 111) + ' 23:59:59'  
 	
 IF @IsSearch = 1
 BEGIN		
@@ -73,6 +83,26 @@ BEGIN
 	
 		SET @sWhere = @sWhere + 'AND Ltrim(RTrim(isnull(HT1400.LastName,'''')))+ '' '' + LTrim(RTrim(isnull(HT1400.MiddleName,''''))) + '' '' + LTrim(RTrim(Isnull(HT1400.FirstName,''''))) LIKE ''%' + @FullName + '%''' + char(13)
 	END
+	-- Check Para FromDate và ToDate
+	IF @IsPeriod = 0
+	BEGIN
+		IF(ISNULL(@FromDate,'') != '' AND ISNULL(@ToDate,'') = '' )
+			BEGIN
+				SET @sWhere = @sWhere + ' AND (HT1420.CreateDate >= ''' + @FromDateText + ''')'
+			END
+		ELSE IF(ISNULL(@FromDate,'') = '' AND ISNULL(@ToDate,'') != '')
+			BEGIN
+				SET @sWhere = @sWhere + ' AND (HT1420.CreateDate <= ''' + @ToDateText + ''')'
+			END
+		ELSE IF(ISNULL(@FromDate, '') != '' AND ISNULL(@ToDate, '') != '')
+			BEGIN
+				SET @sWhere = @sWhere + ' AND (HT1420.CreateDate BETWEEN ''' + @FromDateText + ''' AND ''' + @ToDateText + ''') '
+			END
+	END
+	ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
+		BEGIN
+			SET @sWhere = @sWhere + 'AND (SELECT FORMAT(HT1420.CreateDate, ''MM/yyyy'')) IN (SELECT * FROM StringSplit(REPLACE('''+ @PeriodList + ''', '''', ''''), '',''))' 
+		END
 END 
 
 SET @sSQL = '
@@ -86,7 +116,7 @@ FROM
 	INNER JOIN HT2803 WITH (NOLOCK) ON HT1420.DivisionID = HT2803.DivisionID AND HT1420.EmployeeID = HT2803.EmployeeID
 	INNER JOIN HT1400 WITH (NOLOCK) ON HT2803.DivisionID = HT1400.DivisionID AND HT2803.EmployeeID = HT1400.EmployeeID
 	LEFT JOIN AT1102 WITH (NOLOCK) ON HT1400.DepartmentID = AT1102.DepartmentID
-	LEFT JOIN HT1101 WITH (NOLOCK) ON HT1400.DivisionID = HT1101.DivisionID AND HT1400.TeamID = HT1101.TeamID AND HT1400.DepartmentID = HT1101.DepartmentID
+	LEFT JOIN HT1101 WITH (NOLOCK) ON HT1400.DivisionID = HT1101.DivisionID AND HT1400.TeamID = HT1101.TeamID AND HT1400.DepartmentID = AT1102.DepartmentID
 	WHERE HT1420.DivisionID = ''' + @DivisionID + '''
 	AND HT2803.TranMonth = ' + CONVERT(NVARCHAR(10), @TranMonth) + '
 	AND HT2803.TranYear = ' + CONVERT(NVARCHAR(10), @TranYear) + '
@@ -99,6 +129,7 @@ FETCH NEXT '+STR(@PageSize)+' ROWS ONLY'
 
 EXEC (@sSQL)
 PRINT @sSQL
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

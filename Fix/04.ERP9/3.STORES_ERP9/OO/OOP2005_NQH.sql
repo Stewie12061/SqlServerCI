@@ -28,6 +28,7 @@ GO
 -- <History>
 ----Created by: Hoài Phong [11/01/2021] Tách SP cho NQH
 ----Updated by: Thành Sang - set lại điều kiện khi duyệt 1 cấp
+-- <Example>
 ---- 
 /*
    OOP2005_NQH 'HT','ASOFTADMIN',3,2016,'142C344D-11C8-4ED3-AA53-0020261A0C18','0294D54C-0EC4-499D-A16C-DC1A0732A3CC'

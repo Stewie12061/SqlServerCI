@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- In Yêu cầu tuyển dụng
 -- <Param>
@@ -16,6 +17,7 @@ GO
 ---- 
 -- <History>
 ----Created by: Bảo Thy on 10/08/2017
+----Update  by: Thu Hà,  Date: 29/06/2023 - Bổ sung lọc (để in) theo tên đơn vị
 -- <Example>
 ---- 
 /*-- <Example>
@@ -24,7 +26,6 @@ GO
 
 	EXEC HRMP2012 @DivisionID,@DivisionList, @UserID,@PageNumber,@PageSize,@IsSearch, @RecruitRequireID, @DutyID, @Disabled
 ----*/
-
 CREATE PROCEDURE HRMP2012
 ( 
 	 @DivisionID VARCHAR(50),
@@ -42,7 +43,7 @@ DECLARE @sSQL NVARCHAR (MAX)=N'',
         @sWhere NVARCHAR(MAX)=N'',
 		@sJoin NVARCHAR(MAX)=N'',
         @OrderBy NVARCHAR(500)=N'',
-        @TotalRow NVARCHAR(50)=N''
+        @TotalRow NVARCHAR(50)=''
 
 SET @OrderBy = 'HRMT2010.DutyID, HRMT2010.RecruitRequireID'
 
@@ -52,7 +53,7 @@ BEGIN
 	SET @sWhere = @sWhere + ' HRMT2010.DivisionID IN ('''+@DivisionList+''', ''@@@'')'
 
 END
-ELSE SET @sWhere = @sWhere + ' HRMT2010.DivisionID LIKE ('''+@DivisionID+''',, ''@@@'') '
+ELSE SET @sWhere = @sWhere + ' HRMT2010.DivisionID LIKE '''+@DivisionID+''' OR HRMT2010.DivisionID = ''@@@'' '
 
 IF  @IsSearch = 1
 BEGIN
@@ -62,7 +63,7 @@ BEGIN
 	IF ISNULL(@DutyID,'') <> '' SET @sWhere = @sWhere + '
 	AND HRMT2010.DutyID LIKE ''%'+@DutyID+'%'' '
 	IF @Disabled IS NOT NULL SET @sWhere = @sWhere + N'
-	AND HRMT2010.Disabled = '+@Disabled+''
+	AND HRMT2010.Disabled = ''' + @Disabled + ''''
 END
 
 IF ISNULL(@IsCheckAll,0) = 0
@@ -79,7 +80,7 @@ BEGIN
 END
 SET @sSQL = N'
 SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum,
-	HRMT2010.APK, HRMT2010.DivisionID, HRMT2010.RecruitRequireID, HRMT2010.RecruitRequireName, HRMT2010.DutyID, HT1102.DutyName,
+	HRMT2010.APK, HRMT2010.DivisionID,AT1101.DivisionName, HRMT2010.RecruitRequireID, HRMT2010.RecruitRequireName, HRMT2010.DutyID, HT1102.DutyName,
 	HT99.Description AS Gender, HRMT2010.FromAge, HRMT2010.ToAge, HRMT2010.Experience, HT1005.EducationLevelName AS EducationLevelID, HRMT2010.Appearance,
 	HRMT2010.FromSalary, HRMT2010.ToSalary, HRMT2010.WorkDescription, HT16A.LanguageName Language1ID, HT16B.LanguageName Language2ID, HT16C.LanguageName Language3ID, 
 	HT17A.LanguageLevelName LanguageLevel1ID, HT17B.LanguageLevelName LanguageLevel2ID, HT17C.LanguageLevelName LanguageLevel3ID, HRMT2010.IsInformatics, 
@@ -98,16 +99,19 @@ LEFT JOIN HT1006 HT16B WITH (NOLOCK) ON HRMT2010.DivisionID = HT16B.DivisionID A
 LEFT JOIN HT1006 HT16C WITH (NOLOCK) ON HRMT2010.DivisionID = HT16C.DivisionID AND HRMT2010.Language3ID = HT16C.LanguageID
 LEFT JOIN HT1007 HT17A WITH (NOLOCK) ON HRMT2010.DivisionID = HT17A.DivisionID AND HRMT2010.LanguageLevel1ID = HT17A.LanguageLevelID
 LEFT JOIN HT1007 HT17B WITH (NOLOCK) ON HRMT2010.DivisionID = HT17B.DivisionID AND HRMT2010.LanguageLevel2ID = HT17B.LanguageLevelID
+LEFT JOIN AT1101 WITH (NOLOCK) ON HRMT2010.DivisionID = AT1101.DivisionID
 LEFT JOIN HT1007 HT17C WITH (NOLOCK) ON HRMT2010.DivisionID = HT17C.DivisionID AND HRMT2010.LanguageLevel3ID = HT17C.LanguageLevelID'+@sJoin+'
 WHERE '+@sWhere +'
 ORDER BY '+@OrderBy+'
 '
 
---PRINT(@sSQL)
+PRINT(@sSQL)
 EXEC (@sSQL)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 SET ANSI_NULLS ON
 GO
+

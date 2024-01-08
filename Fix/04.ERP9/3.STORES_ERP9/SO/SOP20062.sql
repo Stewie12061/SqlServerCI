@@ -337,8 +337,6 @@ BEGIN
 			(ISNULL(T2.OrderQuantity,0) - SUM(ISNULL(A07.ActualQuantity,0))) * T2.SalePrice AS OriginalAmount,
 			(ISNULL(T2.OrderQuantity,0) - SUM(ISNULL(A07.ActualQuantity,0))) * T2.SalePrice * T1.ExchangeRate AS ConvertedAmount,
 			T2.UnitID, T04.UnitName, T2.Notes, T2.Notes01,
-			T02.AccountID as CreditAccountName,
-            T02.PrimeCostAccountID as DebitAccountName,
 			T2.Ana01ID, T11.AnaName AS Ana01Name, T2.Ana02ID, T21.AnaName AS Ana02Name, 
 			T2.Ana03ID, T31.AnaName AS Ana03Name, T2.Ana04ID, T41.AnaName AS Ana04Name, 
 			T2.Ana05ID, T51.AnaName AS Ana05Name, T2.Ana06ID, T61.AnaName AS Ana06Name, 

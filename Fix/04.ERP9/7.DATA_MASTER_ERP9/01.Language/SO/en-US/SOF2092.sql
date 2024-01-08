@@ -1,5 +1,5 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ SOF2092- SO
+-- Script tạo ngôn ngữ SOF2092- WM
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -32,16 +32,19 @@ SET @FormID = 'SOF2092';
 SET @LanguageValue = N'Revised order view';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2092.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Order number';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Order date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher type';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object ID';
@@ -59,13 +62,13 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2092.CurrencyID', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Exchange rate';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.ExchangeRate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Original currency';
+SET @LanguageValue = N'Natural currency';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.OriginalAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Conversion';
+SET @LanguageValue = N'Exchange';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.ConvertedAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -128,13 +131,13 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2092.TranYear', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2092.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

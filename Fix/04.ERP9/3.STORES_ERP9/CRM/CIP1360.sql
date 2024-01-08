@@ -6,6 +6,8 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
 -- <Summary>
 --- Load Grid danh sách hợp đồng
 -- <Param>
@@ -96,8 +98,9 @@ Begin
 
 	IF ISNULL(@ContractNo, '') != ''
 		SET @sWhere = @sWhere + ' AND ISNULL(A20.ContractNo, '''') LIKE N''%'+@ContractNo+'%'' '
+
 	IF ISNULL(@ObjectID, '') != ''
-		SET @sWhere = @sWhere + ' AND ISNULL(A20.ObjectID, '''')  LIKE N''%'+@ObjectID+'%'' '
+		SET @sWhere = @sWhere + ' AND (AT1202.ObjectName LIKE N''%' + @ObjectID + '%'' OR A20.ObjectID LIKE N''%' + @ObjectID + '%'') '
 	
 	IF @IsDate = 1 
 		SET @sWhere = @sWhere + ' AND CONVERT(VARCHAR(10), A20.SignDate, 112) BETWEEN ' + 
@@ -194,8 +197,8 @@ END
 
 IF ISNULL(@ConditionOpportunityID, '') != ''
 	BEGIN
-		SET @sWhere = @sWhere + ' AND ISNULL(A20.CreateUserID,'''') IN (N'''+@ConditionOpportunityID+''' )'
-		SET @sWhereDashboard = @sWhereDashboard + ' AND ISNULL(A20.CreateUserID,'''') IN (N'''+@ConditionOpportunityID+''' )'
+		SET @sWhere = @sWhere + ' AND (ISNULL(A20.CreateUserID, '''') IN (''' + @ConditionOpportunityID + ''' ) OR ISNULL(A20.AssignedToUserID, '''') IN (''' + @ConditionOpportunityID + ''' ))'
+		SET @sWhereDashboard = @sWhereDashboard + + ' AND (ISNULL(A20.CreateUserID, '''') IN (''' + @ConditionOpportunityID + ''' ) OR ISNULL(A20.AssignedToUserID, '''') IN (''' + @ConditionOpportunityID + ''' ))'
 	END
 
 SET @sWhere = @sWhere + ' AND ISNULL(A20.DeleteFlg,0) = 0 '
@@ -237,7 +240,8 @@ SET @sSQL01 = N'
 			A01.AnaName AS Ana01Name, A02.AnaName AS Ana02Name, A03.AnaName AS Ana03Name, 
 			A04.AnaName AS Ana04Name, A05.AnaName AS Ana05Name,
 			A06.AnaName AS Ana06Name, A07.AnaName AS Ana07Name, A08.AnaName AS Ana08Name, 
-			A09.AnaName AS Ana09Name, A10.AnaName AS Ana10Name
+			A09.AnaName AS Ana09Name, A10.AnaName AS Ana10Name,
+			AT1202.ObjectName AS ObjectName
 		INTO #CIP1360
 		FROM AT1020 A20 WITH (NOLOCK)
 			LEFT JOIN AT1004 WITH (NOLOCK) ON AT1004.CurrencyID= A20.CurrencyID  
@@ -261,7 +265,7 @@ SET @sSQL01 = N'
 			ContractType, ContractTypeName, ExchangeRate, Amount, ConvertedAmount, VATOriginalAmount,
 			VATConvertedAmount, CurrencyID, CurrencyName, Description,ContractPackageID,
 			Ana01ID,Ana02ID,Ana03ID,Ana04ID,Ana05ID,Ana06ID,Ana07ID,Ana08ID,Ana09ID,Ana10ID,
-			Ana01Name,Ana02Name,Ana03Name,Ana04Name,Ana05Name,Ana06Name,Ana07Name,Ana08Name,Ana09Name,Ana10Name
+			Ana01Name,Ana02Name,Ana03Name,Ana04Name,Ana05Name,Ana06Name,Ana07Name,Ana08Name,Ana09Name,Ana10Name,ObjectName
 		FROM #CIP1360 	'+@SearchWhere +'
 		ORDER BY '+@OrderBy+'
 		OFFSET '+STR((@PageNumber-1) * @PageSize)+' ROWS
@@ -272,6 +276,8 @@ SET @sSQL01 = N'
 
 EXEC (@sSQL01)
 PRINT @sSQL01
+
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

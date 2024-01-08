@@ -79,7 +79,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2120.Description1',  @FormID, @LanguageValu
 SET @LanguageValue  = N'Diễn giải'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2120.Description2',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Tên đối tượng'
+SET @LanguageValue  = N'Đối tác đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2120.ObjectName',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Lịch đào tạo'
@@ -115,3 +115,5 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2120.ResultTypeID.CB',  @FormID, @LanguageV
 SET @LanguageValue  = N'Tên Đánh Giá'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2120.ResultTypeName.CB',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Khóa đào tạo'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2120.TrainingCourseID',  @FormID, @LanguageValue, @Language;

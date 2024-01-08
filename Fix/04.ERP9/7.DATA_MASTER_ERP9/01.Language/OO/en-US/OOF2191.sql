@@ -71,7 +71,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2191.DeleteFlg', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Creation date';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2191.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue =  N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2191.CreateUserID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Last modified user';

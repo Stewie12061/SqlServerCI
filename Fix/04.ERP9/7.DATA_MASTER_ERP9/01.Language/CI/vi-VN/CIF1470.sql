@@ -91,3 +91,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1470.SalePrice', @FormID, @LanguageValue, @L
 
 SET @LanguageValue  = N'Bảng giá mua';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1470.PurchasePrice', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên loại mặt hàng';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1470.InventoryTypeName', @FormID, @LanguageValue, @Language;

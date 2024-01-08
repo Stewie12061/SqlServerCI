@@ -7,6 +7,7 @@ SET ANSI_NULLS ON
 GO
 
 
+
 -- <Summary>
 ----In báo cáo Báo cáo khách hàng không tương tác với dịch vụ
 -- <Param>
@@ -78,11 +79,12 @@ SET @sSQL ='
 			, M.AssignedToUserID  
 			, C1.ObjectName AS AccountName
 			, C2.ContactName AS ContactName
+			, C2.HomeMobile AS Phone
 			, C3.InventoryName AS InventoryName
 			, C4.FullName AS AssignedToUserName
 			, C5.StatusName AS StatusName
-			, (CASE WHEN [dbo].GetStatusQualityOfWork(M.DeadlineRequest,M.ActualEndDate,'''',M.AccountID,C5.StatusName) = ''0'' THEN N''Ðạt'' 
-				WHEN [dbo].GetStatusQualityOfWork(M.DeadlineRequest,M.ActualEndDate,'''',M.AccountID,C5.StatusName) = ''1'' THEN N''Không đạt'' 
+			, (CASE WHEN [dbo].GetStatusQualityOfWork(M.DeadlineRequest,M.ActualEndDate,'''',M.AccountID,C5.StatusName) = ''0'' THEN NCHAR(272) + NCHAR(7841)+ N''t'' 
+				WHEN [dbo].GetStatusQualityOfWork(M.DeadlineRequest,M.ActualEndDate,'''',M.AccountID,C5.StatusName) = ''1'' THEN N''Không '' + NCHAR(273) + NCHAR(7841)+ N''t'' 
 				ELSE N'''' END) AS StatusQualityOfWork
 			, C6.Description AS PriorityName
 			, C7.Description AS TypeOfRequest

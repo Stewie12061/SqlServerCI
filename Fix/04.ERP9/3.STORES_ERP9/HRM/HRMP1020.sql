@@ -16,6 +16,7 @@ GO
 ----Created by: Bảo Thy, Date: 20/07/2017
 ----Update  by: Thu  Hà, Date: 23/06/2023 - Bổ sung lọc theo kỳ
 ----Update  by: Thu Hà,  Date: 06/09/2023 - Cập nhật sắp xếp giảm dần theo mã định biên tuyển dụng
+----Update  by: Thanh Hải,  Date: 13/10/2023 - Cập nhật load dữ liệu những dòng có cột DeleteFlg = 0
 -- <Example>
 /*-- <Example>
 	HRMP1020 @DivisionID='MK',@UserID='ASOFTADMIN',@PageNumber=1,@PageSize=25,@IsSearch=1,

@@ -6,6 +6,9 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
+
 -- <Summary>
 ---- Load Grid Form HRMF2030: Lịch phỏng vấn
 -- <Param>
@@ -110,8 +113,11 @@ BEGIN
 			AND CONVERT(VARCHAR(10), CONVERT(DATE,HRMT2031.InterviewDate,120), 126) BETWEEN '''+CONVERT(VARCHAR(10),@InterviewFromDate,126)+''' AND '''+CONVERT(VARCHAR(10),@InterviewToDate,126)+''' '
 	END
 END
-IF Isnull(@ConditionInterviewScheduleID, '') != ''
-		SET @sWhere = @sWhere + ' AND ISNULL(HRMT2030.CreateUserID,'''') in (N'''+@ConditionInterviewScheduleID+''','''+@UserID+''' )'
+
+IF ISNULL(@ConditionInterviewScheduleID,'') != ''
+		SET @sWhere = @sWhere + ' AND (ISNULL(HRMT2030.AssignedToUserID, '''') IN (''' + @ConditionInterviewScheduleID + ''' ) OR ISNULL(HRMT2030.CreateUserID, '''') IN (''' + @ConditionInterviewScheduleID + ''' ))'
+
+
 	--Bổ sung điều kiện cờ xóa = 0
 	SET @sWhere = @sWhere + ' AND ISNULL(HRMT2030.DeleteFlg,0) = 0 '
 
@@ -140,9 +146,10 @@ FETCH NEXT '+STR(@PageSize)+' ROWS ONLY'
 PRINT(@sSQL)
 EXEC (@sSQL)
 
+
+
 GO
 SET QUOTED_IDENTIFIER OFF
 GO
 SET ANSI_NULLS ON
 GO
-

@@ -32,13 +32,16 @@ SET @FormID = 'HRMF2040';
 SET @LanguageValue = N'Interview Result tracing';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Candidate ID';
+SET @LanguageValue = N'Candidate code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.CandidateID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment period';
+SET @LanguageValue = N'Recruitment';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.RecruitPeriodID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Proposed salary';
@@ -53,7 +56,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.Month', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Negotiated salary';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.DealSalary', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Start date';
+SET @LanguageValue = N'Job acceptance date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.Startdate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Trial period';
@@ -68,13 +71,13 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.TrialToDate', @FormID, @LanguageValue,
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Vacancy';
+SET @LanguageValue = N'Nominee';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.DutyName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Name of recruitment period';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.RecruitPeriodName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Candidate ID';
+SET @LanguageValue = N'Name of applicant';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.CandidateName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
@@ -92,13 +95,13 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.LastModifyDate', @FormID, @LanguageVal
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Vacancy';
+SET @LanguageValue = N'Nominee';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.DutyID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.ResultDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From date';
+SET @LanguageValue = N'Since';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2040.FromDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'To date';

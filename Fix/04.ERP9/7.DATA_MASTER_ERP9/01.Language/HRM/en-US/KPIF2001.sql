@@ -116,16 +116,16 @@ EXEC ERP9AddLanguage @ModuleID, 'KPIF2001.ClassificationUnifiedPoint', @FormID, 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2001.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2001.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2001.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2001.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2001.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Targets group';

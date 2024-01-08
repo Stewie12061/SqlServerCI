@@ -162,8 +162,8 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2052.ProcessName' , @FormID, @LanguageValue
 SET @LanguageValue = N'Bước';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2052.StepName' , @FormID, @LanguageValue, @Language;
 
--- [Bảo Toàn] [Ngày cập nhật: 29/07/2019] [Bổ sung group Yêu cầu báo giá]
-SET @LanguageValue = N'Yêu cầu báo giá';
+-- [Bảo Toàn] [Ngày cập nhật: 29/07/2019] [Bổ sung group Yêu cầu khách hàng]
+SET @LanguageValue = N'Yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2052.TabCRMT20801' , @FormID, @LanguageValue, @Language;
 --tab yêu cầu mua hàng
 SET @LanguageValue  = N'Yêu cầu mua hàng';

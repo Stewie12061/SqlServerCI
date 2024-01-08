@@ -21,7 +21,6 @@ GO
 ---- Modifile on 28/06/2022 by Văn Tài	: Lấy thông tin người duyệt OUTER để tránh INNER JOIN.
 ---- Modified on 08/07/2022 by Đức Tuyên- Bổ sung dữ liệu cho các trường.
 ---- Modified on 15/07/2022 by Đức Tuyên- Load danh sách theo ngày tạo văn bản lên hệ thống.
-----Editted by: Nhật Quang , Date: 04/08/2022: Bổ sung thêm số lượng người theo dõi từ 20 lên 50.
 -- <Example> EXEC KPIP2030 @DivisionID = 'DTI', @DivisionIDList = '', @UserID = 'TANLOC', @PageNumber='1', @PageSize='25','VANTOAI',0,0
 CREATE PROCEDURE [dbo].[OOP3033]
 ( 
@@ -136,36 +135,6 @@ AS
 																			, FollowerID18
 																			, FollowerID19
 																			, FollowerID20
-																			, FollowerID21
-																			, FollowerID22
-																			, FollowerID23
-																			, FollowerID24
-																			, FollowerID25
-																			, FollowerID26
-																			, FollowerID27
-																			, FollowerID28
-																			, FollowerID29
-																			, FollowerID30
-																			, FollowerID31
-																			, FollowerID32
-																			, FollowerID33
-																			, FollowerID34
-																			, FollowerID35
-																			, FollowerID36
-																			, FollowerID37
-																			, FollowerID38
-																			, FollowerID39
-																			, FollowerID40
-																			, FollowerID41
-																			, FollowerID42
-																			, FollowerID43
-																			, FollowerID44
-																			, FollowerID45
-																			, FollowerID46
-																			, FollowerID47
-																			, FollowerID48
-																			, FollowerID49
-																			, FollowerID50
 																		)
 
 							WHERE  ' + @sWhere + ' 

@@ -17,7 +17,7 @@ EXEC ERP9AddLanguage @ModuleID, 'POF3000.Title',  @FormID, @LanguageValue, @Lang
 SET @LanguageValue  = N'Báo cáo biểu đồ'
 EXEC ERP9AddLanguage @ModuleID, 'AsoftPO_Group_BaoCaoBieuDo',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Báo cáo khác'
+SET @LanguageValue  = N'Nhà cung cấp'
 EXEC ERP9AddLanguage @ModuleID, 'AsoftPO.GRP_BaoCao',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Yêu cầu mua hàng'

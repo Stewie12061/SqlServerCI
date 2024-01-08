@@ -16,8 +16,6 @@ GO
 
 
 
-
-
 -- <Summary>
 ---- Load dữ liệu cho grid màn hình đánh giá dự án 
 -- <Param>
@@ -206,8 +204,6 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 	PRINT (@sSQL1 + @sSQL2)
 	EXEC (@sSQL1 + @sSQL2)
 END
-
-
 
 
 

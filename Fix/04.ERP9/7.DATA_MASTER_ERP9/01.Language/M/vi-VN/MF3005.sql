@@ -35,3 +35,6 @@ EXEC ERP9AddLanguage @ModuleID, 'MF3005.Title', @FormID, @LanguageValue, @Langua
 
 SET @LanguageValue = N'Đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'MF3005.DivisionID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Chuyền sản xuất';
+EXEC ERP9AddLanguage @ModuleID, 'MF3005.LineProduce', @FormID, @LanguageValue, @Language;

@@ -29,52 +29,55 @@ SET @Language = 'en-US'
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2054';
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Recruitment confirmation';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment period ID';
+SET @LanguageValue = N'Android Package Kit';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Recruitment code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.RecruitPeriodID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Vacancy';
+SET @LanguageValue = N'Vacancies';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DutyID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.RecruitStatus', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Candidate ID';
+SET @LanguageValue = N'Candidate code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.CandidateID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Decision No';
+SET @LanguageValue = N'Decision number';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.RecDecisionNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Candidate name';
+SET @LanguageValue = N'Name of applicant';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.CandidateName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment period';
+SET @LanguageValue = N'Recruitment';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.RecruitPeriodName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Vacancy';
+SET @LanguageValue = N'Vacancies';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DutyName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.RecruitStatusName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'description';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Decision date';
+SET @LanguageValue = N'DecisionDate';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DecisionDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'RequireSalary';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.RequireSalary', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Deal salary';
+SET @LanguageValue = N'DealSalary';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DealSalary', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'StartDate';
@@ -88,6 +91,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.TrialFromDate', @FormID, @LanguageValu
 
 SET @LanguageValue = N'TrialToDate';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.TrialToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.APKCandidateID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Vacancy ID'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2054.DutyID.CB',  @FormID, @LanguageValue, @Language;

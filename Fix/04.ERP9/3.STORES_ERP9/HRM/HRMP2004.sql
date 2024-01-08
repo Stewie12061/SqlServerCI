@@ -17,7 +17,7 @@ GO
 -- <History>
 ----Created by: Bảo Thy, Date: 20/07/2017
 ----Modified on 27/06/2023 by Võ Dương: Cập nhật màn hình lọc in theo ngày và kì
-----Modified on 15/09/2023 by Thu Hà: Cập nhật in (chi phí hiện có "ActualCost") và bổ sung điều kiện in
+----Modified on 15/09/2023 by Thu Hà:   Cập nhật in (chi phí hiện có "ActualCost") và bổ sung điều kiện in
 -- <Example>
 ---- 
 /*-- <Example>
@@ -129,7 +129,8 @@ SET @sSQL = @sSQL + N'
 		B.Note
 
 	FROM HRMT2000 A
-	LEFT JOIN HRMT2001 B ON A.RecruitPlanID = B.RecruitPlanID
+	--LEFT JOIN HRMT2001 B ON A.RecruitPlanID = B.RecruitPlanID
+	LEFT JOIN HRMT2001 B ON A.APK =TRY_CAST(B.RecruitPlanID AS UNIQUEIDENTIFIER)
 	LEFT JOIN HT1102 C ON B.DutyID = C.DutyID
 	LEFT JOIN HRMT1021 D ON C.DutyID = D.DutyID AND D.DepartmentID =A.DepartmentID
 	LEFT JOIN HRMT1020 E ON D.BoundaryID = E.BoundaryID AND  D.DepartmentID = E.DepartmentID

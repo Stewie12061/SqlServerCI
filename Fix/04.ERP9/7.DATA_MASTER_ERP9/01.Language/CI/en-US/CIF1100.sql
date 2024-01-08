@@ -1,6 +1,6 @@
-﻿------------------------------------------------------------------------------------------------------
--- Script t?o ngôn ng? CIF1100 
------------------------------------------------------------------------------------------------------
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ CIF1100- CI
+------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
@@ -14,6 +14,8 @@ DECLARE
 -- Finished
 ------------------------------------------------------------------------------------------------------
 @Finished BIT
+
+
 ------------------------------------------------------------------------------------------------------
 -- Gan gia tri tham so va thu thi truy van
 ------------------------------------------------------------------------------------------------------
@@ -26,34 +28,41 @@ DECLARE
 SET @Language = 'en-US' 
 SET @ModuleID = 'CI';
 SET @FormID = 'CIF1100';
-------------------------------------------------------------------------------------------------------
---- Title
------------------------------------------------------------------------------------------------------
+
 SET @LanguageValue = N'Category code auto inventory';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1100.Title' , @FormID, @LanguageValue, @Language;
 
---- TAB
------------------------------------------------------------------------------------------------------
-SET @LanguageValue = N'Division';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1100.DivisionID' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.DivisionID', @FormID, @LanguageValue, @Language;
 
-------------------------------------------------------------------------------------------------------
 SET @LanguageValue = N'Classify';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1100.STypeID' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.STypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Classify code';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1100.S' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Classification code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.S', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Classify name';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1100.SName' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Category name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.SName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1100.IsCommon' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Shared';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disable';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1100.Disabled' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.Disabled', @FormID, @LanguageValue, @Language;
 
-------------------------------------------------------------------------------------------------------
--- Finished
-------------------------------------------------------------------------------------------------------
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Update day';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Updater';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1100.APK', @FormID, @LanguageValue, @Language;
+
 SET @Finished = 0;

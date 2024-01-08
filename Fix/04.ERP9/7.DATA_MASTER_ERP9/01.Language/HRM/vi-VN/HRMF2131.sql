@@ -112,7 +112,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2131.TrainingFieldID.CB',  @FormID, @Langua
 SET @LanguageValue  = N'Tên lĩnh vực'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2131.TrainingFieldName.CB',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Thời gian đào tạo thực tế'
+SET @LanguageValue  = N'Từ ngày'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2131.TrainingFromDate',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Lịch đào tạo'
@@ -121,7 +121,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2131.TrainingSchedule',  @FormID, @Language
 SET @LanguageValue  = N'Lịch đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2131.TrainingScheduleID',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Đến'
+SET @LanguageValue  = N'Đến ngày'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2131.TrainingToDate',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Hình thức đào tạo'

@@ -28,7 +28,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2232';
 
-SET @LanguageValue = N'Xem chi tiết email gửi';
+SET @LanguageValue = N'Xem chi tiết thông tin mail đi';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2232.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

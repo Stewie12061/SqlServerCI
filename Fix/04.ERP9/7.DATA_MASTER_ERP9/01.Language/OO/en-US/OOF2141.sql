@@ -59,13 +59,13 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2141.Disabled', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2141.APKMaster_9000', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Levels';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2141.Levels', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2141.Status', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2141.Note', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator ';

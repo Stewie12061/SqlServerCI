@@ -29,7 +29,7 @@ DECLARE
  SET @ModuleID = 'PO';
  SET @FormID = 'POF2061';
 
-SET @LanguageValue = N'Cập nhật Book Cont đơn hàng xuất khẩu';
+SET @LanguageValue = N'Cập nhật Đặt containter xuất hàng';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

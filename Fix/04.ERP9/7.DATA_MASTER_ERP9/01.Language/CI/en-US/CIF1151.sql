@@ -31,7 +31,8 @@ SET @FormID = 'CIF1151';
 
 SET @LanguageValue = N'Update object';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Title' , @FormID, @LanguageValue, @Language;
-SET @LanguageValue = N'Division';
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Classification 1';
@@ -43,7 +44,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.S2', @FormID, @LanguageValue, @Language
 SET @LanguageValue = N'Classification 3';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.S3', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object ID';
+SET @LanguageValue = N'Object code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object name';
@@ -52,13 +53,13 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ObjectName', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Trademark';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.TradeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'VAT No';
+SET @LanguageValue = N'Tax code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.VATNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object type';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ObjectTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tel';
+SET @LanguageValue = N'Phone';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Tel', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Email';
@@ -70,7 +71,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Address', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Province/City';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.CityID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Country';
+SET @LanguageValue = N'Nation';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.CountryID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Fax';
@@ -79,13 +80,13 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Fax', @FormID, @LanguageValue, @Languag
 SET @LanguageValue = N'Website';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Website', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contact person';
+SET @LanguageValue = N'Contact';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Contactor', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phone number';
+SET @LanguageValue = N'Contact phone';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Phonenumber', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Client';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.IsCustomer', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Supplier';
@@ -94,16 +95,16 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.IsSupplier', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Haunt';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.IsUpdateName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Transaction currency';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.CurrencyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Allowed credit limit';
+SET @LanguageValue = N'Allowable debt limit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ReCreditLimit', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Terms of payment';
@@ -118,13 +119,13 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeAddress', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Debt age limit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ReDays', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Lock (Stop Selling)';
+SET @LanguageValue = N'Lock (Stop selling)';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.IsLockedOver', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Receivable account';
+SET @LanguageValue = N'Accounts receivable';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ReAccountID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Allowed credit limit';
+SET @LanguageValue = N'Allowable debt limit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.PaCreditLimit', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Terms of payment';
@@ -133,13 +134,13 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.PaPaymentTermID', @FormID, @LanguageVal
 SET @LanguageValue = N'Number of days to pay';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.PaDueDays', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Number of discount days';
+SET @LanguageValue = N'Number of days to enjoy the discount';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.PaDiscountDays', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Discount rate';
+SET @LanguageValue = N'Rate of discount';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.PaDiscountPercent', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Shipping address';
+SET @LanguageValue = N'Delivery address';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.ReAddress', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Bank';
@@ -151,31 +152,31 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.BankAccountNo', @FormID, @LanguageValue
 SET @LanguageValue = N'License number';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.LicenseNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Charter capital';
+SET @LanguageValue = N'Authorized capital';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.LegalCapital', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Notes 1';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Note', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 2';
+SET @LanguageValue = N'Note 2';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.Note1', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Area';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.AreaID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'ID object analysis 1';
+SET @LanguageValue = N'Object parsing code 1';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.O01ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'ID object analysis 2';
+SET @LanguageValue = N'Object parsing code 2';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.O02ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'ID object analysis 3';
+SET @LanguageValue = N'Object parsing code 3';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.O03ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'ID object analysis 4';
+SET @LanguageValue = N'Object parsing code 4';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.O04ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'ID object analysis 5';
+SET @LanguageValue = N'Object parsing code 5';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.O05ID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
@@ -190,17 +191,17 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1151.LastModifyDate', @FormID, @LanguageValu
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Batch number - Item';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Payable account';
+SET @LanguageValue = N'Accounts payable';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.PaAccountID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'City code';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.CityID.CB' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Position';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DutyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'City name';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.CityName.CB' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Distributor';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.IsDealer', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Country code';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.CountryID.CB' , @FormID, @LanguageValue, @Language;
@@ -269,22 +270,22 @@ SET @LanguageValue = N'Delete';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.btnCleanDeli' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Address';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.AddressMTH' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeliveryAddress', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Update';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.btnUpdateDeli' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Nation';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeliveryCountryID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Cancle';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.btnCancelDeli' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Area code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeliveryPostalCode', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Area Code';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.AreaID.CB' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Province';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeliveryCityID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Area Name';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.AreaName.CB' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'District';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeliveryDistrictID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'District Code';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DistrictID.CB' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Wards';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DeliveryWard', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'District Name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1151.DistrictName.CB' , @FormID, @LanguageValue, @Language;
@@ -303,4 +304,3 @@ EXEC ERP9AddLanguage @ModuleID, 'CI1151.IsRePayment' , @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Purchase terms, pay';
 EXEC ERP9AddLanguage @ModuleID, 'CI1151.IsPaPayment' , @FormID, @LanguageValue, @Language;
-

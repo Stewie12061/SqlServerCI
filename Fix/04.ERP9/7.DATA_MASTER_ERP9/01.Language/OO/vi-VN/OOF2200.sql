@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2200';
 
-SET @LanguageValue = N'Danh sách thông báo cảnh báo';
+SET @LanguageValue = N'Danh sách thông báo/cảnh báo tổng hợp';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2200.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Danh sách thông báo cảnh báo';

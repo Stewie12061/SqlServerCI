@@ -32,7 +32,10 @@ SET @FormID = 'MF2200';
 SET @LanguageValue = N'List of container booking';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2200.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';
@@ -47,10 +50,10 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2200.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Selection of multi sales orders';
@@ -59,6 +62,6 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2200.InheritSOrder', @FormID, @LanguageValue,
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.Date', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2200.Notes', @FormID, @LanguageValue, @Language;
 

@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'PO';
 SET @FormID = 'POF0010';
 
-SET @LanguageValue = N'Dashboard';
+SET @LanguageValue = N'Dashboard mua hàng';
 EXEC ERP9AddLanguage @ModuleID, 'POF0010.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tổng số đơn hàng';

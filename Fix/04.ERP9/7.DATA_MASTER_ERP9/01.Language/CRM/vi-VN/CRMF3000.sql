@@ -8,7 +8,7 @@ SET @Language = 'vi-VN'
 SET @FormID = 'CRMF3000'
 SET @LanguageValue = N'Đầu mối - cơ hội - khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'AsoftCRM.BaoCaoThongKe' , @FormID, @LanguageValue, @Language;
-SET @LanguageValue = N'Báo cáo biểu đồ';
+SET @LanguageValue = N'Báo cáo quản lý quan hệ khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF3000.Title' , @FormID, @LanguageValue, @Language;
 SET @LanguageValue = N'Tỷ lệ chuyển đổi';
 EXEC ERP9AddLanguage @ModuleID, 'AsoftCRM.TyLeChuyenDoi' , @FormID, @LanguageValue, @Language;

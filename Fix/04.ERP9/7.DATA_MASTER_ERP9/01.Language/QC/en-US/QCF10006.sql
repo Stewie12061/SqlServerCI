@@ -1,12 +1,10 @@
-﻿
------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ QCF10006
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ QCF10006- QC
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
 @Language VARCHAR(10),
-
 ------------------------------------------------------------------------------------------------------
 -- Tham so gen tu dong
 ------------------------------------------------------------------------------------------------------
@@ -27,56 +25,34 @@ DECLARE
  - Tieng Nhat: ja-JP
  - Tieng Trung: zh-CN
 */
-DECLARE @KeyID VARCHAR(100)
-DECLARE @Text NVARCHAR(4000)
-DECLARE @CustomName NVARCHAR(4000)
+SET @Language = 'en-US' 
+SET @ModuleID = 'QC';
+SET @FormID = 'QCF10006';
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF10006.Title'
-SET @FormID = N'QCF10006'
-SET @Text = N'List of standard'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'List of standard';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.Title', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF10006.StandardID'
-SET @FormID = N'QCF10006'
-SET @Text = N'Standard ID'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.APK', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF10006.StandardName'
-SET @FormID = N'QCF10006'
-SET @Text = N'Standard Name'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF10006.StandardNameE'
-SET @FormID = N'QCF10006'
-SET @Text = N'Standard Name (Eng)'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Standard ID';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.StandardID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF10006.UnitName'
-SET @FormID = N'QCF10006'
-SET @Text = N'Unit '
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Standard Name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.StandardName', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF10006.TypeName'
-SET @FormID = N'QCF10006'
-SET @Text = N'Type name '
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Standard Name (Eng)';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.StandardNameE', @FormID, @LanguageValue, @Language;
 
-GO
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.UnitID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit ';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.UnitName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Type name ';
+EXEC ERP9AddLanguage @ModuleID, 'QCF10006.TypeName', @FormID, @LanguageValue, @Language;
+

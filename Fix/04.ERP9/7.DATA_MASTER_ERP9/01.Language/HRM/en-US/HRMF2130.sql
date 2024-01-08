@@ -32,34 +32,37 @@ SET @FormID = 'HRMF2130';
 SET @LanguageValue  = N'Cost Recording';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training type';
+SET @LanguageValue = N'Forms of training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingType', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training field';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingFieldID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training cost/schedule recording ID';
+SET @LanguageValue = N'Expense recording code/Phone schedule';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.SearchTxt', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.RowDate', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.FromToDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.AssignedToUser', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.RowDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training schedule';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingSchedule', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Cost';
+SET @LanguageValue = N'Expense';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.CostAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training course';
+SET @LanguageValue = N'Training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingCourseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training partner';
@@ -68,19 +71,19 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.ObjectName', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Address';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.Address', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Cost recording ID';
+SET @LanguageValue = N'Cost recording code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingCostID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Attachment';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.Attach', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Actual training duration';
+SET @LanguageValue = N'Since';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingFromDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To';
+SET @LanguageValue = N'To date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingToDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training schedule';
@@ -89,14 +92,17 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingScheduleID', @FormID, @Languag
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Editor';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.AssignedToUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Training field ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2130.TrainingFieldID.CB',  @FormID, @LanguageValue, @Language;

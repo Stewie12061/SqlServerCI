@@ -104,4 +104,13 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2112.TabCRMT90031',  @FormID, @LanguageValu
 SET @LanguageValue  = N'Lịch sử';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2112.TabCRMT00003',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Ghi chú';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2112.TabCRMT00001',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2112.Status',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Diễn giải';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2112.Description',  @FormID, @LanguageValue, @Language;
+
 

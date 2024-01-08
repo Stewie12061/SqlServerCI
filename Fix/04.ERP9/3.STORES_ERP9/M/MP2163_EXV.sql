@@ -17,7 +17,7 @@ GO
 -- <History>
 ----Created by: Nhật Quang, Date: 01/03/2023
 ----Modified by: Nhật Quang, Date: 28/03/2023 - Bổ sung thêm trường Notes01: Ghi chú 01 ở bảng AT1302.
-----Modified by: Viết Toàn, Date: 11/05/2023 - Nếu mã thành phẩm có mã phân tích mặt hàng 03 mã FG, lấy ra mã ,tên mặt hàng khách hàng ( lấy từ MPT nghiệp vụ 04).
+----Modified by: Viết Toàn, Date: 11/05/2023 - Nếu mã thành phẩm có mã phân tích mặt hàng 03 mã FG, chưa lấy ra mã ,tên mặt hàng khách hàng ( lấy từ MPT nghiệp vụ 04).
 -- <Example>
 --- EXEC MP2163_EXV @VoucherNo=N'LSX/2023/01/009',@InventoryID=N'3317001100PR2-EP',@UnitID=N'THU',@DivisionID=N'EXV'
 -- <Example>

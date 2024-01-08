@@ -22,6 +22,7 @@ GO
 ----Create on 21/03/2021 by  Hoài Phong  bố sung Trạng thái chất lượng công việc
 ----Modified by: Hoài Thanh on 10/01/2023: Bổ sung luồng load dữ liệu từ dashboard
 ----Modified by: Hoài Bảo on 07/02/2023: Bổ sung luồng load dữ liệu từ màn hình truy vấn ngược
+----Modified by: Thu Hà on 08/11/2023: Bổ sung điều kiện lọc "chỉ tiêu/công việc" 
 -- <Example> EXEC KPIP2030 @DivisionID = 'DTI', @DivisionIDList = '', @UserID = 'TANLOC', @PageNumber='1', @PageSize='25','VANTOAI',0,0
 
 CREATE PROCEDURE [dbo].[OOP2160]
@@ -39,6 +40,7 @@ CREATE PROCEDURE [dbo].[OOP2160]
 	 @PriorityID NVARCHAR(250) = '',
 	 @ReleaseVerion NVARCHAR(250) = '',
 	 @ProjectID NVARCHAR(250) = '',
+	 @TargetTaskName NVARCHAR(250) = '',
 	 @TaskID NVARCHAR(250) = '',
 	 @AssignedToUserID NVARCHAR(250) = '',
 	 @SupportRequiredID VARCHAR(250) = '',
@@ -125,6 +127,9 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 	IF ISNULL(@ProjectID, '') != ''
 		SET @sWhere = @sWhere + ' AND ISNULL(M.ProjectID, '''') LIKE N''%' + @ProjectID + '%'' '
 
+	IF ISNULL(@TargetTaskName, '') != ''
+		SET @sWhere = @sWhere + ' AND ISNULL(C8.TargetTaskName, '''') LIKE N''%' + @TargetTaskName + '%'' '
+
 	IF ISNULL(@StatusID,'') != ''
 		BEGIN
 			SET @sWhere = @sWhere + ' AND ISNULL(M.StatusID, '''') IN (''' + @StatusID + ''') '
@@ -199,6 +204,7 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 							INTO #FilterIssuesAPK
 							FROM OOT2160 M WITH (NOLOCK)
 								LEFT JOIN CRMT20801 C1 WITH (NOLOCK) ON M.RequestID = C1.RequestCustomerID
+								LEFT JOIN OOT2290 C8 WITH (NOLOCK) ON C8.TargetTaskID = M.TargetTaskID
 								LEFT JOIN OOT2110 C2 WITH (NOLOCK) ON M.TaskID = C2.TaskID
 								LEFT JOIN OOT2100 C3 WITH (NOLOCK) ON C3.ProjectID = M.ProjectID AND M.TaskID IS NULL
 								LEFT JOIN OOT2101 O1 WITH (NOLOCK) ON O1.RelatedToID = M.ProjectID
@@ -220,6 +226,8 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 					M.TimeRequest, M.DeadlineRequest, M.ProjectID, M.TaskID, C1.RequestSubject AS RequestName, M.AssignedToUserID, M.ReleaseVerion, M.CreateDate, M.SupportRequiredID
 					,A1.FullName AS AssignedToUserName
 					,C3.ProjectName AS ProjectName
+					,M.TargetTaskID
+					,C8.TargetTaskName AS TargetTaskName
 					,TM13.StatusName
 				    ,(CASE WHEN [dbo].GetStatusQualityOfWork(M.DeadlineRequest,M.ActualEndDate,'''',C5.AccountID,TM13.StatusName) = ''0'' THEN N''Đạt'' 
 					 WHEN [dbo].GetStatusQualityOfWork(M.DeadlineRequest,M.ActualEndDate,'''',C5.AccountID,TM13.StatusName) = ''1'' THEN N''Không đạt'' 
@@ -235,6 +243,7 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 			INNER JOIN #FilterIssuesAPK T1 ON T1.APK = M.APK
 			LEFT JOIN AT1103 A1 WITH (NOLOCK) ON A1.EmployeeID = M.AssignedToUserID
 			LEFT JOIN OOT2100 C3 WITH (NOLOCK) ON C3.ProjectID = M.ProjectID
+			LEFT JOIN OOT2290 C8 WITH (NOLOCK) ON C8.TargetTaskID = M.TargetTaskID
 			LEFT JOIN OOT1040 TM13 WITH (NOLOCK) ON M.StatusID = TM13.StatusID
 			LEFT JOIN CRMT0099 A3 WITH (NOLOCK) ON M.PriorityID = A3.ID AND A3.CodeMaster = N''CRMT00000006''
 			LEFT JOIN OOT2110 C2 WITH (NOLOCK) ON M.TaskID = C2.TaskID
@@ -258,6 +267,8 @@ ELSE IF @IsPeriod = 1 AND ISNULL(@PeriodList, '') != ''
 				, M.TimeRequest
 				, M.DeadlineRequest
 				, M.ProjectID
+				, M.TargetTaskID
+				, M.TargetTaskName
 				, M.TaskID
 				, M.RequestID
 				, M.AssignedToUserID

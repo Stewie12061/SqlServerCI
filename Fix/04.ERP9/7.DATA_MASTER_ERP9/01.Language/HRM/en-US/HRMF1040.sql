@@ -32,36 +32,42 @@ SET @FormID = 'HRMF1040';
 SET @LanguageValue  = N'List of training fields'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training Field';
+SET @LanguageValue = N'Training field code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.TrainingFieldID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training Field Name';
+SET @LanguageValue = N'Name of training field';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.TrainingFieldName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'IsCommon';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.IsCommon', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last Modify User';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last Modify Date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Related To Type';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.RelatedToTypeID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.FromDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.APK', @FormID, @LanguageValue, @Language;
 

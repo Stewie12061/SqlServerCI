@@ -49,7 +49,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.AssignedToUserID',  @FormID, @Language
 SET @LanguageValue  = N'Người phụ trách'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.AssignedToUserName',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Số lượng nhân viên'
+SET @LanguageValue  = N'Số lượng tham gia'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.NumberEmployee',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Từ ngày'
@@ -120,3 +120,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.TabCRMT90031',  @FormID, @LanguageValu
 
 SET @LanguageValue  = N'Gửi mail'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.TabCMNT90051',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.StatusID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Mô tả'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2082.Description',  @FormID, @LanguageValue, @Language;

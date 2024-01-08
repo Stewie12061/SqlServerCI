@@ -16,6 +16,8 @@ GO
 ----Update  by: Thu Hà,    Date: 28/06/2023 - Bổ dung lọc theo thời gian.
 ----Update  by: Võ Dương,  Date: 23/08/2023 - Cập nhật chức năng lọc
 ----Update  by: Thu Hà,    Date: 06/09/2023 - Cập nhật sắp xếp giảm dần theo mã nguồn tuyển dụng
+----Update  by: Thu Hà,    Date: 08/09/2023 - Cập nhật bổ sung điều kiện lọc (ResourceName)
+----Update  by: Phương Thảo, Date: 12/03/2023 -[2023/09/IS/0029] Cập nhật bổ sung điều kiện lọc ( DeleteFlg = 0 )
 -- <Example>
 /*-- <Example>
 	HRMP1000 @DivisionID = 'AS', @DivisionList = '', @UserID = 'ASOFTADMIN', @PageNumber = 1, @PageSize = 25, @IsSearch = 1, @ResourceID = '', 
@@ -32,6 +34,7 @@ CREATE PROCEDURE HRMP1000
 	 @PageSize INT,
 	 @IsSearch TINYINT, 
 	 @ResourceID VARCHAR(50),
+	 @ResourceName NVARCHAR(250),
 	 @Disabled VARCHAR(1),
 	 @IsCommon VARCHAR(1),
 	 @FromDate DATETIME,
@@ -83,16 +86,20 @@ ELSE IF @IsSearch = 1 AND ISNULL(@PeriodList, '') != ''
 	BEGIN
 		SET @sWhere = @sWhere + ' AND (SELECT FORMAT(HRMT1000.CreateDate, ''MM/yyyy'')) IN ( ''' + @PeriodList + ''') '
 	END
-	IF ISNULL(@ResourceID,'') <> '' 
+IF ISNULL(@ResourceID,'') <> '' 
 	SET @sWhere = @sWhere + 'AND HRMT1000.ResourceID LIKE ''%'+@ResourceID+'%'' '
 
-	IF ISNULL(@Disabled,'') <> ''
+IF ISNULL(@ResourceName,'') <> '' 
+	SET @sWhere = @sWhere + 'AND HRMT1000.ResourceName LIKE N''%'+@ResourceName+'%'' '
+
+IF ISNULL(@Disabled,'') <> ''
 	SET @sWhere = @sWhere + N'AND HRMT1000.Disabled = '+@Disabled+''
 
-	IF ISNULL(@IsCommon,'') <> ''
+IF ISNULL(@IsCommon,'') <> ''
 	SET @sWhere = @sWhere + N'AND HRMT1000.IsCommon = '+@IsCommon+''
-	
-	SET @sSQL = '
+--Bổ sung điều kiện cờ xóa = 0
+SET @sWhere = @sWhere + ' AND ISNULL(HRMT1000.DeleteFlg,0) = 0 '
+SET @sSQL = '
 	SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum, '+@TotalRow+' AS TotalRow,
 	HRMT1000.APK, 
 	CASE WHEN ISNULL(HRMT1000.IsCommon,0) = 1 then '''' ELSE HRMT1000.DivisionID END AS DivisionID,
@@ -114,7 +121,7 @@ ELSE IF @IsSearch = 1 AND ISNULL(@PeriodList, '') != ''
 
 
 EXEC (@sSQL)
---PRINT(@sSQL)
+PRINT(@sSQL)
 GO
 SET QUOTED_IDENTIFIER OFF
 GO

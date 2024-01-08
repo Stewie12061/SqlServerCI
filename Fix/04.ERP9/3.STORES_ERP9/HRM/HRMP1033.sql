@@ -7,6 +7,7 @@ SET ANSI_NULLS ON
 GO
 
 
+
 -- <Summary>
 ---- Load hồ sơ ứng viên
 -- <Param>
@@ -65,8 +66,8 @@ BEGIN
 			HRMT1031.EvaluationKitID, PAT10201.EvaluationKitName, HRMT1031.RecruitStatus, HT91.Description AS GenderName, A3.CityName AS IdentifyCityName
 		FROM HRMT1030 WITH (NOLOCK)'
 	SET @sSQL_Extend =N'	
-			LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1031.DivisionID AND HRMT1030.CandidateID = HRMT1031.CandidateID 
-			LEFT JOIN HRMT1032 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1032.DivisionID AND HRMT1030.CandidateID = HRMT1032.CandidateID 
+			LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1031.DivisionID AND CAST( HRMT1030.APK AS VARCHAR(250)) = HRMT1031.CandidateID 
+			LEFT JOIN HRMT1032 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1032.DivisionID AND CAST( HRMT1030.APK AS VARCHAR(250)) = HRMT1032.CandidateID 
 			LEFT JOIN HT1001 WITH (NOLOCK) ON HRMT1030.DivisionID = HT1001.DivisionID AND HRMT1030.EthnicID = HT1001.EthnicID 
 			LEFT JOIN HT1102 WITH (NOLOCK) ON HRMT1030.DivisionID = HT1102.DivisionID AND HRMT1031.DutyID = HT1102.DutyID 
 			LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT1031.DepartmentID = AT1102.DepartmentID AND AT1102.DivisionID IN ('''+@DivisionID+''' , ''@@@'')
@@ -89,7 +90,7 @@ BEGIN
 			LEFT JOIN AT1405 A2 WITH (NOLOCK) ON A2.UserID = HRMT1030.LastModifyUserID AND A2.DivisionID IN (HRMT1030.DivisionID, ''@@@'')
 			LEFT JOIN AT1002 A3 WITH (NOLOCK) ON A3.CityID = HRMT1030.IdentifyCityID AND A3.DivisionID IN (HRMT1030.DivisionID, ''@@@'')
 		WHERE HRMT1030.DivisionID = '''+@DivisionID+''' 
-		AND HRMT1030.CandidateID = '''+@CandidateID+'''
+		AND HRMT1030.APK = '''+@CandidateID+'''
 		'
 END
 
@@ -104,7 +105,7 @@ BEGIN
 	HRMT1034.DivisionID, HRMT1034.CandidateID, HRMT1034.EducationCenter, HRMT1034.EducationMajor, HRMT1034.EducationTypeID, HRMT1034.EducationFromDate, HRMT1034.Description, HRMT1034.EducationToDate, HRMT1034.Note
 	FROM HRMT1034
 	WHERE HRMT1034.DivisionID = '''+@DivisionID+'''
-	AND HRMT1034.CandidateID = '''+@CandidateID+'''
+	AND CAST(HRMT1034.CandidateID AS VARCHAR(250)) = '''+@CandidateID+'''
 '
 END
 
@@ -121,11 +122,12 @@ BEGIN
 		FROM HRMT1033
 		LEFT JOIN AT1001 WITH (NOLOCK) ON AT1001.CountryID = HRMT1033.CountryID 
 		WHERE HRMT1033.DivisionID = '''+@DivisionID+'''
-		AND HRMT1033.CandidateID = '''+@CandidateID+'''
+		AND CAST(HRMT1033.CandidateID AS VARCHAR(250)) = '''+@CandidateID+'''
 	'
 END
 
 EXEC (@sSQL+@sSQL_Extend)
+
 
 
 GO

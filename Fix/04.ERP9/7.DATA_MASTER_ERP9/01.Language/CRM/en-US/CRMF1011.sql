@@ -68,9 +68,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.ReCreditLimit', @FormID, @LanguageValu
 SET @LanguageValue = N'Analysis ID 01';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.O01ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Delivery route';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.RouteID', @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue = N'Stop using';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.IsUsing', @FormID, @LanguageValue, @Language;
 
@@ -143,7 +140,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BillCountryID', @FormID, @LanguageValu
 SET @LanguageValue = N'Postal code';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BillPostalCode', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Address';
+SET @LanguageValue = N'City';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BillCityID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'District';
@@ -209,82 +206,36 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.LastAssignedToUserID', @FormID, @Langu
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.WarningNoOrdersGenerated', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Period water';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.PeriodWater', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.FromToDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Delivery info';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.DeliveryInfo', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Note1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Bill info';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BillInfo', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.AssignedToUser', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Bottle limit';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BottleLimit', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.IsComfirmCustomers', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.AnaID.CB', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.APKRel', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis ID';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.DistrictID.CB', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.RelatedToID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Country ID';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.CountryID.CB', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.TableREL', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'City ID';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.CityID.CB', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.RePaymentTermID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contacter';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.ContactName', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.PaymentTermName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Label 01';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Description02', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Tel1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Label 02';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Description03', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Label 03';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Description04', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Label 04';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Description05', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'VAT customer name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.VATAccountName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Name of the analysis';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.AnaName.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'District name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.DistrictName.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Country name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.CountryName.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'City name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.CityName.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Parameters';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Varchar', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'General information';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.CommonInfo', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'City';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BillCityID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Delivery route';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.RouteName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Area';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.AreaID.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Area name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.AreaName.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Business lines';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BusinessLinesID.CB', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Business lines name';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.BusinessLinesName.CB', @FormID, @LanguageValue, @Language;
-
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1011.Tel2', @FormID, @LanguageValue, @Language;
 

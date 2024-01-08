@@ -146,3 +146,21 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.IsH' , @FormID, @LanguageValue, @Langu
 
 SET @LanguageValue = N'Tính KPCĐ';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.IsT' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Người tạo';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.CreateUserID' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Ngày tạo';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.CreateDate' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Người cập nhật';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.LastModifyUserID' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Ngày cập nhật';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.LastModifyDate' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Trạng thái';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.StatusID' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Diễn giải';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2192.Description' , @FormID, @LanguageValue, @Language;

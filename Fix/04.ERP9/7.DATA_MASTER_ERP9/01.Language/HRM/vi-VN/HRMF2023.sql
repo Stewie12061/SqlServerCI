@@ -44,6 +44,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.APK',  @FormID, @LanguageValue, @Langu
 SET @LanguageValue  = N'Phòng ban'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.DepartmentID',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Phòng ban'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.DepartmentName',  @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue  = N'Diễn giải'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.Description',  @FormID, @LanguageValue, @Language;
 
@@ -52,6 +55,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.DivisionID',  @FormID, @LanguageValue,
 
 SET @LanguageValue  = N'Vị trí tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.DutyID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Vị trí tuyển dụng'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.DutyName',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Từ ngày'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2023.FromDate',  @FormID, @LanguageValue, @Language;

@@ -23,23 +23,23 @@ SET @ModuleID = 'SO';
 SET @FormID = 'SOF1070';
 ------------------------------------------------------------------------------------------------------
 
-SET @LanguageValue = N'Danh mục chỉ tiêu doanh số nhân viên bán lẻ (Sale Out)';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.Title' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Danh mục chỉ tiêu doanh số nhân viên bán lẻ (Sell Out)';
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.DivisionID' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Mã chỉ tiêu';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.TargetsID' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.TargetsID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Từ ngày';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.FromDate' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.FromDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đến ngày';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.ToDate' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.ToDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Diễn giải';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.Description' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Người tạo';
-EXEC ERP9AddLanguage @ModuleID, 'SOF1070.CreateUserID' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF1070.CreateUserID', @FormID, @LanguageValue, @Language;

@@ -32,6 +32,9 @@ SET @FormID = 'CRMF2080';
 SET @LanguageValue = N'List of request';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Request ID';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.RequestID', @FormID, @LanguageValue, @Language;
 
@@ -41,7 +44,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.DivisionID', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Subject';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.RequestSubject', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Related To Type';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.RelatedToTypeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
@@ -50,7 +53,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.RequestStatus', @FormID, @LanguageValu
 SET @LanguageValue = N'Priority';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.PriorityID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Recording time';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.TimeRequest', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Deadline';
@@ -65,16 +68,16 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.AssignedToUserID', @FormID, @LanguageV
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.RequestDescription', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Opportunity';
@@ -139,6 +142,9 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.AccountName', @FormID, @LanguageValue,
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.LastAssignedToUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CRMF2080.FromToDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'ID';
 EXEC ERP9AddLanguage @ModuleID, N'CRMF2080.OpportunityID.CB', @FormID, @LanguageValue, @Language, NULL

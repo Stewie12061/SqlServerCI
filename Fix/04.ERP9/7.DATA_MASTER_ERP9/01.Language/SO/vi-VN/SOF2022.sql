@@ -262,3 +262,18 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2022.DiscountConvertedAmount',  @FormID, @La
 
 SET @LanguageValue  = N'Chiết khấu'
 EXEC ERP9AddLanguage @ModuleID, 'SOF2022.DiscountAmount',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.Status',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Loại tiền';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.CurrencyName',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Phương thức thanh toán';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.PaymentName',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Loại mặt hàng';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.InventoryTypeName',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Hàng khuyến mãi';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2022.IsProInventoryID' , @FormID, @LanguageValue, @Language;

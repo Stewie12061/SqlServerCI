@@ -193,3 +193,11 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2012.IsNextDay',  @FormID, @LanguageValue, @
 SET @LanguageValue  = N'ĐTVS Hợp lệ'
 EXEC ERP9AddLanguage @ModuleID, 'OOF2012.IsValid',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Diễn giải'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.Description',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Ghi chú'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.TabCRMT00001',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2012.StatusID',  @FormID, @LanguageValue, @Language;

@@ -112,7 +112,7 @@ SET	ImportMessage = ImportMessage + CASE WHEN ImportMessage <> '' THEN '\n' ELSE
 											WHERE ImportTransTypeID = @ImportTransTypeID AND ColID = 'VoucherNo'),CONVERT(VARCHAR,Row),'-WFML000289,'), ErrorColumn = ErrorColumn + 'VoucherNo,'
 WHERE VoucherNo IN (
 SELECT DT.VoucherNo FROM (select COUNT(*) RowsCount,VoucherNo, InventoryID FROM #WMP22801 Group by VoucherNo, InventoryID) Dt	
-LEFT JOIN  (select COUNT(*) RowsCount,VoucherNo, InventoryID FROM BT1002 WHERE ISNULL(SeriNo,'')=''  Group by VoucherNo, InventoryID) B02 ON B02.VoucherNo = Dt.VoucherNo AND B02.InventoryID = Dt.InventoryID
+LEFT JOIN  (select COUNT(*) RowsCount,VoucherNo, InventoryID FROM BT1002 WHERE Isnull(SeriNo,'')=''  Group by VoucherNo, InventoryID) B02 ON B02.VoucherNo = Dt.VoucherNo AND B02.InventoryID = Dt.InventoryID
 WHERE ISNULL(Dt.RowsCount,0) != ISNULL(B02.RowsCount,0)
 )
 

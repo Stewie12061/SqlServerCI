@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- In chào giá (chuẩn)
 -- <Param>
@@ -50,7 +51,7 @@ T2.Tel as PhoneContactor,A02.Phonenumber,T2.Fax,T2.InventoryID,T2.InventoryName,
 isnull(T2.QuoQuantity,0) as QuoQuantity, 
 T2.UnitName,T2.UnitPrice AS UnitPrice, T2.UnitID,
 T2.OriginalAmount, T2.ConvertedAmount,isnull(T2.VATPercent,0) as VATPercent,isnull( T2.VATOriginalAmount,0) as VATOriginalAmount,T2.VATConvertedAmount,
-T2.DiscountPercent, T2.DiscountConvertedAmount, T2.DiscountOriginalAmount,isnull(T2.TotalOriginalAmount,0) as TotalOriginalAmount,
+isnull(T2.DiscountPercent,0) AS DiscountPercent, T2.DiscountAmount, isnull(T2.DiscountConvertedAmount,0) AS DiscountConvertedAmount, T2.DiscountOriginalAmount,isnull(T2.TotalOriginalAmount,0) as TotalOriginalAmount,
 T2.Attention2, A1.Director, A2.Image01ID AS Image, T2.Specification,AT1016.BankAccountNo , AT1016.BankName,
 ISNULL(T2.QD01,0) AS QD01, ISNULL(T2.QD02,0) AS QD02, ISNULL(T2.QD03,0) AS QD03, ISNULL(T2.QD04,0) AS QD04, ISNULL(T2.QD05,0) AS QD05
 FROM OT2101 T1 WITH (NOLOCK)
@@ -65,6 +66,7 @@ ORDER BY T2.Orders'
 
 PRINT (@sSQL + @sSQL1)
 EXEC (@sSQL + @sSQL1)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

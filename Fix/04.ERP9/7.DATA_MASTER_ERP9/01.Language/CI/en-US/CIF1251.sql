@@ -1,43 +1,147 @@
-                   
-                    ------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ CIF1251 - CRM
---            Ngày tạo                                    Người tạo
---            6/21/2017 9:20:11 AM                                         Thành Luân
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ CIF1251- CI
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
-@LanguageID VARCHAR(10)
+@Language VARCHAR(10),
+------------------------------------------------------------------------------------------------------
+-- Tham so gen tu dong
+------------------------------------------------------------------------------------------------------
+@LanguageValue NVARCHAR(4000),
 
+------------------------------------------------------------------------------------------------------
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
+
+
+------------------------------------------------------------------------------------------------------
 -- Gan gia tri tham so va thu thi truy van
--- SELECT * FROM A00001 WHERE FormID = 'CIF1251' and Module = N'CI'
--- SELECT * FROM A00001 WHERE FormID = 'CIF1251' and Module = N'CI' and LanguageID = N'en-US'
 ------------------------------------------------------------------------------------------------------
 /*
-- Tieng Viet: vi-VN
-- Tieng Anh: en-US 
-- Tieng Nhat: ja-JP 
-- Tieng Trung: zh-CN
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
 */
+SET @Language = 'en-US' 
+SET @ModuleID = 'CI';
+SET @FormID = 'CIF1251';
+
 EXEC ERP9AddLanguage N'CI', N'CIF1251.Title', N'CIF1251', N'Update price list table sell', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.ToDate', N'CIF1251', N'To date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.DivisionID', N'CIF1251', N'Division', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.Disabled', N'CIF1251', N'Disabled', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.InventoryTypeID', N'CIF1251', N'Inventory type', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.CurrencyID', N'CIF1251', N'Currency type', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.ID', N'CIF1251', N'Price list table code', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.InventoryTypeID.CB', N'CIF1251', N'Inventory type', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.AnaID.CB', N'CIF1251', N'Analys code', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.OID', N'CIF1251', N'Customer Group', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.LastModifyDate', N'CIF1251', N'Last modify date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.CreateDate', N'CIF1251', N'Create date', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.LastModifyUserID', N'CIF1251', N'Last modify user', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.CreateUserID', N'CIF1251', N'Create user', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.Description', N'CIF1251', N'Price list table name', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.InventoryTypeName.CB', N'CIF1251', N'Inventory type name', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.CurrencyID.CB', N'CIF1251', N'Currency name', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.CurrencyName.CB', N'CIF1251', N'Currency name', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.AnaName.CB', N'CIF1251', N'Analys name', N'en-US', NULL
 EXEC ERP9AddLanguage N'CI', N'CIF1251.IsConvertedPrice', N'CIF1251', N'Calculate the price according to money rules', N'en-US', NULL
-EXEC ERP9AddLanguage N'CI', N'CIF1251.FromDate', N'CIF1251', N'From date', N'en-US', NULL
+
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.DivisionID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Price list code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Price list name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.Description', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Since';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.FromDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'To date';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.ToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Customer group';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.OID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Item type';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.InventoryTypeID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Item type';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.InventoryTypeName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Currency';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.CurrencyID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Calculate the price according to the exchange rate';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsConvertedPrice', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.Disabled', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Edit date';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Repairer';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Price list after tax';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsTaxIncluded', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Set employee commission rates';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsSetBonus', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.btnEdit_TabInventory', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Price list name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.PriceName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'% discount';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.MasterDiscountPercent', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsTaxIncludedTemp', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Legacy price list code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.InheritID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Plan price list';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsPlanPrice', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Purchase price list';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsPurchasePrice', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Type';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.TypeID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.APKMaster_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.Type_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Browsing status';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.StatusSS', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Reviewer''s comments';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Approver level';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.ApprovingLevel', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.ApproveLevel', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Levels';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.Levels', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Inherit the expected price calculation table';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1251.IsInheritCost', @FormID, @LanguageValue, @Language;
 

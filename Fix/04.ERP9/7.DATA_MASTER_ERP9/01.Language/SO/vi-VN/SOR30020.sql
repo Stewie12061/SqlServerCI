@@ -6,7 +6,7 @@ SET @ModuleID = 'SO'
 SET @Language = 'vi-VN'
 
 SET @FormID = 'SOR30020'
-SET @LanguageValue = N'Báo cáo tổng hợp đơn hàng bán theo loại sản phẩm'
+SET @LanguageValue = N'Báo cáo tổng hợp bán hàng theo loại sản phẩm'
 EXEC ERP9AddLanguage @ModuleID, 'SOR30020.Title' , @FormID, @LanguageValue, @Language;
 
 SET @FormID = 'SOR30020'

@@ -32,31 +32,31 @@ SET @FormID = 'SOF2012';
 SET @LanguageValue = N'Branch';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Order number';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.VoucherNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Customer ID';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ObjectID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Client';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ObjectName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Address';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Address', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher employee';
+SET @LanguageValue = N'Voting maker';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Ship Date';
+SET @LanguageValue = N'Delivery date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ShipDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Order Date';
+SET @LanguageValue = N'Order date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.OrderDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Delivery with invoice';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.IsInvoice', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Notes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -68,16 +68,16 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2012.TranMonth', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.TranYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Impact Level';
@@ -86,43 +86,43 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ImpactLevel', @FormID, @LanguageValue, 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.IsConfirm', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory Type';
+SET @LanguageValue = N'Item type';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Exchange Rate';
+SET @LanguageValue = N'Exchange rate';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ExchangeRate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Order Status';
+SET @LanguageValue = N'Order status';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.OrderStatus', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'VAT customer';
+SET @LanguageValue = N'VAT customers';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.VATObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Currency';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.CurrencyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'VAT customer';
+SET @LanguageValue = N'VAT customers';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.VATObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher Type';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Route';
+SET @LanguageValue = N'Delivery route';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.RouteID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Tình trạng in';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.IsPrinted', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contract No';
+SET @LanguageValue = N'Some contracts';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ContractNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contract Date';
+SET @LanguageValue = N'Contract signing date';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ContractDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Classify ID';
@@ -131,25 +131,25 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ClassifyID', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Sales Man';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.SalesManID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Due Date';
+SET @LanguageValue = N'Date due';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DueDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contact person';
+SET @LanguageValue = N'Contact';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Contact', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Delivery Address';
+SET @LanguageValue = N'Delivery address';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DeliveryAddress', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Transport';
+SET @LanguageValue = N'Transportation';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Transport', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Payment Term';
+SET @LanguageValue = N'Terms of payment';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.PaymentTermID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Payment';
+SET @LanguageValue = N'Payment methods';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.PaymentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'VAT ID';
+SET @LanguageValue = N'Tax code';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.VATNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Order type';
@@ -167,7 +167,7 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2012.PayAmount', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Sales discount';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DiscountSalesAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Total amount';
+SET @LanguageValue = N'total';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.TotalAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -182,32 +182,38 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Type_9000', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Status', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Note of approver';
+SET @LanguageValue = N'Approval Notes';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ApprovalNotes', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ApprovingLevel', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis 1';
+SET @LanguageValue = N'Analysis code 01';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Ana01ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis 2';
+SET @LanguageValue = N'Analysis code 02';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Ana02ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis 3';
+SET @LanguageValue = N'Analysis code 03';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Ana03ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis 4';
+SET @LanguageValue = N'Analysis code 04';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Ana04ID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Analysis 5';
+SET @LanguageValue = N'Analysis code 05';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.Ana05ID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DealerID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.IsReceiveAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ReceiveAmount', @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ChooseQuotationSaleID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.OldTaskID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inventory';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.InventoryID' , @FormID, @LanguageValue, @Language;
@@ -226,6 +232,47 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2012.OrderQuantity' , @FormID, @LanguageValu
  
 SET @LanguageValue = N'Amount';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.OriginalAmount' , @FormID, @LanguageValue, @Language;
+
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.IsExportOrder', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ContactorID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DutyID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.SalesManName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.PromoteIDList', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ItemTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DiscountTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.VATTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.OrderTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ReceiveAmount', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.APKOT2003', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.DiscountWalletTotal', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2012.IsInheritSO_AP', @FormID, @LanguageValue, @Language;
+
 
 SET @LanguageValue = N'Converted amount';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2012.ConvertedAmount' , @FormID, @LanguageValue, @Language;

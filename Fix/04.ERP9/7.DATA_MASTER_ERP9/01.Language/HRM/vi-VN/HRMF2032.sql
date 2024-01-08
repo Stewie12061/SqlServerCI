@@ -134,5 +134,5 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2032.TabCRMT90031' , @FormID, @LanguageValu
 SET @LanguageValue = N'Mã người phụ trách';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2032.AssignedToUserID' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tên người phụ trách';
+SET @LanguageValue = N'Người phỏng vấn';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2032.AssignedToUserName' , @FormID, @LanguageValue, @Language;

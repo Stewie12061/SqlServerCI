@@ -689,5 +689,3 @@ SET @Text = N'Tỉ lệ % không đạt'
 SET @Language = N'vi-VN'
 SET @CustomName = NULL
 EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
-
-

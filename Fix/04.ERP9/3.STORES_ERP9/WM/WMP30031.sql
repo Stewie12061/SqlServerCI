@@ -8,6 +8,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Xu ly hang ton kho
 ---- Thay cho View AV7000 để dữ liệu khi lấy không bị chậm
@@ -204,7 +205,7 @@ SET @sSQL1 = N'
 	LEFT JOIN AT1011 A10 WITH (NOLOCK) ON A10.AnaTypeID = ''A10'' AND A10.AnaID = D17.Ana10ID
 	LEFT JOIN AT0114 WITH (NOLOCK) ON AT0114.Revoucherid=D17.VoucherID AND AT0114.ReTransactionID = D17.TransactionID AND D17.InventoryID = AT0114.InventoryID -- 03/01/2014 My Tuyen add new
 	WHERE	ISNULL(DebitAccountID,'''') <>''''
-			AND D17.DivisionID LIKE '''+@DivisionID+'''
+			AND D17.DivisionID IN ('''+@DivisionID+''')
 	'
 SET @sSQL2 = N'
 UNION ALL --- So du co hang ton kho
@@ -285,7 +286,7 @@ SET @sSQL3 = N'
 	LEFT JOIN AT0114 WITH (NOLOCK) ON AT0114.Revoucherid=D17.VoucherID AND AT0114.ReTransactionID = D17.TransactionID AND D17.InventoryID = AT0114.InventoryID  -- 03/01/2014 My Tuyen add new
 
 	WHERE ISNULL(CreditAccountID,'''') <>''''
-			AND D17.DivisionID LIKE '''+@DivisionID+'''
+			AND D17.DivisionID IN ('''+@DivisionID+''')
 	'
 SET @sSQL4 = N'
 UNION ALL  -- Nhap kho
@@ -367,7 +368,7 @@ SELECT  D07.DivisionID, D07.TranMonth, D07.TranYear, D07.TransactionID,
 	LEFT JOIN AT0114 WITH (NOLOCK) ON D07.RevoucherID=AT0114.RevoucherID AND AT0114.ReTransactionID = D07.ReTransactionID AND D07.InventoryID = AT0114.InventoryID     -- 03/01/2014 My Tuyen add new
 
 	WHERE D06.KindVoucherID in (1,3,5,7,9,15,17)
-			AND D07.DivisionID LIKE '''+@DivisionID+'''
+			AND D07.DivisionID IN ('''+@DivisionID+''')
 	'
 SET @sSQL6 = N'
 UNION ALL  -- XUAT KHO
@@ -452,7 +453,7 @@ SELECT  D07.DivisionID, D07.TranMonth, D07.TranYear, D07.TransactionID,
 	LEFT JOIN AT0114 WITH (NOLOCK) ON D07.RevoucherID=AT0114.RevoucherID AND AT0114.ReTransactionID = D07.ReTransactionID AND D07.InventoryID = AT0114.InventoryID  -- 03/01/2014 My Tuyen add new
 
 	WHERE D06.KindVoucherID in (2,3,4,6,8,10,14,20)
-			AND D07.DivisionID LIKE '''+@DivisionID+'''
+			AND D07.DivisionID IN ('''+@DivisionID+''')
 '
 --PRINT(@sSQL1)
 --PRINT(@sSQL2)
@@ -525,7 +526,7 @@ BEGIN
 	LEFT JOIN AT1011 A10 WITH (NOLOCK) ON A10.AnaTypeID = ''A10'' AND A10.AnaID = D17.Ana10ID
 	LEFT JOIN AT0114 WITH (NOLOCK) ON AT0114.Revoucherid=D17.VoucherID AND AT0114.ReTransactionID = D17.TransactionID AND D17.InventoryID = AT0114.InventoryID  -- 03/01/2014 My Tuyen add new
 	WHERE ISNULL(CreditAccountID,'''') <>''''
-			AND D17.DivisionID LIKE '''+@DivisionID+''''
+			AND D17.DivisionID IN ('''+@DivisionID+''')'
 	SET @sSQL5 = N', WT8899.S01ID, WT8899.S02ID, WT8899.S03ID, WT8899.S04ID, WT8899.S05ID, WT8899.S06ID, WT8899.S07ID, WT8899.S08ID, WT8899.S09ID, WT8899.S10ID,
 	WT8899.S11ID, WT8899.S12ID, WT8899.S13ID, WT8899.S14ID, WT8899.S15ID, WT8899.S16ID, WT8899.S17ID, WT8899.S18ID, WT8899.S19ID, WT8899.S20ID
 	FROM AT2007 AS D07  WITH (NOLOCK)
@@ -558,7 +559,7 @@ BEGIN
 	LEFT JOIN AT0114 WITH (NOLOCK) ON D07.RevoucherID=AT0114.RevoucherID AND AT0114.ReTransactionID = D07.ReTransactionID AND D07.InventoryID = AT0114.InventoryID    -- 03/01/2014 My Tuyen add new
 
 	WHERE D06.KindVoucherID in (1,3,5,7,9,15,17)
-			AND D07.DivisionID LIKE '''+@DivisionID+''''
+			AND D07.DivisionID IN ('''+@DivisionID+''')'
 	SET @sSQL7 = N', WT8899.S01ID, WT8899.S02ID, WT8899.S03ID, WT8899.S04ID, WT8899.S05ID, WT8899.S06ID, WT8899.S07ID, WT8899.S08ID, WT8899.S09ID, WT8899.S10ID,
 	WT8899.S11ID, WT8899.S12ID, WT8899.S13ID, WT8899.S14ID, WT8899.S15ID, WT8899.S16ID, WT8899.S17ID, WT8899.S18ID, WT8899.S19ID, WT8899.S20ID
 	FROM AT2007 AS D07 WITH (NOLOCK) 
@@ -592,7 +593,7 @@ BEGIN
 	LEFT JOIN AT0114 WITH (NOLOCK) ON D07.RevoucherID=AT0114.RevoucherID AND AT0114.ReTransactionID = D07.ReTransactionID AND D07.InventoryID = AT0114.InventoryID  -- 03/01/2014 My Tuyen add new
 
 	WHERE D06.KindVoucherID in (2,3,4,6,8,10,14,20)
-			AND D07.DivisionID LIKE '''+@DivisionID+''''
+			AND D07.DivisionID IN ('''+@DivisionID+''')'
 END
 
 
@@ -617,6 +618,7 @@ IF NOT EXISTS (SELECT 1 FROM  SYSOBJECTS WITH (NOLOCK) WHERE Xtype ='V' and Name
 ELSE
 	EXEC(' ALTER VIEW AV7008 -- Tạo bởi WMP30031 Cách lấy dữ liệu giống AV7000
 	        AS '+@sSQL+@sSQL1+@sWhere1+@sSQL2+@sSQL3+@sWhere2+@sSQL4+@sSQL5+@sWhere3+@sSQL6+@sSQL7+@sWhere4)
+
 
 
 

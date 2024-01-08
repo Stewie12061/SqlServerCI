@@ -32,7 +32,7 @@ SET @FormID = 'OOF1012';
 SET @LanguageValue = N'Unusual type View';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1012.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1012.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unusual Type ID';

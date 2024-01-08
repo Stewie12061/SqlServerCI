@@ -29,33 +29,35 @@ SET @Language = 'en-US'
 SET @ModuleID = 'CI';
 SET @FormID = 'CIF1221';
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Area ID';
+SET @LanguageValue = N'Area code - area';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.AreaID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Area name';
+SET @LanguageValue = N'Region name - area';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.AreaName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disable';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Created user';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Created date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1221.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Update zones';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1221.Title', @FormID, @LanguageValue, @Language;
-

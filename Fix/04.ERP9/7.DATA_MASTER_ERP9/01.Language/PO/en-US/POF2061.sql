@@ -32,22 +32,25 @@ SET @FormID = 'POF2061';
 SET @LanguageValue = N'Update container booking for export order';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'POF2061.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Votes';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Voucher creation date';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Loading';
+SET @LanguageValue = N'Close the goods';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.PackedTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Departure date';
+SET @LanguageValue = N'Ship departure date';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.DepartureDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Arrival date';
+SET @LanguageValue = N'The day the train arrives';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.ArrivalDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Port';
@@ -56,28 +59,28 @@ EXEC ERP9AddLanguage @ModuleID, 'POF2061.PortName', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Closing time';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.ClosingTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Consignee';
+SET @LanguageValue = N'Receiver';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.Forwarder', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Carrier';
+SET @LanguageValue = N'Carriers';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.ShipBrand', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Container quantity';
+SET @LanguageValue = N'Number of containers';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.ContQuantity', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Updater';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -92,7 +95,7 @@ EXEC ERP9AddLanguage @ModuleID, 'POF2061.ShipBrandPOF2060', @FormID, @LanguageVa
 SET @LanguageValue = N'Port';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.PortNamePOF2060', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Customer';
+SET @LanguageValue = N'Client';
 EXEC ERP9AddLanguage @ModuleID, 'POF2061.ObjectName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Voucher No';

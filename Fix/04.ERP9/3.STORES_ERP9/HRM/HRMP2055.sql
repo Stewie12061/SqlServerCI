@@ -6,6 +6,8 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
 -- <Summary>
 ---- Xác nhận tuyển dụng hàng loạt
 -- <Param>
@@ -17,6 +19,7 @@ GO
 -- <History>
 ----Created by: Bảo Thy on 30/08/2017
 --- Modified on 18/02/2019 by Bảo Anh: Update trạng thái trong danh mục hồ sơ nhân viên đối với nhân viên tái tuyển dụng (NEWTOYO)
+--- Modified on 27/09/2023 by Phương Thảo:  Update nếu là  trạng thái từ chối nhận việc sẽ cho  xác nhận tuyển dụng lại
 -- <Example>
 ---- 
 /*-- <Example>
@@ -80,14 +83,15 @@ BEGIN
 END
 
 SET @sSQL = N'
-SELECT HRMT2051.DivisionID, HRMT2051.RecruitPeriodID, HRMT2051.CandidateID
+SELECT HRMT2051.DivisionID, HRMT2051.RecruitPeriodID, HRMT1031.CandidateID
 INTO #Temp_HRMP2055
 FROM HRMT2051 WITH (NOLOCK)
 LEFT JOIN HRMT2050 WITH (NOLOCK) ON HRMT2050.DivisionID = HRMT2051.DivisionID AND HRMT2050.RecDecisionID = HRMT2051.RecDecisionID
 LEFT JOIN HRMT2020 WITH (NOLOCK) ON HRMT2051.DivisionID = HRMT2020.DivisionID AND HRMT2051.RecruitPeriodID = HRMT2020.RecruitPeriodID
-LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT2051.DivisionID = HRMT1031.DivisionID AND HRMT2051.CandidateID = HRMT1031.CandidateID
+LEFT JOIN HRMT1030 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT2051.DivisionID  AND HRMT1030.CandidateID = HRMT2051.CandidateID 
+LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT2051.DivisionID = HRMT1031.DivisionID AND HRMT1030.APK = HRMT1031.CandidateID AND  HRMT2051.CandidateID = HRMT1030.CandidateID
 '+@sJoin+' 
-WHERE HRMT2051.DivisionID = '''+@DivisionID+''' AND  ( HRMT1031.RecruitStatus = 1 OR HRMT1031.RecruitStatus = 3 OR HRMT1031.RecruitStatus = 4 )
+WHERE HRMT2051.DivisionID = '''+@DivisionID+''' AND  ( HRMT1031.RecruitStatus = 1 OR HRMT1031.RecruitStatus = 3 OR HRMT1031.RecruitStatus = 4  OR HRMT1031.RecruitStatus = 6)
 '+@sWhere +'
 '
 
@@ -96,7 +100,8 @@ WHERE HRMT2051.DivisionID = '''+@DivisionID+''' AND  ( HRMT1031.RecruitStatus = 
 SET @sSQL1 = '
 DECLARE @Cur CURSOR,
 		@RecruitPeriodID_Cur VARCHAR(50),
-		@CandidateID_Cur VARCHAR(50)
+		@CandidateID_Cur VARCHAR(50),
+		@CandidateID_CurAPK VARCHAR(100)
 
 SET @Cur = CURSOR SCROLL KEYSET FOR
 SELECT RecruitPeriodID, CandidateID
@@ -131,7 +136,10 @@ CLOSE @Cur
 --PRINT(@sSQL)
 --PRINT(@sSQL1)
 
+print (@sSQL+@sSQL1)
 EXEC (@sSQL+@sSQL1)
+
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

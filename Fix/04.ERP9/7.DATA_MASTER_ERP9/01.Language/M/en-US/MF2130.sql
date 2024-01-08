@@ -32,7 +32,10 @@ SET @FormID = 'MF2130';
 SET @LanguageValue = N'List of production processes ';
 EXEC ERP9AddLanguage @ModuleID, 'MF2130.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2130.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF2130.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Process ID';
@@ -41,7 +44,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2130.RoutingID', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Process name';
 EXEC ERP9AddLanguage @ModuleID, 'MF2130.RoutingName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF2130.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';

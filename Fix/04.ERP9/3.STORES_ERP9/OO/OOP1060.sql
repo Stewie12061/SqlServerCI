@@ -45,7 +45,7 @@ SET @OrderBy = ' M.DivisionID, M.TaskSampleID'
 IF ISNULL(@DivisionIDList, '') != ''
 	SET @sWhere = ' M.DivisionID IN (''' + @DivisionIDList + ''', ''@@@'') '
 ELSE 
-	SET @sWhere = ' M.DivisionID IN (''' + @DivisionID + ''', ''@@@'') '
+	SET @sWhere = ' M.DivisionID = ''' + @DivisionID + ''' '
 
 IF ISNULL(@TaskSampleID, '') != ''
 	SET @sWhere = @sWhere + ' AND ISNULL(M.TaskSampleID, '''') LIKE N''%' + @TaskSampleID + '%'' '

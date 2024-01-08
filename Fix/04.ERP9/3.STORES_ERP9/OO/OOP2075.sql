@@ -19,7 +19,6 @@ GO
 -- <History>
 ---- Created by Bảo Thy on 15/03/2018
 ---- Modified by on 
----- Modified by Xuân Nguyên on 05/01/2024 : [2024/01/IS/0009] Bổ sung import cột ApproveLevel cho OOT2070 và cột APKDetail cho OOT9001 
 -- <Example>
 /*
     EXEC OOP2075,0, 1
@@ -1505,9 +1504,9 @@ BEGIN
 		--order by T1.EmployeeID, T1.Date, T1.ShiftID
 
 
-		INSERT INTO OOT2070 (APK, DivisionID, APKMaster, EmployeeID, ShiftID, ChangeFromDate, ChangeToDate, Status, Note, DeleteFlag, ApproveLevel)
+		INSERT INTO OOT2070 (APK, DivisionID, APKMaster, EmployeeID, ShiftID, ChangeFromDate, ChangeToDate, Status, Note, DeleteFlag)
 		SELECT NEWID(), Temp1.DivisionID, Temp2.APK, Temp1.EmployeeID, Temp1.ShiftID, CONVERT(DATETIME,CONVERT(VARCHAR(4),@TranYear)+'-'+CONVERT(VARCHAR(2),@TranMonth)+'-'+CONVERT(VARCHAR(2),Temp1.MinDate),120),
-		CONVERT(DATETIME,CONVERT(VARCHAR(4),@TranYear)+'-'+CONVERT(VARCHAR(2),@TranMonth)+'-'+CONVERT(VARCHAR(2),Temp1.MaxDate),120), 0, NULL, 0, @Level
+		CONVERT(DATETIME,CONVERT(VARCHAR(4),@TranYear)+'-'+CONVERT(VARCHAR(2),@TranMonth)+'-'+CONVERT(VARCHAR(2),Temp1.MaxDate),120), 0, NULL, 0
 		FROM 
 		(
 			SELECT TransactionKey, DivisionID, TypeID, TranMonth, TranYear, EmployeeID, ID, ShiftID, MIN(Date) AS MinDate, MAX(Date) AS MaxDate
@@ -1529,8 +1528,8 @@ BEGIN
 			IF @i < 10 SET @s = '0' + CONVERT(VARCHAR, @i)
 			ELSE SET @s = CONVERT(VARCHAR, @i)
 			SET @sSQL='
-			INSERT INTO OOT9001 (DivisionID, APKMaster, ApprovePersonID, [Level], DeleteFlag, [Status],APKDetail)
-			SELECT A.DivisionID,OOT9.APK,ApprovePersonID,'+str(@i)+',0,0,OOT2.APK
+			INSERT INTO OOT9001 (DivisionID, APKMaster, ApprovePersonID, [Level], DeleteFlag, [Status])
+			SELECT A.DivisionID,OOT9.APK,ApprovePersonID,'+str(@i)+',0,0
 			FROM
 			(
 				SELECT DivisionID, TranMonth, TranYear, ID, DepartmentID, TeamID, MAX(ApprovePersonID'+@s+') ApprovePersonID
@@ -1538,8 +1537,7 @@ BEGIN
 				WHERE TransactionKey='''+@TransactionKey+'''
 				GROUP BY DivisionID, TranMonth, TranYear, ID, DepartmentID, TeamID
 			)A
-			INNER JOIN OOT9000 OOT9 ON OOT9.DivisionID = A.DivisionID AND OOT9.TranMonth = A.TranMonth AND OOT9.TranYear = A.TranYear AND OOT9.ID = A.ID
-			INNER JOIN OOT2070 OOT2  with (nolock) ON OOT2.DivisionID = A.DivisionID AND OOT2.APKMaster = OOT9.APK'
+			INNER JOIN OOT9000 OOT9 ON OOT9.DivisionID = A.DivisionID AND OOT9.TranMonth = A.TranMonth AND OOT9.TranYear = A.TranYear AND OOT9.ID = A.ID '
 			--PRINT (@sSQL)
 			EXEC (@sSQL)
 			SET @i = @i + 1		

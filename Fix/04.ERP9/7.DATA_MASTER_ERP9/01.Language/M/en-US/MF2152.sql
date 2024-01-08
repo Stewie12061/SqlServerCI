@@ -33,27 +33,30 @@ SET @LanguageValue = N'Production cost estimate view';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2152.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Supplies date';
@@ -65,7 +68,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2152.DepartmentID', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Requesting employee ID';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Requesting employee';
+SET @LanguageValue = N'Petitioner';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.EmployeeName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
@@ -74,7 +77,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2152.OrderStatus', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.StatusID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -98,7 +101,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2152.ApprovingLevel', @FormID, @LanguageValue
 SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object ID';
+SET @LanguageValue = N'Object code';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.ObjectID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -110,7 +113,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2152.Note', @FormID, @LanguageValue, @Languag
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.Type_9000', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Warehouse';
+SET @LanguageValue = N'Reservation warehouse';
 EXEC ERP9AddLanguage @ModuleID, 'MF2152.WareHouseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Month period';

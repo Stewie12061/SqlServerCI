@@ -79,7 +79,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2055.RecruitStatus',  @FormID, @LanguageVal
 SET @LanguageValue  = N'Trạng thái tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2055.RecruitStatusName',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Mức lương thỏa thuận'
+SET @LanguageValue  = N'Mức lương đề xuất'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2055.RequireSalary',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Thời gian có thể bắt đầu nhận việc'
@@ -91,6 +91,6 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2055.TrialFromDate',  @FormID, @LanguageVal
 SET @LanguageValue  = N'Thời gian thử việc'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2055.TrialTime',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Đến đến ngày'
+SET @LanguageValue  = N'Đến ngày'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2055.TrialToDate',  @FormID, @LanguageValue, @Language;
 

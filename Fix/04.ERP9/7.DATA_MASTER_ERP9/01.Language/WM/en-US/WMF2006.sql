@@ -32,7 +32,7 @@ SET @FormID = 'WMF2006';
 SET @LanguageValue = N'View output request information';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2006.WMF2006Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2006.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Voucher no';
@@ -119,10 +119,10 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2006.CreateUserID', @FormID, @LanguageValue,
 SET @LanguageValue = N'Create date';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2006.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2006.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2006.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

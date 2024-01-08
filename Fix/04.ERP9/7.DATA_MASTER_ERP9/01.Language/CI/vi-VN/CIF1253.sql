@@ -11,7 +11,7 @@ SET @ModuleID = 'CI';
 SET @FormID = 'CIF1253'
 ---------------------------------------------------------------
 
-SET @LanguageValue  = N'Cập nhật chi tiết bảng giá bán'
+SET @LanguageValue  = N'Cập nhật chi tiết bảng giá bán (Sell In)'
 EXEC ERP9AddLanguage @ModuleID, 'CIF1253.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Mã mặt hàng';

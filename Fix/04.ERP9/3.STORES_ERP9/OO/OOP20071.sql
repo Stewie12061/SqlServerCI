@@ -17,7 +17,6 @@ GO
 ----
 -- <History>
 ----Created by: Học Huy
-----Modified on 30/08/2023 by Thu Hà: Cập nhật điều kiện lọc
 -- <Example>
 /*
     EXEC OOP20071 'AS', '','PHUONG',1,25
@@ -54,12 +53,13 @@ DECLARE @sSQL NVARCHAR (MAX),
 			, HV.DepartmentName
 		FROM HV1400 HV WITH (NOLOCK)
 			INNER JOIN AT1102 WITH (NOLOCK) ON HV.EmployeeID = AT1102.ContactPerson
-		WHERE HV.DivisionID = ''' + @DivisionID + '''' + @sWhere + '
-		--AND HV.StatusID NOT IN (3,9)'+ @sWhere + '
+		WHERE HV.DivisionID = ''' + @DivisionID + '''
+			AND HV.StatusID NOT IN (3,9) '+ @sWhere + '
 		GROUP BY HV.EmployeeID, HV.FullName, HV.DepartmentName
 		ORDER BY ' + @OrderBy + '
 		OFFSET ' + STR((@PageNumber-1) * @PageSize) + ' ROWS
 		FETCH NEXT ' + STR(@PageSize) + ' ROWS ONLY '
+
 EXEC (@sSQL)
 --PRINT(@sSQL)
 

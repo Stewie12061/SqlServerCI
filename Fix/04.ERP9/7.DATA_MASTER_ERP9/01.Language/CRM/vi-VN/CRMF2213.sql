@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF2213';
 
-SET @LanguageValue = N'Chọn người phụ trách';
+SET @LanguageValue = N'Chọn telesales phụ trách';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2213.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Người phụ trách';

@@ -32,28 +32,31 @@ SET @FormID = 'HRMF2020';
 SET @LanguageValue = N'Recruitment';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Android Package Kit';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment period ID';
+SET @LanguageValue = N'Recruitment code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RecruitPeriodID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment period name';
+SET @LanguageValue = N'Name of recruitment period';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RecruitPeriodName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment plan';
+SET @LanguageValue = N'Name of recruitment plan';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RecruitPlanName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Vacancy';
+SET @LanguageValue = N'Vacancies';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DutyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From date';
+SET @LanguageValue = N'Made from';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.PeriodFromDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To date';
+SET @LanguageValue = N'Made to';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.PeriodToDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -65,49 +68,52 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.ReceiveToDate', @FormID, @LanguageValu
 SET @LanguageValue = N'Quantity';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RecruitQuantity', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Workplace';
+SET @LanguageValue = N'WorkPlace';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.WorkPlace', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Work type';
+SET @LanguageValue = N'WorkType';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.WorkType', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Request date';
+SET @LanguageValue = N'Request Date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RequireDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Costs';
+SET @LanguageValue = N'Expense';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Costs', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Note', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Number of interview rounds';
+SET @LanguageValue = N'TotalLevel';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.TotalLevel', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.InheritRecruitPeriodID', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.AssignedToUserID', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'People change';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Date changes';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Vacancy';
+SET @LanguageValue = N'Vacancies';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DutyName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recruitment plan ID';
+SET @LanguageValue = N'Recruitment plan code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RecruitPlanID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Cost';
+SET @LanguageValue = N'Expense';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Cost', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Available cost (VND)';
@@ -125,6 +131,18 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.QuantityBoundary', @FormID, @LanguageV
 SET @LanguageValue = N'Attachment';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Attach', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.NumberInterviews_HRMT2021', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.RecruitRequirement_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Gender_HRMT2024', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue  = N'Department ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DepartmentID.CB',  @FormID, @LanguageValue, @Language;
 
@@ -136,3 +154,88 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DutyID.CB',  @FormID, @LanguageValue, 
 
 SET @LanguageValue  = N'Vacancy name';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.DutyName.CB',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.FromAge_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.ToAge_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Appearance_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Experience_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.EducationLevelID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.FromSalary_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.ToSalary_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.WorkDescription_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Language1ID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Language2ID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Language3ID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.LanguageLevel1ID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.LanguageLevel2ID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.LanguageLevel3ID_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.IsInformatics_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.InformaticsLevel_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.IsCreativeness_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Creativeness_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.IsProblemSolving_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.ProblemSolving_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.IsPrsentation_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Prsentation_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.IsCommunication_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Communication_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Height_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Weight_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.HealthStatus_HRMT2024', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2020.Notes_HRMT2024', @FormID, @LanguageValue, @Language;
+

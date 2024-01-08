@@ -85,7 +85,7 @@ LEFT JOIN AT1102 T2 WITH(NOLOCK) ON T1.DepartmentID = T2.DepartmentID
 LEFT JOIN AT1103 T3 WITH(NOLOCK) ON T1.EmployeeID = T3.EmployeeID
 LEFT JOIN AT1202 T4 WITH(NOLOCK) ON T1.ObjectID = T4.ObjectID
 LEFT JOIN MT1601 T5 WITH(NOLOCK) ON T1.PeriodID = T5.PeriodID
-WHERE T1.DivisionID = '''+@DivisionID+'''' + @sWhere +'
+WHERE T1.DivisionID = '''+@DivisionID+''' AND T1.DeleteFlg <> 1' + @sWhere +'
 AND StatusID = 1
 AND NOT EXISTS (SELECT TOP 1 1 from MT2141 WHERE MT2141.InheritTransactionID = convert(nvarchar(50),T12.APK) and ISNULL(DeleteFlg,0)!=1)
 

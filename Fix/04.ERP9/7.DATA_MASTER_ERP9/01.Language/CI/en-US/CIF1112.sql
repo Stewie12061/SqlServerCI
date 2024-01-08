@@ -1,6 +1,6 @@
-﻿------------------------------------------------------------------------------------------------------
--- Script t?o ngôn ng? CIF1112 
------------------------------------------------------------------------------------------------------
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ CIF1112- CI
+------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
@@ -14,6 +14,8 @@ DECLARE
 -- Finished
 ------------------------------------------------------------------------------------------------------
 @Finished BIT
+
+
 ------------------------------------------------------------------------------------------------------
 -- Gan gia tri tham so va thu thi truy van
 ------------------------------------------------------------------------------------------------------
@@ -26,49 +28,44 @@ DECLARE
 SET @Language = 'en-US' 
 SET @ModuleID = 'CI';
 SET @FormID = 'CIF1112';
-------------------------------------------------------------------------------------------------------
---- Title
------------------------------------------------------------------------------------------------------
+
 SET @LanguageValue = N'Category payment';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1112.Title' , @FormID, @LanguageValue, @Language;
 
---- TAB
------------------------------------------------------------------------------------------------------
-SET @LanguageValue = N'Division';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.DivisionID' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.DivisionID', @FormID, @LanguageValue, @Language;
 
-------------------------------------------------------------------------------------------------------
-SET @LanguageValue = N'Payment code';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.PaymentID' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Method code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.PaymentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Payment name';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.PaymentName' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Method name';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.PaymentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.IsCommon' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Shared';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disable';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.Disabled' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Create date';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.CreateDate',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Last modify date';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.LastModifyDate',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Last modify user';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.LastModifyUserID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Update day';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Create user';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1112.CreateUserID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Last modified user';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1112.APK', @FormID, @LanguageValue, @Language;
 
-    SET @LanguageValue = N'Information payment';
+SET @LanguageValue = N'Information payment';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1112.ThongTinPhuongThucThanhToan' , @FormID, @LanguageValue, @Language;
 
-    SET @LanguageValue = N'Information payment';
+SET @LanguageValue = N'Information payment';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1121.ThongTinPhuongThucThanhToan' , @FormID, @LanguageValue, @Language;
-------------------------------------------------------------------------------------------------------
--- Finished
-------------------------------------------------------------------------------------------------------
+
 SET @Finished = 0;

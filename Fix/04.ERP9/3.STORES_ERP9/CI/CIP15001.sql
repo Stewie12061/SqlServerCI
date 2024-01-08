@@ -8,6 +8,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Load Grid Form CIF1500 Danh mục mã phân tích đơn hàng mua
 -- <Param>
@@ -18,6 +19,7 @@ GO
 ---- 
 -- <History>
 ----Created by: Hoài Bảo, Date: 19/12/2022
+----Modified by: Tấn Lộc,  Date: 06/01/2023 - Bổ sung điều kiện join
 -- <Example>
 ----    EXEC CIP15001 '1B','','','',1,20
 
@@ -87,10 +89,10 @@ DECLARE @sSQL NVARCHAR (MAX),
     ---lấy kết quả
 	SET @sSQL02 = N'
 				 SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum, (Select CountRow FROM @CountEXEC) AS TotalRow	,
-				 OT1002.DivisionID, OT1002.AnaID, OT05.UserName AS AnaTypeID, OT1002.AnaName, OT1002.AnaNameE, OT1002.Disabled,
-				 OT1002.OrdersArea, OT1002.APK
+				 OT1002.DivisionID, OT1002.AnaID, OT05.UserName AS AnaTypeName, OT1002.AnaName, OT1002.AnaNameE, OT1002.Disabled,
+				 OT1002.OrdersArea, OT1002.APK, OT05.AnaTypeID
 				 FROM @OT1002 AS OT1002
-					LEFT JOIN OT1005 OT05 WITH (NOLOCK) ON OT05.AnaTypeID = OT1002.AnaTypeID
+					LEFT JOIN OT1005 OT05 WITH (NOLOCK) ON OT05.AnaTypeID = OT1002.AnaTypeID AND OT05.DivisionID in ('''+@DivisionID+''', ''@@@'')
 				 WHERE ISNULL(OT05.IsUsed, 0) = 1 '+@sWhere+'
 				ORDER BY '+@OrderBy+'
 				OFFSET '+STR((@PageNumber-1) * @PageSize)+' ROWS
@@ -98,6 +100,7 @@ DECLARE @sSQL NVARCHAR (MAX),
 
 	PRINT (@sSQL+ @sSQL01+@sSQL02)
 	EXEC (@sSQL+ @sSQL01+@sSQL02)
+
 
 
 

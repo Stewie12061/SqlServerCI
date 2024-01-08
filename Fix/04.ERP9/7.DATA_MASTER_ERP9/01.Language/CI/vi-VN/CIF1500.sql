@@ -31,3 +31,6 @@ EXEC ERP9AddLanguage @ModuleID, 'CIF1500.Disabled',  @FormID, @LanguageValue, @L
 
 SET @LanguageValue  = N'Thứ tự khu vực';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1500.OrdersArea',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên loại mã phân tích';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1500.AnaTypeName',  @FormID, @LanguageValue, @Language;

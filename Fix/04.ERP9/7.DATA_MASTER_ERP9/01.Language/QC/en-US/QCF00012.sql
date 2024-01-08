@@ -1,140 +1,70 @@
-﻿DECLARE @ScreenID NVARCHAR(MAX)
-DECLARE @ColumnName NVARCHAR(MAX)
-DECLARE @IDLanguage NVARCHAR(MAX)
-DECLARE @ModuleID VARCHAR(10)
-DECLARE @KeyID VARCHAR(100)
-DECLARE @FormID VARCHAR(200)
-DECLARE @Text NVARCHAR(4000)
-DECLARE @Language VARCHAR(10)
-DECLARE @CustomName NVARCHAR(4000)
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ QCF00012- QC
+------------------------------------------------------------------------------------------------------
+DECLARE
+@ModuleID VARCHAR(10),
+@FormID VARCHAR(200),
+@Language VARCHAR(10),
+------------------------------------------------------------------------------------------------------
+-- Tham so gen tu dong
+------------------------------------------------------------------------------------------------------
+@LanguageValue NVARCHAR(4000),
 
-SET @ScreenID = N'QCF00012'
+------------------------------------------------------------------------------------------------------
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.Title'
-SET @FormID = N'QCF00012'
-SET @Text = N'Choose first shift'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.Title'
-SET @FormID = N'QCF00012'
-SET @Text = N'Choose first shift'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+------------------------------------------------------------------------------------------------------
+-- Gan gia tri tham so va thu thi truy van
+------------------------------------------------------------------------------------------------------
+/*
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
+*/
+SET @Language = 'en-US'; 
+SET @ModuleID = 'QC';
+SET @FormID = 'QCF00012';
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.APK'
-SET @FormID = N'QCF00012'
-SET @Text = N''
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Choose first shift';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.Title', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.WorkDate'
-SET @FormID = N'QCF00012'
-SET @Text = N'Manufacture Date'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.APK', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.ShiftID'
-SET @FormID = N'QCF00012'
-SET @Text = N'Working Shift'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Date of manufacture';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.WorkDate', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.ShiftName'
-SET @FormID = N'QCF00012'
-SET @Text = N'Working Shift'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Shift';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.ShiftID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.MachineID'
-SET @FormID = N'QCF00012'
-SET @Text = N'Machine'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Shift';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.ShiftName', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.MachineName'
-SET @FormID = N'QCF00012'
-SET @Text = N'Machine name'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Factory';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.DepartmentID'
-SET @FormID = N'QCF00012'
-SET @Text = N'Workshop'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Workshop name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.DepartmentName'
-SET @FormID = N'QCF00012'
-SET @Text = N'Workshop Name'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Machine';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.MachineID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.DepartmentID.CB'
-SET @FormID = N'QCF00012'
-SET @Text = N'Code'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Machine name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.MachineName', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.DepartmentName.CB'
-SET @FormID = N'QCF00012'
-SET @Text = N'Name'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.MachineName.CB', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.MachineID.CB'
-SET @FormID = N'QCF00012'
-SET @Text = N'Code'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Code';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.MachineID.CB', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.MachineName.CB'
-SET @FormID = N'QCF00012'
-SET @Text = N'Name'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Code';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.ShiftID.CB', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.ShiftID.CB'
-SET @FormID = N'QCF00012'
-SET @Text = N'Code'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
-
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF00012.ShiftName.CB'
-SET @FormID = N'QCF00012'
-SET @Text = N'Name'
-SET @Language = N'en-US'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF00012.ShiftName.CB', @FormID, @LanguageValue, @Language;
 

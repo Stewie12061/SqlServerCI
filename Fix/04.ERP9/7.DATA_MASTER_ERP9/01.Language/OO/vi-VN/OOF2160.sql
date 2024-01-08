@@ -59,7 +59,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2160.TaskID', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Người phụ trách';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2160.AssignedToUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Yêu cầu';
+SET @LanguageValue = N'Yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2160.RequestID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Release Version';
@@ -95,7 +95,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2160.TaskName', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Người phụ trách';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2160.AssignedToUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Yêu cầu';
+SET @LanguageValue = N'Yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2160.RequestName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -128,4 +128,6 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2160.TimeConfirm', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Chất lượng';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2160.StatusQualityOfWork', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Chỉ tiêu/Target';
+EXEC ERP9AddLanguage @ModuleID, 'OOF2160.TargetTaskName', @FormID, @LanguageValue, @Language;
 

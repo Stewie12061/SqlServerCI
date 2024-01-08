@@ -32,19 +32,22 @@ SET @FormID = 'QCF1031';
 SET @LanguageValue = N'Update reasons';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF1031.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Reason name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.ReasonName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Describe';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Reason ID';
+SET @LanguageValue = N'Reason code';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.ReasonID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase';
+SET @LanguageValue = N'Stage';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.PhaseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
@@ -56,16 +59,16 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF1031.CreateDate', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue =N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Non-use';
+SET @LanguageValue = N'Do not use';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1031.IsCommon', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'ID';

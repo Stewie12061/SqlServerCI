@@ -157,6 +157,9 @@ SELECT 'APRList' AS TransactionTypeID, 35 AS Orders, 'KHDSSI' AS TypeID, N'Kế 
 --- Thanh Lượng [25/07/2023] : Bổ sung duyệt KH doanh số (Sell OUT)(KHDSSO).
 UNION ALL
 SELECT 'APRList' AS TransactionTypeID, 36 AS Orders, 'KHDSSO' AS TypeID, N'Kế hạch doanh số (Sell Out)' AS Description, NULL AS TableID, NULL AS ColumnID, NULL AS ColumnName
+--- Phương Thảo [24/10/2023] : Bổ sung duyệt Kết quả thử việc (KQTV).
+UNION ALL
+SELECT 'APRList' AS TransactionTypeID, 37 AS Orders, 'KQTV' AS TypeID, N'Kết quả thử việc' AS Description, NULL AS TableID, NULL AS ColumnID, NULL AS ColumnName
 GO
 SET QUOTED_IDENTIFIER OFF
 GO

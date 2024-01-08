@@ -23,8 +23,8 @@ SET @ModuleID = 'SO';
 SET @FormID = 'SOF2150';
 ------------------------------------------------------------------------------------------------------
 
-SET @LanguageValue = N'Danh mục đơn hàng bán lẻ - Sell out';
-EXEC ERP9AddLanguage @ModuleID, 'SOF2150.Title' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Danh mục đơn hàng bán lẻ (Sell Out)';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2150.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2150.DivisionID' , @FormID, @LanguageValue, @Language;

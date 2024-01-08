@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- Chọn ứng viên (lịch PV)
 -- <Param>
@@ -76,9 +77,9 @@ ELSE IF @InterviewLevel = 1
 BEGIN 
 	SET @sSQL = N'
 SELECT ROW_NUMBER() OVER (ORDER BY HRMT1030.CandidateID) AS RowNum, '+@TotalRow+' AS TotalRow, HRMT1030.DivisionID, HRMT1030.CandidateID,
-LTRIM(RTRIM(REPLACE(LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,'''')))+ '' '' + LTRIM(RTRIM(ISNULL(HRMT1030.MiddleName,''''))) + '' '' + LTRIM(RTRIM(ISNULL(HRMT1030.LastName,''''))),''  '','' ''))) AS CandidateName
+LTRIM(RTRIM(REPLACE(LTRIM(RTRIM(ISNULL(HRMT1030.LastName,'''')))+ '' '' + LTRIM(RTRIM(ISNULL(HRMT1030.MiddleName,''''))) + '' '' + LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,''''))),''  '','' ''))) AS CandidateName
 FROM HRMT1030 WITH (NOLOCK)
-INNER JOIN HRMT1031 WITH (NOLOCK) ON HRMT1031.DivisionID = HRMT1030.DivisionID AND HRMT1031.CandidateID = HRMT1030.CandidateID
+INNER JOIN HRMT1031 WITH (NOLOCK) ON HRMT1031.DivisionID = HRMT1030.DivisionID AND HRMT1031.CandidateID = HRMT1030.APK
 WHERE HRMT1030.DivisionID = '''+@DivisionID+'''
 AND HRMT1031.RecPeriodID = '''+@RecruitPeriodID+'''
 AND HRMT1031.RecruitStatus = 1 
@@ -87,7 +88,7 @@ AND (ISNULL(HRMT1030.CandidateID,'''') LIKE ''%'+ISNULL(@TxtSearch,'')+'%''
 	) 
 AND HRMT1030.CandidateID NOT IN (SELECT CandidateID FROM HRMT2031 WITH (NOLOCK) WHERE DivisionID = '''+@DivisionID+''' AND CandidateID = HRMT1030.CandidateID)
 '+ CASE WHEN @InterviewRecruitList IS NOT NULL THEN 'AND NOT EXISTS (SELECT TOP 1 1 FROM #InterviewRecruitList T1 WHERE HRMT1030.CandidateID = T1.CandidateID)' ELSE '' END+'
-ORDER BY HRMT1030.CandidateID
+ORDER BY HRMT1030.CandidateID 
 
 OFFSET '+STR((@PageNumber-1) * @PageSize)+' ROWS
 FETCH NEXT '+STR(@PageSize)+' ROWS ONLY
@@ -96,11 +97,12 @@ END
 
 
 
---PRINT(@sSQL)
+PRINT(@sSQL)
 EXEC (@sSQL)
 
 IF @InterviewRecruitList IS NOT NULL
 DROP TABLE #InterviewRecruitList
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

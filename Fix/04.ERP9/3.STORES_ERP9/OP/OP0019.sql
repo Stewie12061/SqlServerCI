@@ -23,7 +23,6 @@ GO
 ---- Modified by Trọng Kiên on 08/12/2020 : Bổ sung Customize Mai Thư trỏ về OT2003_MT để so sánh ngày giao hàng
 ---- Modified by Trọng Kiên on 09/12/2020 : Bổ sung where Follower
 ---- Modified by Kiều Nga on 08/12/2021 : Bổ sung CustomizeIndex = 145 cho DPT
-----Editted by: Nhật Quang , Date: 04/08/2022: Bổ sung thêm số lượng người theo dõi từ 20 lên 50.
 -- exec OP0019 'KE', 'SO/02/2016/0004'
 -- exec OP0019 'DPT', ''
 CREATE PROCEDURE [dbo].[OP0019] 
@@ -46,7 +45,7 @@ BEGIN
 						     OR S1.FollowerID05 = '''+@UserID+''' OR S1.FollowerID06 = '''+@UserID+''' OR S1.FollowerID07 = '''+@UserID+''' OR S1.FollowerID08 = '''+@UserID+'''
 							 OR S1.FollowerID09 = '''+@UserID+''' OR S1.FollowerID10 = '''+@UserID+''' OR S1.FollowerID11 = '''+@UserID+''' OR S1.FollowerID12 = '''+@UserID+'''
 							 OR S1.FollowerID13 = '''+@UserID+''' OR S1.FollowerID14 = '''+@UserID+''' OR S1.FollowerID15 = '''+@UserID+''' OR S1.FollowerID16 = '''+@UserID+'''
-							 OR S1.FollowerID17 = '''+@UserID+''' OR S1.FollowerID18 = '''+@UserID+''' OR S1.FollowerID19 = '''+@UserID+''' OR S1.FollowerID20 = '''+@UserID+''' OR S1.FollowerID21 = '''+@UserID+''' OR S1.FollowerID22 = '''+@UserID+''' OR S1.FollowerID23 = '''+@UserID+''' OR S1.FollowerID24 = '''+@UserID+''' OR S1.FollowerID25 = '''+@UserID+''' OR S1.FollowerID26 = '''+@UserID+''' OR S1.FollowerID27 = '''+@UserID+''' OR S1.FollowerID28 = '''+@UserID+''' OR S1.FollowerID29 = '''+@UserID+''' OR S1.FollowerID30 = '''+@UserID+'''  OR S1.FollowerID31 = '''+@UserID+'''  OR S1.FollowerID32 = '''+@UserID+'''  OR S1.FollowerID33 = '''+@UserID+'''  OR S1.FollowerID34 = '''+@UserID+'''  OR S1.FollowerID35 = '''+@UserID+'''  OR S1.FollowerID36 = '''+@UserID+'''  OR S1.FollowerID37 = '''+@UserID+'''  OR S1.FollowerID38 = '''+@UserID+'''  OR S1.FollowerID39 = '''+@UserID+'''  OR S1.FollowerID40 = '''+@UserID+''' OR S1.FollowerID41 = '''+@UserID+''' OR S1.FollowerID42 = '''+@UserID+''' OR S1.FollowerID43 = '''+@UserID+''' OR S1.FollowerID44 = '''+@UserID+''' OR S1.FollowerID45 = '''+@UserID+''' OR S1.FollowerID46 = '''+@UserID+''' OR S1.FollowerID47 = '''+@UserID+''' OR S1.FollowerID48 = '''+@UserID+''' OR S1.FollowerID49 = '''+@UserID+''' OR S1.FollowerID50 = '''+@UserID+''') '
+							 OR S1.FollowerID17 = '''+@UserID+''' OR S1.FollowerID18 = '''+@UserID+''' OR S1.FollowerID19 = '''+@UserID+''' OR S1.FollowerID20 = '''+@UserID+''') '
 END
 
 SET @CustomizeIndex = (SELECT CustomerName FROM CustomerIndex)

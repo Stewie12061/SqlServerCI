@@ -8,6 +8,10 @@ GO
 
 
 
+
+
+
+
 -- <Summary>
 ---- Load tab thông tin tuyển dụng của đợt tuyển dụng
 -- <Param>
@@ -59,7 +63,7 @@ DECLARE @sSQL NVARCHAR (MAX)=N'',
 		@sWhere2 NVARCHAR(MAX) = N'', 
 		@sWhere3 NVARCHAR(MAX) = N''
 
-		SET @sWhere = @sWhere + N' HRMT1020.DivisionID = '''+@DivisionID+''' AND HRMT1020.Disabled = 0 '
+		SET @sWhere = @sWhere + N' HRMT1020.DivisionID = '''+@DivisionID+''' AND ISNULL(HRMT1020.Disabled,0) = 0 '
 		SET @sWhere1 = @sWhere1 + N' HRMT2020.DivisionID = '''+@DivisionID+''''
 -- Lấy chi phí và số lượng của định biên tuyển dụng theo phòng ban trong khoảng thời gian từ ngày đến ngày 
 IF ISNULL(@DepartmentID, '') <> '' SET @sWhere = @sWhere + N'
@@ -93,11 +97,11 @@ BEGIN
 				, HRMT1020.ToDate 
 		FROM HRMT1020 WITH (NOLOCK)
 		INNER JOIN HRMT1021 WITH (NOLOCK) ON HRMT1020.DivisionID = HRMT1021.DivisionID 
-												AND HRMT1020.BoundaryID = HRMT1021.BoundaryID
+												AND CONVERT(NVARCHAR(50), HRMT1020.APK) = HRMT1021.BoundaryID
 	) #Temp ON HRMT2020.DivisionID = #Temp.DivisionID 
 					AND HRMT2020.DepartmentID = #Temp.DepartmentID 
 					AND HRMT2020.DutyID = #Temp.DutyID
-	WHERE HRMT2020.RecruitPeriodID = @RecruitPeriodID 
+	WHERE CONVERT(NVARCHAR(50), HRMT2020.APK) = @RecruitPeriodID 
 	AND HRMT2020.DivisionID = @DivisionID
 	AND (
 			(HRMT2020.PeriodFromDate >= #Temp.FromDate 
@@ -120,11 +124,11 @@ BEGIN
 						, HRMT1020.ToDate 
 				FROM HRMT1020 WITH (NOLOCK)
 				INNER JOIN HRMT1021 WITH (NOLOCK) ON HRMT1020.DivisionID = HRMT1021.DivisionID 
-														AND HRMT1020.BoundaryID = HRMT1021.BoundaryID
+														AND CONVERT(NVARCHAR(50), HRMT1020.APK) = HRMT1021.BoundaryID
 	) #Temp ON HRMT2020.DivisionID = #Temp.DivisionID 
 				AND HRMT2020.DepartmentID = #Temp.DepartmentID 
 				AND HRMT2020.DutyID = #Temp.DutyID
-	WHERE HRMT2020.RecruitPeriodID = @RecruitPeriodID 
+	WHERE CONVERT(NVARCHAR(50), HRMT2020.APK) = @RecruitPeriodID 
 				AND HRMT2020.DivisionID = @DivisionID
 	AND ( 
 			(HRMT2020.PeriodFromDate >= #Temp.FromDate 
@@ -164,7 +168,7 @@ SET @sSQL1 = @sSQL1 + N'
 	INTO #HRMP2024_Boundary_Quantity 
 	FROM HRMT1020 WITH (NOLOCK) 
 	INNER JOIN HRMT1021 WITH (NOLOCK) ON HRMT1020.DivisionID = HRMT1021.DivisionID 
-											AND HRMT1020.BoundaryID = HRMT1021.BoundaryID
+											AND CONVERT(NVARCHAR(50), HRMT1020.APK) = HRMT1021.BoundaryID
 	WHERE 
 		' + @sWhere + '
 		' + @sWhere2 + '
@@ -302,7 +306,7 @@ BEGIN
 			, HRMT2020.LastModifyUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HRMT2020.LastModifyUserID) LastModifyUserID
 			, HRMT2020.LastModifyDate
 	FROM HRMT2020 WITH (NOLOCK) 
-	LEFT JOIN HRMT2000 WITH (NOLOCK) ON HRMT2020.RecruitPlanID = HRMT2000.RecruitPlanID
+	LEFT JOIN HRMT2000 WITH (NOLOCK) ON CONVERT(NVARCHAR(50), HRMT2020.APK) = HRMT2000.RecruitPlanID
 	LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT2020.DepartmentID = AT1102.DepartmentID
 	LEFT JOIN HT1102 WITH (NOLOCK) ON HRMT2020.DivisionID = HT1102.DivisionID 
 										AND HRMT2020.DutyID = HT1102.DutyID
@@ -332,9 +336,9 @@ BEGIN
 								AND HRMT2020.DutyID = #Temp1.DutyID
 	LEFT JOIN HT0099 WITH (NOLOCK) ON HRMT2020.WorkType = HT0099.ID 
 										AND HT0099.CodeMaster = ''WorkType''
-    LEFT JOIN HRMT2024  WITH (NOLOCK) ON HRMT2024.RecruitPeriodID = HRMT2020.RecruitPeriodID
+    LEFT JOIN HRMT2024  WITH (NOLOCK) ON HRMT2024.RecruitPeriodID = CONVERT(NVARCHAR(50), HRMT2020.APK)
 	WHERE HRMT2020.DivisionID = ''' + @DivisionID + '''
-			AND (HRMT2020.RecruitPeriodID = ''' + @RecruitPeriodID + ''' OR HRMT2020.APK = TRY_CAST(''' + @RecruitPeriodID + ''' AS UNIQUEIDENTIFIER))
+			AND (HRMT2020.RecruitPeriodID = ''' + @RecruitPeriodID + ''' OR CONVERT(NVARCHAR(50), HRMT2020.APK) = '''+@RecruitPeriodID+''')
 	'
 
 
@@ -347,6 +351,10 @@ PRINT @sSQL3
 PRINT @sSQL4
 
 EXEC (@sSQL+@sSQL1+@sSQL2+@sSQL3+@sSQL4)
+
+
+
+
 
 
 GO

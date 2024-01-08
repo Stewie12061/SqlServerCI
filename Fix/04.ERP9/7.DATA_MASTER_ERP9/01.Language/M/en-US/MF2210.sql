@@ -32,13 +32,16 @@ SET @FormID = 'MF2210';
 SET @LanguageValue = N'List of production results';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2210.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -50,19 +53,19 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2210.TranYear', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Production order';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.ProductionOrder', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase';
+SET @LanguageValue = N'Stage';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.PhaseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase';
+SET @LanguageValue = N'Stage';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.PhaseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tracking employee';
+SET @LanguageValue = N'Followers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.EmployeeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2210.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object';

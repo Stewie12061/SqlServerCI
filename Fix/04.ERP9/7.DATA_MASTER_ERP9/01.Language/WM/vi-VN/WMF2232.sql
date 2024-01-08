@@ -67,7 +67,7 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2232.VoucherDate' , @FormID, @LanguageValue,
 SET @LanguageValue = N'Người lập phiếu';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.EmployeeID' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Loại sản phẩm';
+SET @LanguageValue = N'Loại hàng';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.InventoryTypeID' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Người tạo';
@@ -97,7 +97,7 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2232.InventoryName',  @FormID, @LanguageValu
 SET @LanguageValue  = N'Đơn vị tính';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.UnitID',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Số lượng xuất';
+SET @LanguageValue  = N'Số lượng chuyển';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.ActualQuantity',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đơn giá';
@@ -105,6 +105,9 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2232.UnitPrice',  @FormID, @LanguageValue, @
 
 SET @LanguageValue  = N'Thành tiền';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.OriginalAmount',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Thành tiền quy đổi';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2232.ConvertedAmount',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Lô nhập';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.SourceNo',  @FormID, @LanguageValue, @Language;
@@ -135,3 +138,6 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2232.DinhKem', @FormID, @LanguageValue, @Lan
 
 SET @LanguageValue = N'Đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2232.DivisionID' , @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số đơn hàng';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2232.VoucherNoSOderID' , @FormID, @LanguageValue, @Language;

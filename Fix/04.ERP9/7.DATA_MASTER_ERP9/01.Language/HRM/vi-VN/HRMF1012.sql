@@ -31,7 +31,7 @@ SET @Language = 'vi-VN';
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF1012'
 
-SET @LanguageValue  = N'Mã hình thức PV'
+SET @LanguageValue  = N'Mã hình thức phỏng vấn'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.InterviewTypeID',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Vị trí tuyển dụng'
@@ -93,3 +93,15 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyDate',  @FormID, @LanguageVa
 
 SET @LanguageValue  = N'Xem chi tiết hình thức phỏng vấn'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Title',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Mã đơn vị'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.DivisionID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.StatusID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Ghi chú'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.TabCRMT00001',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Đính kèm'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.TabCRMT00002',  @FormID, @LanguageValue, @Language;

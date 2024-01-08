@@ -1,5 +1,5 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ WMF2000- WM
+-- Script tạo ngôn ngữ WMF2000- wm
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -32,10 +32,13 @@ SET @FormID = 'WMF2000';
 SET @LanguageValue = N'Input request';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.WMF2000Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher no';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.VoucherNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -44,10 +47,10 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2000.VoucherID', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.VoucherTypeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Contract no';
+SET @LanguageValue = N'Contract';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ContractNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Input warehouse';
+SET @LanguageValue = N'Import warehouse';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.WarehouseID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Status';
@@ -56,22 +59,22 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2000.Status', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.InputDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher type';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Planning day';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Total amount';
+SET @LanguageValue = N'into money';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ConvertedAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ObjectID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Import warehouse';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ImWareHouseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Input warehouse';
+SET @LanguageValue = N'Import warehouse';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ImWareHouseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -89,10 +92,10 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2000.RefNo01', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Reference code 2';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.RefNo02', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Create user';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.CreateUserName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -113,19 +116,19 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2000.RDAddress', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ObjectName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -136,6 +139,27 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2000.LastModifyUserName', @FormID, @Language
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.InventoryTypeName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.InheritSaleOrders', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.APKMaster_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Browsing status';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ApprovePersonStatus', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.StatusMaster', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.Type_9000', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ApprovalNotes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2000.ApprovingLevel', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Warehouse ID';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2000.WareHouseID.CB', @FormID, @LanguageValue, @Language;

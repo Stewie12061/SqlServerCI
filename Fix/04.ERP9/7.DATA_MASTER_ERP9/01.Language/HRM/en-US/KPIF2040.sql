@@ -68,16 +68,16 @@ EXEC ERP9AddLanguage @ModuleID, 'KPIF2040.ActualEffectiveSalary', @FormID, @Lang
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2040.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2040.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2040.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2040.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2040.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Period';

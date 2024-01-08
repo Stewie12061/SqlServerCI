@@ -8,6 +8,8 @@ GO
 
 
 
+
+
 -- <Summary>
 ---- Kiểm tra định biên
 -- <Param>
@@ -61,7 +63,7 @@ DECLARE @ID VARCHAR(50),
 SELECT T1.DepartmentID, T2.DutyID, T1.CostBoundary, T2.QuantityBoundary, T3.Status_Quantity, T3.Status_Cost
 INTO #Temp_Boundary
 FROM HRMT1020 T1 WITH (NOLOCK)
-LEFT JOIN HRMT1021 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.BoundaryID = T2.BoundaryID
+LEFT JOIN HRMT1021 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.APK = T2.BoundaryID
 INNER JOIN #TBL_Recruit T3 ON T1.DepartmentID = T3.DepartmentID AND T2.DutyID = T3.DutyID
 AND (T3.FromDate Between T1.FromDate and T1.ToDate
 	OR T3.ToDate Between T1.FromDate and T1.ToDate
@@ -76,13 +78,13 @@ BEGIN
 	SELECT T1.DepartmentID, T2.DutyID, SUM(T2.RecruitCost) AS Cost_KHTD, SUM(T2.Quantity) AS Quantity_KHTD
 	INTO #Temp_KHTD
 	FROM HRMT2000 T1 WITH (NOLOCK)
-	LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.RecruitPlanID = T2.RecruitPlanID
+	LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.APK = T2.RecruitPlanID
 	INNER JOIN #TBL_Recruit T3 ON T1.DepartmentID = T3.DepartmentID AND T2.DutyID = T3.DutyID
 	AND (T3.FromDate Between T1.FromDate and T1.ToDate
 		OR T3.ToDate Between T1.FromDate and T1.ToDate
 		OR (T3.FromDate <= T1.FromDate AND T3.ToDate >= T1.ToDate))
 	WHERE T1.DivisionID = @DivisionID
-	AND T1.RecruitPlanID <> @RecruitPlanID
+	AND T1.RecruitPlanID <> @RecruitPlanID AND ISNULL(T1.DeleteFlg,0) = 0 AND T1.Status = 1
 	GROUP BY T1.DepartmentID, T2.DutyID
 	
 
@@ -120,7 +122,7 @@ BEGIN
 		SELECT T1.DepartmentID, T2.DutyID, SUM(T2.RecruitCost) AS Cost_KHTD, SUM(T2.Quantity) AS Quantity_KHTD
 		INTO #Temp_KHTD_HRMF2021
 		FROM HRMT2000 T1 WITH (NOLOCK)
-		LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.RecruitPlanID = T2.RecruitPlanID
+		LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.APK = T2.RecruitPlanID
 		INNER JOIN #TBL_Recruit T3 ON T1.DepartmentID = T3.DepartmentID AND T2.DutyID = T3.DutyID
 		AND (T3.FromDate Between T1.FromDate and T1.ToDate
 			OR T3.ToDate Between T1.FromDate and T1.ToDate
@@ -182,6 +184,8 @@ BEGIN
 	
 	END
 END
+
+
 
 
 GO

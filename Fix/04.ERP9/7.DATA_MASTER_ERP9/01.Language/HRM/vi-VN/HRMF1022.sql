@@ -76,6 +76,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.LastModifyUserID',  @FormID, @Language
 SET @LanguageValue  = N'Ngày sửa'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.LastModifyDate',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Ghi chú'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.TabCRMT00001',  @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue  = N'Đính kèm'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1022.TabCRMT00002',  @FormID, @LanguageValue, @Language;
 

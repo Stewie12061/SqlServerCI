@@ -86,7 +86,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF1061.APKMaster', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Target type';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1061.TargetTypeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1061.DepartmentID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Block type ';

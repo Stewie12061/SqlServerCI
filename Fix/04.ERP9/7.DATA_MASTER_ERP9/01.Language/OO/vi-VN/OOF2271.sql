@@ -29,5 +29,5 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2271';
 
-SET @LanguageValue = N'Cập nhật file (Cá nhân)';
+SET @LanguageValue = N'Cập nhật file cá nhân';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2271.Title', @FormID, @LanguageValue, @Language;

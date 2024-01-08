@@ -32,35 +32,41 @@ SET @FormID = 'QCF1021';
 SET @LanguageValue = N'Update standard definition';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF1021.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inventory';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.InventoryIDSearch', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory ID';
+SET @LanguageValue = N'Items';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.InventoryID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inventory name';
+SET @LanguageValue = N'Items';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.InventoryName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Note';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.Notes', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 01';
+SET @LanguageValue = N'Notes 1';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.Notes01', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes 02';
+SET @LanguageValue = N'Mark';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.Notes02', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Notes 03';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.Notes03', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.IsCommon', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF1021.UpdateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.CreateDate', @FormID, @LanguageValue, @Language;
@@ -73,6 +79,9 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF1021.LastModifyDate', @FormID, @LanguageValu
 
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF1021.ChooseImage', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Standard';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1021.TabQCT1021', @FormID, @LanguageValue, @Language;

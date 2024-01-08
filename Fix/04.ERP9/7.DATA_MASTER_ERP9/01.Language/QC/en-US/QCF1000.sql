@@ -32,22 +32,25 @@ SET @FormID = 'QCF1000';
 SET @LanguageValue = N'List of Standard';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF1000.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Standard ID';
+SET @LanguageValue = N'Standard code';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.StandardID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Standard name';
+SET @LanguageValue = N'standard name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.StandardName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Standard name (E)';
+SET @LanguageValue = N'Standard name (English)';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.StandardNameE', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.UnitID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Standard type';
@@ -56,7 +59,7 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF1000.TypeID', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Standard type name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.TypeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Parent standard';
+SET @LanguageValue = N'Father standard';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.ParentID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Data type';
@@ -65,10 +68,10 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF1000.DataType', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Recipe type';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.CalculateType', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.IsCommon', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Default field';
@@ -89,10 +92,10 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF1000.LastModifyUserID', @FormID, @LanguageVa
 SET @LanguageValue = N'Last modify date';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase';
+SET @LanguageValue = N'Stage';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.PhaseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Specification';
+SET @LanguageValue = N'Specifications';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.Specification', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Recipe';
@@ -115,6 +118,9 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF1000.DisplayName', @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.UsingMaterialID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF1000.TypeSpreadsheetID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'ID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF1000.DataTypeID.CB', @FormID, @LanguageValue, @Language;

@@ -34,6 +34,9 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'WM';
 SET @FormID = 'WMF2010';
 
+SET @LanguageValue = N'Danh mục số dư tồn kho';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2010.Title' , @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2010.DivisionID' , @FormID, @LanguageValue, @Language;
 

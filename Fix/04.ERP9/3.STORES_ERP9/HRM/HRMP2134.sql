@@ -7,6 +7,7 @@ SET ANSI_NULLS ON
 GO
 
 
+
 -- <Summary>
 ---- Load đổ nguồn kế thừa lịch đào tạo
 ---- 
@@ -21,7 +22,7 @@ GO
 ---Modified by Đình Ly on 02/06/2021: Load thêm trường dữ liệu cho màn hình chọn Lịch đào tạo.
 ---Modified by Tiến Sỹ on 18/07/2023: Hiển thị duy nhất
 ----Võ Dương Updated on 25/07/2023 - Bổ sung điều kiện lọc lấy ra lịch đào tạo chưa có kết quả
----Modified by Thu Hà on 28/09/2023:Fix lỗi không hiển thị tên đối tác đào tạo đối với "hình thức đào tạo nội bộ" 
+---Modified by  Thu Hà on 28/09/2023:Fix lỗi không hiển thị tên đối tác đào tạo đối với "hình thức đào tạo nội bộ" 
 ---- <Example>
 ---- exec HRMP2134 @DivisionID=N'BBA-SI',@UserID=N'ADMIN',@PageNumber=1,@PageSize=25,@SearchTxt=N''
 ---- 
@@ -59,13 +60,9 @@ FROM
 		, HRMT1050.TrainingType AS TrainingTypeID 
 		, HT0099.Description AS TrainingTypeName
 		, HRMT2100.AssignedToUserID
-		, AT1103.FullName AS AssignedToUserName
-		, AT1202.ObjectID
-		--, AT1202.ObjectName
-		,CASE
-        WHEN HRMT1050.ObjectID = AT1103.EmployeeID THEN AT1103.FullName
-        WHEN HRMT1050.ObjectID = AT1202.ObjectID THEN AT1202.ObjectName
-		END AS ObjectName
+		, A1.FullName AS AssignedToUserName
+		, HRMT1050.ObjectID
+        , IIF(ISNULL(AT1202.ObjectName, '''') != '''', AT1202.ObjectName, A2.FullName) AS ObjectName
 		, HRMT2100.Address
 		, HRMT2100.FromDate
 		, HRMT2100.ToDate
@@ -77,9 +74,9 @@ FROM
 		LEFT JOIN HRMT1050 WITH (NOLOCK) ON HRMT1050.TrainingCourseID = HRMT2100.TrainingCourseID 
 		LEFT JOIN HT0099 WITH (NOLOCK) ON HT0099.ID = HRMT1050.TrainingType AND HT0099.CodeMaster = ''TrainingType''
 		LEFT JOIN HRMT1040 WITH (NOLOCK) ON HRMT1040.TrainingFieldID = HRMT2100.TrainingFieldID
-		LEFT JOIN AT1103 WITH (NOLOCK) ON AT1103.EmployeeID = HRMT2100.AssignedToUserID 
+		LEFT JOIN AT1103 A1 WITH (NOLOCK) ON A1.EmployeeID = HRMT2100.AssignedToUserID 
 		LEFT JOIN AT1405 WITH (NOLOCK) ON HRMT1050.CreateUserID = AT1405.UserID AND AT1405.DivisionID IN ('''+@DivisionID+''', ''@@@'')
-		--LEFT JOIN AT1103 WITH (NOLOCK) ON AT1103.EmployeeID = HRMT2100.AssignedToUserID AND   AT1103.EmployeeID =HRMT1050.ObjectID
+		LEFT JOIN AT1103 A2 WITH (NOLOCK) ON  A2.EmployeeID = HRMT1050.ObjectID
 		LEFT JOIN AT1202 WITH (NOLOCK) ON AT1202.ObjectID = HRMT1050.ObjectID
 		LEFT JOIN HRMT2130 WITH (NOLOCK) ON HRMT2130.DivisionID = HRMT2100.DivisionID AND HRMT2130.TrainingScheduleID = HRMT2100.TrainingScheduleID
 	WHERE 
@@ -92,6 +89,7 @@ FETCH NEXT ' + CONVERT(NVARCHAR(10), @PageSize) + ' ROWS ONLY'
 
 print (@sSQL)
 EXEC (@sSQL)
+
 
 
 GO

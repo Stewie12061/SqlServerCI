@@ -124,3 +124,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2100.ObjectName',  @FormID, @LanguageValue,
 
 SET @LanguageValue  = N'Mã khóa đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2100.TrainingCourseID.CB',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Giờ đào tạo cụ thể'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2100.SpecificHours',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên khóa đào tạo'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2100.TrainingCourseName.CB',  @FormID, @LanguageValue, @Language;

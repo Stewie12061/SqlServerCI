@@ -98,7 +98,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2130.AssignedToUserName', @FormID, @Language
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2130.Percentage', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Status';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2130.StatusName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Assessor';

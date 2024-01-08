@@ -1,5 +1,5 @@
------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ HRMF1032- OO
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ HRMF1012- HRM
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -25,17 +25,72 @@ DECLARE
  - Tieng Nhat: ja-JP
  - Tieng Trung: zh-CN
 */
-
-
-SET @Language = 'en-US';
+SET @Language = 'en-US' 
 SET @ModuleID = 'HRM';
-SET @FormID = 'HRMF1012'
+SET @FormID = 'HRMF1012';
 
-SET @LanguageValue  = N'Interview Type ID'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.InterviewTypeID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Unit code';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Duty ID'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.DutyID',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Interview form code';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.InterviewTypeID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Name of the interview room format';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.InterviewTypeName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Vacancies';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.DutyID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Vacancies';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.DutyName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Note';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Note', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Shared';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.IsCommon', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Not displayed';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Disabled', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Repairer';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Edit date';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'From {0} to {1}';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'IsCommon'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.IsCommon',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Disabled'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Disabled',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Create User ID'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.CreateUserID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Create Date'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.CreateDate',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Last Modify User ID'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyUserID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Last Modify Date'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyDate',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Interview Type Detail'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Duty Name'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.DutyName',  @FormID, @LanguageValue, @Language;
@@ -64,32 +119,5 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.TabCRMT00003',  @FormID, @LanguageValu
 SET @LanguageValue  = N'Interview Type Detail'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.TabInfo1',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Interview Type Name'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.InterviewTypeName',  @FormID, @LanguageValue, @Language;
-
 SET @LanguageValue  = N'Interview Type Info'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.TabInfo',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Notes'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Note',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'IsCommon'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.IsCommon',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Disabled'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Disabled',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Create User ID'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.CreateUserID',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Create Date'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.CreateDate',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Last Modify User ID'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyUserID',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Last Modify Date'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.LastModifyDate',  @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue  = N'Interview Type Detail'
-EXEC ERP9AddLanguage @ModuleID, 'HRMF1012.Title',  @FormID, @LanguageValue, @Language;

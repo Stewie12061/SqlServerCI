@@ -32,13 +32,16 @@ SET @FormID = 'MF2212';
 SET @LanguageValue = N'Production result view';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2212.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -53,16 +56,16 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2212.ProductionOrder', @FormID, @LanguageValu
 SET @LanguageValue = N'Phase';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.PhaseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase';
+SET @LanguageValue = N'Stage';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.PhaseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tracking employee';
+SET @LanguageValue = N'Followers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.EmployeeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object';
@@ -74,16 +77,16 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2212.SourceEmployeeName', @FormID, @LanguageV
 SET @LanguageValue = N'Inheritance of production orders';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.InheritProductOrder', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Updater';
 EXEC ERP9AddLanguage @ModuleID, 'MF2212.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Warehouse';

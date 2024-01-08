@@ -17,6 +17,7 @@ GO
 ---- 
 -- <History>
 ----Created by: Bảo Thy, Date: 26/11/2015
+----Updated by Thanh Phương, Date 19/12/2023: - Cập nhật bổ sung xóa DeleteFlg = 1
 ---- 
 /*-- <Example>
 	Exec OOP1001 @DivisionID='CTY',@UserID='ASOFTADMIN',@APK=NULL,@Mode=0
@@ -58,7 +59,9 @@ BEGIN
 				SET @Params2 = @Params2 + @DelAbsentTypeID + '', ''			
 			ELSE
 				BEGIN
-					DELETE OOT1000 WHERE AbsentTypeID = @DelAbsentTypeID
+					--DELETE OOT1000 WHERE AbsentTypeID = @DelAbsentTypeID
+					--Thay đổi biến cờ DeleteFlg
+					UPDATE OOT1000 SET DeleteFlg = 1 WHERE AbsentTypeID = @DelAbsentTypeID
 				END
 		END	
 	FETCH NEXT FROM @Cur INTO @DelDivisionID, @DelAbsentTypeID

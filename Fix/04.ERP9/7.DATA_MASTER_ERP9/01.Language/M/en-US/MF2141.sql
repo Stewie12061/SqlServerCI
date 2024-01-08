@@ -33,6 +33,9 @@ SET @LanguageValue = N'Update production plan';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2141.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -50,20 +53,26 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2141.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.Description', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.VoucherNo', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inheritance of production information';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.InheritSOT2080', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2141.DescriptionSearch', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2141.InheritPlan', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Production information';
 EXEC ERP9AddLanguage @ModuleID, 'MF2141.TabMT2141', @FormID, @LanguageValue, @Language;

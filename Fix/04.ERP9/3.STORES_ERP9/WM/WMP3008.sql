@@ -16,7 +16,6 @@ GO
 --- Modified by Thành Sang  on 13/04/2023: Sửa lại cách lấy số lượng cuối kỳ
 
 
-
  
 
 CREATE PROCEDURE [dbo].[WMP3008] 

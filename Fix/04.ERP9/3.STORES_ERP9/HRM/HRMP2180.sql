@@ -16,6 +16,7 @@ GO
 ---- 
 -- <History>
 ----Created by: Phương Thảo on 07/08/2023
+----Modify  by: Phương Thảo on 24/10/2023 -- Update load Trạng thái hợp dồng và Tên nhân viên 
 ---- 
 /*-- <Example>
 	
@@ -116,15 +117,14 @@ SET @sSQL = N'
 		HT60.APK
 		, HT60.DivisionID
         , HT60.ContractID
-		, AT39.ContractTypeName
-		, AT051.UserName AS EmployeeName
+		, HT05.ContractTypeName
+		, AT031.FullName AS EmployeeName
 		, HT60.ContractNo
 		, HT60.DepartmentID
 		, AT02.DepartmentName
 		, HT01.TeamName AS TeamName
-		, AT051.UserName AS EmployeeName
 		, HT60.SignDate
-		, AT052.UserName AS SignPersonName
+		, AT032.FullName AS SignPersonName
 		, HT02.DutyName
 		, HT99.Description AS StatusRecieveName 
 		, HT60.WorkDate
@@ -134,13 +134,13 @@ SET @sSQL = N'
 		, HT60.LastModifyUserID +'' - ''+ (SELECT TOP 1 UserName FROM AT1405 WHERE UserID = HT60.LastModifyUserID) LastModifyUserID
 		, HT60.LastModifyDate
 	FROM HT1360  HT60 WITH (NOLOCK)
-	    LEFT JOIN AT1339 AT39 WITH (NOLOCK) ON AT39.DivisionID = HT60.DivisionID AND AT39.ContractTypeID = HT60.ContractTypeID
-		LEFT JOIN AT1102 AT02 WITH (NOLOCK) ON AT02.DivisionID = HT60.DivisionID AND HT60.DepartmentID = AT02.DepartmentID
-		LEFT JOIN HT1102 HT02 WITH (NOLOCK) ON HT02.DivisionID = HT60.DivisionID AND HT60.DutyID = HT02.DutyID
-		LEFT JOIN HT1101 HT01 WITH (NOLOCK) ON HT01.DivisionID = HT60.DivisionID AND HT01.TeamID = HT60.TeamID
-		LEFT JOIN AT1405 AT051 WITH (NOLOCK) ON AT051.DivisionID in ( HT60.DivisionID,''@@@'') AND AT051.UserID = HT60.EmployeeID
-		LEFT JOIN AT1405 AT052 WITH (NOLOCK) ON AT052.DivisionID in ( HT60.DivisionID,''@@@'') AND AT052.UserID = HT60.SignPersonID
-		LEFT JOIN HT0099 HT99 WITH (NOLOCK) ON  HT99.ID = HT60.StatusRecieve AND  HT99.CodeMaster = ''TrainingType''
+	    LEFT JOIN HT1105 HT05	WITH (NOLOCK) ON HT05.DivisionID in ( HT60.DivisionID,''@@@'') AND HT05.ContractTypeID = HT60.ContractTypeID 
+		LEFT JOIN AT1102 AT02	WITH (NOLOCK) ON AT02.DivisionID = HT60.DivisionID AND AT02.DepartmentID = HT60.DepartmentID
+		LEFT JOIN HT1102 HT02	WITH (NOLOCK) ON HT02.DivisionID = HT60.DivisionID AND HT02.DutyID = HT60.DutyID
+		LEFT JOIN HT1101 HT01	WITH (NOLOCK) ON HT01.DivisionID = HT60.DivisionID AND HT01.TeamID = HT60.TeamID
+		LEFT JOIN AT1103 AT031	WITH (NOLOCK) ON AT031.DivisionID in ( HT60.DivisionID,''@@@'') AND AT031.EmployeeID = HT60.EmployeeID
+		LEFT JOIN AT1103 AT032	WITH (NOLOCK) ON AT032.DivisionID in ( HT60.DivisionID,''@@@'') AND AT032.EmployeeID = HT60.SignPersonID
+		LEFT JOIN HT0099 HT99   WITH (NOLOCK) ON HT99.ID = HT60.StatusRecieve AND  HT99.CodeMaster = ''TrainingType''
 	WHERE '+@sWhere +'
 	ORDER BY '+@OrderBy+'
 	

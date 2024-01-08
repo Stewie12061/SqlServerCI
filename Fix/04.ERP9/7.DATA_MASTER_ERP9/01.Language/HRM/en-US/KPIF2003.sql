@@ -92,16 +92,16 @@ EXEC ERP9AddLanguage @ModuleID, 'KPIF2003.TotalPerformPoint', @FormID, @Language
 SET @LanguageValue = N'Total perform percent (%)';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2003.TotalPerformPercent', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2003.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2003.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2003.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'KPIF2003.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department ID';

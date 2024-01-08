@@ -29,23 +29,22 @@ SET @Language = 'en-US'
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2121';
 
-
 SET @LanguageValue  = N'Update result recording ';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training course';
+SET @LanguageValue = N'Training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.TrainingCourseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Attachment';
+SET @LanguageValue = N'Attach';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.Attach', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training type';
+SET @LanguageValue = N'Forms of training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.TrainingTypeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Training type';
+SET @LanguageValue = N'Forms of training';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.TrainingType', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training field';
@@ -66,13 +65,13 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.AssignedToUserName', @FormID, @Languag
 SET @LanguageValue = N'Training schedule';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.TrainingScheduleName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Address';
+SET @LanguageValue = N'Location';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.Address', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Recommendations';
+SET @LanguageValue = N'Propose recommendations';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.Description1', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.Description2', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Training partner';
@@ -96,20 +95,23 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.ResultTypeName.CB',  @FormID, @Languag
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.AssignedToUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Result recording ID';
+SET @LanguageValue = N'Code to record results';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.TrainingResultID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.APK', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Employee ID';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2121.EmployeeID',  @FormID, @LanguageValue, @Language;

@@ -222,7 +222,7 @@ BEGIN
 	SET @LanguageValue  = N'Địa chỉ';
 	EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.DeliveryAddress',  @FormID, @LanguageValue, @Language;
 
-    SET @LanguageValue = N'Yêu cầu';
+    SET @LanguageValue = N'Yêu cầu khách hàng';
 	EXEC ERP9AddLanguage @ModuleID, 'CRMF1012.TabCRMT20801' , @FormID, @LanguageValue, @Language;
 
 	SET @LanguageValue  = N'Quốc gia';

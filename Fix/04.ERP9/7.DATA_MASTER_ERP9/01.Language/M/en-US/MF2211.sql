@@ -32,13 +32,16 @@ SET @FormID = 'MF2211';
 SET @LanguageValue = N'Update list of production results';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF2211.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -53,16 +56,16 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2211.ProductionOrder', @FormID, @LanguageValu
 SET @LanguageValue = N'Phase';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.PhaseID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Phase';
+SET @LanguageValue = N'Stage';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.PhaseName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.EmployeeID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tracking employee';
+SET @LanguageValue = N'Followers';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.EmployeeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object';
@@ -71,7 +74,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF2211.ObjectName', @FormID, @LanguageValue, @L
 SET @LanguageValue = N'Employment source';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.SourceEmployeeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Inheritance of production orders';
+SET @LanguageValue = N'Inherit production orders';
 EXEC ERP9AddLanguage @ModuleID, 'MF2211.InheritProductOrder', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';

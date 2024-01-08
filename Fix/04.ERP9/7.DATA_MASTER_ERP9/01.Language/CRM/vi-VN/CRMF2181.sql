@@ -74,7 +74,7 @@ EXEC ERP9AddLanguage @ModuleID, 'CRMF2181.Choose', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Số lượng sản phẩm';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2181.AmountInventory', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Thêm mặt hàng';
+SET @LanguageValue = N'Cập nhật mặt hàng';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF2181.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

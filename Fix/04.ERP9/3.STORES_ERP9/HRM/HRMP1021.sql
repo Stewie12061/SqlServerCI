@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- Kiểm tra Sửa/Xóa Định biên tuyển dụng
 ---- Xóa Định biên tuyển dụng
@@ -31,12 +32,12 @@ CREATE PROCEDURE [dbo].[HRMP1021]
 AS 
 DECLARE @sSQL NVARCHAR(MAX)
 
-CREATE TABLE #BoundaryList (BoundaryID VARCHAR(50), DepartmentID VARCHAR(50))
-INSERT INTO #BoundaryList (BoundaryID, DepartmentID)
-SELECT X.Data.query('BoundaryID').value('.', 'NVARCHAR(50)') AS BoundaryID,
-	   X.Data.query('DepartmentID').value('.', 'NVARCHAR(50)') AS DepartmentID
+CREATE TABLE #BoundaryList (DivisionID VARCHAR(50), APK VARCHAR(50))
+INSERT INTO #BoundaryList (DivisionID, APK)
+SELECT X.Data.query('DivisionID').value('.', 'NVARCHAR(50)') AS DivisionID,
+	   X.Data.query('APK').value('.', 'NVARCHAR(50)') AS APK
 FROM	@BoundaryList.nodes('//Data') AS X (Data)
-ORDER BY BoundaryID
+ORDER BY DivisionID
 IF @Mode = 1 
 BEGIN
 	SET @sSQL = '
@@ -60,7 +61,7 @@ BEGIN
 	SELECT HRMT1020.APK, HRMT1020.DivisionID, HRMT1020.BoundaryID, HRMT1020.FromDate, HRMT1020.ToDate, HRMT1020.DepartmentID, HRMT1021.DutyID
 	FROM HRMT1020 WITH (NOLOCK) 
 	INNER JOIN HRMT1021 WITH (NOLOCK) ON HRMT1020.APK = HRMT1021.BoundaryID AND HRMT1020.DepartmentID = HRMT1021.DepartmentID
-	INNER JOIN #BoundaryList T1 ON HRMT1020.BoundaryID = T1.BoundaryID AND HRMT1020.DepartmentID = T1.DepartmentID
+	INNER JOIN #BoundaryList T1 ON HRMT1020.APK = T1.APK
 
 	OPEN @Cur
 	FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelBoundaryID, @DelFromDate, @DelToDate, @DelDepartmentID, @DelDutyID
@@ -80,7 +81,7 @@ BEGIN
 			--DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 3 ---Xoa thong tin tab lich su
 			--DELETE FROM CRMT00002_REL WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID_REL = 3 ---Xoa thong tin tab dinh kem
 			--DELETE HRMT1021 WHERE DivisionID = @DelDivisionID AND BoundaryID = @DelAPK AND DepartmentID = @DelDepartmentID
-			UPDATE HRMT1020 SET DeleteFlg = 1 WHERE DivisionID = @DelDivisionID AND BoundaryID = @DelBoundaryID AND DepartmentID = @DelDepartmentID
+			UPDATE HRMT1020 SET DeleteFlg = 1 WHERE DivisionID = @DelDivisionID AND APK = @DelAPK AND DepartmentID = @DelDepartmentID
 		END
 	
 	FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelBoundaryID, @DelFromDate, @DelToDate, @DelDepartmentID, @DelDutyID
@@ -120,6 +121,7 @@ END
 
 PRINT(@sSQL)
 EXEC (@sSQL)
+
 
 
 GO

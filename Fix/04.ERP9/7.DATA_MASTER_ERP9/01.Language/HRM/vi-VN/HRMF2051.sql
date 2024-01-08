@@ -31,7 +31,7 @@ SET @Language = 'vi-VN';
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2051'
 
-SET @LanguageValue  = N'Quyết định tuyển dụng'
+SET @LanguageValue  = N'Cập nhật quyết định tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2051.Title',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đơn vị'
@@ -138,3 +138,9 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2051.ApprovePerson',  @FormID, @LanguageVal
 
 SET @LanguageValue  = N'Mã phòng ban'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2051.DepartmentID_Master',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Mã ứng viên'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2051.CandidateID.CB',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên ứng viên'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2051.CandidateName.CB',  @FormID, @LanguageValue, @Language;

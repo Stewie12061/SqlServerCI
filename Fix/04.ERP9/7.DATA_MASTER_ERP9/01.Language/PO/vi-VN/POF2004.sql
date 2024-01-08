@@ -46,4 +46,3 @@ EXEC ERP9AddLanguage @ModuleID, 'POF2004.ID.CB',  @FormID, @LanguageValue, @Lang
 
 SET @LanguageValue  = N'Mô tả';
 EXEC ERP9AddLanguage @ModuleID, 'POF2004.Description.CB',  @FormID, @LanguageValue, @Language;
-

@@ -56,7 +56,6 @@ BEGIN
 		SET @sWhere = @sWhere + ' M.DivisionID IN ('''+@DivisionIDList+''', ''@@@'')'
 	ELSE 
 		SET @sWhere = @sWhere + ' M.DivisionID IN ('''+@DivisionID+''', ''@@@'')'
-
 	--Search theo điều điện thời gian
 	IF @IsDate = 1	
 	BEGIN
@@ -127,8 +126,8 @@ BEGIN
 			,ISNULL(SUM(M.ConvertedAmount) - SUM(M.DiscountAmount * M.ExchangeRate), 0) AS ConvertedAmount
 		FROM OT2002 M
 		LEFT JOIN OT2001 O WITH (NOLOCK) ON O.SOrderID = M.SOrderID AND O.IsConfirm = 1 AND O.OrderType = 0 
-		LEFT JOIN AT1302 A1 WITH (NOLOCK) ON A1.InventoryID = M.InventoryID
-		LEFT JOIN AT1304 A2 WITH (NOLOCK) ON A2.UnitID = M.UnitID
+		LEFT JOIN AT1302 A1 WITH (NOLOCK) ON A1.InventoryID = M.InventoryID AND A1.DivisionID IN (O.DivisionID, ''@@@'')
+		LEFT JOIN AT1304 A2 WITH (NOLOCK) ON A2.UnitID = M.UnitID AND A2.DivisionID IN (O.DivisionID, ''@@@'')
 		LEFT JOIN AT1101 A3 WITH (NOLOCK) ON A3.DivisionID = M.DivisionID
 		WHERE '+ @sWhere +'
 		GROUP BY  M.DivisionID ,A3.DivisionName, M.InventoryID, A1.InventoryName, A2.UnitName, M.SalePrice, M.DiscountPercent

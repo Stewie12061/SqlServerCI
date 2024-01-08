@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- Load đổ nguồn màn hình xem thông tin kết quả đào tạo
 ---- 
@@ -65,6 +66,7 @@ FETCH NEXT ' + CONVERT(NVARCHAR(10), @PageSize) + ' ROWS ONLY'
 
 --PRINT @sSQL			
 EXEC (@sSQL)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

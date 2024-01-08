@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF2001';
 
-SET @LanguageValue = N'Kế hoạch tuyển dụng';
+SET @LanguageValue = N'Cập nhật kế hoạch tuyển dụng';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2001.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -120,8 +120,12 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2001.ActualCost' , @FormID, @LanguageValue,
 SET @LanguageValue = N'Chi phí định biên';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2001.CostBoundary' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Số lượng hiện có';
+SET @LanguageValue = N'SLKH theo đợt';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2001.ActualQuantity' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Số lượng định biên';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2001.QuantityBoundary' , @FormID, @LanguageValue, @Language;
+
+---Modify on 28/08/2023 by Phương Thảo : bổ sung ngôn ngữ ý kiến người duyệt 
+SET @LanguageValue = N'Ý kiến người duyệt';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2001.ApprovalNotes' , @FormID, @LanguageValue, @Language;

@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF1050';
 
-SET @LanguageValue = N'Khóa đào tạo';
+SET @LanguageValue = N'Danh mục khóa đào tạo';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1050.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -80,4 +80,8 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1050.CreateDate' , @FormID, @LanguageValue,
 SET @LanguageValue = N'Dùng chung';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1050.IsCommon' , @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Diễn giải';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1050.Description' , @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'Địa chỉ';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1050.Address' , @FormID, @LanguageValue, @Language;

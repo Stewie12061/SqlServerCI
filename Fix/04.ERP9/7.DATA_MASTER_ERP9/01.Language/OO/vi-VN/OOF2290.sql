@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2290';
 
-SET @LanguageValue = N'Danh mục chỉ tiêu/công việc';
+SET @LanguageValue = N'Danh mục chỉ tiêu/target';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2290.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -41,10 +41,10 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2290.TypeID', @FormID, @LanguageValue, @Lang
 SET @LanguageValue = N'Phân loại';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2290.TypeName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mã chỉ tiêu/công việc';
+SET @LanguageValue = N'Mã chỉ tiêu/target';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2290.TargetTaskID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tên chỉ tiêu/công việc';
+SET @LanguageValue = N'Tên chỉ tiêu/target';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2290.TargetTaskName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Độ ưu tiên';

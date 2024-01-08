@@ -37,7 +37,7 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.DivisionID',  @FormID, @LanguageValue,
 SET @LanguageValue  = N'Nguồn tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.ResourceID',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Diễn giải'
+SET @LanguageValue  = N'Tên nguồn tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.ResourceName',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Dùng chung'
@@ -70,4 +70,14 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.TabCRMT00003',  @FormID, @LanguageValu
 SET @LanguageValue  = N'Xem chi tiết nguồn tuyển dụng'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.Title',  @FormID, @LanguageValue, @Language;
 
-select * from A00001 where formID ='HRMF1002'
+SET @LanguageValue  = N'Trạng thái'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.StatusID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Ghi chú'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.TabCRMT00001',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Diễn giải'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.Description',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Đính kèm'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1002.TabCRMT00002',  @FormID, @LanguageValue, @Language;

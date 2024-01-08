@@ -67,7 +67,7 @@ BEGIN
 					 FROM ['+@DB_ADMIN+'].dbo.sysMenu M WITH(NOLOCK)
 						LEFT JOIN A00001 L WITH(NOLOCK) ON M.MenuText = L.ID
 					 WHERE L.LanguageID = '''+@LanguageID+''' '+@sWhere+' AND M.MenuLevel in (2,3,4)
-					 ORDER BY M.MenuLevel, M.sysScreenID;' 
+					 ORDER BY M.MenuLevel, M.MenuOrder, M.sysScreenID;' 
 	END
 	IF (@TypeMenu = 3)
 	BEGIN

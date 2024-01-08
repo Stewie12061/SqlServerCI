@@ -32,10 +32,13 @@ SET @FormID = 'MF1821';
 SET @LanguageValue = N'Update production resource';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.Title', @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'MF1821.APK', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Division';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Resource ID';
+SET @LanguageValue = N'Đóng góp';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.ResourceID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Resource name';
@@ -44,7 +47,7 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1821.ResourceName', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Efficiency';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.Efficiency', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Disabled';
+SET @LanguageValue = N'Not displayed';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.Disabled', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creation date';
@@ -59,16 +62,16 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1821.LastModifyDate', @FormID, @LanguageValue
 SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Common use';
+SET @LanguageValue = N'Shared';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.IsCommon', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Notes';
+SET @LanguageValue = N'Describe';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.Notes', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Lined up timme';
+SET @LanguageValue = N'Time in line';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.LinedUpTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Setting time';
+SET @LanguageValue = N'Setup time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.SettingTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Waiting time';
@@ -77,10 +80,10 @@ EXEC ERP9AddLanguage @ModuleID, 'MF1821.WaittingTime', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Transfer time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.TransferTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Min time';
+SET @LanguageValue = N'Minimum time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.MinTime', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Max time';
+SET @LanguageValue = N'Maximum time';
 EXEC ERP9AddLanguage @ModuleID, 'MF1821.MaxTime', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Unit';

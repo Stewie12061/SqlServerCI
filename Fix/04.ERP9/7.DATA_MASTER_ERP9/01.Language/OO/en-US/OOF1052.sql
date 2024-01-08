@@ -68,7 +68,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF1052.IsCommon', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'Step Name';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1052.StepName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Personality description';
 EXEC ERP9AddLanguage @ModuleID, 'OOF1052.DescriptionS', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Project/Task group sample information';

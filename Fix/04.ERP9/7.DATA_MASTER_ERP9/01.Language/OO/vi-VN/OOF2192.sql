@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2192';
 
-SET @LanguageValue = N'Xem chi tiết milestone';
+SET @LanguageValue = N'Xem chi tiết quản lý milestone';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2192.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';
@@ -116,7 +116,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2192.ThongTinChiTietQuanLyMilestone', @FormI
 SET @LanguageValue = N'Quản lý vấn đề';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2192.QuanLyVanDe', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Yêu cầu từ khách hàng';
+SET @LanguageValue = N'Yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2192.TabCRMT20801', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Mã yêu cầu';
@@ -130,4 +130,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2192.TypeOfRequest', @FormID, @LanguageValue
 
 SET @LanguageValue = N'Trạng thái';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2192.RequestStatus', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Chỉ tiêu/Target';
+EXEC ERP9AddLanguage @ModuleID, 'OOF2192.GiaoChiTieuCV', @FormID, @LanguageValue, @Language;
 

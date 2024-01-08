@@ -16,6 +16,7 @@ GO
 -- <Reference>
 -- <History>
 -- Created by: Khâu Vĩnh Tâm, Date: 01/02/2021
+-- Modify by:  Thu Hà		  Date: 02/11/2023 -Bổ sung điều kiện xoá  chỉ tiêu/công việc
 /* Example:
 	EXEC OOP2109 'DTI', 'ASOFTADMIN', '80c76c1b-298c-4dfa-a2bf-b0e30dac9ce4', '200140', 'OOT2100'
 		, 'b7349d84-efad-4c9a-b291-0d517c8fa16c,1a8cc9a5-fabc-4a61-a2cc-defd10202aad,1d70ef67-cf2e-4869-82bc-a6b4d9770db6', 'VD/2021/02/0004,VD/2021/01/0007,VD/2021/01/0005', 'OOT2160'
@@ -89,6 +90,14 @@ BEGIN
 			SELECT C1.RequestCustomerID FROM CRMT20801 C1 WITH (NOLOCK)
 			WHERE APK IN (SELECT APK FROM #OOP2109_APKChild T1 WHERE T1.APK NOT IN (SELECT APKChild FROM #OOP2109_APKRef))
 			ORDER BY C1.RequestCustomerID
+		END
+		-- Giao chỉ tiêu/công việc
+		IF (@TableBusinessChild = 'OOT2290')
+		BEGIN
+			INSERT INTO @RefTable
+			SELECT O2.TargetTaskID FROM OOT2290  O2 WITH (NOLOCK)
+			WHERE APK IN (SELECT APK FROM #OOP2109_APKChild T1 WHERE T1.APK NOT IN (SELECT APKChild FROM #OOP2109_APKRef))
+			ORDER BY O2.TargetTaskID
 		END
 	END
 

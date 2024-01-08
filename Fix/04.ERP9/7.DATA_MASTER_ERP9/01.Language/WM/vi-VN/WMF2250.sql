@@ -30,7 +30,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'WM';
 SET @FormID = 'WMF2250';
 
-SET @LanguageValue = N'Điều chỉnh kho';
+SET @LanguageValue = N'Danh mục điều chỉnh kho';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2250.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đơn vị';

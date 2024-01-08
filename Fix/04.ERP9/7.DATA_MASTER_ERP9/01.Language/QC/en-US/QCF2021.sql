@@ -1,11 +1,10 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ QCF2021 
+-- Script tạo ngôn ngữ QCF2021- QC
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
 @Language VARCHAR(10),
-
 ------------------------------------------------------------------------------------------------------
 -- Tham so gen tu dong
 ------------------------------------------------------------------------------------------------------
@@ -33,25 +32,28 @@ SET @FormID = 'QCF2021';
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2021.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher type';
+SET @LanguageValue = N'Type of document';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.VoucherType', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher no';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Date founded';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.VoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Manufacturing date';
+SET @LanguageValue = N'Date of manufacture';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.ShiftVoucherDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Shift';
+SET @LanguageValue = N'Production shifts';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.ShiftID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Machine';
+SET @LanguageValue = N'Factory';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MachineID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Workshop';
@@ -60,26 +62,32 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2021.DepartmentID', @FormID, @LanguageValue,
 SET @LanguageValue = N'Notes';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Notes', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'TranMonth';
+SET @LanguageValue = N'Month';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.TranMonth', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'TranYear';
+SET @LanguageValue = N'Year';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.TranYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'DeleteFlg';
+SET @LanguageValue = N'Note';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Notes', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Erase';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Create user';
-EXEC ERP9AddLanguage @ModuleID, 'QCF2021.CreateUserID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Create date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modify user';
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2021.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Edit date';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2021.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modify date';
-EXEC ERP9AddLanguage @ModuleID, 'QCF2021.LastModifyDate', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Factory';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2021.DepartmentID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Voucher type ID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.VoucherTypeID.CB', @FormID, @LanguageValue, @Language;
@@ -113,40 +121,58 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2021.APKMasterCB', @FormID, @LanguageValue, 
 
 SET @LanguageValue = N'Inventory';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.RefAPKDetail', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Inventory';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.APKDetailCB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Inventory name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.InventoryName', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Source no';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.SourceNo', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Batch no';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.BatchNo', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Reason';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Description', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Method ID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Method', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Method name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MethodName', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'New InventoryID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.NewInventoryID', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'New Inventory name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.NewInventoryName', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'New quantity';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.NewQuantity', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'New batch no';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.NewBatchID', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Material ID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MaterialID', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Material name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MaterialName', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Material unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MaterialUnitID', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Material quantity';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MaterialQuantity', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Description';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Notes01', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Notes 1';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Notes02', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Notes 2';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Notes03', @FormID, @LanguageValue, @Language;
 
@@ -154,29 +180,40 @@ EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Notes03', @FormID, @LanguageValue, @Lan
 --Combo Detail
 SET @LanguageValue = N'Voucher no';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.ShiftVoucherNo.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Voucher date';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.ShiftVoucherDate.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Shift';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.ShiftName.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Machine';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MachineName.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Source no';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.SourceNo.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Batch no';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.BatchNo.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'ID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.ID.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Description';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Description.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Inventory ID';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.InventoryID.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Inventory name';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.InventoryName.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.UnitID.CB', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'Method';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.MethodName', @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue = N'List handling of defective items';
 EXEC ERP9AddLanguage @ModuleID, 'QCF2021.Title', @FormID, @LanguageValue, @Language;
-
 

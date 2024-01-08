@@ -110,8 +110,14 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2021.PaymentTermID',  @FormID, @LanguageValu
 SET @LanguageValue  = N'Phương thức thanh toán';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2021.PaymentID',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Phương thức thanh toán';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2021.PaymentName',  @FormID, @LanguageValue, @Language;
+
 SET @LanguageValue  = N'Loại mặt hàng';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2021.InventoryTypeID',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Loại mặt hàng';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2021.InventoryTypeName',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Mã hàng';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2021.InventoryID',  @FormID, @LanguageValue, @Language;

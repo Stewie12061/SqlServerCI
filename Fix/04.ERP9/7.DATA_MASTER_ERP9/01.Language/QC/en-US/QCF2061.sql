@@ -1,13 +1,10 @@
-﻿--delete  A00001 where FormID  =N'QCF2061'
-
------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ QCF2061 
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ QCF2061- QC
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
 @FormID VARCHAR(200),
 @Language VARCHAR(10),
-
 ------------------------------------------------------------------------------------------------------
 -- Tham so gen tu dong
 ------------------------------------------------------------------------------------------------------
@@ -32,330 +29,142 @@ SET @Language = 'en-US'
 SET @ModuleID = 'QC';
 SET @FormID = 'QCF2061';
 
-DECLARE @KeyID VARCHAR(100)
-DECLARE @Text NVARCHAR(4000)
-DECLARE @CustomName NVARCHAR(4000)
+SET @LanguageValue = N'Statistical screen';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Title', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Title'
-SET @FormID = N'QCF2061'
-SET @Text = N'Statistical screen'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.APK', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.DivisionID'
-SET @FormID = N'QCF2061'
-SET @Text = N'Division'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.FromDate'
-SET @FormID = N'QCF2061'
-SET @Text = N'From date'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Since';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.FromDate', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.ToDate'
-SET @FormID = N'QCF2061'
-SET @Text = N'To date'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'To date';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.ToDate', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.ShiftID'
-SET @FormID = N'QCF2061'
-SET @Text = N'Shift'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Shift';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.ShiftID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.MachineID'
-SET @FormID = N'QCF2061'
-SET @Text = N'Machine'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Machine';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.MachineID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Status'
-SET @FormID = N'QCF2061'
-SET @Text = N'Status'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Goods';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.InventoryID', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.InventoryID'
-SET @FormID = N'QCF2061'
-SET @Text = N'Inventory'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Batch number';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.BatchNo', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.BatchNo'
-SET @FormID = N'QCF2061'
-SET @Text = N'Batch no'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Status';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Status', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.StandardParent'
-SET @FormID = N'QCF2061'
-SET @Text = N'Standard type'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Standard type';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.StandardParent', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Standard'
-SET @FormID = N'QCF2061'
-SET @Text = N'Standard'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Standard';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Standard', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Quality control';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.TabQCT2071', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.TabQCT2071'
-SET @FormID = N'QCF2061'
-SET @Text = N'Quality control'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Material standard';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.TabQCT2072', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.TabQCT2072'
-SET @FormID = N'QCF2061'
-SET @Text = N'Material standard'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Handling of defective items';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.TabQCT2073', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.TabQCT2073'
-SET @FormID = N'QCF2061'
-SET @Text = N'Handling of defective items'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Date';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Date_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Date_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Date'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Shift';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.ShiftName_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.ShiftName_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Shift'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Machine';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.MachineName_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.MachineName_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Machine'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Inventory ID';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.InventoryID_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.InventoryID_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Inventory ID'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Inventory name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.InventoryName_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.InventoryName_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Inventory name'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Batch no';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.BatchNo_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.BatchNo_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Batch no'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Unit';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.UnitName_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.UnitName_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Unit'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Gross weight';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.GrossWeight_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.GrossWeight_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Gross weight'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Net weight';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.NetWeight_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.NetWeight_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Net weight'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Notes 01';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Notes01_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Notes01_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Notes 01'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Notes 02';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Notes02_Tab1andard', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Notes02_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Notes 02'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Notes 03';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Notes03_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Notes03_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Notes 03'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Status';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Status_Tab1', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Status_Tab1'
-SET @FormID = N'QCF2061'
-SET @Text = N'Status'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Voucher date';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Date_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Date_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Voucher date'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Shift';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.ShiftName_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.ShiftName_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Shift'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Time';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Time_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Time_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Time'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Machine';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.MachineName_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.MachineName_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Machine'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Inventory ID';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.InventoryName_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.InventoryName_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Inventory ID'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Batch no';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.BatchNo_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.BatchNo_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Batch no'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Material ID';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.MaterialID_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.MaterialID_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Material ID'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Material name';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.MaterialName_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.MaterialName_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Material name'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Material batch';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.BatchNo2050_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.BatchNo2050_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Material batch'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Material unit';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.UnitName_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.UnitName_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Material unit'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Time';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Time2050_Tab2', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Time2050_Tab2'
-SET @FormID = N'QCF2061'
-SET @Text = N'Time'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Date';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Date_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Date_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'Date'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Inventory ID';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.InventoryName_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.InventoryName_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'Inventory ID'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Batch no';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.BatchNo_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.BatchNo_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'Batch no'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Reason';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Description_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Description_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'Reason'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'Method';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Method_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Method_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'Method'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'New inventory';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.NewInventoryName_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.NewInventoryName_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'New inventory'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
+SET @LanguageValue = N'New batch';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.NewBatchNo_Tab3', @FormID, @LanguageValue, @Language;
 
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.NewBatchNo_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'New batch'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
-
-SET @ModuleID = N'QC'
-SET @KeyID = N'QCF2061.Notes_Tab3'
-SET @FormID = N'QCF2061'
-SET @Text = N'Conclude'
-SET @CustomName = NULL
-EXEC ERP9AddLanguage @ModuleID, @KeyID, @FormID, @Text, @Language, @CustomName;
-
-GO
+SET @LanguageValue = N'Conclude';
+EXEC ERP9AddLanguage @ModuleID, 'QCF2061.Notes_Tab3', @FormID, @LanguageValue, @Language;

@@ -17,7 +17,7 @@ SET @FormID = 'OOF2114';
 SET @Language = 'vi-VN';
 
 
-EXEC ERP9AddLanguage @ModuleID, N'OOF2114.Title', @FormID, N'Cập nhật checklist', @Language;
+EXEC ERP9AddLanguage @ModuleID, N'OOF2114.Title', @FormID, N'Cập nhật checklist công việc', @Language;
 EXEC ERP9AddLanguage @ModuleID, N'OOF2114.ChecklistName', @FormID, N'Tên checklist', @Language;
 EXEC ERP9AddLanguage @ModuleID, N'OOF2114.Description', @FormID, N'Mô tả', @Language;
 EXEC ERP9AddLanguage @ModuleID, N'OOF2114.IsComplete', @FormID, N'Hoàn thành', @Language;

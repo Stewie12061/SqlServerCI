@@ -18,6 +18,7 @@ GO
 -- <History>
 ----Created by: Hoài Bảo, Date: 11/07/2022
 --- Modify by Hoài Bảo Date: 15/07/2022 - Cập nhật các cột load lên Grid
+--- Modify by Tiến Thành Date: 30/03/2023 - Chỉnh sửa chức năng lọc bằng tên người tạo
 -- <Example>
 ----    EXEC SOP10601 @DivisionID=N'DTI',@DivisionIDList=N'',@FromDate=NULL,@ToDate=NULL,@IsPeriod=0,@PeriodList=N'',@TargetsID=N'',@Description=N'',@UserID=N'ASOFTADMIN',@PageNumber=1,@PageSize=25
 
@@ -92,7 +93,7 @@ SET @sSQL = '
 		INTO #TempAT0161
 		From AT1103 A03
 		INNER JOIN AT0161 A01 WITH(NOLOCK)
-		ON '+@sWhere+'
+		ON '+@sWhere+' AND A03.EmployeeID = A01.CreateUserID
 
 		DECLARE @Count INT
 		SELECT @Count = COUNT(TargetsID) FROM #TempAT0161

@@ -32,7 +32,7 @@ SET @FormID = 'OOF2115';
 SET @LanguageValue = N'Choose Task';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2115.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2115.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'TaskID';

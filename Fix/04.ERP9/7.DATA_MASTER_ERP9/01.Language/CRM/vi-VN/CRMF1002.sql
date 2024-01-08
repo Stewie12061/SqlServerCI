@@ -30,7 +30,7 @@ SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF1002';
  
 SET @LanguageValue = N'Xem chi tiết liên hệ';
-EXEC ERP9AddLanguage @ModuleID, 'CRMF1002.CRMF1002Title' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'CRMF1002.Title' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'TabDetail';
 EXEC ERP9AddLanguage @ModuleID, 'CRMF1002.TabDetail' , @FormID, @LanguageValue, @Language;

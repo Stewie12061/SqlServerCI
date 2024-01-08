@@ -32,7 +32,7 @@ SET @FormID = 'WMF2020';
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2020.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Nhập kho';
+SET @LanguageValue = N'Danh mục nhập kho';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2020.Title' , @FormID, @LanguageValue, @Language;
 SET @LanguageValue = N'Đơn vị';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2020.DivisionID', @FormID, @LanguageValue, @Language;

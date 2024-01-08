@@ -32,10 +32,10 @@ SET @FormID = 'HRMF2061';
 SET @LanguageValue  = N'Update training budget';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Budget ID';
+SET @LanguageValue = N'Budget code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.BudgetID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
@@ -47,13 +47,13 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.EmployeeID', @FormID, @LanguageValue, 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.DepartmentName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'The whole company';
+SET @LanguageValue = N'All the people in company';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsAllName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quarterly/annual budget';
+SET @LanguageValue = N'Quarterly/Yearly Budget';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsBugetYearName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quarter';
+SET @LanguageValue = N'Precious';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.TranQuarter', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Year';
@@ -65,34 +65,34 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsQuarter', @FormID, @LanguageValue, @
 SET @LanguageValue = N'Year';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'The whole company';
+SET @LanguageValue = N'All the people in company';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsAll', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Quarterly/annual budget';
+SET @LanguageValue = N'Quarterly/Yearly Budget';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.TranQuarterYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Budget amount';
+SET @LanguageValue = N'Amount of money';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.BudgetAmount', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Balance';
+SET @LanguageValue = N'The remaining amount';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.RemainBudgetAmount', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsQuarterYear', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Repairer';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Edit date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
@@ -101,8 +101,15 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.AssignedToUserID', @FormID, @LanguageV
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.AssignedToUserName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Budget type';
+SET @LanguageValue = N'Budget accordingly';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.IsBugetYear', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.FromToDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.APK', @FormID, @LanguageValue, @Language;
+
 
 SET @LanguageValue  = N'Department ID'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2061.DepartmentID.CB',  @FormID, @LanguageValue, @Language;

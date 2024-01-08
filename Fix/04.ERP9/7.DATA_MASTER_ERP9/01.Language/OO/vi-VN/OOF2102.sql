@@ -218,7 +218,7 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2102.TabCRMT20301', @FormID, @LanguageValue,
 SET @LanguageValue = N'Liên hệ';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2102.TabCRMT10001', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Yêu cầu';
+SET @LanguageValue = N'Yêu cầu khách hàng';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2102.TabCRMT20801', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Hệ số chiết khấu NC';
@@ -253,3 +253,6 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2102.TabCMNT90051', @FormID, @LanguageValue,
 
 SET @LanguageValue = N'Đăng ký thông tin dự án';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2102.DangKy', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Chỉ tiêu/Target';
+EXEC ERP9AddLanguage @ModuleID, 'OOF2102.ChiTieuCongViec', @FormID, @LanguageValue, @Language;

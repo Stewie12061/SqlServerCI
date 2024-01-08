@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- In Yêu cầu mua hàng
 -- <Param>
@@ -50,7 +51,10 @@ SELECT DISTINCT
 	OrderDate,  
 	OT3101.Description,
 	OT3101.TransPort,
-	OT3101.ObjectID, 	
+	OT3101.ObjectID,
+	OT3101.DueDate,
+	OT3101.PaymentID,
+	AT1205.PaymentName,
 	case when isnull(OT3101.ObjectName, '') = '' then AT1202.ObjectName else 
 	OT3101.ObjectName end as ObjectName,
 	AT1202.Website, AT1202.Contactor,
@@ -58,7 +62,7 @@ SELECT DISTINCT
 	isnull(OT3101.Address, AT1202.Address)  as ObjectAddress, 
 	AT1002.CityName,
 	OT3101.CurrencyID,  AT1004.CurrencyName,
-	OT3101.ShipDate, OT3101.ExchangeRate, 
+	OT3101.ShipDate, OT3101.ExchangeRate,
 	OT3101.ContractNo, OT3101.ContractDate,
 	AT1001.CountryName,  	
 	AT1205.PaymentName,		OT3101.EmployeeID, 
@@ -123,6 +127,7 @@ ORDER BY OT3101.ROrderID
 --PRINT @sSQL
 --PRINT @sSQL1
 --EXEC (@sSQL+@sSQL1)
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

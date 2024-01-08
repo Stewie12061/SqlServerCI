@@ -8,6 +8,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Kiểm tra trùng thời gian định biên
 -- <Param>
@@ -59,9 +60,9 @@ WHILE @@FETCH_STATUS = 0
 BEGIN
 	
 	IF NOT EXISTS (SELECT TOP 1 1 FROM HRMT2000 T1 WITH (NOLOCK)
-				   LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.RecruitPlanID = T2.RecruitPlanID
+				   LEFT JOIN HRMT2001 T2 WITH (NOLOCK) ON T1.DivisionID = T2.DivisionID AND T1.APK = T2.RecruitPlanID
 				   WHERE T1.DivisionID = @DivisionID
-				   AND T1.RecruitPlanID <> @RecruitPlanID
+				   AND T1.RecruitPlanID <> @RecruitPlanID AND IsNULL(T1.DeleteFlg,0) = 0 AND T1.Status = 1
 				   AND T1.DepartmentID = @DepartmentID
 				   AND T2.DutyID = @DutyID
 				   AND (@FromDate Between T1.FromDate and T1.ToDate
@@ -84,6 +85,7 @@ SET MessageID = 'HRMFML000014'
 SELECT * FROM #TBL_RecruitPlanID
 
 DROP TABLE #TBL_RecruitPlanID
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

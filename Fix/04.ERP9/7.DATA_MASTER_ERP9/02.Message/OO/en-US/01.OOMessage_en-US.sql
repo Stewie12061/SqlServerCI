@@ -466,17 +466,3 @@ SET @MessageValue=N'{0} is not inheriting data, you cannot remove it.'
 EXEC ERP9AddMessage @ModuleID,'OOFML000263', @MessageValue, @Language;
 SET @MessageValue=N'Time {0} from {1} to {2}  has confirmed booking. You must reselect a different time for the booking code {3} !!!'
 EXEC ERP9AddMessage @ModuleID,'OOFML000264', @MessageValue, @Language;
-SET @MessageValue=N'You have just been assigned a low priority target: {0}'
-EXEC ERP9AddMessage @ModuleID,'OOFML000280', @MessageValue, @Language;
-SET @MessageValue=N'You have just been assigned a high priority target: {0}'
-EXEC ERP9AddMessage @ModuleID,'OOFML000281', @MessageValue, @Language;
-SET @MessageValue=N'You have just been assigned a target with urgent priority: {0}'
-EXEC ERP9AddMessage @ModuleID,'OOFML000282', @MessageValue, @Language;
-SET @MessageValue=N'A canceled target cannot be transferred to the Done status!'
-EXEC ERP9AddMessage @ModuleID,'OOFML000283', @MessageValue, @Language;
-SET @MessageValue=N'Targets that have been started cannot be moved to the Unfulfilled state!'
-EXEC ERP9AddMessage @ModuleID,'OOFML000284', @MessageValue, @Language;
-SET @MessageValue=N'You must move to the Processing state before moving on to other states!'
-EXEC ERP9AddMessage @ModuleID,'OOFML000285', @MessageValue, @Language;
-SET @MessageValue=N'{0} has completed the target {1}'
-EXEC ERP9AddMessage @ModuleID,'OOFML000286', @MessageValue, @Language;

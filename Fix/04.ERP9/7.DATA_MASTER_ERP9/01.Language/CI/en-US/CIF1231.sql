@@ -29,35 +29,50 @@ SET @Language = 'en-US'
 SET @ModuleID = 'CI';
 SET @FormID = 'CIF1231';
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Store code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.WareHouseID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Norm type code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.NormID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Minimum';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.MinQuantity', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1231.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'From Inventory';
+SET @LanguageValue = N'Maximum levels';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.MaxQuantity', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Reorder level';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.ReOrderQuantity', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Inventory levels of goods';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.InventoryNormID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Item code';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.InventoryID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Creator';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.CreateUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Date created';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.CreateDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Edit date';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Repairer';
+EXEC ERP9AddLanguage @ModuleID, 'CIF1231.LastModifyUserID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'From item';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1231.FromInventoryID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'To Inventory';
+SET @LanguageValue = N'Go to the item';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1231.ToInventoryID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Inventory ID';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.InventoryID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Inventory Name';
 EXEC ERP9AddLanguage @ModuleID, 'CIF1231.InventoryName', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'WareHouse ID';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.WareHouseID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Rated type code';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.NormID', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Description';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.Description', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Min Quantity';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.MinQuantity', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'Max Quantity';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.MaxQuantity', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'ReOrder Quantity';
-EXEC ERP9AddLanguage @ModuleID, 'CIF1231.ReOrderQuantity', @FormID, @LanguageValue, @Language;

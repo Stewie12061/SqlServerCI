@@ -1,6 +1,5 @@
-﻿------------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ SOF0138 - CRM 
--- [Đình Hòa] [26/02/2021] - Bổ sung ngôn ngữ
+﻿-----------------------------------------------------------------------------------------------------
+-- Script tạo ngôn ngữ SOF0138- SO
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -9,59 +8,76 @@ DECLARE
 ------------------------------------------------------------------------------------------------------
 -- Tham so gen tu dong
 ------------------------------------------------------------------------------------------------------
-@LanguageValue NVARCHAR(4000)
+@LanguageValue NVARCHAR(4000),
+
 ------------------------------------------------------------------------------------------------------
--- Gan gia tri tham so va thuc thi truy van
+-- Finished
+------------------------------------------------------------------------------------------------------
+@Finished BIT
+
+
+------------------------------------------------------------------------------------------------------
+-- Gan gia tri tham so va thu thi truy van
 ------------------------------------------------------------------------------------------------------
 /*
-- Tieng Viet: vi-VN 
-- Tieng Anh: en-US 
-- Tieng Nhat: ja-JP 
-- Tieng Trung: zh-CN
-*/ 
+ - Tieng Viet: vi-VN 
+ - Tieng Anh: en-US 
+ - Tieng Nhat: ja-JP
+ - Tieng Trung: zh-CN
+*/
 SET @Language = 'en-US';
 SET @ModuleID = 'SO';
 SET @FormID = 'SOF0138';
-------------------------------------------------------------------------------------------------------
-
 SET @LanguageValue = N'Inheriting purchase orders';
  EXEC ERP9AddLanguage @ModuleID, 'SOF0138.Title' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.VoucherNo' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.APK', @FormID, @LanguageValue, @Language;
 
- SET @LanguageValue = N'Order Date';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.OrderDate' , @FormID, @LanguageValue, @Language;
- 
-SET @LanguageValue = N'Voucher Type';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.VoucherTypeID' , @FormID, @LanguageValue, @Language;
- 
-SET @LanguageValue = N'ObjectID';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ObjectID' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Order number';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object Name';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ObjectName' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Order hours';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.OrderDate', @FormID, @LanguageValue, @Language;
 
- SET @LanguageValue = N'Currency';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.CurrencyID' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Type of document';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.VoucherTypeID', @FormID, @LanguageValue, @Language;
 
- SET @LanguageValue = N'Exchange Rate';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ExchangeRate' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Object code';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ObjectID', @FormID, @LanguageValue, @Language;
 
- SET @LanguageValue = N'Inventory Type';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.InventoryTypeID' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Object name';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ObjectName', @FormID, @LanguageValue, @Language;
 
-  SET @LanguageValue = N'Order Status';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.OrderStatus' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Currency';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.CurrencyID', @FormID, @LanguageValue, @Language;
 
- SET @LanguageValue = N'Contrac No';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ContracNo' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Exchange rate';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ExchangeRate', @FormID, @LanguageValue, @Language;
 
-  SET @LanguageValue = N'Contract Date';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ContractDate' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Item type';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.InventoryTypeID', @FormID, @LanguageValue, @Language;
 
-   SET @LanguageValue = N'Description';
- EXEC ERP9AddLanguage @ModuleID, 'SOF0138.Description' , @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Status';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.OrderStatus', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Some contracts';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ContracNo', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Sign day';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ContractDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Explain';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.Description', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.POrderID', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Status';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.OrderStatusName', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF0138.ScreenID', @FormID, @LanguageValue, @Language;
 
   SET @LanguageValue = N'InventoryID';
  EXEC ERP9AddLanguage @ModuleID, 'SOF0138.InventoryID' , @FormID, @LanguageValue, @Language;

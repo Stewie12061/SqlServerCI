@@ -107,5 +107,5 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2031.Description.CB' , @FormID, @LanguageVa
 SET @LanguageValue = N'Mã người phụ trách';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2031.AssignedToUserID' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Tên người phụ trách';
+SET @LanguageValue = N'Người phỏng vấn';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2031.AssignedToUserName' , @FormID, @LanguageValue, @Language;

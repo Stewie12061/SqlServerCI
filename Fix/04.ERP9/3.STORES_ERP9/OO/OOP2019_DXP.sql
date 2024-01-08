@@ -68,6 +68,7 @@ CREATE TABLE #Approve (Levels INT, LevelNo INT, ApproveID VARCHAR(50))
 		Where T4.EmployeeStatus=1  ---Chỉ hiện nhân viên có trạng thái "Đang làm"
 		ORDER BY LevelNo
 
+
 GO
 SET QUOTED_IDENTIFIER OFF
 GO

@@ -34,7 +34,7 @@ SET @FormID = 'HRMF1040'
 SET @LanguageValue  = N'Danh mục lĩnh vực đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.Title',  @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue  = N'Lĩnh vực đào tạo'
+SET @LanguageValue  = N'Mã lĩnh vực đào tạo'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.TrainingFieldID',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Đơn vị'
@@ -67,3 +67,8 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.LastModifyDate',  @FormID, @LanguageVa
 SET @LanguageValue  = NULL
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.RelatedToTypeID',  @FormID, @LanguageValue, @Language;
 
+SET @LanguageValue  = N'Mã người tạo'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.UserID.CB',  @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue  = N'Tên người tạo'
+EXEC ERP9AddLanguage @ModuleID, 'HRMF1040.UserName.CB',  @FormID, @LanguageValue, @Language;

@@ -6,6 +6,8 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
+
 -- <Summary>
 ---- Load Grid Form HRMF2054: Xác nhận tuyển dụng
 -- <Param>
@@ -78,7 +80,7 @@ IF Isnull(@ConditionComfirmationRecruitmentID, '') != ''
 		SET @sWhere = @sWhere + ' AND ISNULL(HRMT2050.CreateUserID,'''') in (N'''+@ConditionComfirmationRecruitmentID+''','''+@UserID+''' )'
 
 SET @sSQL = N'
-SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum, '+@TotalRow+' AS TotalRow, HRMT2051.APK, HRMT2051.DivisionID, HRMT2051.RecDecisionID,
+SELECT ROW_NUMBER() OVER (ORDER BY '+@OrderBy+') AS RowNum, '+@TotalRow+' AS TotalRow, HRMT2051.APK, HRMT1031.CandidateID AS APKCandidateID, HRMT2051.DivisionID, HRMT2051.RecDecisionID,
 HRMT2050.RecDecisionNo, HRMT2051.RecruitPeriodID, HRMT2051.RecruitPeriodID+'' - ''+HRMT2020.RecruitPeriodName AS RecruitPeriodName,
 HRMT2020.DepartmentID, AT1102.DepartmentName, HRMT2020.DutyID, HT1102.DutyName, HRMT2051.CandidateID, 
 LTRIM(RTRIM(REPLACE(LTRIM(RTRIM(ISNULL(HRMT1030.LastName,'''')))+ '' '' + LTRIM(RTRIM(ISNULL(HRMT1030.MiddleName,''''))) + '' '' + LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,''''))),''  '','' ''))) AS CandidateName,
@@ -87,7 +89,7 @@ FROM HRMT2051 WITH (NOLOCK)
 LEFT JOIN HRMT2050 WITH (NOLOCK) ON HRMT2050.DivisionID = HRMT2051.DivisionID AND HRMT2050.RecDecisionID = HRMT2051.RecDecisionID
 LEFT JOIN HRMT2020 WITH (NOLOCK) ON HRMT2051.DivisionID = HRMT2020.DivisionID AND HRMT2051.RecruitPeriodID = HRMT2020.RecruitPeriodID
 LEFT JOIN HRMT1030 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT2051.DivisionID AND HRMT1030.CandidateID = HRMT2051.CandidateID 
-LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1031.DivisionID AND HRMT1030.CandidateID = HRMT1031.CandidateID 
+LEFT JOIN HRMT1031 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT1031.DivisionID AND HRMT1030.APK = HRMT1031.CandidateID 
 LEFT JOIN AT1102 WITH (NOLOCK) ON HRMT2020.DepartmentID = AT1102.DepartmentID
 LEFT JOIN HT1102 WITH (NOLOCK) ON HRMT2020.DivisionID = HT1102.DivisionID AND HRMT2020.DutyID = HT1102.DutyID
 LEFT JOIN HT0099 H09 WITH (NOLOCK) ON HRMT1031.RecruitStatus = H09.ID AND H09.CodeMaster = ''RecruitStatus''
@@ -101,6 +103,8 @@ FETCH NEXT '+STR(@PageSize)+' ROWS ONLY '
 
 PRINT(@sSQL)
 EXEC (@sSQL)
+
+
 
 GO
 SET QUOTED_IDENTIFIER OFF

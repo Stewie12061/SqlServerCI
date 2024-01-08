@@ -50,16 +50,16 @@ EXEC ERP9AddLanguage @ModuleID, 'OOF2080.SubsectionID', @FormID, @LanguageValue,
 SET @LanguageValue = N'Phase';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2080.ProcessID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2080.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2080.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2080.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2080.LastModifyDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

@@ -33,24 +33,27 @@ SET @LanguageValue = N'List of sales plans';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'SOF2070.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.Date', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher No';
+SET @LanguageValue = N'Document number';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.VoucherNo', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Voucher date';
+SET @LanguageValue = N'Day vouchers';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.VoucherDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.ObjectID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Object ';
+SET @LanguageValue = N'Object';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.ObjectName', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Type';
+SET @LanguageValue = N'Classify';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.Type', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Year plan';
@@ -65,15 +68,15 @@ EXEC ERP9AddLanguage @ModuleID, 'SOF2070.Disabled', @FormID, @LanguageValue, @La
 SET @LanguageValue = N'';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.DeleteFlg', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.CreateDate', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Updater';
 EXEC ERP9AddLanguage @ModuleID, 'SOF2070.LastModifyUserID', @FormID, @LanguageValue, @Language;
 

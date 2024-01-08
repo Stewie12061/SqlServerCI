@@ -9,7 +9,7 @@ GO
 
 
 -- <Summary>
----- Load Master màn hình kế thừa phiếu kiểm tra chất lượng
+---- Load Master định nghĩa tiêu chuẩn (màn hình xem chi tiết/ màn hình cập nhật)
 -- <Param>
 ---- 
 -- <Return>
@@ -21,6 +21,7 @@ GO
 ----Created by: Nhật Thanh on 19/09/2023
 ----Modified by ... on ... :
 
+-- <Example> EXEC QCP2009 @DivisionID = 'VNP', @UserID = '', @APK = 'C69E5AE4-6FE1-4829-B99A-78D1AB7D89D3'
 
 CREATE PROCEDURE [dbo].[QCP2009]
 ( 

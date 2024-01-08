@@ -6,6 +6,7 @@ GO
 SET ANSI_NULLS ON
 GO
 
+
 -- <Summary>
 ---- Load edit Kết hoạch tuyển dụng
 -- <Param>
@@ -82,8 +83,9 @@ ELSE
 		LEFT JOIN HV1400 V3 ON V3.DivisionID = @DivisionID AND V3.EmployeeID = CASE WHEN O91.Level = 3 THEN O91.ApprovePersonID ELSE '' END
 		LEFT JOIN HV1400 V4 ON V4.DivisionID = @DivisionID AND V4.EmployeeID = CASE WHEN O91.Level = 4 THEN O91.ApprovePersonID ELSE '' END
 		LEFT JOIN HV1400 V5 ON V5.DivisionID = @DivisionID AND V5.EmployeeID = CASE WHEN O91.Level = 5 THEN O91.ApprovePersonID ELSE '' END
-		where HRMT2000.DivisionID = @DivisionID AND RecruitPlanID = @RecruitPlanID
+		where HRMT2000.DivisionID = @DivisionID AND HRMT2000.APK = @RecruitPlanID
 	END
+
 
 
 GO

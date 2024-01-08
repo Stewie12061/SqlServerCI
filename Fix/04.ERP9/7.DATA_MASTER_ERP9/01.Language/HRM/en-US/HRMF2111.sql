@@ -32,19 +32,22 @@ SET @FormID = 'HRMF2111';
 SET @LanguageValue = N'Update D.I.S.C Personality Trait';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Employee ID';
+SET @LanguageValue = N'Staff';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.EmployeeID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Department';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.DepartmentID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Duty';
+SET @LanguageValue = N'Position';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.DutyID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Title';
+SET @LanguageValue = N'Title / position';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.TitleID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';
@@ -53,37 +56,37 @@ EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.TeamID', @FormID, @LanguageValue, @Lan
 SET @LanguageValue = N'Evaluation date';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.EvaluationDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Nature D';
+SET @LanguageValue = N'Personality D';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Nature_D', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Nature I';
+SET @LanguageValue = N'Personality I';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Nature_I', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Nature S';
+SET @LanguageValue = N'S is personality';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Nature_S', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Nature C';
+SET @LanguageValue = N'Personality C';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Nature_C', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Nature';
+SET @LanguageValue = N'Character';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Nature', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Adaptive D';
+SET @LanguageValue = N'Personality D';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Adaptive_D', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Adaptive I';
+SET @LanguageValue = N'Personality I';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Adaptive_I', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Adaptive S';
+SET @LanguageValue = N'S is personality';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Adaptive_S', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Adaptive C';
+SET @LanguageValue = N'Personality C';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Adaptive_C', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Adaptive';
+SET @LanguageValue = N'Character';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Adaptive', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Descriptions';
+SET @LanguageValue = N'Personality description';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2111.Descriptions', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'';

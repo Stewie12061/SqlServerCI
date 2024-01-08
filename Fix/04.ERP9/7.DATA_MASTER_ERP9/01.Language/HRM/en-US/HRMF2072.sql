@@ -32,29 +32,35 @@ SET @FormID = 'HRMF2072';
 SET @LanguageValue = N'Regular training plan view';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.Title', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Division';
+SET @LanguageValue = N'';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.APK', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.DivisionID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Regular training plan ID';
+SET @LanguageValue = N'Periodic phone plan code';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.TrainingPlanID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Person in charge';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.AssignedToUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Description';
+SET @LanguageValue = N'Explain';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.Description', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Creator';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Creation date';
+SET @LanguageValue = N'Date created';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified user';
+SET @LanguageValue = N'Updater';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Last modified date';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.LastModifyDate', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Person in charge';
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.AssignedToUserName', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Is whole';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.IsAll' , @FormID, @LanguageValue, @Language;

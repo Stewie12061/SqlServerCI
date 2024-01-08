@@ -28,7 +28,7 @@ SET @ModuleID = 'CRM';
 SET @FormID = 'CRMF1031'
 ---------------------------------------------------------------
 
-Exec ERP9AddLanguage @ModuleID, N'CRMF1031.Title', @FormID, N'Cập nhật nhóm nhận Email', @Language, NULL
+Exec ERP9AddLanguage @ModuleID, N'CRMF1031.Title', @FormID, N'Cập nhật nhóm người nhận email', @Language, NULL
 
 Exec ERP9AddLanguage @ModuleID, N'CRMF1031.GroupReceiverID', @FormID, N'Mã nhóm nhận email', @Language, NULL
 

@@ -29,7 +29,7 @@ SET @Language = 'vi-VN'
 SET @ModuleID = 'OO';
 SET @FormID = 'OOF2133';
 
-SET @LanguageValue = N'Đánh giá công việc hàng loạt';
+SET @LanguageValue = N'Đánh giá công việc';
 EXEC ERP9AddLanguage @ModuleID, 'OOF2133.Title', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Điểm số đánh giá';

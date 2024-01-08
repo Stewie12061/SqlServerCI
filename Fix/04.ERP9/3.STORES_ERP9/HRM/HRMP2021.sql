@@ -18,6 +18,7 @@ GO
 -- <History>
 ---- Created by Bảo Thy on 14/08/2017
 ---- Modified by Lê Hoàng on 04/06/2021 : WORKFLOW.HRM.ContentMaster.DeleteBussinessStore.HRMF2020MainExecute trả XML ra thì RecruitPeriodID là APK => sửa lại join RecruitPeriodID thành APK
+---- Modified by: Phương Thảo, Date: 12/03/2023 -[2023/09/IS/0029] Thay đổi update cờ xóa = 1
 ---- Modified by ... on ...
 -- <Example>
 /*
@@ -80,13 +81,15 @@ BEGIN
 				SET @Params2 = @Params2 + @DelRecruitPeriodID+ '', ''
 		ELSE
 			BEGIN
-				DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 7 ---Xoa thong tin tab lich su
-				DELETE FROM CRMT00002_REL WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID_REL = 7 ---Xoa thong tin tab dinh kem
-				DELETE HRMT2020 WHERE APK = @DelAPK
-				DELETE HRMT2021 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
-				DELETE HRMT2022 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
-				DELETE HRMT2023 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
-				DELETE HRMT2024 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
+			    -- Thay đổi biến cờ DeleteFlg
+				  UPDATE HRMT2020 SET DeleteFlg = 1 WHERE APK = @DelAPK 
+				--DELETE CRMT00003 WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID = 7 ---Xoa thong tin tab lich su
+				--DELETE FROM CRMT00002_REL WHERE DivisionID = @DelDivisionID AND RelatedToID = @DelAPK AND RelatedToTypeID_REL = 7 ---Xoa thong tin tab dinh kem
+				--DELETE HRMT2020 WHERE APK = @DelAPK
+				--DELETE HRMT2021 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
+				--DELETE HRMT2022 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
+				--DELETE HRMT2023 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
+				--DELETE HRMT2024 WHERE DivisionID = @DelDivisionID AND RecruitPeriodID = @DelRecruitPeriodID
 			END
 			
 	FETCH NEXT FROM @Cur INTO @DelAPK, @DelDivisionID, @DelRecruitPeriodID

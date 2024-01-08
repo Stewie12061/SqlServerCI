@@ -31,7 +31,7 @@ SET @Language = 'vi-VN';
 SET @ModuleID = 'HRM';
 SET @FormID = 'HRMF1011'
 
-SET @LanguageValue  = N'Mã hình thức PV'
+SET @LanguageValue  = N'Mã hình thức phỏng vấn'
 EXEC ERP9AddLanguage @ModuleID, 'HRMF1011.InterviewTypeID',  @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue  = N'Vị trí tuyển dụng'

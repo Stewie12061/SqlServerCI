@@ -1,5 +1,5 @@
 ﻿-----------------------------------------------------------------------------------------------------
--- Script tạo ngôn ngữ HF0393- HRM
+-- Script tạo ngôn ngữ HF0393- H
 ------------------------------------------------------------------------------------------------------
 DECLARE
 @ModuleID VARCHAR(10),
@@ -26,25 +26,25 @@ DECLARE
  - Tieng Trung: zh-CN
 */
 SET @Language = 'en-US' 
-SET @ModuleID = 'HRM';
+SET @ModuleID = 'H';
 SET @FormID = 'HF0393';
 
 SET @LanguageValue = N'Seniority leave Update';
 EXEC ERP9AddLanguage @ModuleID, 'HF0393.CreateUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Creation Date';
 EXEC ERP9AddLanguage @ModuleID, 'HF0393.CreateDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Last modified user';
 EXEC ERP9AddLanguage @ModuleID, 'HF0393.LastModifyUserID', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Update day';
 EXEC ERP9AddLanguage @ModuleID, 'HF0393.LastModifyDate', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
-EXEC ERP9AddLanguage @ModuleID, 'HF0393.Title', @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Batch number - Item';
+EXEC ERP9AddLanguage @ModuleID, 'HF0393.APK', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'';
+SET @LanguageValue = N'Unit';
 EXEC ERP9AddLanguage @ModuleID, 'HF0393.DivisionID', @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Seniority ID';
@@ -56,14 +56,3 @@ EXEC ERP9AddLanguage @ModuleID, 'HF0393.DescriptionID', @FormID, @LanguageValue,
 SET @LanguageValue = N'Disabled';
 EXEC ERP9AddLanguage @ModuleID, 'HF0393.Disabled', @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'>= Value (Year)';
-EXEC ERP9AddLanguage @ModuleID, 'HF0393.FromValues', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'< Value (Year)';
-EXEC ERP9AddLanguage @ModuleID, 'HF0393.ToValues', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'The number of increase leave days';
-EXEC ERP9AddLanguage @ModuleID, 'HF0393.VacSeniorDays', @FormID, @LanguageValue, @Language;
-
-SET @LanguageValue = N'The number of leave days is move to next year';
-EXEC ERP9AddLanguage @ModuleID, 'HF0393.VacSeniorPrevDays', @FormID, @LanguageValue, @Language;

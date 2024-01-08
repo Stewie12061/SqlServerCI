@@ -66,7 +66,7 @@ SET @LanguageValue = N'Hiệu lực';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.RepeatTimeName' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Ghi chú';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.Notes' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.GhiChu' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Thông tin kế hoạch đào tạo định kỳ';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.TabThongKeHoachDaoTaoDinhKy' , @FormID, @LanguageValue, @Language;
@@ -96,7 +96,7 @@ SET @LanguageValue = N'Ghi chú';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.TabGhiChu' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Đính kèm';
-EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.TabDinhKem' , @FormID, @LanguageValue, @Language;
+EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.DinhKem' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Trạng thái';
 EXEC ERP9AddLanguage @ModuleID, 'HRMF2072.StatusID' , @FormID, @LanguageValue, @Language;

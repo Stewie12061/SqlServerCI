@@ -8,6 +8,7 @@ GO
 
 
 
+
 -- <Summary>
 ---- Load đổ nguồn màn hình xem thông tin yêu cầu đào tạo
 ---- 
@@ -58,6 +59,7 @@ FETCH NEXT ' + CONVERT(NVARCHAR(10), @PageSize) + ' ROWS ONLY'
 
 --PRINT(@sSQL)
 EXEC (@sSQL)
+
 
 
 

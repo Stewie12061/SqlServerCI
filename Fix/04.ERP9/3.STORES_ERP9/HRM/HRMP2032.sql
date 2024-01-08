@@ -66,7 +66,6 @@ ELSE
 IF @InterviewScheduleList IS NOT NULL
 SET @sWhere = @sWhere + ' AND HRMT2030.InterviewScheduleID IN (''' + @InterviewScheduleList +''') '
 
-
 IF @IsSearch = 1
 BEGIN
 	
