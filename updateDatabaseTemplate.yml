@@ -19,7 +19,7 @@ jobs:
       inputs:
         ConnectionString: 'Server=61.28.229.125;Database=${{ parameters.databaseName }};User ID=sa;Password=As@19006123;TrustServerCertificate=True;Connection Timeout=30;'
         ScriptPath: '$(Pipeline.Workspace)/s/Fix'
-        IncludeSubfolders: true
+        IncludeSubfolders: false
         Order: 'FolderStructure'
         # JournalSchemaName: 'dbo'
         # JournalTableName: '_SchemaVersions'
