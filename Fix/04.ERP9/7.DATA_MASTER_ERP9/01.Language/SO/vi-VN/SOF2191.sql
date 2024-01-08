@@ -47,7 +47,7 @@ SET @LanguageValue = N'Loại';
 SET @LanguageValue = N'Số xe'; 
 EXEC ERP9AddLanguage @ModuleID, 'SOF2191.CarNumber' , @FormID, @LanguageValue, @Language;
 
-SET @LanguageValue = N'Mã đối tượng'; 
+SET @LanguageValue = N'Khách hàng'; 
 EXEC ERP9AddLanguage @ModuleID, 'SOF2191.ObjectID' , @FormID, @LanguageValue, @Language;
 
 SET @LanguageValue = N'Khách hàng'; 

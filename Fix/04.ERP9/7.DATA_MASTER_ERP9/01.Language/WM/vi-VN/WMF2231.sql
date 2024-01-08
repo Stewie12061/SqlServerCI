@@ -201,3 +201,26 @@ EXEC ERP9AddLanguage @ModuleID, 'WMF2231.DebitAccountName',  @FormID, @LanguageV
 
 SET @LanguageValue  = N'Tài khoản có';
 EXEC ERP9AddLanguage @ModuleID, 'WMF2231.CreditAccountName',  @FormID, @LanguageValue, @Language;
+SET @LanguageValue = N'Lô nhập';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.ReSourceNo.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Ngày nhập';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.ReVoucherDate.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Đơn giá';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.UnitPrice.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số lượng nhập';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.ReQuantity.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số lượng xuất';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.DeQuantity.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số chứng từ';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.ReVoucherNo.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Số lượng tồn cuối (ĐVT chuẩn)';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.EndQuantity.CB', @FormID, @LanguageValue, @Language;
+
+SET @LanguageValue = N'Ngày hết hạn';
+EXEC ERP9AddLanguage @ModuleID, 'WMF2231.LimitDate.CB', @FormID, @LanguageValue, @Language;

@@ -1,0 +1,39 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[CP0038]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			
+DROP PROCEDURE [DBO].[CP0038]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+-- <Summary>
+---- Load lưới danh mục bảng giá mua (ANGEL) 
+---- EXEC CP0038 @DivisionID = 'ANG', @StrWhere = 'AND ID = ''CNN.1.000416'''
+-- <Param>
+
+CREATE PROCEDURE [dbo].[CP0038] 
+	@DivisionID NVARCHAR(50),
+	@StrWhere NVARCHAR(MAX) = ''								
+AS
+DECLARE @sSQL NVARCHAR(MAX)
+
+SET @sSQL = N'
+SELECT CASE ToDate WHEN CAST(''1900-01-01'' AS DATETIME) THEN NULL ELSE ToDate END AS ToDateTemp,  
+CASE WHEN ISNULL(IsConfirm, 0) = 0 THEN N''Chưa chấp nhận'' ELSE N''Chấp nhận'' END AS IsConfirmName, *
+FROM OT1301 WITH (NOLOCK)
+WHERE ISNULL(TypeID, 0) = 1
+AND DivisionID = ''' + @DivisionID + '''
+' + @StrWhere + '
+ORDER BY ID
+'
+
+PRINT @sSQL
+EXEC (@sSQL)
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+             

@@ -1,0 +1,15 @@
+DECLARE @CustomerName INT
+SELECT @CustomerName = CustomerName FROM dbo.CustomerIndex
+IF @CustomerName = 16 -- Customize Siêu Thanh
+BEGIN
+	IF EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[AT1011]') AND name = N'AT1011_Index1')
+		DROP INDEX [AT1011_Index1] ON [dbo].[AT1011] WITH ( ONLINE = OFF )
+	
+	CREATE NONCLUSTERED INDEX [01_AT1011_Index] ON [dbo].[AT1011]
+	(
+		[DivisionID] ASC,
+		[AnaID] ASC,
+		[AnaTypeID] ASC
+	)INCLUDE ([AnaName])
+	WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+END

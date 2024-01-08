@@ -61,6 +61,7 @@ VALUES
 (N'SOF3025', 27),
 (N'SOR3021', 28),
 (N'SOR3022', 22),
+(N'SOR3023', 23),
 (N'SOF2110', 5),
 (N'SOF2020', 6),
 (N'SOF2000', 7),
@@ -414,9 +415,15 @@ SET @ScreenNameE = N''
 SET @OrderNo = ISNULL((SELECT TOP 1 ISNULL(OrderNo, 0) FROM #SO_ERP9_PERMISSIONS WHERE ScreenID = @ScreenID), 0)
 EXEC AddScreenERP9_V2 @ModuleID, @ScreenID,@ScreenType,@ScreenName,@ScreenNameE, -2, NULL, @OrderNo
 
-
 SET @ScreenID = N'SOR3022'
 SET @ScreenName = N'Báo cáo chương trình khuyến mãi theo đối tượng'
+SET @ScreenNameE = N''
+SET @OrderNo = ISNULL((SELECT TOP 1 ISNULL(OrderNo, 0) FROM #SO_ERP9_PERMISSIONS WHERE ScreenID = @ScreenID), 0)
+EXEC AddScreenERP9_V2 @ModuleID, @ScreenID,@ScreenType,@ScreenName,@ScreenNameE, -1, NULL, @OrderNo
+
+-- Hoàng Long [22/12/2023] - N'Báo cáo tổng hợp doanh số treo tường kênh phân phối_RAC'
+SET @ScreenID = N'SOR3023'
+SET @ScreenName = N'Báo cáo tổng hợp doanh số treo tường kênh phân phối_RAC'
 SET @ScreenNameE = N''
 SET @OrderNo = ISNULL((SELECT TOP 1 ISNULL(OrderNo, 0) FROM #SO_ERP9_PERMISSIONS WHERE ScreenID = @ScreenID), 0)
 EXEC AddScreenERP9_V2 @ModuleID, @ScreenID,@ScreenType,@ScreenName,@ScreenNameE, -1, NULL, @OrderNo

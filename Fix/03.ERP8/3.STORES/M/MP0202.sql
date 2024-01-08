@@ -1,0 +1,181 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[MP0202]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			
+DROP PROCEDURE [DBO].[MP0202]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+-- <Summary>
+--- In báo cáo tình hình sản xuất (CustomizeIndex = 80 -- Bê tông Long An)
+-- <Param>
+----
+-- <Return>
+----
+-- <Reference>
+----
+-- <History>
+---- Created by Tieu Mai on 18/09/2017
+---- Modified by Đức Duy on 20/02/2023: [2023/02/IS/0091] - Bổ sung thêm điều kiện DivisionID dùng chung cho bảng danh mục đối tượng - AT1202.
+-- <Example>
+/*	
+	exec MP0202 'PC', '2016-09-18 00:00:00.000', 'CA 1', '%'	
+	'TH/2016/08/0041'
+*/
+CREATE PROCEDURE MP0202
+(
+	@DivisionID		NVARCHAR(50),
+	@ReportDate		DATETIME,
+	@ShiftID		NVARCHAR(50),
+	@TeamID			NVARCHAR(50)
+	
+)
+AS
+
+DECLARE @sSQL NVARCHAR(MAX),
+		@sSQL1 NVARCHAR(MAX),
+		@sSQL2 NVARCHAR(MAX),
+		@sSQL3 NVARCHAR(MAX),
+		@sSQL4 NVARCHAR(MAX),
+		@sWhere NVARCHAR(MAX),
+		@sWhere1 NVARCHAR(MAX)
+
+		
+		
+SET @sSQL = N''
+SET @sWhere = N''
+
+SET @sSQL = '
+SELECT M21.ProductionDate, M21.ShiftID, M22.TeamID, M22.BeginTime, M22.EndTime, SUM(M22.PresentNumber) AS PresentNumber, SUM(M22.AbsentNumber) AS AbsentNumber, MAX(M22.Notes1) AS Notes1
+INTO #TH_TEMP
+FROM MT1621 M21 WITH (NOLOCK)
+LEFT JOIN MT1622 M22 WITH (NOLOCK) ON M22.DivisionID = M21.DivisionID AND M22.VoucherID = M21.VoucherID
+WHERE M22.DivisionID = '''+@DivisionID+''' AND M22.TypeTab = 1
+	AND M21.ShiftID LIKE '''+@ShiftID+''' 
+	AND M22.TeamID LIKE '''+@TeamID+''' 
+	AND CONVERT(NVARCHAR(10),M21.ProductionDate,101) = '''+CONVERT(NVARCHAR(10),@ReportDate,101)+'''
+GROUP BY M21.ProductionDate, M21.ShiftID, M22.TeamID, M22.BeginTime, M22.EndTime
+'
+
+SET @sSQL1 = '
+SELECT KH.*, TK.Ana07ID, TK.Ana08ID, TK.ActualQuantity, TK.ObjectID
+INTO #KH_TK
+FROM
+	(
+	SELECT MT2002.TeamID, MT2003.ValueDate, MT2002.InventoryID, MT2002.UnitID, O99.S01ID, O99.S02ID, O99.S03ID, O99.S04ID, O99.S05ID, O99.S06ID, O99.S07ID, O99.S08ID, O99.S09ID, O99.S10ID,
+		O99.S11ID, O99.S12ID, O99.S13ID, O99.S14ID, O99.S15ID, O99.S16ID, O99.S17ID, O99.S18ID, O99.S19ID, O99.S20ID,
+		SUM(MT2002.PlanQuantity) AS PlanQuantity, SUM(MT2002.ConvertedPlanQuantity) AS ConvertedPlanQuantity
+	FROM
+	(SELECT *, ''Date'' + RIGHT(FieldQuanName,2) AS FieldDateName
+	FROM 
+	( SELECT *
+	  FROM MT2002 WITH (NOLOCK)) TEMP
+	  UNPIVOT
+		(
+		ValueDate FOR FieldQuanName in (Quantity01,Quantity02,Quantity03,Quantity04,Quantity05,Quantity06,Quantity07,Quantity08,Quantity09,Quantity10,Quantity11,Quantity12,Quantity13,Quantity14,Quantity15
+	,Quantity16,Quantity17,Quantity18,Quantity19,Quantity20,Quantity21,Quantity22,Quantity23,Quantity24,Quantity25,Quantity26,Quantity27,Quantity28,Quantity29,Quantity30,Quantity31,Quantity32,Quantity33
+	,Quantity34,Quantity35,Quantity36,Quantity37,Quantity38,Quantity39,Quantity40)
+	  ) unpiv
+	WHERE ValueDate <> 0
+	) MT2002
+	LEFT JOIN MT8899 O99 WITH (NOLOCK) ON O99.DivisionID = MT2002.DivisionID AND O99.VoucherID = MT2002.PlanID AND O99.TransactionID = MT2002.PlanDetailID
+	LEFT JOIN (
+	SELECT *
+	FROM 
+	( SELECT  *
+	  FROM (SELECT *
+	FROM 
+	( SELECT *
+	  FROM MT2003 WITH (NOLOCK)) TEMP
+	  UNPIVOT
+		(
+		ValueDate FOR FieldDateName in (Date01,Date02,Date03,Date04,Date05,Date06,Date07,Date08,Date09,Date10,Date11,Date12,Date13,Date14,Date15
+	,Date16,Date17,Date18,Date19,Date20,Date21,Date22,Date23,Date24,Date25,Date26,Date27,Date28,Date29,Date30,Date31,Date32,Date33
+	,Date34,Date35,Date36,Date37,Date38,Date39,Date40)
+	  ) unpiv
+	  ) TEMP2
+	  UNPIVOT
+		(
+		ValueTeam FOR FieldTeamName in (TeamID01 ,TeamID02 ,TeamID03 ,TeamID04 ,TeamID05 ,TeamID06 ,TeamID07,TeamID08,TeamID09,TeamID10,TeamID11,TeamID12,TeamID13,TeamID14
+	,TeamID15,TeamID16,TeamID17,TeamID18,TeamID19,TeamID20,TeamID21,TeamID22,TeamID23,TeamID24,TeamID25,TeamID26,TeamID27,TeamID28,TeamID29,TeamID30,TeamID31,TeamID32,TeamID33
+	,TeamID34,TeamID35,TeamID36,TeamID37,TeamID38,TeamID39,TeamID40)
+	  ) unpiv2 ) unpiv3 
+	) MT2003 ON MT2003.DivisionID = MT2002.DivisionID AND MT2003.PlanID = MT2002.PlanID AND MT2003.FieldDateName = MT2002.FieldDateName AND MT2003.ValueTeam = MT2002.TeamID
+	WHERE MT2002.TeamID LIKE '''+@TeamID+''' 
+		AND CONVERT(NVARCHAR(10),MT2003.ValueDate,101) = '''+CONVERT(NVARCHAR(10),@ReportDate,101)+'''
+	GROUP BY MT2002.TeamID, MT2003.ValueDate, MT2002.InventoryID, MT2002.UnitID, O99.S01ID, O99.S02ID, O99.S03ID, O99.S04ID, O99.S05ID, O99.S06ID, O99.S07ID, O99.S08ID, O99.S09ID, O99.S10ID,
+		O99.S11ID, O99.S12ID, O99.S13ID, O99.S14ID, O99.S15ID, O99.S16ID, O99.S17ID, O99.S18ID, O99.S19ID, O99.S20ID
+) KH
+'
+SET @sSQL2 = '
+LEFT JOIN 
+	(SELECT M01.ObjectID, M01.ProductDate, M01.TeamID, M02.[Shift], M02.BeginTime, M02.EndTime, M02.ProductID as InventoryID, M02.ProductUnitID as UnitID, M02.S01ID, M02.S02ID, M02.S03ID, M02.S04ID, M02.S05ID, M02.S06ID, M02.S07ID, M02.S08ID, M02.S09ID, M02.S10ID,
+		M02.S11ID, M02.S12ID, M02.S13ID, M02.S14ID, M02.S15ID, M02.S16ID, M02.S17ID, M02.S18ID, M02.S19ID, M02.S20ID,
+		M02.Ana07ID, M02.Ana08ID,
+		SUM(M02.ActualQuantity) AS ActualQuantity  
+	FROM MT1801 M01 WITH (NOLOCK)
+	LEFT JOIN MT1802 M02 WITH (NOLOCK) ON M02.DivisionID = M01.DivisionID AND M02.VoucherID = M01.VoucherID
+	WHERE M02.DivisionID = ''PC'' AND M01.TeamID LIKE ''%''
+	GROUP BY M01.ObjectID, M01.ProductDate, M01.TeamID, M02.[Shift], M02.BeginTime, M02.EndTime, M02.ProductID, M02.ProductUnitID, 
+		M02.S01ID, M02.S02ID, M02.S03ID, M02.S04ID, M02.S05ID, M02.S06ID, M02.S07ID, M02.S08ID, M02.S09ID, M02.S10ID,
+		M02.S11ID, M02.S12ID, M02.S13ID, M02.S14ID, M02.S15ID, M02.S16ID, M02.S17ID, M02.S18ID, M02.S19ID, M02.S20ID,
+		M02.Ana07ID, M02.Ana08ID) TK 
+ON TK.TeamID = KH.TeamID AND CONVERT(NVARCHAR(10),KH.ValueDate,101) = CONVERT(NVARCHAR(10),TK.ProductDate,101)
+AND TK.InventoryID = KH.InventoryID AND KH.UnitID = TK.UnitID 
+	AND ISNULL(TK.S01ID,'''') = ISNULL(KH.S01ID,'''')
+	AND ISNULL(TK.S02ID,'''') = ISNULL(KH.S02ID,'''')
+	AND ISNULL(TK.S03ID,'''') = ISNULL(KH.S03ID,'''')
+	AND ISNULL(TK.S04ID,'''') = ISNULL(KH.S04ID,'''')
+	AND ISNULL(TK.S05ID,'''') = ISNULL(KH.S05ID,'''')
+	AND ISNULL(TK.S06ID,'''') = ISNULL(KH.S06ID,'''')
+	AND ISNULL(TK.S07ID,'''') = ISNULL(KH.S07ID,'''')
+	AND ISNULL(TK.S08ID,'''') = ISNULL(KH.S08ID,'''')
+	AND ISNULL(TK.S09ID,'''') = ISNULL(KH.S09ID,'''')
+	AND ISNULL(TK.S10ID,'''') = ISNULL(KH.S10ID,'''')
+	AND ISNULL(TK.S11ID,'''') = ISNULL(KH.S11ID,'''')
+	AND ISNULL(TK.S12ID,'''') = ISNULL(KH.S12ID,'''')
+	AND ISNULL(TK.S13ID,'''') = ISNULL(KH.S13ID,'''')
+	AND ISNULL(TK.S14ID,'''') = ISNULL(KH.S14ID,'''')
+	AND ISNULL(TK.S15ID,'''') = ISNULL(KH.S15ID,'''')
+	AND ISNULL(TK.S16ID,'''') = ISNULL(KH.S16ID,'''')
+	AND ISNULL(TK.S17ID,'''') = ISNULL(KH.S17ID,'''')
+	AND ISNULL(TK.S18ID,'''') = ISNULL(KH.S18ID,'''')
+	AND ISNULL(TK.S19ID,'''') = ISNULL(KH.S19ID,'''')
+	AND ISNULL(TK.S20ID,'''') = ISNULL(KH.S20ID,'''')
+
+select TH.*, KH.ValueDate, KH.InventoryID, A32.InventoryName, KH.UnitID, KH.S01ID, KH.S02ID, KH.S03ID, KH.S04ID, KH.S05ID, KH.S06ID, KH.S07ID, KH.S08ID, KH.S09ID, KH.S10ID,
+		KH.S11ID, KH.S12ID, KH.S13ID, KH.S14ID, KH.S15ID, KH.S16ID, KH.S17ID, KH.S18ID, KH.S19ID, KH.S20ID,
+		KH.PlanQuantity, KH.ConvertedPlanQuantity, Ana07ID, A07.AnaName as Ana07Name, KH.Ana08ID, A08.AnaName as Ana08Name, KH.ActualQuantity, KH.ObjectID, A12.ObjectName,
+		H20.ShiftName, H01.TeamName 
+from #TH_TEMP TH
+LEFT JOIN #KH_TK KH ON CONVERT(NVARCHAR(10),KH.ValueDate,101) = CONVERT(NVARCHAR(10),TH.ProductionDate,101) AND TH.TeamID = KH.TeamID
+LEFT JOIN AT1302 A32 WITH (NOLOCK) ON A32.InventoryID  = KH.InventoryID
+LEFT JOIN AT1202 A12 WITH (NOLOCK) ON A12.DivisionID IN (''' +@DivisionID+ ''', ''@@@'') AND A12.ObjectID = KH.ObjectID
+LEFT JOIN AT1011 A07 WITH (NOLOCK) ON KH.Ana07ID = A07.AnaID AND A07.AnaTypeID = ''A07''
+LEFT JOIN AT1011 A08 WITH (NOLOCK) ON KH.Ana08ID = A08.AnaID AND A08.AnaTypeID = ''A08''
+LEFT JOIN HT1020 H20 WITH (NOLOCK) ON H20.ShiftID  = TH.ShiftID
+LEFT JOIN HT1101 H01 WITH (NOLOCK) ON H01.TeamID  = TH.TeamID
+'
+
+SET @sSQL3 = '
+SELECT TypeTab, ConcreteID, MeasureTimes, ReasonDescription, SagNumber1, SagNumber2, Notes2, Notes3, Notes4
+FROM MT1621 M21 WITH (NOLOCK)
+LEFT JOIN MT1622 M22 WITH (NOLOCK) ON M22.DivisionID = M21.DivisionID AND M22.VoucherID = M21.VoucherID
+WHERE M22.DivisionID = '''+@DivisionID+''' AND M22.TypeTab <> 1
+	AND M21.ShiftID LIKE '''+@ShiftID+''' 
+	AND CONVERT(NVARCHAR(10),M21.ProductionDate,101) = '''+CONVERT(NVARCHAR(10),@ReportDate,101)+'''
+ORDER BY TypeTab
+'
+	
+PRINT @sSQL
+PRINT @sSQL1
+PRINT @sSQL2
+PRINT @sSQL3
+EXEC (@sSQL+@sSQL1+@sSQL2+@sSQL3)
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO

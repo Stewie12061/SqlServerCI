@@ -1,0 +1,84 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[MP0137_AP]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			
+DROP PROCEDURE [DBO].[MP0137_AP]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+-- <Summary>
+---- In kế hoạch sx đơn hàng cho An Phát (CustomizeIndex = 54)
+-- <History>
+---- Created by Tiểu Mai on 12/10/2016
+---- Modified by Hải Long on 25/05/2017: Sửa danh mục dùng chung
+---- Modified by Nhựt Trường on 13/10/2020: (Sửa danh mục dùng chung) Bổ sung điều kiện DivisionID IN cho AT1302.
+---- Modified by Đức Duy on 20/02/2023: [2023/02/IS/0091] - Bổ sung thêm điều kiện DivisionID dùng chung cho bảng danh mục đối tượng - AT1202.
+-- <Example>
+
+-- EXEC MP0137_AP 'PC', '6635(CS)TRYBUS'
+
+CREATE PROCEDURE [dbo].[MP0137_AP] 	
+	@DivisionID NVARCHAR(50),
+	@ApportionID NVARCHAR(50)
+AS
+DECLARE @sSQL NVARCHAR(MAX), @sSQL1 NVARCHAR(MAX)
+
+SET @sSQL = '
+SELECT MT0135.DivisionID, MT0135.ApportionID, MT0135.[Description],
+	MT0136.ProductQuantity, 
+	MT0136.S05ID, MT0136.S06ID,
+	MT0136.Parameter01, MT0136.Parameter02, MT0136.Parameter03,
+	MT0137.MaterialID, MT0137.MaterialQuantity, MT0137.MaterialPrice, MT0137.MaterialAmount,							
+	MT0137.QuantityUnit,
+	MT0137.DS01ID, MT0137.DS02ID, MT0137.DS03ID, MT0137.DS04ID, MT0137.DS05ID, MT0137.DS06ID, MT0137.DS07ID, MT0137.DS08ID, MT0137.DS09ID, MT0137.DS10ID,
+	MT0137.DS11ID, MT0137.DS12ID, MT0137.DS13ID, MT0137.DS14ID, MT0137.DS15ID, MT0137.DS16ID, MT0137.DS17ID, MT0137.DS18ID, MT0137.DS19ID, MT0137.DS20ID
+INTO #TEMP
+FROM MT0135 WITH (NOLOCK)
+LEFT JOIN MT0136 WITH (NOLOCK) ON MT0135.DivisionID = MT0136.DivisionID AND MT0135.ApportionID = MT0136.ApportionID
+LEFT JOIN MT0137 WITH (NOLOCK) ON MT0136.DivisionID = MT0137.DivisionID AND MT0136.ProductID = MT0137.ProductID AND MT0137.ReTransactionID = MT0136.TransactionID
+LEFT JOIN AT1202 WITH (NOLOCK) ON AT1202.DivisionID IN (''' +@DivisionID+ ''', ''@@@'') AND AT1202.ObjectID = MT0135.ObjectID
+LEFT JOIN AT1301 WITH (NOLOCK) ON AT1301.InventoryTypeID = MT0135.InventoryTypeID
+LEFT JOIN AT1302 WITH (NOLOCK) ON AT1302.InventoryID = Mt0136.ProductID AND AT1302.DivisionID IN (MT0136.DivisionID,''@@@'')
+LEFT JOIN AT1302 A50 WITH (NOLOCK) ON A50.InventoryID = MT0137.MaterialID AND A50.DivisionID IN (MT0137.DivisionID,''@@@'')
+WHERE MT0135.ApportionID = '''+@ApportionID+'''
+		AND MT0135.DivisionID = '''+@DivisionID+'''
+		AND A50.I01ID = N''VAICHINH''
+GROUP BY MT0135.DivisionID, MT0135.ApportionID, MT0135.[Description],
+MT0136.S05ID, MT0136.S06ID,	
+ProductQuantity, MT0136.Parameter01, MT0136.Parameter02, MT0136.Parameter03,
+MT0137.MaterialID, MT0137.MaterialQuantity, MT0137.MaterialPrice, MT0137.MaterialAmount,							
+MT0137.QuantityUnit,
+MT0137.DS01ID, MT0137.DS02ID, MT0137.DS03ID, MT0137.DS04ID, MT0137.DS05ID, MT0137.DS06ID, MT0137.DS07ID, MT0137.DS08ID, MT0137.DS09ID, MT0137.DS10ID,
+MT0137.DS11ID, MT0137.DS12ID, MT0137.DS13ID, MT0137.DS14ID, MT0137.DS15ID, MT0137.DS16ID, MT0137.DS17ID, MT0137.DS18ID, MT0137.DS19ID, MT0137.DS20ID
+'
+
+SET @sSQL1 = '
+SELECT t1.DivisionID, t1.ApportionID, t1.[Description], t1.ProductQuantity AS Quantity, t1.S05ID, t1.S06ID,
+	t1.Parameter02, t1.Parameter03, t1.MaterialID, t1.MaterialQuantity, t1.MaterialPrice, t1.MaterialAmount, t1.QuantityUnit,
+	t1.DS01ID, t1.DS02ID, t1.DS03ID, t1.DS04ID, t1.DS05ID, t1.DS06ID, t1.DS07ID, t1.DS08ID, t1.DS09ID, t1.DS10ID,
+	t1.DS11ID, t1.DS12ID, t1.DS13ID, t1.DS14ID, t1.DS15ID, t1.DS16ID, t1.DS17ID, t1.DS18ID, t1.DS19ID, t1.DS20ID, 0 AS [Type]
+FROM #TEMP t1
+
+UNION 
+SELECT t1.DivisionID, t1.ApportionID, t1.[Description], ISNULL(Convert(Decimal(28,8),t1.Parameter01),0) AS Quantity, t1.S05ID, t1.S06ID,
+	t1.Parameter02, t1.Parameter03, t1.MaterialID, t1.MaterialQuantity, t1.MaterialPrice, t1.MaterialAmount, t1.QuantityUnit,
+	t1.DS01ID, t1.DS02ID, t1.DS03ID, t1.DS04ID, t1.DS05ID, t1.DS06ID, t1.DS07ID, t1.DS08ID, t1.DS09ID, t1.DS10ID,
+	t1.DS11ID, t1.DS12ID, t1.DS13ID, t1.DS14ID, t1.DS15ID, t1.DS16ID, t1.DS17ID, t1.DS18ID, t1.DS19ID, t1.DS20ID, 1 AS [Type]
+FROM #TEMP t1
+
+drop table #TEMP
+'
+
+EXEC (@sSQL + @sSQL1 )
+PRINT @sSQL
+PRINT @sSQL1
+
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
