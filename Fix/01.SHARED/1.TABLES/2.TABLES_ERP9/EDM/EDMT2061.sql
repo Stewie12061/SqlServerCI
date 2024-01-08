@@ -1,0 +1,26 @@
+﻿---- Create by Nguyễn Thị Minh Hòa on 5/11/2018 2:29:31 PM
+---- Nghiệp vụ Kết quả dự giờ. lưu thông tin Thành viên (giáo viên) dự giờ
+---- Select * from EDMT2061
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[EDMT2061]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[EDMT2061]
+(
+	[APK] UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+	[APKMaster] UNIQUEIDENTIFIER NOT NULL,
+	[DivisionID] VARCHAR(50) NOT NULL,
+	MemberID VARCHAR(50) NULL,
+	CreateUserID VARCHAR(50) NULL,
+	CreateDate DATETIME NULL,
+	LastModifyUserID VARCHAR(50) NULL,
+	LastModifyDate DATETIME NULL,
+	DeleteFlg TINYINT DEFAULT(0) NULL
+
+CONSTRAINT [PK_EDMT2061] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+) ON [PRIMARY]
+
+END
+GO

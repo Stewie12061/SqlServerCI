@@ -1,0 +1,28 @@
+IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[AX1401]') AND OBJECTPROPERTY(ID, N'IsTrigger') = 1)
+DROP TRIGGER [DBO].[AX1401]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+--- Created by Nguyen Van Nhan and Nguyen Lam Hoa, Date 17/11/2003
+---- purpose:  Khi xoa nhom thi xoa tat cac cac nguoi dung thuoc nhom
+
+CREATE TRIGGER [dbo].[AX1401] ON [dbo].[AT1401] 
+FOR DELETE 
+AS
+DECLARE @DivisionID VARCHAR(50),
+		@GroupID VARCHAR(50)
+
+SELECT @DivisionID = DivisionID, @GroupID = GroupID FROM DELETED
+
+DELETE AT1402 WHERE DivisionID = @DivisionID AND GroupID = @GroupID
+DELETE AT1403 WHERE DivisionID = @DivisionID AND GroupID = @GroupID
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+

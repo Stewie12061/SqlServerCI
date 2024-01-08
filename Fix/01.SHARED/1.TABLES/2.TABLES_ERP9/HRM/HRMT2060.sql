@@ -1,0 +1,39 @@
+﻿---- Create by Phan Hải Long on 9/12/2017 11:45:42 AM
+---- Ngân sách đào tạo
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[HRMT2060]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[HRMT2060]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] NVARCHAR(50) NOT NULL,
+  [BudgetID] NVARCHAR(50) NOT NULL,
+  [IsAll] TINYINT DEFAULT (0) NULL,
+  [DepartmentID] NVARCHAR(50) NULL,
+  [IsBugetYear] TINYINT DEFAULT (0) NULL,
+  [TranQuarter] INT NULL,
+  [TranYear] INT NULL,
+  [BudgetAmount] DECIMAL(28,8) NULL,   
+  [Description] NVARCHAR(1000) NULL,  
+  [AssignedToUserID] NVARCHAR(50) NULL,  
+  [CreateUserID] NVARCHAR(50) NULL,
+  [CreateDate] DATETIME NULL,
+  [LastModifyUserID] NVARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL
+CONSTRAINT [PK_HRMT2060] PRIMARY KEY CLUSTERED
+(
+  [DivisionID],
+  [BudgetID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+--- 17/10/2023 - Minh Trí: Bổ sung cột DeleteFlg
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE NAME='HRMT2060' AND xtype='U')
+	BEGIN
+	IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+		ON col.id=tab.id WHERE tab.name='HRMT2060' AND col.name='DeleteFlg')
+		ALTER TABLE HRMT2060 ADD DeleteFlg TINYINT DEFAULT (0) NULL
+	END

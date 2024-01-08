@@ -1,0 +1,24 @@
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[MTT1041]') AND TYPE IN (N'U'))
+BEGIN
+     CREATE TABLE [dbo].[MTT1041]
+     (
+      [APK] UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL,
+      [DivisionID] VARCHAR(50) NULL,
+      [ClassID] VARCHAR(50) NOT NULL,
+      [TeacherID] VARCHAR(50) NOT NULL,
+      [BeginDate] DATETIME NULL,
+      [EndDate] DATETIME NULL,
+      [Notes] NVARCHAR(500) NULL,
+      [CreateUserID] VARCHAR(50) NULL,
+      [CreateDate] DATETIME NULL,
+      [LastModifyUserID] VARCHAR(50) NULL,
+      [LastModifyDate] DATETIME NULL
+    CONSTRAINT [PK_MTT1041] PRIMARY KEY CLUSTERED
+      (
+      [ClassID],
+      [TeacherID]
+      )
+WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+     )
+ ON [PRIMARY]
+END

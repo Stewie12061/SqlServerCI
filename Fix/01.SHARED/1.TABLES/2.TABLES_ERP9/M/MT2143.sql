@@ -1,0 +1,33 @@
+﻿---- Create by Mai Trọng Kiên on 2/1/2021 3:07:16 PM
+---- Kế hoạch sản xuất (Detail_Máy_SX_02)
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[MT2143]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[MT2143]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [APKMaster] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NULL,
+  [DeleteFlg] TINYINT DEFAULT (0) NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [CreateDate] DATETIME NULL,
+  [LastModifyDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [Date] DATETIME NULL,
+  [Quantity] VARCHAR(50) NULL
+CONSTRAINT [PK_MT2143] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+---------------- 08/04/2021 - Trọng Kiên: Bổ sung cột APK_MT2140 ----------------
+
+IF NOT EXISTS (SELECT * FROM syscolumns col INNER JOIN sysobjects tab 
+	ON col.id = tab.id WHERE tab.name = 'MT2143' AND col.name = 'APK_MT2140')
+BEGIN
+	ALTER TABLE MT2143 ADD APK_MT2140 UNIQUEIDENTIFIER NULL
+END

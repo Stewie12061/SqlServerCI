@@ -1,0 +1,74 @@
+﻿IF EXISTS (SELECT TOP 1 1 FROM DBO.SYSOBJECTS WHERE ID = OBJECT_ID(N'[DBO].[HRMP0011]') AND  OBJECTPROPERTY(ID, N'IsProcedure') = 1)			
+DROP PROCEDURE [DBO].[HRMP0011]
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+-- <Summary>
+---- Load danh sách người nhận mail (module tuyển dụng)
+-- <Param>
+---- 
+-- <Return>
+---- 
+-- <Reference>
+---- 
+-- <History>
+----Created by Khả Vi on 11/10/2017
+-- <Example>
+---- 
+/*
+   EXEC HRMP0011 @DivisionID = 'CH',@UserID = 'ASOFTADMIN',@FormID = 'HRMF2041', @RecruitPeriodID = 'Period1' 
+
+
+   EXEC HRMP0011 @DivisionID,@UserID,@FormID,@RecruitPeriodIDR
+*/
+CREATE PROCEDURE [HRMP0011]
+( 
+	@DivisionID VARCHAR(50),
+	@UserID NVARCHAR(50),
+	@FormID NVARCHAR(50),
+	@RecruitPeriodID NVARCHAR(50) = ''	
+
+)
+AS 
+
+IF @FormID = 'HRMF2031' -- Lich phong van 
+BEGIN
+	SELECT DISTINCT HRMT2031.CandidateID,(CASE 
+				WHEN ISNULL(HRMT1030.MiddleName,'') = '' THEN LTRIM(RTRIM(ISNULL(HRMT1030.LastName,''))) + ' ' + LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,''))) 
+				WHEN ISNULL(HRMT1030.MiddleName,'') <> '' THEN LTRIM(RTRIM(ISNULL(HRMT1030.LastName,''))) + ' ' + LTRIM(RTRIM(ISNULL(HRMT1030.MiddleName,''))) + ' ' +  LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,''))) 
+				END) AS EmployeeName, HRMT1030.Email
+	FROM HRMT2031 WITH (NOLOCK) 
+	INNER JOIN HRMT2030 WITH (NOLOCK) ON HRMT2031.DivisionID = HRMT2030.DivisionID AND HRMT2031.InterviewScheduleID = HRMT2030.InterviewScheduleID
+	INNER JOIN HRMT1030 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT2031.DivisionID AND HRMT1030.CandidateID = HRMT2031.CandidateID
+	WHERE HRMT2031.DivisionID = @DivisionID 
+	AND HRMT2030.RecruitPeriodID = @RecruitPeriodID
+END 
+
+IF @FormID = 'HRMF2051' -- Quyet dinh tuyen dung
+BEGIN
+	PRINT '0'
+END 
+
+
+IF @FormID = 'HRMF2041' -- Kết qủa phỏng vấn
+BEGIN
+	SELECT DISTINCT HRMT2040.CandidateID,(CASE 
+				WHEN ISNULL(HRMT1030.MiddleName,'') = '' THEN LTRIM(RTRIM(ISNULL(HRMT1030.LastName,''))) + ' ' + LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,''))) 
+				WHEN ISNULL(HRMT1030.MiddleName,'') <> '' THEN LTRIM(RTRIM(ISNULL(HRMT1030.LastName,''))) + ' ' + LTRIM(RTRIM(ISNULL(HRMT1030.MiddleName,''))) + ' ' +  LTRIM(RTRIM(ISNULL(HRMT1030.FirstName,''))) 
+				END) AS Candidatename, HRMT1030.Email
+	FROM HRMT2040 WITH (NOLOCK)
+	INNER JOIN HRMT2041 WITH (NOLOCK) ON HRMT2041.DivisionID = HRMT2040.DivisionID AND HRMT2041.APKMaster = HRMT2040.APK
+	INNER JOIN HRMT1030 WITH (NOLOCK) ON HRMT1030.DivisionID = HRMT2040.DivisionID AND HRMT1030.CandidateID = HRMT2040.CandidateID
+	WHERE HRMT2040.DivisionID = @DivisionID AND HRMT2040.RecruitPeriodID = @RecruitPeriodID
+END 
+
+
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO

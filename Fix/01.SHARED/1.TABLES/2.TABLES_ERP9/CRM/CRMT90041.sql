@@ -1,0 +1,38 @@
+﻿---- Create by Cao Thị Phượng on 3/3/2017 11:43:02 AM
+---- Danh mục nhiệm vụ
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[CRMT90041]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[CRMT90041]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [DivisionID] VARCHAR(50) NOT NULL,
+  [TaskID] INT Identity(1,1) NOT NULL,
+  [Title] NVARCHAR(250) NOT NULL,
+  [PriorityID] TINYINT DEFAULT (0) NULL,
+  [TaskStatus] TINYINT DEFAULT (0) NULL,
+  [AssignedToUserID] VARCHAR(50) NOT NULL,
+  [StartDate] DATETIME NULL,
+  [EndDate] DATETIME NULL,
+  [TypeActive] INT NULL,
+  [Description] NVARCHAR(Max) NULL,
+  [CreateDate] DATETIME NULL,
+  [CreateUserID] VARCHAR(50) NULL,
+  [LastModifyDate] DATETIME NULL,
+  [LastModifyUserID] VARCHAR(50) NULL,
+  [RelatedToTypeID] INT DEFAULT 9 NOT NULL
+CONSTRAINT [PK_CRMT90041] PRIMARY KEY CLUSTERED
+(
+  [TaskID]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
+
+IF EXISTS (SELECT TOP 1 1 FROM sysobjects WHERE [name] = 'CRMT90041' AND xtype = 'U')
+BEGIN 
+   IF NOT EXISTS (SELECT TOP 1 1 FROM syscolumns col INNER JOIN sysobjects tab 
+   ON col.id = tab.id WHERE tab.name = 'CRMT90041' AND col.name = 'DeleteFlg') 
+   ALTER TABLE CRMT90041 ADD DeleteFlg TINYINT DEFAULT (0) NULL 
+END

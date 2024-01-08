@@ -1,0 +1,20 @@
+﻿---- Create by Đình Hòa 18/11/2020
+---- Mối liên hệ giữa Chiến dịch và chi tiết chuyển đổi kế hoạch
+
+IF NOT EXISTS (SELECT TOP 1 1 FROM sys.objects WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[CRMT20402]') AND TYPE IN (N'U'))
+BEGIN
+CREATE TABLE [dbo].[CRMT20402]
+(
+  [APK] UNIQUEIDENTIFIER DEFAULT newid() NOT NULL,
+  [APKMaster] UNIQUEIDENTIFIER NULL,
+  [ConversionTargetID] VARCHAR(50) NULL,
+  [ConversionRate] Decimal(28,8) NULL,
+  [AttendTarget] Decimal(28,8) NULL,
+CONSTRAINT [PK_CRMT20402] PRIMARY KEY CLUSTERED
+(
+  [APK]
+)
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)
+ON [PRIMARY]
+END
