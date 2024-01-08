@@ -5,6 +5,8 @@ parameters:
 jobs:
 - job: UpdateDatabase
   displayName: 'Update Database - ${{ parameters.databaseName }}'
+  pool:
+    name: Stewie
   steps:
     - task: PublishPipelineArtifact@1
       inputs:
