@@ -1,28 +1,14 @@
 trigger: none
 
-resources:
-  - repo: self
-
-pool:
-  name: Stewie
-
 jobs:
-- job: UpdateDatabase
-  displayName: 'Update Database'
+- job: UpdateAllDatabases
+  displayName: 'Update All Databases'
+  pool:
+    name: Stewie
   steps:
-  
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: '$(Pipeline.Workspace)/s'
-        artifact: 'ScriptsFix'
-        publishLocation: 'pipeline'
-      displayName: 'Publish Pipeline Artifact'
-
-    - task: UpdateDatabaseWithDbUp@2
-      inputs:
-        ConnectionString: 'Server=61.28.229.125;Database=1BOSS_nhut;User ID=sa;Password=As@19006123;TrustServerCertificate=True;Connection Timeout=30;'
-        ScriptPath: '$(Pipeline.Workspace)/s/Fix'
-        IncludeSubfolders: true
-        Order: 'FolderStructure'
-        JournalSchemaName: 'dbo'
-        JournalTableName: '_SchemaVersions'
+    - template: updateDatabaseTemplate.yml
+      parameters:
+        databaseName: '1BOSS_nhut'
+    - template: updateDatabaseTemplate.yml
+      parameters:
+        databaseName: '1BOSS_stew'
