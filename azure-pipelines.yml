@@ -18,13 +18,21 @@ jobs:
         publishLocation: 'pipeline'
       displayName: 'Publish Pipeline Artifact'
 
-    - task: RunSqlCmdScriptsInFolderTask@1
+    # - task: RunSqlCmdScriptsInFolderTask@1
+    #   inputs:
+    #     Server: '61.28.229.125'
+    #     Database: '1BOSS_nhut'
+    #     SqlCmdSciptFolderPath: '$(Pipeline.Workspace)/s/Fix'
+    #     Recursive: 'true'
+    #     SqlCmdVariableType: 'none'
+    #     AuthenticationMethod: 'sqlauth'
+    #     AuthenticationUser: 'sa'
+    #     AuthenticationPassword: 'As@19006123'
+    - task: dbForgeExecute@1
       inputs:
-        Server: '61.28.229.125'
-        Database: '1BOSS_nhut'
-        SqlCmdSciptFolderPath: '$(Pipeline.Workspace)/s/Fix'
-        Recursive: 'true'
-        SqlCmdVariableType: 'none'
-        AuthenticationMethod: 'sqlauth'
-        AuthenticationUser: 'sa'
-        AuthenticationPassword: 'As@19006123'
+        input: '$(Pipeline.Workspace)/s/Fix.zip'
+        sqlServer: '61.28.229.12'
+        dbName: '1BOSS_nhut'
+        authMethod: 'sqlServerAuth'
+        connUserName: 'sa'
+        connPassword: 'As@19006123'
