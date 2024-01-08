@@ -1,14 +1,9 @@
 trigger: none
 
 jobs:
-- job: UpdateAllDatabases
-  displayName: 'Update All Databases'
-  pool:
-    name: Stewie
-  steps:
-    - template: updateDatabaseTemplate.yml
-      parameters:
-        databaseName: '1BOSS_nhut'
-    - template: updateDatabaseTemplate.yml
-      parameters:
-        databaseName: '1BOSS_stew'
+- template: updateDatabaseTemplate.yml
+  parameters:
+    databaseName: '1BOSS_nhut'
+- template: updateDatabaseTemplate.yml
+  parameters:
+    databaseName: '1BOSS_stew'
