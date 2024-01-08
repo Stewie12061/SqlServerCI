@@ -31,7 +31,7 @@ jobs:
     - task: dbForgeExecute@1
       inputs:
         input: '$(Pipeline.Workspace)/s/Fix.zip'
-        sqlServer: '61.28.229.12'
+        sqlServer: '61.28.229.125'
         dbName: '1BOSS_nhut'
         authMethod: 'sqlServerAuth'
         connUserName: 'sa'
