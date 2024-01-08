@@ -13,21 +13,16 @@ jobs:
   
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/s/'
+        targetPath: '$(Pipeline.Workspace)/s'
         artifact: 'ScriptsFix'
         publishLocation: 'pipeline'
       displayName: 'Publish Pipeline Artifact'
-    - task: DownloadPipelineArtifact@2
+
+    - task: UpdateDatabaseWithDbUp@2
       inputs:
-        buildType: 'current'
-        artifactName: 'ScriptsFix'
-        targetPath: '$(Pipeline.Workspace)/ScriptsFix'
-      displayName: 'Download Pipeline Artifact'
-    # - task: UpdateDatabaseWithDbUp@2
-    #   inputs:
-    #     ConnectionString: 'Server=$(DbUp.Server);Database=$(DbUp.Database);User ID=$(DbUp.UserId);Password=$(DbUp.Password);Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
-    #     ScriptPath: 'path'
-    #     JournalSchemaName: 'dbo'
-    #     JournalTableName: '_SchemaVersions'
-    
-    
+        ConnectionString: 'Server=61.28.229.125;Database=1BOSS_nhut;User ID=sa;Password=As@19006123;TrustServerCertificate=True;Connection Timeout=30;'
+        ScriptPath: '$(Pipeline.Workspace)/s/Fix'
+        IncludeSubfolders: true
+        Order: 'FolderStructure'
+        JournalSchemaName: 'dbo'
+        JournalTableName: '_SchemaVersions'
