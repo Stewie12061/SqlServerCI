@@ -4,6 +4,12 @@ jobs:
 - template: updateDatabaseTemplate.yml
   parameters:
     databaseName: '1BOSS_nhut'
+    serverName: '61.28.229.125'
+    userName: 'sa'
+    passWord: 'As@19006123'
 - template: updateDatabaseTemplate.yml
   parameters:
     databaseName: '1BOSS_stew'
+    serverName: '61.28.229.125'
+    userName: 'sa'
+    passWord: 'As@19006123'  

@@ -1,6 +1,12 @@
 parameters:
   - name: databaseName
     type: string
+  - name: serverName
+    type: string
+  - name: userName
+    type: string
+  - name: passWord
+    type: string
 
 jobs:
 - job:
@@ -8,17 +14,10 @@ jobs:
   pool:
     name: Update database
   steps:
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: '$(Pipeline.Workspace)/s'
-        artifact: 'ScriptsFix'
-        publishLocation: 'pipeline'
-      displayName: 'Publish Pipeline Artifact'
-
     - task: UpdateDatabaseWithDbUp@2
       inputs:
-        ConnectionString: 'Server=61.28.229.125;Database=${{ parameters.databaseName }};User ID=sa;Password=As@19006123;TrustServerCertificate=True;Connection Timeout=30;'
-        ScriptPath: '$(Pipeline.Workspace)/s/Fix'
+        ConnectionString: 'Server=${{ parameters.serverName }};Database=${{ parameters.databaseName }};User ID=${{ parameters.userName }};Password=${{ parameters.passWord }};TrustServerCertificate=True;Connection Timeout=30;'
+        ScriptPath: 'Fix'
         IncludeSubfolders: true
         Order: 'FolderStructure'
         JournalToSqlTable: false
