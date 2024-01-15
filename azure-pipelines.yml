@@ -3,13 +3,25 @@ trigger: none
 jobs:
 - template: updateDatabaseTemplate.yml
   parameters:
-    databaseName: '1BOSS_nhut'
+    databaseName: '1BOSS_jennie'
     serverName: '61.28.229.125'
     userName: 'sa'
     passWord: 'As@19006123'
 - template: updateDatabaseTemplate.yml
   parameters:
-    databaseName: '1BOSS_stew'
+    databaseName: '1BOSS_minh-nhut-01'
+    serverName: '61.28.229.125'
+    userName: 'sa'
+    passWord: 'As@19006123'  
+- template: updateDatabaseTemplate.yml
+  parameters:
+    databaseName: '1BOSS_stewie-demo'
+    serverName: '61.28.229.125'
+    userName: 'sa'
+    passWord: 'As@19006123'  
+- template: updateDatabaseTemplate.yml
+  parameters:
+    databaseName: '22S999_INTERNALPROJECT_1'
     serverName: '61.28.229.125'
     userName: 'sa'
     passWord: 'As@19006123'  
