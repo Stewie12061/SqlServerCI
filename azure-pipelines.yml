@@ -6,22 +6,22 @@ jobs:
     databaseName: '1BOSS_minhnhut-01'
     serverName: '61.28.229.125'
     userName: 'sa'
-    passWord: 'As@19006123'
+    passWord: '$(SA_PASSWORD)'
 - template: updateDatabaseTemplate.yml
   parameters:
     databaseName: '1BOSS_minhnhut-demo-01'
     serverName: '61.28.229.125'
     userName: 'sa'
-    passWord: 'As@19006123'  
+    passWord: '$(SA_PASSWORD)'  
 - template: updateDatabaseTemplate.yml
   parameters:
     databaseName: '1BOSS_minhnhut-02'
     serverName: '61.28.227.3'
     userName: 'sa'
-    passWord: 'As@19006123' 
+    passWord: '$(SA_PASSWORD)' 
 - template: updateDatabaseTemplate.yml
   parameters:
     databaseName: '1BOSS_minhnhut-demo-02'
     serverName: '61.28.227.3'
     userName: 'sa'
-    passWord: 'As@19006123'  
+    passWord: '$(SA_PASSWORD)'  
