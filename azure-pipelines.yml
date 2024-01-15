@@ -25,9 +25,3 @@ jobs:
     serverName: '61.28.229.125'
     userName: 'sa'
     passWord: 'As@19006123'  
-- template: updateDatabaseTemplate.yml
-  parameters:
-    databaseName: '22S999_INTERNALPROJECT_1'
-    serverName: '61.28.229.125'
-    userName: 'sa'
-    passWord: 'As@19006123'  
