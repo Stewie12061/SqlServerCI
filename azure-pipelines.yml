@@ -9,7 +9,7 @@ jobs:
     passWord: '$(SA_PASSWORD)'
 - template: updateDatabaseTemplate.yml
   parameters:
-    databaseName: '1BOSS_minhnhut-demo-01'
+    databaseName: '1BOSS_minhnhut-03'
     serverName: '61.28.229.125'
     userName: 'sa'
     passWord: '$(SA_PASSWORD)'  
@@ -21,7 +21,7 @@ jobs:
     passWord: '$(SA_PASSWORD)' 
 - template: updateDatabaseTemplate.yml
   parameters:
-    databaseName: '1BOSS_minhnhut-demo-02'
+    databaseName: '1BOSS_minhnhut-04'
     serverName: '61.28.227.3'
     userName: 'sa'
     passWord: '$(SA_PASSWORD)'  
