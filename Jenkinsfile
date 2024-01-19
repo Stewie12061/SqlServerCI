@@ -29,7 +29,7 @@ pipeline {
                         def server = values[0].trim()
                         def database = values[1].trim()
 
-                        def branchLabel = "Update database parallel"
+                        def branchLabel = "Update_${server}_${database}"
 
                         parallelBranches[branchLabel] = {
                             def sourceFolder = "${env.WORKSPACE}\\Fix"
