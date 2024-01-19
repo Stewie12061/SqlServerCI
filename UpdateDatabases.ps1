@@ -5,8 +5,19 @@ param(
     [string]$sqlPassword
 )
 
-$sqlServer = "$server,1433"
+$connectionString = "Server=$server,1433;Database=$database;User Id=sa;Password=$sqlPassword;Trusted_Connection=False;"
 
 Get-ChildItem -Path $scriptFolder -Filter *.sql -Recurse | ForEach-Object {
-    sqlcmd -S $sqlServer -U sa -P $sqlPassword -d $database -i $_.FullName -C -o "C:\UpdateDBLog.txt"
+    Try
+    {
+        $scriptname = $_.Name
+        $result = Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction SilentlyContinue | Out-File -FilePath "UpdateDBLog.txt"
+        Write-Host "[Completed] $scriptname"
+
+    }
+    Catch
+    {
+        $ErrorMessage = $_.Exception.Message
+        Write-Error "[Error running $scriptname]: $ErrorMessage"
+    }
 }
