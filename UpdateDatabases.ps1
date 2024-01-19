@@ -5,8 +5,8 @@ param(
     [string]$sqlPassword
 )
 
-$sqlServer = "Server=$server;Database=$database;User Id=sa;Password=$sqlPassword;Trusted_Connection=False;"
+$sqlServer = "$server,1433"
 
 Get-ChildItem -Path $scriptFolder -Filter *.sql -Recurse | ForEach-Object {
-    sqlcmd -S $sqlServer -U sa -P $sqlPassword -d $database -i $_.FullName
+    sqlcmd -S $sqlServer -U sa -P $sqlPassword -d $database -i $_.FullName -C -o "C:\UpdateDBLog.txt"
 }
