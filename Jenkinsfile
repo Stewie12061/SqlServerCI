@@ -42,7 +42,7 @@ pipeline {
                             def targetFolder = "${env.WORKSPACE}\\Fix_${server}_${database}"
 
                             echo "Copying content from ${sourceFolder} to ${targetFolder}"
-                            bat "robocopy \"${sourceFolder}\" \"${targetFolder}\" /E /MIR"
+                            bat "robocopy \"${sourceFolder}\" \"${targetFolder}\" /E /MIR & EXIT /B 0"
 
                             echo "Updating database ${database} on server ${server}"
 
@@ -50,9 +50,6 @@ pipeline {
                                 .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
                             """
                         }
-
-                        // Now you can use 'server' and 'database' variables as needed in your Jenkins pipeline
-                        // For example, you might want to perform some actions based on these values
                     }
                     
 
