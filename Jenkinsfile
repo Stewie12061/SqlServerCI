@@ -9,7 +9,8 @@ pipeline {
         stage('Update Databases') {
             steps {
                 script {
-                    def databaseInfo = readCSV file: 'DatabaseInfo.csv'
+                    def excelFormat = CSVFormat.EXCEL
+                    def databaseInfo = readCSV file: 'DatabaseInfo.csv', format: excelFormat
                     echo databaseInfo
                     // def parallelBranches = [:]
 
