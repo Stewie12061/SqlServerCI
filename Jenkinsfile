@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    options {
+        disableConcurrentBuilds()
+    }
+
+
     environment {
         SQL_PASSWORD = credentials('sa-password-creds')
     }
