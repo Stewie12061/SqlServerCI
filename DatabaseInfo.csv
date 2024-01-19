@@ -1,5 +1,5 @@
-Server	Database
-61.28.229.125	1BOSS_minhnhut-01
-61.28.229.126	1BOSS_minhnhut-02
-61.28.229.127	1BOSS_minhnhut-demo-01
-61.28.227.3	22S999_INTERNALPROJECT_test
+Server,Database
+61.28.229.125,1BOSS_minhnhut-01
+61.28.229.126,1BOSS_minhnhut-02
+61.28.229.127,1BOSS_minhnhut-demo-01
+61.28.227.3,22S999_INTERNALPROJECT_test
