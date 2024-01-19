@@ -34,15 +34,15 @@ pipeline {
                         parallelBranches[branchLabel] = {
                             def sourceFolder = "${env.WORKSPACE}\\Fix"
                             def targetFolder = "${env.WORKSPACE}\\Fix_${server}_${database}"
-
+                            echo "${targetFolder}"
                             // echo "Copying content from ${sourceFolder} to ${targetFolder}"
                             // bat "robocopy \"${sourceFolder}\" \"${targetFolder}\" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS & EXIT /B 0"
 
                             echo "Updating database ${database} on server ${server}"
 
-                            powershell script: """
-                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -sourceFolder ${sourceFolder} -targetFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
-                            """
+                            // powershell script: """
+                            //     .\\UpdateDatabases.ps1 -server ${server} -database ${database} -sourceFolder ${sourceFolder} -targetFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
+                            // """
                         }
                     }
                     

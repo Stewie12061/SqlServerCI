@@ -9,7 +9,7 @@ param(
 $connectionString = "Server=$server,1433;Database=$database;User Id=sa;Password=$sqlPassword;Trusted_Connection=False;"
 robocopy \"$sourceFolder\" \"$targetFolder\" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS
 
-Get-ChildItem -Path $scriptFolder -Filter *.sql -Recurse | ForEach-Object {
+Get-ChildItem -Path $targetFolder -Filter *.sql -Recurse | ForEach-Object {
     Try
     {
         $scriptname = $_.Name
