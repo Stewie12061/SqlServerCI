@@ -24,8 +24,6 @@ pipeline {
                     // Split the CSV data into lines
                     def lines = csvData.readLines()
 
-                    def folderFix = "${env.WORKSPACE}\\Fix"
-
                     def parallelBranches = [:]
                     
                     // Iterate through each line
@@ -40,11 +38,13 @@ pipeline {
                         def branchLabel = "${server}_${database}"
 
                         parallelBranches[branchLabel] = {
+                            def folderFix = "${env.WORKSPACE}\\Fix_${server}_${database}"
+
                             echo "Updating database ${database} on server ${server}"
 
                             powershell script: """
-                                    .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${folderFix} -sqlPassword ${env.SQL_PASSWORD}
-                                """
+                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${folderFix} -sqlPassword ${env.SQL_PASSWORD}
+                            """
                         }
 
                         // Now you can use 'server' and 'database' variables as needed in your Jenkins pipeline
