@@ -40,9 +40,9 @@ pipeline {
 
                             echo "Updating database ${database} on server ${server}"
 
-                            // powershell script: """
-                            //     .\\UpdateDatabases.ps1 -server ${server} -database ${database} -sourceFolder ${sourceFolder} -targetFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
-                            // """
+                            powershell script: """
+                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -sourceFolder ${sourceFolder} -targetFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
+                            """
                         }
                     }
                     
