@@ -11,7 +11,7 @@ Get-ChildItem -Path $scriptFolder -Filter *.sql -Recurse | ForEach-Object {
     Try
     {
         $scriptname = $_.Name
-        $result = Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction SilentlyContinue | Out-File -FilePath "UpdateDBLog.txt"
+        Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction SilentlyContinue
         Write-Host "[Completed] $scriptname"
 
     }
