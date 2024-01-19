@@ -9,13 +9,26 @@ pipeline {
         stage('Update Databases') {
             steps {
                 script {
-                    def databaseInfo = readCSV file: 'DatabaseInfo.csv', format: CSVFormat.DEFAULT.withHeader()
+
+                    // Define the path to your CSV file
+                    def csvFilePath = 'DatabaseInfo.csv'
+
+                    // Read the CSV file
+                    def csvData = readFile(file: csvFilePath).trim()
+
+                    // Split the CSV data into lines
+                    def lines = csvData.readLines()
 
                     def parallelBranches = [:]
+                    
+                    // Iterate through each line
+                    for (line in lines) {
+                        // Split each line by comma
+                        def values = line.split(',')
 
-                    for (row in databaseInfo) {
-                        def server = row['Server']
-                        def database = row['Database']
+                        // Extract Server and Database values
+                        def server = values[0].trim()
+                        def database = values[1].trim()
 
                         def branchLabel = "${server}_${database}"
 
@@ -25,7 +38,11 @@ pipeline {
                             //     UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${env.WORKSPACE} -sqlPassword ${env.SQL_PASSWORD}
                             // """
                         }
+
+                        // Now you can use 'server' and 'database' variables as needed in your Jenkins pipeline
+                        // For example, you might want to perform some actions based on these values
                     }
+                    
 
                     parallel parallelBranches
                 }
