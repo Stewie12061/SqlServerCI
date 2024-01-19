@@ -14,8 +14,8 @@ pipeline {
                     def parallelBranches = [:]
 
                     for (row in databaseInfo) {
-                        def server = row.Server
-                        def database = row.Database
+                        def server = row['Server']
+                        def database = row['Database']
 
                         def branchLabel = "${server}_${database}"
 
