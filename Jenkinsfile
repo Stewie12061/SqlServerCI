@@ -24,6 +24,8 @@ pipeline {
                     // Split the CSV data into lines
                     def lines = csvData.readLines()
 
+                    def folderFix = "${env.WORKSPACE}\\Fix"
+
                     def parallelBranches = [:]
                     
                     // Iterate through each line
@@ -36,8 +38,6 @@ pipeline {
                         def database = values[1].trim()
 
                         def branchLabel = "${server}_${database}"
-
-                        def folderFix - "${env.WORKSPACE}\\Fix"
 
                         parallelBranches[branchLabel] = {
                             echo "Updating database ${database} on server ${server}"
