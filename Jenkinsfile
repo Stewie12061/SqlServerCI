@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    options {
+        disableConcurrentBuilds()
+    }
+
+
     environment {
         SQL_PASSWORD = credentials('sa-password-creds')
     }
@@ -9,6 +14,7 @@ pipeline {
         stage('Update Databases') {
             steps {
                 script {
+
                     // Define the path to your CSV file
                     def csvFilePath = 'DatabaseInfo.csv'
 
@@ -17,6 +23,8 @@ pipeline {
 
                     // Split the CSV data into lines
                     def lines = csvData.readLines()
+
+                    def folderFix = "${env.WORKSPACE}\\Fix"
 
                     def parallelBranches = [:]
                     
@@ -29,24 +37,17 @@ pipeline {
                         def server = values[0].trim()
                         def database = values[1].trim()
 
-                        def branchLabel = "Update_${server}_${database}"
+                        def branchLabel = "${server}_${database}"
 
                         parallelBranches[branchLabel] = {
-                            def sourceFolder = "${env.WORKSPACE}\\Fix"
-                            def targetFolder = "${env.WORKSPACE}\\Fix_${server}_${database}"
-                            echo "${targetFolder}"
-                            // echo "Copying content from ${sourceFolder} to ${targetFolder}"
-                            // bat "robocopy \"${sourceFolder}\" \"${targetFolder}\" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS & EXIT /B 0"
-
                             echo "Updating database ${database} on server ${server}"
 
                             powershell script: """
-                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -sourceFolder ${sourceFolder} -targetFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
+                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${folderFix} -sqlPassword ${env.SQL_PASSWORD}
                             """
                         }
                     }
                     
-
                     parallel parallelBranches
                 }
             }

@@ -1,19 +1,17 @@
 param(
     [string]$server,
     [string]$database,
-    [string]$sourceFolder,
-    [string]$targetFolder,
+    [string]$scriptFolder,
     [string]$sqlPassword
 )
 
 $connectionString = "Server=$server,1433;Database=$database;User Id=sa;Password=$sqlPassword;Trusted_Connection=False;"
-robocopy "$sourceFolder" "$targetFolder" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS
 
-Get-ChildItem -Path $targetFolder -Filter *.sql -Recurse | ForEach-Object {
+Get-ChildItem -Path $scriptFolder -Filter *.sql -Recurse | ForEach-Object {
     Try
     {
         $scriptname = $_.Name
-        Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction Stop
+        Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction SilentlyContinue
         Write-Host "[Completed] $scriptname"
 
     }
@@ -21,6 +19,5 @@ Get-ChildItem -Path $targetFolder -Filter *.sql -Recurse | ForEach-Object {
     {
         $ErrorMessage = $_.Exception.Message
         Write-Error "[Error running $scriptname]: $ErrorMessage"
-        throw $_
     }
 }
