@@ -13,7 +13,7 @@ Get-ChildItem -Path $targetFolder -Filter *.sql -Recurse | ForEach-Object {
     Try
     {
         $scriptname = $_.Name
-        Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction SilentlyContinue
+        Invoke-Sqlcmd -ConnectionString $connectionString -InputFile $_.FullName -ErrorAction Stop
         Write-Host "[Completed] $scriptname"
 
     }
@@ -21,5 +21,6 @@ Get-ChildItem -Path $targetFolder -Filter *.sql -Recurse | ForEach-Object {
     {
         $ErrorMessage = $_.Exception.Message
         Write-Error "[Error running $scriptname]: $ErrorMessage"
+        throw $_
     }
 }
