@@ -21,7 +21,6 @@ pipeline {
 
                         parallelBranches[branchLabel] = {
                             echo "Updating database ${database} on server ${server}"
-                            powershell(script: "${server} - ${database}")
                             // powershell script: """
                             //     UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${env.WORKSPACE} -sqlPassword ${env.SQL_PASSWORD}
                             // """
