@@ -35,8 +35,8 @@ pipeline {
                             def sourceFolder = "${env.WORKSPACE}\\Fix"
                             def targetFolder = "${env.WORKSPACE}\\Fix_${server}_${database}"
 
-                            echo "Copying content from ${sourceFolder} to ${targetFolder}"
-                            bat "robocopy \"${sourceFolder}\" \"${targetFolder}\" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS & EXIT /B 0"
+                            // echo "Copying content from ${sourceFolder} to ${targetFolder}"
+                            // bat "robocopy \"${sourceFolder}\" \"${targetFolder}\" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS & EXIT /B 0"
 
                             echo "Updating database ${database} on server ${server}"
 
