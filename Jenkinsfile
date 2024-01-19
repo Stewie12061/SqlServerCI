@@ -37,12 +37,19 @@ pipeline {
 
                         def branchLabel = "${server}_${database}"
 
+                        def folderFix - "${env.WORKSPACE}\\Fix"
+
                         parallelBranches[branchLabel] = {
                             echo "Updating database ${database} on server ${server}"
-                            echo "${env.SQL_PASSWORD} - ${env.WORKSPACE}"
-                            // powershell script: """
-                            //     .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${env.WORKSPACE} -sqlPassword ${env.SQL_PASSWORD}
-                            // """
+                            echo "${env.SQL_PASSWORD} - ${folderFix}"
+                            // try {
+                            //     powershell script: """
+                            //         .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${folderFix} -sqlPassword ${env.SQL_PASSWORD}
+                            //     """
+                            // } catch (Exception e) {
+                            //     echo "Error updating database ${database} on server ${server}: ${e.message}"
+                            //     error "Pipeline failed due to an error in updating the database."
+                            // }
                         }
 
                         // Now you can use 'server' and 'database' variables as needed in your Jenkins pipeline
