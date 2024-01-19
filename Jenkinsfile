@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     def databaseInfo = readCSV file: 'DatabaseInfo.csv'
-                    databaseInfo
+                    echo databaseInfo
                     // def parallelBranches = [:]
 
                     // for (row in databaseInfo) {
