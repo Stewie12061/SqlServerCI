@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    options {
-        disableConcurrentBuilds()
-    }
-
-
     environment {
         SQL_PASSWORD = credentials('sa-password-creds')
     }
@@ -14,7 +9,6 @@ pipeline {
         stage('Update Databases') {
             steps {
                 script {
-
                     // Define the path to your CSV file
                     def csvFilePath = 'DatabaseInfo.csv'
 
@@ -47,7 +41,7 @@ pipeline {
                             echo "Updating database ${database} on server ${server}"
 
                             powershell script: """
-                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
+                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -sourceFolder ${sourceFolder} -targetFolder ${targetFolder} -sqlPassword ${env.SQL_PASSWORD}
                             """
                         }
                     }

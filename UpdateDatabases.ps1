@@ -1,11 +1,13 @@
 param(
     [string]$server,
     [string]$database,
-    [string]$scriptFolder,
+    [string]$sourceFolder,
+    [string]$targetFolder,
     [string]$sqlPassword
 )
 
 $connectionString = "Server=$server,1433;Database=$database;User Id=sa;Password=$sqlPassword;Trusted_Connection=False;"
+robocopy \"$sourceFolder\" \"$targetFolder\" /E /MIR /MT:4 /NP /NDL /NFL /NC /NS
 
 Get-ChildItem -Path $scriptFolder -Filter *.sql -Recurse | ForEach-Object {
     Try
