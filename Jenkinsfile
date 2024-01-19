@@ -11,7 +11,7 @@ pipeline {
                 script {
                     def excelFormat = CSVFormat.EXCEL
                     def databaseInfo = readCSV file: 'DatabaseInfo.csv' , format: excelFormat.withHeader()
-
+                    databaseInfo
                     // def parallelBranches = [:]
 
                     // for (row in databaseInfo) {
