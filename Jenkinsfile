@@ -17,15 +17,10 @@ pipeline {
         stage('Update Databases') {
             steps {
                 script {
+                    def excelFormat = CSVFormat.EXCEL
+                    def records = readCSV file: "${params.CSV_PATH}", format: excelFormat
 
-                    // Define the path to CSV file
-                    def csvFilePath = "${params.CSV_PATH}"
-
-                    def csvFile = new File(csvFilePath)
-
-                    // Read the CSV file
-                    def csvData = csvFile.readLines().tail()*.split(',')
-                    echo "$csvData"
+                    echo "$records"
 
                     // def folderFix = "${env.WORKSPACE}\\Fix"
 
