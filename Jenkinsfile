@@ -4,10 +4,6 @@ pipeline {
         disableConcurrentBuilds()
     }
 
-    environment {
-        SQL_PASSWORD = credentials('sa-password-creds')
-    }
-
     parameters {
         string(description: 'Fill agent to run', name: 'build_agent')
         string(name: 'CSV_PATH', defaultValue: 'D:\\UpdateDB\\DatabaseInfo.csv', description: 'Path to database info file')
@@ -28,7 +24,7 @@ pipeline {
                     def csvFile = new File(csvFilePath)
 
                     // Read the CSV file
-                    def csvData = file.readLines().tail()*.split(',')
+                    def csvData = csvFile.readLines().tail()*.split(',')
                     echo "$csvData"
 
                     // def folderFix = "${env.WORKSPACE}\\Fix"
