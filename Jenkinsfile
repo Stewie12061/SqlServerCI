@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     def excelFormat = CSVFormat.EXCEL
-                    def records = readCSV file: "${params.CSV_PATH}", format: excelFormat
+                    def records = readCSV file: "${params.CSV_PATH}", format: CSVFormat.DEFAULT.withHeader()
 
                     echo "$records"
 
