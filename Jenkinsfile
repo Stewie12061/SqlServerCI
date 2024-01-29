@@ -24,7 +24,7 @@ pipeline {
 
                     echo "$records"
 
-                    def folderFix = "${env.WORKSPACE}\\Fix"
+                    def folderFix = "${params.FIX_PATH}"
 
                     def parallelBranches = [:]
                     
