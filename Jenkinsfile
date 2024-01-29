@@ -35,32 +35,32 @@ pipeline {
                         def branchLabel = "${server}_${database}"
                         echo "$server - $database - $username -$password"
 
-                        // def psScript = """
-                        //     \$connectionString = "Server=${server},1433;Database=${database};User Id=${username};Password=${password};Trusted_Connection=False;"
+                        def psScript = """
+                            \$connectionString = "Server=${server},1433;Database=${database};User Id=${username};Password=${password};Trusted_Connection=False;"
 
-                        //     Get-ChildItem -Path ${folderFix} -Filter *.sql -Recurse | ForEach-Object {
-                        //         Try
-                        //         {
-                        //             \$scriptname = \$_.Name
-                        //             Invoke-Sqlcmd -ConnectionString \$connectionString -InputFile \$_.FullName -ErrorAction SilentlyContinue
-                        //             Write-Host "[Completed] \$scriptname"
+                            Get-ChildItem -Path ${folderFix} -Filter *.sql -Recurse | ForEach-Object {
+                                Try
+                                {
+                                    \$scriptname = \$_.Name
+                                    Invoke-Sqlcmd -ConnectionString \$connectionString -InputFile \$_.FullName -ErrorAction SilentlyContinue
+                                    Write-Host "[Completed] \$scriptname"
 
-                        //         }
-                        //         Catch
-                        //         {
-                        //             \$ErrorMessage = \$_.Exception.Message
-                        //             Write-Error "[Error running \$scriptname]: \$ErrorMessage"
-                        //         }
-                        //     }
-                        // """
+                                }
+                                Catch
+                                {
+                                    \$ErrorMessage = \$_.Exception.Message
+                                    Write-Error "[Error running \$scriptname]: \$ErrorMessage"
+                                }
+                            }
+                        """
 
-                        // parallelBranches[branchLabel] = {
-                        //     echo "Updating database ${database} on server ${server}"
-                        //     powershell(script: psScript)
-                        // }
+                        parallelBranches[branchLabel] = {
+                            echo "Updating database ${database} on server ${server}"
+                            powershell(script: psScript)
+                        }
                     }
                     
-                    //parallel parallelBranches
+                    parallel parallelBranches
                 }
             }
         }
