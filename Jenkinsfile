@@ -1,13 +1,20 @@
 pipeline {
-    agent any
 
     options {
         disableConcurrentBuilds()
     }
 
-
     environment {
         SQL_PASSWORD = credentials('sa-password-creds')
+    }
+
+    parameters {
+        string(description: 'Fill agent to run', name: 'build_agent')
+        string(name: 'CSV_PATH', defaultValue: 'D:\\UpdateDB\\DatabaseInfo.csv', description: 'Path to database info file')
+    }
+
+    agent {
+        label params['build_agent']
     }
 
     stages {
@@ -15,40 +22,40 @@ pipeline {
             steps {
                 script {
 
-                    // Define the path to your CSV file
-                    def csvFilePath = 'DatabaseInfo.csv'
+                    // Define the path to CSV file
+                    def csvFilePath = "${params.CSV_PATH}"
+
+                    def csvFile = new File(csvFilePath)
 
                     // Read the CSV file
-                    def csvData = readFile(file: csvFilePath).trim()
+                    def csvData = file.readLines().tail()*.split(',')
+                    echo "$csvData"
 
-                    // Split the CSV data into lines
-                    def lines = csvData.readLines()
+                    // def folderFix = "${env.WORKSPACE}\\Fix"
 
-                    def folderFix = "${env.WORKSPACE}\\Fix"
-
-                    def parallelBranches = [:]
+                    // def parallelBranches = [:]
                     
-                    // Iterate through each line
-                    for (line in lines) {
-                        // Split each line by comma
-                        def values = line.split(',')
+                    // // Iterate through each line
+                    // for (line in lines) {
+                    //     // Split each line by comma
+                    //     def values = line.split(',')
 
-                        // Extract Server and Database values
-                        def server = values[0].trim()
-                        def database = values[1].trim()
+                    //     // Extract Server and Database values
+                    //     def server = values[0].trim()
+                    //     def database = values[1].trim()
 
-                        def branchLabel = "${server}_${database}"
+                    //     def branchLabel = "${server}_${database}"
 
-                        parallelBranches[branchLabel] = {
-                            echo "Updating database ${database} on server ${server}"
+                    //     parallelBranches[branchLabel] = {
+                    //         echo "Updating database ${database} on server ${server}"
 
-                            powershell script: """
-                                .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${folderFix} -sqlPassword ${env.SQL_PASSWORD}
-                            """
-                        }
-                    }
+                    //         powershell script: """
+                    //             .\\UpdateDatabases.ps1 -server ${server} -database ${database} -scriptFolder ${folderFix} -sqlPassword ${env.SQL_PASSWORD}
+                    //         """
+                    //     }
+                    // }
                     
-                    parallel parallelBranches
+                    // parallel parallelBranches
                 }
             }
         }
