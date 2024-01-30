@@ -1,9 +1,5 @@
 pipeline {
 
-    options {
-        disableConcurrentBuilds()
-    }
-
     parameters {
         string(description: 'Fill agent to run', name: 'build_agent')
         string(name: 'CSV_PATH', defaultValue: 'D:\\UpdateDB\\DatabaseInfo.csv', description: 'Path to database info file')
