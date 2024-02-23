@@ -37,7 +37,7 @@ pipeline {
                         def psScript = """
                             \$connectionString = "Server=${server},1433;Database=${database};User Id=${username};Password=${password};Trusted_Connection=False;"
 
-                            Get-ChildItem -Path ${folderFix} -Filter *.sql -Recurse | ForEach-Object {
+                            Get-ChildItem -Path "${folderFix}" -Filter *.sql -Recurse | ForEach-Object {
                                 Try
                                 {
                                     \$scriptname = \$_.Name
