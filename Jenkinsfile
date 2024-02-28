@@ -35,7 +35,7 @@ pipeline {
                         echo "$server - $database - $username -$password"
 
                         def psScript = """
-                            \$connectionString = "Server=${server},1433;Database=${database};User Id=${username};Password=${password};Trusted_Connection=False;"
+                            \$connectionString = "Server=${server};Database=${database};User Id=${username};Password=${password};Trusted_Connection=False;"
 
                             Get-ChildItem -Path "${folderFix}" -Filter *.sql -Recurse | ForEach-Object {
                                 Try
